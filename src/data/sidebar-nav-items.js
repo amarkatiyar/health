@@ -12,7 +12,8 @@ export default function() {
       to: "/blog-posts",
     },
     {
-      title: "Add New Post",
+      // title: "Add New Post",
+      title: "Invoice",
       htmlBefore: '<i class="material-icons">note_add</i>',
       to: "/add-new-post",
     },
@@ -22,17 +23,20 @@ export default function() {
       to: "/components-overview",
     },
     {
-      title: "Tables",
+      // title: "Tables",
+      title: "Message",
       htmlBefore: '<i class="material-icons">table_chart</i>',
       to: "/tables",
     },
     {
-      title: "User Profile",
+      // title: "User Profile",
+      title: "Billing",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/user-profile-lite",
     },
     {
       title: "Errors",
+      // title: "NewMessage",
       htmlBefore: '<i class="material-icons">error</i>',
       to: "/errors",
     }

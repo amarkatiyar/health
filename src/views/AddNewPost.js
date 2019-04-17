@@ -7,11 +7,11 @@ import SidebarActions from "../components/add-new-post/SidebarActions";
 import SidebarCategories from "../components/add-new-post/SidebarCategories";
 
 const AddNewPost = () => (
-  <Container fluid className="main-content-container px-4 pb-4">
+  <Container fluid className="main-content-container px-4 pb-4 py-4">
     {/* Page Header */}
-    <Row noGutters className="page-header py-4">
+    {/* <Row noGutters className="page-header py-4">
       <PageTitle sm="4" title="Add New Post" subtitle="Blog Posts" className="text-sm-left" />
-    </Row>
+    </Row> */}
 
     <Row>
       {/* Editor */}
@@ -22,7 +22,7 @@ const AddNewPost = () => (
       {/* Sidebar Widgets */}
       <Col lg="3" md="12">
         <SidebarActions />
-        <SidebarCategories />
+        {/* <SidebarCategories /> */}
       </Col>
     </Row>
   </Container>
