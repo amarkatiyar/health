@@ -1,31 +1,98 @@
+
 import React from "react";
-import { Container, Row, Col } from "shards-react";
+import {
 
+  Card,
+  CardHeader,
+  CardBody,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  FormInput,
+  Button
+} from "shards-react";
 import PageTitle from "../components/common/PageTitle";
-import Editor from "../components/add-new-post/Editor";
-import SidebarActions from "../components/add-new-post/SidebarActions";
-import SidebarCategories from "../components/add-new-post/SidebarCategories";
 
-const AddNewPost = () => (
-  <Container fluid className="main-content-container px-4 pb-4 py-4">
-    {/* Page Header */}
-    {/* <Row noGutters className="page-header py-4">
-      <PageTitle sm="4" title="Add New Post" subtitle="Blog Posts" className="text-sm-left" />
-    </Row> */}
+export default function BasicCardExample() {
+  return (
+    <div className="container">
+    <div className="row mt-4">
+    <div className="col lg-6 ">
+    <Card  style={{height: "600px"}}>
+      <CardHeader className="bg-light">
+            <InputGroup size="md" seamless>
+              <InputGroupAddon type="prepend">
+                <InputGroupText>
+                <i class="fas fa-search"></i>
+                </InputGroupText>
+              </InputGroupAddon>
+              <FormInput className="border-3 " placeholder="Search patient by name.." />
+              <span className="ml-2 mr-2"> <a href="#"><Button outline theme="success">
+              <i class="fas fa-bars"></i> &nbsp;
+          Report
+      </Button></a></span><span><a href="./patient"><Button outline theme="success">
+      <i class="fas fa-user-plus"></i> &nbsp;
+        New patient
+      </Button></a></span>
+            </InputGroup></CardHeader>
+      
+            <CardBody className="p-0 pb-3"><small>
+            <a href="./patientacc">  <table className="table mb-0">
+          
+              <thead className="bg-light">
+                <tr>
+                  <th scope="col " className="border-0">
+                  Patient Name/KPiD
+                  </th>
+                  <th scope="col" className="border-0">
+                  Phone/Email
+                  </th>
+                  <th scope="col" className="border-0">
+                  Address
+                  </th>
+                  <th scope="col" className="border-0">
+                  Birth Date
+                  </th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <tr>
+                  <td>1/prashant</td>
+                  <td>890380345/prashantkatiyar10796@gmail.com</td>
+                  <td>kanpur</td>
+                  <td>10/07/96</td>
+                  
+                </tr>
+                <tr>
+                  <td>2 /kamal</td>
+                  <td>993091092/hdfuiafi@sjdfgmail.com</td>
+                  <td>lucknow</td>
+                  <td>30/2/98</td>
+                 
+                </tr>
+                <tr>
+                  <td>3/rana</td>
+                  <td>8849902932/ranakat10894@gmail.com</td>
+                  <td>delhi</td>
+                  <td>10/3/94</td>
+                  
+                </tr>
+                
+              </tbody>
+            
+            </table>
+          </a>
+            </small>
+          </CardBody>
+    </Card>
+    </div>   
+   
+    </div>
+    </div>
+      
 
-    <Row>
-      {/* Editor */}
-      <Col lg="9" md="12">
-        <Editor />
-      </Col>
-
-      {/* Sidebar Widgets */}
-      <Col lg="3" md="12">
-        <SidebarActions />
-        {/* <SidebarCategories /> */}
-      </Col>
-    </Row>
-  </Container>
-);
-
-export default AddNewPost;
+  
+    
+  );
+}
