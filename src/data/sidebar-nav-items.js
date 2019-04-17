@@ -29,8 +29,7 @@ export default function() {
       to: "/tables",
     },
     {
-      // title: "User Profile",
-      title: "Billing",
+      title: "setting",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/user-profile-lite",
     },
