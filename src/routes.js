@@ -16,6 +16,9 @@ import BlogPosts from "./views/BlogPosts";
 import  FormExample from "./views/patient";
 import CardBodyExample from "./views/patientacc";
 import LoginForm from "./components/LoginForm";
+import Message from "./views/Message";
+import Billings from "./views/Billings";
+import CreateMessage from "./views/CreateMessage";
 
 export default [
   {
@@ -76,5 +79,20 @@ export default [
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
+  },
+  {
+    path: "/billings",
+    layout: DefaultLayout,
+    component: Billings
+  },
+  {
+    path: "/message",
+    layout: DefaultLayout,
+    component: Message
+  },
+  {
+    path: "/createmessage",
+    layout: DefaultLayout,
+    component: CreateMessage
   }
 ];

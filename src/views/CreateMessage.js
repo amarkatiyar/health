@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Card, CardHeader, CardBody } from "shards-react";
+import { Container, Row, Col, Card, CardHeader,FormInput, CardBody } from "shards-react";
 
 
-import PageTitle from "../components/common/PageTitle";
+// import PageTitle from "../components/common/PageTitle";
 
-const NewMessage = () => (
+// const CreateMessage = () => (
+  export default function CreateMessage() {
+    return (
   <Container fluid className="main-content-container px-4 py-4">
         <Row>
         <Col >
@@ -41,11 +43,13 @@ const NewMessage = () => (
           </div>
           <div className="col-xs-6 mt-3">
 						<div id="save-btn" class="icon-color btn btn-outline-success" data-toggle="tooltip" title="Send Message">Send</div>
-					</div></CardHeader>
+					</div>
+          </CardHeader>
         </Card>
       </Col>
     </Row>
   </Container>
-);
+)
+    }
 
-export default NewMessage;
+// export default CreateMessage;

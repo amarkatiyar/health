@@ -1,9 +1,8 @@
 import React from "react";
-import ReactQuill from "react-quill";
-import { Card, CardBody, Form, FormInput } from "shards-react";
+import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shards-react";
 
-import "react-quill/dist/quill.snow.css";
-import "../../assets/quill.css";
+
+import PageTitle from "../components/common/PageTitle";
 
 const NewBill = () => (
   <Card small className="mb-3">

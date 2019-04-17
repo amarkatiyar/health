@@ -6,17 +6,29 @@ import PageTitle from "../components/common/PageTitle";
 
 const Tables = () => (
   <Container fluid className="main-content-container px-4 py-4">
-    {/* Page Header
-    <Row noGutters className="page-header py-4">
-      <PageTitle sm="4" title="Add New Post" subtitle="Blog Posts" className="text-sm-left" />
-    </Row>
-    Default Light Table */}
+
             <Card small className="mb-4">
           <CardHeader className="border-bottom">
 
-{/* <h6 className="m-0">MESSAGE</h6> */}
+          <div className="row">
+   <div className="col-lg-10">
+   <span id="save-btn" className="text-primary fa fa-credit-card mr-2" data-toggle="tooltip" title="Send Message"></span>
+      Billing
+   </div>
+   <div className="col-lg-1">
+   
+   <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="Send Message"></span>
+   </div>
+   <div className="col-lg-1">
+   <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Send Message"></span>
+   </div>
+   </div>
 
-<div className="row">
+
+
+
+
+        {/* <div className="row">
           <div className="col-lg-11">
           <span id="help-btn" className="hover icon-md fa fa-envelope-o mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
           Message
@@ -39,13 +51,6 @@ const Tables = () => (
 					</div>            
             </div>
             </div>
-
-            {/* <div className="row bg-info text-black border">
-        <div className="col-4 border">Item/Service</div>
-        <div className="col-3 border text-right">Price</div>
-        <div className="col-2 border text-right">Qty</div>
-        <div className="col-3 border text-right">Amount</div>
-      </div><br></br> */}
             <table className="table mt-2">
             <thead className="thead-light">
             <tr>
@@ -62,13 +67,18 @@ const Tables = () => (
 						<span>&nbsp;&nbsp;Create Message</span>
 					</div>
            </CardHeader>
-           </card>
+           </card> */}
 
 
 
     
 
         
+
+
+
+
+
         {/* <div className="row">
           <div className="col-lg-11">
           <span id="cancel-btn" className="hover icon-md fa fa-chevron-left mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
@@ -100,23 +110,55 @@ const Tables = () => (
           </div>
           <div className="col-xs-6 mt-3">
 						<div id="save-btn" class="icon-color btn btn-outline-success" data-toggle="tooltip" title="Send Message">Send</div>
-					</div> */}
-          </CardHeader>
-        </Card>
-  
+					</div>
 
-    {/* Default Dark Table */}
-    {/* <Row>
-      <Col>
-        <Card small className="mb-4 overflow-hidden">
-          <CardHeader className="bg-dark">
-            <h6 className="m-0 text-white">Active Users</h6>
+
+
+
+
+          <div className="row">
+        <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
+        </div>
+        <div className="col-lg-1">
+          <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Send Message"></span>
+        </div>
+        <div className="col-lg-1">
+          <span id="save-btn" className="fa fa-print ml-3" data-toggle="tooltip" title="Send Message"></span>
+        </div>
+        <div className="col-lg-1">
+          <span id="save-btn" className="fa fa-print ml-3" data-toggle="tooltip" title="Print Invoice"></span>
+        </div>
+        <div className="col-lg-1">
+          <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Show List"></span>
+        </div>
+        <div className="col-xs-12 col-sm-6 col-md-6">
+          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message">
+          </FormInput>
+        </div>
+        <div className="col-xs-12 col-sm-6 col-md-6">
+          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message" />
+        </div>
+      </div>
+      <h6 className="mt-3">Add item purchased or service received by patient, and end with payment</h6>
+      <div className="row bg-info text-black">
+        <div className="col-4 border">Item/Service</div>
+        <div className="col-3 border text-right">Price</div>
+        <div className="col-2 border text-right">Qty</div>
+        <div className="col-3 border text-right">Amount</div>
+      </div>
+      <div class="col-xs-6 text-right mt-2">
+        <button id="add-btn" class="icon-color btn btn-outline-primary btn-xs mb-5" data-toggle="tooltip" title="Add Item purchased or service offered">
+          <span class="fa fa-plus"></span> <span>&nbsp;&nbsp;Add Item/Service</span>
+        </button>
+      </div> */}
+
+
+
+
+
+      
           </CardHeader>
-          <CardBody className="bg-dark p-0 pb-3">
-          </CardBody>
         </Card>
-      </Col>
-    </Row> */}
   </Container>
 );
 export default Tables;
