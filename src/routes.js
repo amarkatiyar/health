@@ -13,6 +13,8 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
+import  FormExample from "./views/patient";
+import CardBodyExample from "./views/patientacc";
 import LoginForm from "./components/LoginForm";
 
 export default [
@@ -27,6 +29,18 @@ export default [
     layout: LoginLayout,
     component: LoginForm
   },
+  {
+    path: "/patient",
+    layout: DefaultLayout,
+    component: FormExample
+  },
+
+  {
+    path: "/patientacc",
+    layout: DefaultLayout,
+    component: CardBodyExample
+  },
+
   {
     path: "/dashboard",
     layout: DefaultLayout,
