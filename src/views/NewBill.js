@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shards-react";
 
 
-// import PageTitle from "../components/common/PageTitle";
-
-// const NewBill = () => (
   export default function NewBill() {
     return (
-  <Card small className="mb-3">
+      <Container fluid className="main-content-container px-4 py-4">
+    <div className="row">
+    <div className="col-8">
+    <Card style={{height: "600px"}}>
     <CardBody>
            <div className="row">
         <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
@@ -33,7 +33,7 @@ import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shar
         </div>
       </div>
       <h6 className="mt-3">Add item purchased or service received by patient, and end with payment</h6>
-      <div className="row bg-info text-black">
+      <div className="row bg-info text-black" style={{height: "35px"}}>
         <div className="col-4 border">Item/Service</div>
         <div className="col-3 border text-right">Price</div>
         <div className="col-2 border text-right">Qty</div>
@@ -41,13 +41,23 @@ import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shar
       </div>
       <div class="col-xs-6 text-right mt-2">
         <button id="add-btn" class="icon-color btn btn-outline-primary btn-xs mb-5" data-toggle="tooltip" title="Add Item purchased or service offered">
-          <span class="fa fa-plus"></span> <span>&nbsp;&nbsp;Add Item/Service</span>
+          <span class="fa fa-plus"></span> <span>&nbsp;&nbsp;<a href="./Item">Add Item/Service</a></span>
         </button>
       </div>
-     
     </CardBody>
   </Card>
-   
+    </div>
+    <div className="col-4">
+    <Card>
+      <CardHeader style={{background:"aqua"}}>Favorite Item/Service</CardHeader>
+      <span id="assign-icon" className="hover icon-md fa fa-search">
+      <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message">
+          </FormInput></span>
+    </Card>
+    </div>
+    </div>
+
+  </Container>
 )
 }
-// export default NewBill;
+

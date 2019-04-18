@@ -20,6 +20,8 @@ import Message from "./views/Message";
 import Billings from "./views/Billings";
 import CreateMessage from "./views/CreateMessage";
 import EditUser from "./views/EditUser";
+import NewBill from "./views/NewBill";
+import Item from "./views/Item";
 
 export default [
   {
@@ -95,6 +97,16 @@ export default [
     path: "/createmessage",
     layout: DefaultLayout,
     component: CreateMessage
+  },
+  {
+    path: "/newbill",
+    layout: DefaultLayout,
+    component: NewBill
+  },
+  {
+    path: "/item",
+    layout: DefaultLayout,
+    component: Item
   },
   {
     path: "/EditUser",
