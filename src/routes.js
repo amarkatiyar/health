@@ -13,9 +13,11 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
-import  FormExample from "./views/patient";
-import CardBodyExample from "./views/patientacc";
+import Patient from "./components/Patient/Patient";
+import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
+import  NewhealthRecord from "./components/NewhealthRecord";
+
 
 export default [
   {
@@ -32,13 +34,13 @@ export default [
   {
     path: "/patient",
     layout: DefaultLayout,
-    component: FormExample
+    component: Patient
   },
 
   {
-    path: "/patientacc",
+    path: "/PatientAcc",
     layout: DefaultLayout,
-    component: CardBodyExample
+    component: PatientAcc
   },
 
   {
@@ -66,6 +68,12 @@ export default [
     layout: DefaultLayout,
     component: ComponentsOverview
   },
+  {
+    path: "/NewhealthRecord",
+    layout: DefaultLayout,
+    component: NewhealthRecord
+  },
+
   {
     path: "/tables",
     layout: DefaultLayout,
