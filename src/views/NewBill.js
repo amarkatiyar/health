@@ -2,9 +2,11 @@ import React from "react";
 import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shards-react";
 
 
-import PageTitle from "../components/common/PageTitle";
+// import PageTitle from "../components/common/PageTitle";
 
-const NewBill = () => (
+// const NewBill = () => (
+  export default function NewBill() {
+    return (
   <Card small className="mb-3">
     <CardBody>
            <div className="row">
@@ -46,6 +48,6 @@ const NewBill = () => (
     </CardBody>
   </Card>
    
-);
-
-export default NewBill;
+)
+}
+// export default NewBill;

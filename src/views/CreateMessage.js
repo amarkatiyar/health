@@ -1,10 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, CardHeader,FormInput, CardBody } from "shards-react";
 
-
-// import PageTitle from "../components/common/PageTitle";
-
-// const CreateMessage = () => (
   export default function CreateMessage() {
     return (
   <Container fluid className="main-content-container px-4 py-4">
@@ -52,4 +48,3 @@ import { Container, Row, Col, Card, CardHeader,FormInput, CardBody } from "shard
 )
     }
 
-// export default CreateMessage;
