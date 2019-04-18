@@ -6,6 +6,8 @@ import {
   Card,
   CardHeader,
   CardBody,
+  FormInput,
+  CardFooter,
   ListGroup,
   ListGroupItem,
   Button
@@ -13,10 +15,31 @@ import {
 
 const SidebarActions = ({ title }) => (
   <Card small className="mb-3">
-    <CardHeader className="border-bottom">
+  <CardHeader className="bg-success">Favorite Item/Service</CardHeader>
+  <CardHeader className="border-top bg-primary">Item/Service Code 
+  </CardHeader>
+  <CardBody>
+  <table>
+  <td>
+    <span class="hover icon-md fa fa-search text-success text-left" title="Search"> </span>
+    </td>
+    <FormInput  className="bg-default" id="search-string"  maxlength="40" placeholder="All"></FormInput>
+    <td>
+    <span class="hover icon-md fa fa-plus text-success text-right" title="plus"> </span>
+    </td>
+    {/* <td> */}
+    <span className="hover icon-md fa fa-ellipsis-v text-success text-left ml-4" title="Search"> </span>
+    {/* </td> */}
+  </table>
+  
+ 
+  </CardBody>
+  
+
+  <CardFooter className="bg-success border-top">fksfskfkslfjksl</CardFooter>
+    {/* <CardHeader className="border-bottom">
       <h6 className="m-0">{title}</h6>
     </CardHeader>
-
     <CardBody className="p-0">
       <ListGroup flush>
         <ListGroupItem className="p-3">
@@ -57,8 +80,10 @@ const SidebarActions = ({ title }) => (
           </Button>
         </ListGroupItem>
       </ListGroup>
-    </CardBody>
+    </CardBody> */}
+    
   </Card>
+  
 );
 
 SidebarActions.propTypes = {

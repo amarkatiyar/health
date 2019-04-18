@@ -23,20 +23,30 @@ export default function() {
     },
     {
       title: "Tables",
+      // title: "Message",
       htmlBefore: '<i class="material-icons">table_chart</i>',
       to: "/tables",
     },
     {
-      title: "User Profile",
+      title: "setting",
       htmlBefore: '<i class="material-icons">person</i>',
       to: "/user-profile-lite",
+    },
+    {
+      title: "Billings",
+      htmlBefore: '<i class="material-icons">error</i>',
+      to: "/billings",
+    },
+    {
+      title: "Message",
+      htmlBefore: '<i class="material-icons">error</i>',
+      to: "/message",
     },
     {
       title: "Errors",
       htmlBefore: '<i class="material-icons">error</i>',
       to: "/errors",
     }
-
    
   ];
 }

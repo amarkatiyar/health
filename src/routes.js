@@ -18,6 +18,15 @@ import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
+import Message from "./views/Message";
+import Billings from "./views/Billings";
+import CreateMessage from "./views/CreateMessage";
+import EditUser from "./views/EditUser";
+import ManageUser from "./views/ManageUser";
+import SetForms from "./views/SetForms";
+import ChangePassword from "./views/ChangePassword";
+import CDS from "./views/CDS";
+import AuditReport from "./views/AuditReport";
 
 export default [
   {
@@ -58,6 +67,7 @@ export default [
     layout: DefaultLayout,
     component: AddNewPost
   },
+
   {
     path: "/errors",
     layout: DefaultLayout,
@@ -83,5 +93,50 @@ export default [
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
+  },
+  {
+    path: "/billings",
+    layout: DefaultLayout,
+    component: Billings
+  },
+  {
+    path: "/message",
+    layout: DefaultLayout,
+    component: Message
+  },
+  {
+    path: "/createmessage",
+    layout: DefaultLayout,
+    component: CreateMessage
+  },
+  {
+    path: "/EditUser",
+    layout: DefaultLayout,
+    component: EditUser
+  },
+  {
+    path: "/ManageUser",
+    layout: DefaultLayout,
+    component: ManageUser
+  },
+  {
+    path: "/SetForms",
+    layout: DefaultLayout,
+    component: SetForms
+  },
+  {
+    path: "/ChangePassword",
+    layout: DefaultLayout,
+    component: ChangePassword
+  },
+  {
+    path: "/CDS",
+    layout: DefaultLayout,
+    component: CDS
+  },
+  {
+    path: "/AuditReport",
+    layout: DefaultLayout,
+    component: AuditReport
   }
 ];
