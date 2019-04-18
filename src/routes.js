@@ -24,6 +24,7 @@ import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
 import CDS from "./views/CDS";
+import AuditReport from "./views/AuditReport";
 
 export default [
   {
@@ -124,5 +125,10 @@ export default [
     path: "/CDS",
     layout: DefaultLayout,
     component: CDS
+  },
+  {
+    path: "/AuditReport",
+    layout: DefaultLayout,
+    component: AuditReport
   }
 ];
