@@ -19,6 +19,7 @@ import LoginForm from "./components/LoginForm";
 import Message from "./views/Message";
 import Billings from "./views/Billings";
 import CreateMessage from "./views/CreateMessage";
+import EditUser from "./views/EditUser";
 
 export default [
   {
@@ -94,5 +95,10 @@ export default [
     path: "/createmessage",
     layout: DefaultLayout,
     component: CreateMessage
+  },
+  {
+    path: "/EditUser",
+    layout: DefaultLayout,
+    component: EditUser
   }
 ];
