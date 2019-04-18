@@ -20,6 +20,7 @@ import Message from "./views/Message";
 import Billings from "./views/Billings";
 import CreateMessage from "./views/CreateMessage";
 import EditUser from "./views/EditUser";
+import ManageUser from "./views/ManageUser";
 
 export default [
   {
@@ -100,5 +101,10 @@ export default [
     path: "/EditUser",
     layout: DefaultLayout,
     component: EditUser
+  },
+  {
+    path: "/ManageUser",
+    layout: DefaultLayout,
+    component: ManageUser
   }
 ];

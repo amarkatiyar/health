@@ -59,7 +59,7 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">Manage User</h6>
         <p>Manage users, you can create new user or view existing user and edit them</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        Manage User
+        <a href="./ManageUser">Manage User</a>
       </Button>
       </div>
     </CardHeader></div>
