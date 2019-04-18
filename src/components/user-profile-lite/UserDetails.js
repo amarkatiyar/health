@@ -38,7 +38,7 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="card-body" className="text-primary">Profile</h6>
         <p>Edit your profile,change name,email,etc.</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        Edit Profile
+        <a href="./EditUser"> Edit Profile</a>
       </Button>
       </div>
     </CardHeader>
