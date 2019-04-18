@@ -21,6 +21,8 @@ import Billings from "./views/Billings";
 import CreateMessage from "./views/CreateMessage";
 import EditUser from "./views/EditUser";
 import ManageUser from "./views/ManageUser";
+import SetForms from "./views/SetForms";
+import ChangePassword from "./views/ChangePassword";
 
 export default [
   {
@@ -106,5 +108,15 @@ export default [
     path: "/ManageUser",
     layout: DefaultLayout,
     component: ManageUser
+  },
+  {
+    path: "/SetForms",
+    layout: DefaultLayout,
+    component: SetForms
+  },
+  {
+    path: "/ChangePassword",
+    layout: DefaultLayout,
+    component: ChangePassword
   }
 ];

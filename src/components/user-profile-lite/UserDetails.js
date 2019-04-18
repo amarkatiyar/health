@@ -49,7 +49,7 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">Change Password</h6>
         <p>Change your password, it is recommended you change your password regularl</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        Change Password
+        <a href="./ChangePassword">Change Password </a>
       </Button>
       </div>
     </CardHeader></div>
