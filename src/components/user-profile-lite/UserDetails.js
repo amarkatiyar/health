@@ -190,7 +190,7 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">CLINICAL DECISION SUPPORT</h6>
         <p>Set your Clinical Decision Support settings here</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        Set Clinical Decision Report
+       <a href="./CDS"> Set Clinical Decision Report</a>
       </Button>
       </div>
     </CardHeader></div>

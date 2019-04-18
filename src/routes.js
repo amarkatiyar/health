@@ -23,6 +23,7 @@ import EditUser from "./views/EditUser";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
+import CDS from "./views/CDS";
 
 export default [
   {
@@ -118,5 +119,10 @@ export default [
     path: "/ChangePassword",
     layout: DefaultLayout,
     component: ChangePassword
+  },
+  {
+    path: "/CDS",
+    layout: DefaultLayout,
+    component: CDS
   }
 ];
