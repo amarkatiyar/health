@@ -13,6 +13,7 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
+// import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";

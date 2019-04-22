@@ -44,9 +44,9 @@ class PatientAcc extends React.Component{
     
     return(
       <div className="container">
-      <Row>
+      <Row className="mt-4">
         {/* ************this first column******** */}
-        <div className="col-lg-10 mt-4">
+        <div className="col-lg-10 col-md-10 col-sm-10 col-9">
           <p>Patient Account</p>
           <div className="mb-4">
             {" "}
@@ -63,7 +63,7 @@ class PatientAcc extends React.Component{
           </div>
         </div>
         {/* ***********************second column************* */}
-        <div className="col-lg-2 mt-4 "><a href="#"><i class="fas fa-print"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fas fa-ellipsis-v"></i></a></div>
+        <div className="col-lg-2  col-md-2 col-sm-2 col-3"><a href="#"><i class="fas fa-print"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><i class="fas fa-ellipsis-v"></i></a></div>
       </Row>
 
       <div className="row">
@@ -86,21 +86,21 @@ class PatientAcc extends React.Component{
             { showPersonal &&
               <div style={{"zIndex":999}}>
                <div className="container">
-    <Card className="mt-2 ml-3 mb-2" style={{height: "350px",width:"480px"}}>
+    <Card className="mt-2 ml-3 mb-2">
      <CardBody>
        <Row className="mt-0">
-         <div className="col-lg-10"><h6><i class="fas fa-arrow-left mr-3"></i>Personal</h6></div>
-         <div className="col-lg-2"><i class="fas fa-check"></i></div>
+         <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Personal</h6></div>
+         <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
        
        </Row>
        <Form>
      
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
       <label htmlFor="#Country">Gender</label> 
       </div>
-      <div className="col-lg-6">
+      <div className="col-lg-6 col-md-6 col-sm-6 col-6">
        <FormSelect>
       <option value="first">Male</option>
       <option value="second">Female</option>
@@ -114,10 +114,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4 ">
         <label htmlFor="Date of Birth">Date of Birth</label>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 col-md-6 col-sm-6 col-6">
         <FormInput type="text" id="#date of birth" placeholder="10/07/96" />
         </div>
         </div>
@@ -126,10 +126,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
       <label htmlFor="#state/province">Blood Group</label> 
       </div>
-      <div className="col-lg-8">
+      <div className="col-lg-8 col-md-8 col-sm-8 col-8">
        <FormSelect>
        <option value="first">--select Blood Group--</option>
       <option value="first">O postive</option>
@@ -145,10 +145,10 @@ class PatientAcc extends React.Component{
     
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
       <label htmlFor="#state/province">Marital Status</label>
       </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
        <FormSelect>
        <option value="first">--select Marital Status--</option>
       <option value="first">Single</option>
@@ -178,11 +178,11 @@ class PatientAcc extends React.Component{
           <Card className="mb-3" style={{ height: "240px" }}>
             <CardBody>
               <div className="row">
-                <div className="col-lg-10">
+                <div className="col-lg-10 col-md-10 col-sm-10 col-10">
                   {" "}
                   <h6 className="text-success">ALTERNATE CONTACT</h6>
                 </div>
-                <div className="col-lg-2">
+                <div className="col-lg-2 col-md-2 col-sm-2 col-2">
           
                     <i class="fas fa-plus"onClick={()=> this.handleshowAlternatecontact(showAlternatecontact)} />
         
@@ -192,20 +192,20 @@ class PatientAcc extends React.Component{
             { showAlternatecontact &&
               <div style={{"zIndex":999}}>
               <div className="container">
-              <Card className="mt-2 ml-3" style={{height: "270px",width:"500px"}}>
+              <Card className="mt-2 ml-3">
                <CardBody>
                  <Row className="mt-0">
-                   <div className="col-lg-10"><h6><i class="fas fa-arrow-left mr-3"></i>Alternatecontact</h6></div>
-                   <div className="col-lg-2"><i class="fas fa-check"></i></div>
+                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Alternatecontact</h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
                  
                  </Row>
                  <Form>
                 <FormGroup>
                   <div className="row">
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="#Full Name">Full Name</label>
                   </div>
-                  <div className="col-lg-8">
+                  <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                   <FormInput id="#fullname" placeholder="enter the full name"/>
                   </div>
                   </div>
@@ -213,10 +213,10 @@ class PatientAcc extends React.Component{
 
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="#contactnumber">Contact Number</label>
                 </div>
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                   <FormInput type="number" id="#contactnumber" placeholder="enter the number" />
                 </div>
                 </div>
@@ -224,11 +224,11 @@ class PatientAcc extends React.Component{
 
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                 <label htmlFor="#Country">Country</label> 
                 </div>
 
-                <div className="col-lg-6">
+                <div className=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                  <FormSelect>
                 
                 <option value="first">India</option>
@@ -259,23 +259,7 @@ class PatientAcc extends React.Component{
               <h6 className="text-success">UPCOMING APPOINTMENTS</h6>
             </CardBody>
           </Card>
-          <div className="mb-2">
-            <a href="#">
-              <Button className="mr-2" outline theme="success">
-                <i class="fas fa-print" /> &nbsp;Print Id Card{" "}
-              </Button>
-            </a>
-            <a href="#">
-              <Button className="mr-2" outline theme="success">
-                <i class="far fa-trash-alt" /> &nbsp;Delete{" "}
-              </Button>
-            </a>
-            <a href="#">
-              <Button className="mr-2" outline theme="success">
-                <i class="fas fa-arrow-left" /> &nbsp; Back{" "}
-              </Button>
-            </a>
-          </div>
+          
         </div>
 {/* *******************************************this edit profile************************************** */}
         <div className="col-lg-6">
@@ -288,21 +272,21 @@ class PatientAcc extends React.Component{
             { showProfile &&
               <div style={{"zIndex":999}}>
                   <div className="container">
-    <Card className="mt-2 ml-3 mb-2" style={{height: "560",width:"480px"}}>
+    <Card className="mt-2 ml-3 mb-2">
      <CardBody>
        <Row className="mt-0">
-         <div className="col-lg-10"><h6><i class="fas fa-arrow-left mr-3"></i>Name</h6></div>
-         <div className="col-lg-2"><i class="fas fa-check"></i></div>
+         <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Name</h6></div>
+         <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
        
        </Row>
        <Form>
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className=" col-xl-4 col-lg-4  col-md-4 col-sm-4 col-4">
         <label htmlFor="#emailid">Email id</label>
         </div>
-        <div className="col-lg-8">
+        <div className=" col-xl-8 col-lg-8  col-md-8 col-sm-8 col-8">
         <FormInput type="email" id="#Email" placeholder="email id" />
        </div>
        </div>
@@ -310,10 +294,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
         <label htmlFor="#Firstname">Firstname</label>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="text" id="#Firstname" placeholder="firstname" />
          </div>
          </div>
@@ -321,10 +305,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
         <label htmlFor="#Lastname">Lastname</label>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="text" id="#Lastname" placeholder="Lastname" />
          </div>
          </div>
@@ -332,10 +316,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
         <label htmlFor="#number">Mobile Number</label>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="number" id="#number" placeholder="mobile number" />
         </div>
         </div>
@@ -343,10 +327,10 @@ class PatientAcc extends React.Component{
 
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
         <label htmlFor="#id"> id</label>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="text" id="#ids" placeholder=" National,License or Passport" />
         </div>
         </div>
@@ -354,10 +338,10 @@ class PatientAcc extends React.Component{
  
       <FormGroup>
         <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
         <label for="exampleFormControlTextarea1">CARE TEAM MEMBER</label>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="3" placeholder="user by name id emailid"></textarea> 
         </div>
         </div>
@@ -392,20 +376,20 @@ class PatientAcc extends React.Component{
             { showAddress &&
               <div style={{"zIndex":999}}>
               <div className="container">
-              <Card className="mt-2 ml-3" style={{height: "520px",width:"500px"}}>
+              <Card className="mt-2 ml-3">
                <CardBody>
                  <Row className="mt-0">
-                   <div className="col-lg-10"><h6><i class="fas fa-arrow-left mr-3"></i>Contact</h6></div>
-                   <div className="col-lg-2"><i class="fas fa-check"></i></div>
+                   <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Contact</h6></div>
+                   <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
                  
                  </Row>
                  <Form>
                 <FormGroup>
                   <div className="row">
-                  <div className="col-lg-4">
+                  <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="#Address">Address</label>
                   </div>
-                  <div className="col-lg-8">
+                  <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                   <FormInput id="#address" placeholder="enter the address"/>
                   </div>
                   </div>
@@ -413,10 +397,10 @@ class PatientAcc extends React.Component{
 
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="#City">City</label>
                   </div>
-                  <div className="col-lg-8">
+                  <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                   <FormInput type="text" id="#city" placeholder="enter the city" />
                  </div>
                  </div>
@@ -424,10 +408,10 @@ class PatientAcc extends React.Component{
 
                 <FormGroup>
               <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                 <label htmlFor="#Country">Country</label>
                 </div> 
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                  <FormSelect>
                 <option value="first">India</option>
                 <option value="second">Pakistan</option>
@@ -440,10 +424,10 @@ class PatientAcc extends React.Component{
           
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                 <label htmlFor="#state/province">State/Province</label> 
                 </div>
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                  <FormSelect>
                 <option value="first">uttar pradesh</option>
                 <option value="second">bihar</option>
@@ -455,10 +439,10 @@ class PatientAcc extends React.Component{
           
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="ZIP/Postal Code">ZIP/Postal Code</label>
                 </div>
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                   <FormInput type="text" id="#ZIP/Postal Code" placeholder="ZIP/Postal Code" />
                   </div>
                   </div>
@@ -466,10 +450,10 @@ class PatientAcc extends React.Component{
           
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                   <label htmlFor="#Number"> phone Number</label>
                 </div>
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8  col-md-8 col-sm-8 col-8">
                   <FormInput type="number" id="#number" placeholder="number" />
                 </div>
                 </div>
@@ -477,10 +461,10 @@ class PatientAcc extends React.Component{
           
                 <FormGroup>
                 <div className="row">
-                <div className="col-lg-4">
+                <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                 <label for="exampleFormControlTextarea1">Notes</label>
                 </div>
-                <div className="col-lg-8">
+                <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="notes"></textarea>
                  </div>
                  </div>
@@ -503,11 +487,11 @@ class PatientAcc extends React.Component{
           <Card className="mb-3" style={{ height: "240px" }}>
             <CardBody>
               <div className="row">
-                <div className="col-lg-10">
+                <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                   {" "}
                   <h6 className="text-success">CARE TEAM MEMBER</h6>
                 </div>
-                <div className="col-lg-2">
+                <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
                   
                     <i class="fas fa-plus" onClick={()=> this.handleShowCreatemember(showCreatemember)} />
                 
@@ -517,30 +501,47 @@ class PatientAcc extends React.Component{
             { showCreatemember &&
               <div style={{"zIndex":999}}>
               <div className="container">
-    <Card className="mt-2  mb-3 ml-3" style={{height: "250px",width:"450px"}}>
-     <CardBody>
-       <Row className="mt-0">
-         <div className="col-lg-10"><h6><i class="fas fa-arrow-left mr-3"></i>CARE TEAM MEMBER
-</h6></div>
-         <div className="col-lg-2"><i class="fas fa-check"></i></div>
+               <Card className="mt-2  mb-3 ml-3">
+                 <CardBody>
+                   <Row className="mt-0">
+                     <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>CARE TEAM MEMBER
+                      </h6></div>
+                      <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
        
-       </Row>
-       <Form>
-       <FormGroup>
-      <label for="exampleFormControlTextarea1">CARE TEAM MEMBER</label>
-       <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="3" placeholder="user by name id emailid"></textarea>        </FormGroup>
+                   </Row>
+                   <Form>
+                    <FormGroup>
+                        <label for="exampleFormControlTextarea1">CARE TEAM MEMBER</label>
+                        <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="3" placeholder="user by name id emailid"></textarea>        </FormGroup>
      
-      <a href="#"><Button  className="mr-2" outline theme="success"> &nbsp; Save </Button></a>
+                        <a href="#"><Button  className="mr-2" outline theme="success"> &nbsp; Save </Button></a>
 
 
-    </Form>
-     </CardBody>
-   </Card>
-   </div>
+                    </Form>
+                   </CardBody>
+                 </Card>
+             </div>
              </div>
             }
           </Card>
         </div>
+        <div className="mb-2 ml-3">
+            <a href="#">
+              <Button className="mr-2" outline theme="success">
+                <i class="fas fa-print" /> &nbsp;Print Id Card{" "}
+              </Button>
+            </a>
+            <a href="#">
+              <Button className="mr-2" outline theme="success">
+                <i class="far fa-trash-alt" /> &nbsp;Delete{" "}
+              </Button>
+            </a>
+            <a href="#">
+              <Button className="mr-2" outline theme="success">
+                <i class="fas fa-arrow-left" /> &nbsp; Back{" "}
+              </Button>
+            </a>
+          </div>
       </div>
     </div>
     )
