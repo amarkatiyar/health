@@ -37,9 +37,9 @@ export default function() {
     // },
     
     {
-      title: "Billings",
-      htmlBefore: '<i class="fas fa-digital-tachograph"></i>',
-      to: "/billings",
+      title: "Billing",
+      htmlBefore: '<i class="fa fa-credit-card"></i>',
+      to: "/billing",
     },
     {
       title: "Message",

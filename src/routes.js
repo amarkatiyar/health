@@ -20,7 +20,8 @@ import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
 import Message from "./views/Message";
-import Billings from "./views/Billings";
+import Billing from "./components/Billings/Billing";
+import CreateBill from "./components/Billings/CreateBill";
 import CreateMessage from "./views/CreateMessage";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
@@ -103,9 +104,14 @@ export default [
     component: BlogPosts
   },
   {
-    path: "/billings",
+    path: "/billing",
     layout: DefaultLayout,
-    component: Billings
+    component: Billing
+  },
+  {
+    path: "/CreateBill",
+    layout: DefaultLayout,
+    component: CreateBill
   },
   {
     path: "/message",

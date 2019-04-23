@@ -79,6 +79,7 @@ class NewhealthRecord extends React.Component{
      {/* ************************************************  VITAL CARD  ***********************************************  */}
      <Card className="pt-2 mb-2 "style={{height:"100px"}}>
           <div className="d-flex  ">
+  
          <div className=""><h6 className="text-success pl-3">VITAL</h6>
           </div>
 
