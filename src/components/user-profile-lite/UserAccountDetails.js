@@ -29,7 +29,7 @@ const UserAccountDetails = ({ title }) => (
             </tr>
             <tr>
               <td>
-                <a>Change Password</a>
+                <a href="">Change Password</a>
               </td>
             </tr>
             <tr>

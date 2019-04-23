@@ -25,6 +25,11 @@ import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
 import CDS from "./views/CDS";
 import AuditReport from "./views/AuditReport";
+import NewUser from "./views/NewUser";
+import Multiple from "./views/Multiple";
+import Edit1 from "./views/Edit1";
+import Edit2 from "./views/Edit2";
+import Add2 from "./views/Add2";
 
 export default [
   {
@@ -130,5 +135,25 @@ export default [
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
+  },
+  {
+    path: "/NewUser",
+    layout: DefaultLayout,
+    component: NewUser
+  },
+  {
+    path: "/Multiple",
+    layout: DefaultLayout,
+    component: Multiple
+  },
+  {
+    path: "/Edit1",
+    layout: DefaultLayout,
+    component: Edit1
+  },
+  {
+    path: "/Add2",
+    layout: DefaultLayout,
+    component: Add2
   }
 ];

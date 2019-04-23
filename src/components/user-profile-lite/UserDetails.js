@@ -180,7 +180,7 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">AUDIT REPORTS</h6>
         <p>You can view your audit reports here</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        View Audit Reports
+        <a href="./AuditReport">View Audit Reports</a>
       </Button>
       </div>
     </CardHeader></div>

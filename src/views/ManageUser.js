@@ -17,7 +17,7 @@ export default  function ManageUser(){
                     </div>
                     <div className="col-lg-4">
                     <Button outline size="sm" theme="primary" className="ml-2">
-                    <i class="fas fa-plus"></i> &nbsp; New User
+                    <a href="./NewUser"><i class="fas fa-plus"></i> &nbsp; New User</a>
                     </Button>
                     </div>
                 </div>
