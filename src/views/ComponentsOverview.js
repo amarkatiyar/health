@@ -40,13 +40,13 @@ export default function HealthRecord() {
       </div>
       <div className="text-center">
       
-       <table className="table mb-2 mt-5 ">
+       <table className="table mt-3">
        
-         <tr>
-          
-           <th><h6>Patient</h6></th>
-           <th><h6>Kpid</h6></th>
-           <th><h6>Gender Age</h6></th>
+         <tr className="bg-light">
+           <th><small><b>Patient</b></small></th>
+           <th ><small><b>KPid</b></small></th>
+           <th ><small><b>Gender/Age</b></small></th>
+             
         </tr>
          <tr>
            <td></td>
