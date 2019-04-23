@@ -23,12 +23,19 @@ import Message from "./views/Message";
 import Billing from "./components/Billings/Billing";
 import CreateBill from "./components/Billings/CreateBill";
 import CreateMessage from "./views/CreateMessage";
-import EditUser from "./views/EditUser";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
 import CDS from "./views/CDS";
 import AuditReport from "./views/AuditReport";
+import NewUser from "./views/NewUser";
+import Multiple from "./views/Multiple";
+import Edit1 from "./views/Edit1";
+import Edit2 from "./views/Edit2";
+import Add2 from "./views/Add2";
+import EditProfile from "./views/EditProfile";
+import RestSetting from "./views/RestSetting";
+import HospitalService from "./views/HospitalService";
 
 export default [
   {
@@ -117,9 +124,9 @@ export default [
     component: CreateMessage
   },
   {
-    path: "/EditUser",
+    path: "/EditProfile",
     layout: DefaultLayout,
-    component: EditUser
+    component: EditProfile
   },
   {
     path: "/ManageUser",
@@ -145,5 +152,40 @@ export default [
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
+  },
+  {
+    path: "/NewUser",
+    layout: DefaultLayout,
+    component: NewUser
+  },
+  {
+    path: "/Multiple",
+    layout: DefaultLayout,
+    component: Multiple
+  },
+  {
+    path: "/Edit1",
+    layout: DefaultLayout,
+    component: Edit1
+  },
+  {
+    path: "/Add2",
+    layout: DefaultLayout,
+    component: Add2
+  },
+  {
+    path: "/Edit2",
+    layout: DefaultLayout,
+    component: Edit2
+  },
+  {
+    path: "/RestSetting",
+    layout: DefaultLayout,
+    component: RestSetting
+  },
+  {
+    path: "/HospitalService",
+    layout: DefaultLayout,
+    component: HospitalService
   }
 ];

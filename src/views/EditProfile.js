@@ -2,21 +2,24 @@ import React from 'react'
 import {Row,Button, Card, CardBody } from 'shards-react'
 
 
-export default  function EditUser(){
+export default  function EditProfile(){
     return(
     <div className="container">
         <h6 className="mt-3 text-primary">ADMINISTRATOR ACCOUNT</h6>
         <div className="row mt-3">
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
-                        <CardBody>   
+                        <CardBody> 
+                        <div class="text-center" >
+                            <img src="..." className="rounded" alt="..." style={{width:"200px",height:"200px"}}></img>
+                            </div>  
                         </CardBody>
                     </Card>
                 </div>
                 <div className="col lg-6">
                 <Card style={{height:"250px"}}>
                         <CardBody> 
-                        <a href="#"><i class="far fa-edit"></i></a> 
+                        <a href="./Edit1"><i class="far fa-edit"></i></a> 
                         </CardBody>
                 </Card>
                 </div>
@@ -37,7 +40,8 @@ export default  function EditUser(){
                 <Card style={{height:"250px"}}>
                         <CardBody>  
                         <h6 className="text-primary">PERSONAL</h6>
-                        <a href="#"><i class="far fa-edit"></i></a>
+                        
+                        <a href="./Edit2"><i class="far fa-edit"></i></a>
                         </CardBody>
                 </Card>
                 </div>
@@ -47,7 +51,7 @@ export default  function EditUser(){
                     <Card style={{height:"180px"}}>
                         <CardBody>
                         <h6 className="text-primary">SPECIALITY</h6>
-                        <a href="#"><Button size="sm" className="mr-2 p-1" outline theme="primary">
+                        <a href="./Add2"><Button size="sm" className="mr-2 p-1" outline theme="primary">
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
                         </Button></a>     
