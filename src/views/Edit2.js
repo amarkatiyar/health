@@ -6,7 +6,7 @@ export default  function Edit2(){
 return(
 
     <div className="container mt-3">
-    <Card className="" style={{width:"600px",height:"400px"}}>
+    <Card className="" style={{width:"600px",height:"280px"}}>
     <CardBody>
     <form>
 

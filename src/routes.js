@@ -22,7 +22,6 @@ import  NewhealthRecord from "./components/NewhealthRecord";
 import Message from "./views/Message";
 import Billings from "./views/Billings";
 import CreateMessage from "./views/CreateMessage";
-import EditUser from "./views/EditUser";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -33,6 +32,9 @@ import Multiple from "./views/Multiple";
 import Edit1 from "./views/Edit1";
 import Edit2 from "./views/Edit2";
 import Add2 from "./views/Add2";
+import EditProfile from "./views/EditProfile";
+import RestSetting from "./views/RestSetting";
+import HospitalService from "./views/HospitalService";
 
 export default [
   {
@@ -116,9 +118,9 @@ export default [
     component: CreateMessage
   },
   {
-    path: "/EditUser",
+    path: "/EditProfile",
     layout: DefaultLayout,
-    component: EditUser
+    component: EditProfile
   },
   {
     path: "/ManageUser",
@@ -164,5 +166,20 @@ export default [
     path: "/Add2",
     layout: DefaultLayout,
     component: Add2
+  },
+  {
+    path: "/Edit2",
+    layout: DefaultLayout,
+    component: Edit2
+  },
+  {
+    path: "/RestSetting",
+    layout: DefaultLayout,
+    component: RestSetting
+  },
+  {
+    path: "/HospitalService",
+    layout: DefaultLayout,
+    component: HospitalService
   }
 ];

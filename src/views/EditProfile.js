@@ -2,14 +2,17 @@ import React from 'react'
 import {Row,Button, Card, CardBody } from 'shards-react'
 
 
-export default  function EditUser(){
+export default  function EditProfile(){
     return(
     <div className="container">
         <h6 className="mt-3 text-primary">ADMINISTRATOR ACCOUNT</h6>
         <div className="row mt-3">
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
-                        <CardBody>   
+                        <CardBody> 
+                        <div class="text-center" >
+                            <img src="..." className="rounded" alt="..." style={{width:"200px",height:"200px"}}></img>
+                            </div>  
                         </CardBody>
                     </Card>
                 </div>
@@ -37,6 +40,7 @@ export default  function EditUser(){
                 <Card style={{height:"250px"}}>
                         <CardBody>  
                         <h6 className="text-primary">PERSONAL</h6>
+                        
                         <a href="./Edit2"><i class="far fa-edit"></i></a>
                         </CardBody>
                 </Card>
