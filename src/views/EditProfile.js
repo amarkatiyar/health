@@ -1,8 +1,26 @@
 import React from 'react'
-import {Row,Button, Card, CardBody } from 'shards-react'
+import {Row,Button, Card, CardBody, Modal, ModalBody, ModalHeader } from 'shards-react'
+import DropdownSplitExample1 from './Edit1';
+
+export default class DropdownSplitExample extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state = { 
+        open: false,
+        showEditModal: false
+    };
+    }
+
+    handleShowEdit1 = () =>{
+        //e.preventDefault();
+        this.setState({showEditModal: !this.state.showEditModal});
+    }
+    
+render(){
+    const {showEditModal} = this.state;
+    //  let { showEdit1 } = this.state;
 
 
-export default  function EditProfile(){
     return(
     <div className="container">
         <h6 className="mt-3 text-primary">ADMINISTRATOR ACCOUNT</h6>
@@ -18,8 +36,16 @@ export default  function EditProfile(){
                 </div>
                 <div className="col lg-6">
                 <Card style={{height:"250px"}}>
-                        <CardBody> 
-                        <a href="./Edit1"><i class="far fa-edit"></i></a> 
+                        <CardBody>
+                        <div> 
+                        <a onClick={() => {this.handleShowEdit1()}}><i className="far fa-edit"></i></a> 
+                        <Modal size="sm" open={showEditModal} toggle={this.handleShowEdit1}>
+                        <ModalHeader>Header</ModalHeader>
+                        <ModalBody>
+                            <DropdownSplitExample1 />
+                        </ModalBody>
+                        </Modal>
+                        </div>                        
                         </CardBody>
                 </Card>
                 </div>
@@ -65,3 +91,4 @@ export default  function EditProfile(){
     </div>
     )
 }
+      }

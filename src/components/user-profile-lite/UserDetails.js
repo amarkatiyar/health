@@ -36,24 +36,25 @@ export default class DropdownSplitExample extends React.Component{
     <CardHeader className="border-bottom mb-3">
       <div  className="mb-3 mx-auto">
         <h6 className="card-body" className="text-primary">Profile</h6>
-        <p>Edit your profile,change name,email,etc.</p>
+        <p style={{fontSize:""}}>Edit your profile,change name,email,etc.</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
         <a href="./EditProfile"> Edit Profile</a>
       </Button>
       </div>
     </CardHeader>
-    </div>
-    <div className="card mt-3">
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom ">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">Change Password</h6>
-        <p>Change your password, it is recommended you change your password regularl</p>
+        <p>Change your password, it is recommended you change your password regular</p>
         <Button outline size="sm" theme="primary" className="mb-2 mr-1">
         <a href="./ChangePassword">Change Password </a>
       </Button>
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">Manage User</h6>
@@ -62,8 +63,9 @@ export default class DropdownSplitExample extends React.Component{
         <a href="./ManageUser">Manage User</a>
       </Button>
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">FAVORITES</h6>
@@ -82,8 +84,9 @@ export default class DropdownSplitExample extends React.Component{
         </DropdownMenu>
       </Dropdown>
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">HOSPITAL CODES</h6>
@@ -99,8 +102,9 @@ export default class DropdownSplitExample extends React.Component{
         </DropdownMenu>
       </Dropdown>
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">HOSPITAL SERVICE CHARGES/ TAX</h6>
@@ -113,8 +117,9 @@ export default class DropdownSplitExample extends React.Component{
         </DropdownMenu>
       </Dropdown>
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">NOTIFICATION</h6>
@@ -122,8 +127,9 @@ export default class DropdownSplitExample extends React.Component{
         <input type="checkbox" outline size="sm" theme="primary" className="mb-2 mr-1"></input>
         On complete EHR notify user*
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">SMS/E-MAIL</h6>
@@ -133,8 +139,9 @@ export default class DropdownSplitExample extends React.Component{
         <input type="checkbox" outline size="sm" theme="primary" className="mb-2 mr-1"></input>
         The Patient will receive email notifications and reminder
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">LOGO PRINTING</h6>
@@ -145,8 +152,9 @@ export default class DropdownSplitExample extends React.Component{
         company logo
       </Button> */}
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">DOCTOR SIGNATURE</h6>
@@ -158,8 +166,9 @@ export default class DropdownSplitExample extends React.Component{
         Edit signature
       </Button> */}
       </div>
-    </CardHeader></div>
-    <div className="card mt-3">
+    </CardHeader>
+  </div>
+  <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
         <h6 className="text-primary">REPORT BY EMAIL</h6>
@@ -175,7 +184,8 @@ export default class DropdownSplitExample extends React.Component{
         </DropdownMenu>
       </Dropdown>
       </div>
-    </CardHeader></div>
+    </CardHeader>
+    </div>
     <div className="card mt-3">
     <CardHeader className="border-bottom">
       <div className="mb-3 mx-auto">
