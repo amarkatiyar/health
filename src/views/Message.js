@@ -36,13 +36,13 @@ class Message extends React.Component{
                   <option value="I">INBOX</option>
                   <option value="S">SENT MESSAGE</option>
             </select> 
-            <div className="icon-color btn btn-outline-primary ml-5 " data-toggle="tooltip" title="Create New Message">
-						<span className="fa fa-plus"></span>
-                        {/* <span>&nbsp;&nbsp;Compose</span> */}
-                        <span><a href="./CreateMessage"> &nbsp;
-                         Compose
-                        </a></span>
-					</div>            
+          <div>
+          <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
+                        <span className="text-success">&nbsp;&nbsp;Compose</span></a> 
+                        <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
+                           <CreateMessage />                        
+                        </Modal>
+          </div>
             </div>
             </div>
             <table className="table mt-2">
@@ -56,29 +56,13 @@ class Message extends React.Component{
            </table>
            <card small className="mb-4" >
            <CardHeader className="border-bottom" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
-           {/* <div class="icon-color btn btn-outline-primary" data-toggle="tooltip" title="Create New Message">
-						<span class="fa fa-plus"></span>
-                        <span>&nbsp;&nbsp;Create Message</span>
-                        <span><a onClick={() => {this.handleShowCreateMessage()}}> &nbsp;
-                         Create Message
-                        </a></span>
-                        
-                        
-          </div> */}
                     <div> 
-                        <a onClick={() => {this.handleShowCreateMessage()}}><i className="far fa-plus">CreateMessage</i></a> 
-                        <Modal size="sm" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
-                        {/* <ModalHeader>Header</ModalHeader> */}
-                        {/* <ModalBody> */}
-                            <CreateMessage />
-                        {/* </ModalBody> */}
+                        <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
+                        <span className="text-success">&nbsp;&nbsp;Create Message</span></a> 
+                        <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
+                           <CreateMessage />                        
                         </Modal>
                         </div> 
-            {/* <Button size="sm" className="mr-2 p-1" outline theme="success"
-                // onClick={()=> this.handleShowCreateMessage(showCreateMessage)}>
-                onClick={() => {this.handleShowCreateMessage()}}>
-                  <i class="fas fa-plus" /> &nbsp; Create Message
-                </Button> */}
            </CardHeader>
            </card>
           </CardHeader>

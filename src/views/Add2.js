@@ -33,9 +33,8 @@ return(
                    <div className="col-lg-4 col-md-4 col-sm-4 col-4"><h6>Speciality</h6></div>
                    <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                    <select className="form-control ">
-                      <option value=""></option>
-                      <option value="1"></option>
-                      <option value="2"></option>
+                      <option value="">--Select Speciality--</option>
+                      <option value="1">Allergy</option>
                       </select>
                    </div>
                  

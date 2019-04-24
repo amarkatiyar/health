@@ -18,8 +18,6 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
           
         render(){
 return(
-
-//  <div className="container mt-3 ">
     <Card className="" style={{width:"500px",height:"550px"}}>
     <CardBody>
     <Row className="mt-0">
@@ -27,7 +25,6 @@ return(
                    <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
                  
                  </Row>
-        
     <FormGroup>
         <div className="row mt-1 ">
         <div className="col-lg-4 col-md-4 col-sm-4 col-4">
@@ -115,12 +112,11 @@ return(
     </div>
     </FormGroup>
 
-    <span className="text-center"><a href="#"><Button outline size="md" className="mt-3 ml-5" theme="success">
+    <span className="text-center"><a href="#"><Button outline size="md" className="mt-3" theme="success">
             Save
         </Button></a></span>
     </CardBody>        
     </Card>
-//  </div>
 )
 }
 }
