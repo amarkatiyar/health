@@ -13,20 +13,20 @@ export default function() {
     // },
 
     {
-      title: "Home",
-      htmlBefore: '<i class="fas fa-home"></i>',
+     title:"Home",
+      htmlBefore: '<i class="p-2  text-danger fas fa-home"></i>',
       to: "/blog-posts",
     },
 
 
     {
       title: "Patient",
-      htmlBefore: '<i class="fas fa-user"></i>',
+      htmlBefore: '<i class=" p-2 text-primary fas fa-user"></i>',
       to: "/add-new-post",
     },
     {
       title: "Health Record",
-      htmlBefore: '<i class="fas fa-list"></i>',
+      htmlBefore: '<i class=" p-2 text-warning fas fa-list"></i>',
       to: "/components-overview",
     },
     // {
@@ -38,17 +38,17 @@ export default function() {
     
     {
       title: "Billing",
-      htmlBefore: '<i class="fa fa-credit-card"></i>',
+      htmlBefore: '<i class="p-2 text-info fa fa-credit-card"></i>',
       to: "/billing",
     },
     {
       title: "Message",
-      htmlBefore: '<i class="fas fa-envelope"></i>',
+      htmlBefore: '<i class=" p-2 text-success fas fa-envelope"></i>',
       to: "/message",
     },
     {
-      title: "setting",
-      htmlBefore: '<i class="fas fa-cog"></i>',
+      title: "Setting",
+      htmlBefore: '<i class="p-2 text-dark fas fa-cog"></i>',
       to: "/user-profile-lite",
     },
     // {

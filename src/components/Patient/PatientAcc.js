@@ -86,11 +86,11 @@ class PatientAcc extends React.Component{
             { showPersonal &&
               <div style={{"zIndex":999}}>
                <div className="container">
-    <Card className="mt-2 ml-3 mb-2">
+    <Card className="mb-2">
      <CardBody>
        <Row className="mt-0">
-         <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Personal</h6></div>
-         <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+         <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3 text-dark"onClick={()=> this.handleshowPersonal(showPersonal)}></i>Personal</h6></div>
+         <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check text-dark"></i></div>
        
        </Row>
        <Form>
@@ -192,11 +192,11 @@ class PatientAcc extends React.Component{
             { showAlternatecontact &&
               <div style={{"zIndex":999}}>
               <div className="container">
-              <Card className="mt-2 ml-3">
+              <Card>
                <CardBody>
                  <Row className="mt-0">
-                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Alternatecontact</h6></div>
-                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left text-dark mr-3"onClick={()=> this.handleshowAlternatecontact(showAlternatecontact)}></i>Alternatecontact</h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check text-dark"></i></div>
                  
                  </Row>
                  <Form>
@@ -266,17 +266,17 @@ class PatientAcc extends React.Component{
           <Card className="mb-3" style={{ height: "240px" }}>
             <CardBody>
               
-                <i class="far fa-edit" onClick={()=> this.handleShowProfile(showProfile)}/> profile
+<div className="text-success"><i class="far fa-edit" onClick={()=> this.handleShowProfile(showProfile)}/> profile</div>
             
             </CardBody>
             { showProfile &&
               <div style={{"zIndex":999}}>
                   <div className="container">
-    <Card className="mt-2 ml-3 mb-2">
+    <Card className="mb-2">
      <CardBody>
        <Row className="mt-0">
-         <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Name</h6></div>
-         <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+         <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left text-dark mr-3"onClick={()=> this.handleShowProfile(showProfile)}></i>Name</h6></div>
+         <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check text-dark"></i></div>
        
        </Row>
        <Form>
@@ -376,11 +376,11 @@ class PatientAcc extends React.Component{
             { showAddress &&
               <div style={{"zIndex":999}}>
               <div className="container">
-              <Card className="mt-2 ml-3">
+              <Card>
                <CardBody>
                  <Row className="mt-0">
-                   <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>Contact</h6></div>
-                   <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                   <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left text-dark mr-3"onClick={()=> this.handleShowAddress(showAddress)}></i>Contact</h6></div>
+                   <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class=" fas fa-check text-dark"></i></div>
                  
                  </Row>
                  <Form>
@@ -501,12 +501,12 @@ class PatientAcc extends React.Component{
             { showCreatemember &&
               <div style={{"zIndex":999}}>
               <div className="container">
-               <Card className="mt-2  mb-3 ml-3">
+               <Card className="mb-3">
                  <CardBody>
                    <Row className="mt-0">
-                     <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i>CARE TEAM MEMBER
+                     <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left text-dark mr-3"onClick={()=> this.handleShowCreatemember(showCreatemember)} ></i>CARE TEAM MEMBER
                       </h6></div>
-                      <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                      <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check text-dark"onClick={()=> this.handleShowCreatemember(showCreatemember)} ></i></div>
        
                    </Row>
                    <Form>

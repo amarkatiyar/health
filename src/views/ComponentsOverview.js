@@ -12,7 +12,7 @@ export default function HealthRecord() {
         <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-9 col-9">
       <h6 className="ml-4  text-success"><i class="fas fa-list-ul"></i> &nbsp; &nbsp; &nbsp;PATIENT MEDICAL HISTORY</h6>
       </div>
-      <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class="fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class="fas fa-ellipsis-v"></i></div>
+      <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class=" text-dark fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v"></i></div>
      </div>
      <div className="row pl-4 mt-2 mb-2 pr-4 ">
      <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
