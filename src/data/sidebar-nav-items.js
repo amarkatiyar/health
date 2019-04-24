@@ -43,7 +43,7 @@ export default function() {
     },
     {
       title: "Billings",
-      htmlBefore: '<i class="material-icons">error</i>',
+      htmlBefore: '<i class="fas fa-credit-card"></i>',
       to: "/billings",
     },
     {
@@ -51,16 +51,5 @@ export default function() {
       htmlBefore: '<i class="fas fa-envelope"></i>',
       to: "/message",
     },
-    {
-      title: "setting",
-      htmlBefore: '<i class="fas fa-cog"></i>',
-      to: "/user-profile-lite",
-    },
-    // {
-    //   title: "Errors",
-    //   htmlBefore: '<i class="material-icons">error</i>',
-    //   to: "/errors",
-    // }
-   
   ];
 }

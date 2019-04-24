@@ -20,81 +20,81 @@ const UserAccountDetails = ({ title }) => (
     // <ListGroup flush>
       // <ListGroupItem className="">
       <table className="table">
-          <tbody className="text-center text-primary" >
+          <tbody className="text-center" >
           <small>
             <tr className="card mt-1">
               <td>
-                <a href="">Edit Profile</a>
+                <a className="text-success" href="">Edit Profile</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Change Password</a>
+                <a className="text-success" href="">Change Password</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Manage User</a>
+                <a className="text-success" href="">Manage User</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Set favourites</a>
+                <a className="text-success" href="">Set favourites</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Set Hospital Codes</a>
+                <a className="text-success" href="">Set Hospital Codes</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Set Hospital Service Charges/Tax</a>
+                <a className="text-success" href="">Set Hospital Service Charges/Tax</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Notification</a>
+                <a className="text-success" href="">Notification</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">SMS/EMAIL</a>
+                <a className="text-success" href="">SMS/EMAIL</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Print Logo</a>
+                <a className="text-success" href="">Print Logo</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Doctor Signature</a>
+                <a className="text-success" href="">Doctor Signature</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Report By Email</a>
+                <a className="text-success" href="">Report By Email</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Audit Report</a>
+                <a className="text-success" href="">Audit Report</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Clinical Decision Report</a>
+                <a className="text-success" href="">Clinical Decision Report</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Forms</a>
+                <a className="text-success" href="">Forms</a>
               </td>
             </tr>
             <tr className="card mt-1">
               <td>
-                <a href="">Reset All String</a>
+                <a className="text-success" href="">Reset All String</a>
               </td>
             </tr>
             </small>
