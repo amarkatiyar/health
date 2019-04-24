@@ -42,9 +42,9 @@ export default function() {
       to: "/user-profile-lite",
     },
     {
-      title: "Billing",
+      title: "Billings",
       htmlBefore: '<i class="material-icons">error</i>',
-      to: "/Billing",
+      to: "/billings",
     },
     {
       title: "Message",

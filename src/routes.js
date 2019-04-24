@@ -13,21 +13,17 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
-// import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
 import Message from "./views/Message";
-import Billing from "./views/Billing";
 import CreateMessage from "./views/CreateMessage";
-import EditUser from "./views/EditUser";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-import Billing from "./components/Billing";
-import CreateBill from "./components/Billing/CreateBill";
-import CreateMessage from "./views/CreateMessage";
+import CreateBill from "./components/Billings/CreateBill";
+
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -41,6 +37,7 @@ import Add2 from "./views/Add2";
 import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
+import Billings from "./views/Billings";
 
 export default [
   {
@@ -97,21 +94,15 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-
-  // {
-  //   path: "/tables",
-  //   layout: DefaultLayout,
-  //   component: Tables
-  // },
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
   },
   {
-    path: "/billing",
+    path: "/billings",
     layout: DefaultLayout,
-    component: Billing
+    component: Billings
   },
   {
     path: "/CreateBill",
@@ -142,11 +133,6 @@ export default [
     path: "/item",
     layout: DefaultLayout,
     component: Item
-  },
-  {
-    path: "/EditUser",
-    layout: DefaultLayout,
-    component: EditUser
   },
   {
     path: "/SetForms",
