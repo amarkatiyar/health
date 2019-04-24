@@ -13,16 +13,17 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
-// import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
 import Message from "./views/Message";
-import Billing from "./components/Billings/Billing";
-import CreateBill from "./components/Billings/CreateBill";
 import CreateMessage from "./views/CreateMessage";
+import NewBill from "./views/NewBill";
+import Item from "./views/Item";
+import CreateBill from "./components/Billings/CreateBill";
+
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -37,7 +38,7 @@ import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
-
+import Billings from "./views/Billings";
 export default [
   {
     path: "/",
@@ -93,21 +94,15 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-
-  {
-    path: "/tables",
-    layout: DefaultLayout,
-    component: Tables
-  },
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
   },
   {
-    path: "/billing",
+    path: "/billings",
     layout: DefaultLayout,
-    component: Billing
+    component: Billings
   },
   {
     path: "/CreateBill",
@@ -125,14 +120,19 @@ export default [
     component: CreateMessage
   },
   {
+    path: "/newbill",
+    layout: DefaultLayout,
+    component: NewBill
+  },
+  {
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
   },
   {
-    path: "/ManageUser",
+    path: "/item",
     layout: DefaultLayout,
-    component: ManageUser
+    component: Item
   },
   {
     path: "/SetForms",

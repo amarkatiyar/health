@@ -37,25 +37,19 @@ export default function() {
     // },
     
     {
-      title: "Billing",
-      htmlBefore: '<i class="fa fa-credit-card"></i>',
-      to: "/billing",
+      title: "setting",
+      htmlBefore: '<i class="material-icons">person</i>',
+      to: "/user-profile-lite",
+    },
+    {
+      title: "Billings",
+      htmlBefore: '<i class="fas fa-credit-card"></i>',
+      to: "/billings",
     },
     {
       title: "Message",
       htmlBefore: '<i class="fas fa-envelope"></i>',
       to: "/message",
     },
-    {
-      title: "setting",
-      htmlBefore: '<i class="fas fa-cog"></i>',
-      to: "/user-profile-lite",
-    },
-    // {
-    //   title: "Errors",
-    //   htmlBefore: '<i class="material-icons">error</i>',
-    //   to: "/errors",
-    // }
-   
   ];
 }
