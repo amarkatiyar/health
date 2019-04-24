@@ -18,6 +18,7 @@ export default class DropdownSplitExample extends React.Component{
     };
     }
 
+    
     handleShowEdit1 = () =>{
         //e.preventDefault();
         this.setState({showEditModal: !this.state.showEditModal});
@@ -42,6 +43,7 @@ render(){
     const {showEditModal2} = this.state;
     const {showAddModal2} = this.state;
     const {showAddModal1} = this.state;
+    
     //  let { showEdit1 } = this.state;
 
 

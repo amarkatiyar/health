@@ -23,7 +23,7 @@ export default class Edit1 extends React.Component{
       
     render(){
     return(
-    // <div className="container mt-3">
+    
      <Card className="" style={{width:"600px",height:"400px"}}>
      <CardBody>
      <Row className="mt-0">
@@ -58,12 +58,12 @@ export default class Edit1 extends React.Component{
          </div>
          <div class="form-group row mt-3">
                   <label for="Ad_status" class="col-sm-6 text-success">Administrator status*</label>
-                  {/* <Dropdown open={this.state.open} toggle={this.toggle} group></Dropdown> */}
+                 
                   <Dropdown open={this.state.open} toggle={this.toggle} group>
                     <select className="form-control ml-3 ">
                       <option value="">ACTIVE</option>
                       <option value="1">DEACTIVE</option>
-                      {/* <option value="2">Other</option> */}
+                     
                       </select>
                     </Dropdown>
          </div>
@@ -81,7 +81,6 @@ export default class Edit1 extends React.Component{
      </form>
      </CardBody>        
      </Card>
-    //  </div>
         )
     }
   }

@@ -11,16 +11,23 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Modal
   
 } from "shards-react";
+import RestSetting from "../../views/RestSetting";
 
 export default class DropdownSplitExample extends React.Component{
   constructor(props) {
     super(props);
     this.state = { 
-      open: false 
+      open: false,
+      showReset: false
     };
   }
+  handleShowReset=()=>{
+    this.setState({showReset: !this.state.showReset});
+}
+
 
   toggle = () => {
     this.setState(prevState => {
@@ -29,6 +36,8 @@ export default class DropdownSplitExample extends React.Component{
   }
 
   render(){
+    const{showReset}=this.state;
+
     return(
 
 <Card small className="">
@@ -36,7 +45,7 @@ export default class DropdownSplitExample extends React.Component{
     <CardHeader className="border-bottom mb-3">
       <div  className="mb-3 mx-auto">
         <h6 className="card-body" className="text-success">Profile</h6>
-        <p style={{fontSize:""}}>Edit your profile,change name,email,etc.</p>
+        <p className="body" style={{fontSize:"" }}>Edit your profile,change name,email,etc.</p>
         <Button outline size="sm" theme="success" className="mb-2 mr-1">
         <a className="text-success" href="./EditProfile"> Edit Profile</a>
       </Button>
@@ -247,7 +256,7 @@ export default class DropdownSplitExample extends React.Component{
         <p>Create custom form use them in Electronic health record page</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
        <a href="./SetForms"> <Button outline  theme="success">Set forms</Button></a>
-        <DropdownToggle split />
+        {/* <DropdownToggle split /> */}
       </Dropdown>
       </div>
     </CardHeader></div>
@@ -257,9 +266,12 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-success">RESET ALL SETTING</h6>
         <p>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like 
            account created. This will not delete any data.</p>
-        <a href="./RestSetting"><Button outline size="sm" theme="success" className="mb-2 mr-1">
+        <a onClick={() => {this.handleShowReset()}}><Button outline size="sm" theme="success" className="mb-2 mr-1">
         Reset All your Setting
       </Button></a>
+      < Modal size="sm" open={showReset} toggle={this.handleShowReset}>
+      <RestSetting/>
+      </Modal>
       </div>
     </CardHeader></div>
     <div className="card mt-3"></div>
