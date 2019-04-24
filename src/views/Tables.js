@@ -1,14 +1,86 @@
-import React from "react";
-import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shards-react";
+// import React from "react";
+// import { Container, Row, Col, Card, FormInput, CardHeader,Button,Collapse, CardBody } from "shards-react";
+// // import Collapse from "shards-react/collapse";
+// import useCollapse from 'react-collapsed';
+// import Button from "shards-react/button";
+// import Collapse from "shards-react/collapse";
 
 
-import PageTitle from "../components/common/PageTitle";
-import Colors from "../components/components-overview/Colors";
+// import PageTitle from "../components/common/PageTitle";
+// import Colors from "../components/components-overview/Colors";
 
-const Tables = () => (
-  <Container fluid className="main-content-container px-4 py-4">
 
-            <Card small className="mb-4 col-8">
+// export default class Tables extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.toggle = this.toggle.bind(this);
+//     this.state = { collapse: false };
+//   }
+
+//   toggle() {
+//     this.setState({ collapse: !this.state.collapse });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <Button onClick={this.toggle}>Toggle</Button>
+//         <Collapse open={this.state.collapse}>
+//           <div className="p-3 mt-3 border rounded">
+//             <h5>😍 Now you see me!</h5>
+//             <span>
+//               In sagittis nibh non arcu viverra, nec imperdiet quam suscipit.
+//               Sed porta eleifend scelerisque. Vestibulum dapibus quis arcu a
+//               facilisis.
+//             </span>
+//           </div>
+//         </Collapse>
+//       </div>
+//     );
+//   }
+// }
+
+
+// const Tables = () => (
+//   <Container fluid className="main-content-container px-4 py-4">
+
+// <div className="row">
+//     <div className="col-6">
+//     <CardHeader  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style={{background:"aqua"}}><span id="assign-icon" className="hover icon-md fa fa-percent"> &nbsp;&nbsp; Favorite Item/Service</span></CardHeader>
+//     <Card className="collapse mt-3" id="collapseExample" style={{height: "400px"}}>
+//     <table>
+//   <td>
+//     <span class="hover icon-md fa fa-search text-success text-left" title="Search"> </span>
+//     </td>
+//     <FormInput  className="bg-default" id="search-string"  maxlength="40" placeholder="All"></FormInput>
+//     <td>
+//     <span class="hover icon-md fa fa-plus text-success text-right" title="plus"> </span>
+//     </td>
+//     <td>
+//     <span class="hover icon-md fa fa-ellipsis-v text-success text-right" title="plus"> </span>
+//     </td>
+//   </table>
+//     </Card>
+//     {/* <CardHeader className="mt-3" style={{background:"aqua"}}><span id="assign-icon" class="hover icon-md fa fa-plus"> &nbsp;&nbsp;Item/Service Code</span></CardHeader> */}
+//     {/* <CardHeader className="mt-3" style={{background:"aqua"}}><span id="assign-icon" class="hover icon-md fa fa-percent"> &nbsp;&nbsp;Service Charges/ Tax</span></CardHeader> */}
+//     </div>
+//     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <Card small className="mb-4 col-8">
           <CardHeader className="border-bottom">
 
           <div className="row">
@@ -40,7 +112,7 @@ const Tables = () => (
       <span class="text-muted">Add as favorite</span>
       <div class="col-xs-6 mt-3 mb-5">
 						<div id="save-btn" class="icon-color btn btn-success">Save</div>
-					</div>
+					</div> */}
       
 
 
@@ -175,8 +247,8 @@ const Tables = () => (
 
 
       
-          </CardHeader>
-        </Card>
-  </Container>
+          
+        
+  {/* </Container>
 );
-export default Tables;
+export default Tables; */}

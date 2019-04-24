@@ -17,7 +17,7 @@ import  FormExample from "./views/patient";
 import CardBodyExample from "./views/patientacc";
 import LoginForm from "./components/LoginForm";
 import Message from "./views/Message";
-import Billings from "./views/Billings";
+import Billing from "./views/Billing";
 import CreateMessage from "./views/CreateMessage";
 import EditUser from "./views/EditUser";
 import NewBill from "./views/NewBill";
@@ -84,9 +84,9 @@ export default [
     component: BlogPosts
   },
   {
-    path: "/billings",
+    path: "/billing",
     layout: DefaultLayout,
-    component: Billings
+    component: Billing
   },
   {
     path: "/message",

@@ -33,7 +33,7 @@ import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shar
         </div>
       </div>
       <h6 className="mt-3">Add item purchased or service received by patient, and end with payment</h6>
-      <div className="row bg-info text-black" style={{height: "35px"}}>
+      <div className="row text-white" style={{height: "35px",background:"#b4b4b4"}}>
         <div className="col-4 border">Item/Service</div>
         <div className="col-3 border text-right">Price</div>
         <div className="col-2 border text-right">Qty</div>
@@ -44,19 +44,29 @@ import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shar
           <span class="fa fa-plus"></span> <span>&nbsp;&nbsp;<a href="./Item">Add Item/Service</a></span>
         </button>
       </div>
-    </CardBody>
+    </CardBody >
   </Card>
     </div>
     <div className="col-4">
-    <Card>
-      <CardHeader style={{background:"aqua"}}>Favorite Item/Service</CardHeader>
-      <span id="assign-icon" className="hover icon-md fa fa-search">
-      <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message">
-          </FormInput></span>
+    <CardHeader  style={{background:"aqua"}}><span id="assign-icon" class="hover icon-md fa fa-percent"> &nbsp;&nbsp; Favorite Item/Service</span></CardHeader>
+    <Card className="mt-3" style={{height: "400px"}}>
+    <table>
+  <td>
+    <span class="hover icon-md fa fa-search text-success text-left" title="Search"> </span>
+    </td>
+    <FormInput  className="bg-default" id="search-string"  maxlength="40" placeholder="All"></FormInput>
+    <td>
+    <span class="hover icon-md fa fa-plus text-success text-right" title="plus"> </span>
+    </td>
+    <td>
+    <span class="hover icon-md fa fa-ellipsis-v text-success text-right" title="plus"> </span>
+    </td>
+  </table>
     </Card>
+    <CardHeader className="mt-3" style={{background:"aqua"}}><span id="assign-icon" class="hover icon-md fa fa-plus"> &nbsp;&nbsp;Item/Service Code</span></CardHeader>
+    <CardHeader className="mt-3" style={{background:"aqua"}}><span id="assign-icon" class="hover icon-md fa fa-percent"> &nbsp;&nbsp;Service Charges/ Tax</span></CardHeader>
     </div>
     </div>
-
   </Container>
 )
 }

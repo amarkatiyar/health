@@ -27,9 +27,7 @@ const SidebarActions = ({ title }) => (
     <td>
     <span class="hover icon-md fa fa-plus text-success text-right" title="plus"> </span>
     </td>
-    {/* <td> */}
-    <span className="hover icon-md fa fa-ellipsis-v text-success text-left ml-4" title="Search"> </span>
-    {/* </td> */}
+   
   </table>
   
  
