@@ -16,94 +16,94 @@ import {
 } from "shards-react";
 
 const UserAccountDetails = ({ title }) => (
-  <Card small className="mb-4">
-    <ListGroup flush>
-      <ListGroupItem className="p-3">
-      <table class="table table mb-0 table-hover table-white">
-          <tbody className="text-center text-primary " >
+  // <Card small className="mb-4">
+    // <ListGroup flush>
+      // <ListGroupItem className="">
+      <table className="table">
+          <tbody className="text-center" >
           <small>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Edit Profile</a>
+                <a className="text-success" href="">Edit Profile</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a href="">Change Password</a>
+                <a className="text-success" href="">Change Password</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Manage User</a>
+                <a className="text-success" href="">Manage User</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Set favourites</a>
+                <a className="text-success" href="">Set favourites</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Set Hospital Codes</a>
+                <a className="text-success" href="">Set Hospital Codes</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Set Hospital Service Charges/Tax</a>
+                <a className="text-success" href="">Set Hospital Service Charges/Tax</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Notification</a>
+                <a className="text-success" href="">Notification</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>SMS/EMAIL</a>
+                <a className="text-success" href="">SMS/EMAIL</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Print Logo</a>
+                <a className="text-success" href="">Print Logo</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Doctor Signature</a>
+                <a className="text-success" href="">Doctor Signature</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Report By Email</a>
+                <a className="text-success" href="">Report By Email</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Audit Report</a>
+                <a className="text-success" href="">Audit Report</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Clinical Decision Report</a>
+                <a className="text-success" href="">Clinical Decision Report</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Forms</a>
+                <a className="text-success" href="">Forms</a>
               </td>
             </tr>
-            <tr>
+            <tr className="card mt-1">
               <td>
-                <a>Reset All String</a>
+                <a className="text-success" href="">Reset All String</a>
               </td>
             </tr>
             </small>
           </tbody>
       </table>
 
-      </ListGroupItem>
-    </ListGroup>
-  </Card>
+      // </ListGroupItem>
+    // </ListGroup>
+  // </Card>
 );
 
 UserAccountDetails.propTypes = {

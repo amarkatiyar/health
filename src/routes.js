@@ -13,16 +13,23 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
-// import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
+<<<<<<< HEAD
 import Message from "./components/Message/Message";
 import Billing from "./components/Billings/Billing";
 import CreateBill from "./components/Billings/CreateBill";
+=======
+import Message from "./views/Message";
+>>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
 import CreateMessage from "./views/CreateMessage";
+import NewBill from "./views/NewBill";
+import Item from "./views/Item";
+import CreateBill from "./components/Billings/CreateBill";
+
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -36,7 +43,9 @@ import Add2 from "./views/Add2";
 import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
-
+import Add1 from "./views/Add1";
+import Billings from "./views/Billings";
+import Form from "./views/Form";
 export default [
   {
     path: "/",
@@ -92,21 +101,24 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
+<<<<<<< HEAD
 
   // {
   //   path: "/tables",
   //   layout: DefaultLayout,
   //   component: Tables
   // },
+=======
+>>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
   },
   {
-    path: "/billing",
+    path: "/billings",
     layout: DefaultLayout,
-    component: Billing
+    component: Billings
   },
   {
     path: "/CreateBill",
@@ -124,14 +136,19 @@ export default [
     component: CreateMessage
   },
   {
+    path: "/newbill",
+    layout: DefaultLayout,
+    component: NewBill
+  },
+  {
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
   },
   {
-    path: "/ManageUser",
+    path: "/item",
     layout: DefaultLayout,
-    component: ManageUser
+    component: Item
   },
   {
     path: "/SetForms",
@@ -187,5 +204,20 @@ export default [
     path: "/HospitalService",
     layout: DefaultLayout,
     component: HospitalService
-  }
+  },
+  {
+    path: "/Add1",
+    layout: DefaultLayout,
+    component: Add1
+  },
+  {
+    path: "/ManageUser",
+    layout: DefaultLayout,
+    component: ManageUser
+  },
+  {
+    path: "/Form",
+    layout: DefaultLayout,
+    component: Form
+  },
 ];

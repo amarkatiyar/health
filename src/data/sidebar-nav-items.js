@@ -37,15 +37,27 @@ export default function() {
     // },
     
     {
+<<<<<<< HEAD
       title: "Billing",
       htmlBefore: '<i class="p-2 text-info fa fa-credit-card"></i>',
       to: "/billing",
+=======
+      title: "setting",
+      htmlBefore: '<i class="material-icons">person</i>',
+      to: "/user-profile-lite",
+    },
+    {
+      title: "Billings",
+      htmlBefore: '<i class="fas fa-credit-card"></i>',
+      to: "/billings",
+>>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
     },
     {
       title: "Message",
       htmlBefore: '<i class=" p-2 text-success fas fa-envelope"></i>',
       to: "/message",
     },
+<<<<<<< HEAD
     {
       title: "Setting",
       htmlBefore: '<i class="p-2 text-dark fas fa-cog"></i>',
@@ -57,5 +69,7 @@ export default function() {
     //   to: "/errors",
     // }
    
+=======
+>>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
   ];
 }

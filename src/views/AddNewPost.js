@@ -37,7 +37,8 @@ export default function BasicCardExample() {
             </InputGroup></CardHeader>
       
             <CardBody className="p-0 pb-3"><small>
-            <a href="./patientacc">  <table className="table mb-0">
+            <a href="./patientacc">  
+            <table className="table mb-0">
           
               <thead className="bg-light">
                 <tr>
