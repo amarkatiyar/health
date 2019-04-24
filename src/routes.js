@@ -40,6 +40,14 @@ import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
 import Billings from "./views/Billings";
 import Form from "./views/Form";
+import Hospital1 from "./views/Hospital1";
+import Procedure1 from "./views/Procedure1";
+import DrugCode1 from "./views/DrugCode1";
+import TestCode1 from "./views/TestCode1";
+import Symtom from "./views/Symtom";
+import Problems from "./views/Problems";
+import VisitReason from "./views/VisitReason";
+import Procedure from "./views/Procedure";
 export default [
   {
     path: "/",
@@ -205,4 +213,44 @@ export default [
     layout: DefaultLayout,
     component: Form
   },
+  {
+    path: "/Hospital1",
+    layout: DefaultLayout,
+    component: Hospital1
+  },
+  {
+    path: "/Procedure1",
+    layout: DefaultLayout,
+    component: Procedure1
+  },
+  {
+    path: "/DrugCode1",
+    layout: DefaultLayout,
+    component: DrugCode1
+  },
+  {
+    path: "/TestCode1",
+    layout: DefaultLayout,
+    component: TestCode1
+  },
+  {
+    path: "/Symtom",
+    layout: DefaultLayout,
+    component: Symtom
+  },
+  {
+    path: "/Problems",
+    layout: DefaultLayout,
+    component: Problems
+  },
+  {
+    path: "/VisitReason",
+    layout: DefaultLayout,
+    component: VisitReason
+  },
+  {
+    path: "/Procedure",
+    layout: DefaultLayout,
+    component: Procedure
+  }
 ];

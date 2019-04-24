@@ -15,19 +15,23 @@ import {
   
 } from "shards-react";
 import RestSetting from "../../views/RestSetting";
+import SetForms from "../../views/SetForms";
 
 export default class DropdownSplitExample extends React.Component{
   constructor(props) {
     super(props);
     this.state = { 
       open: false,
-      showReset: false
+      showReset: false,
+      setForms:false
     };
   }
   handleShowReset=()=>{
     this.setState({showReset: !this.state.showReset});
 }
-
+handleShowForms=()=>{
+  this.setState({setForms: !this.state.setForms});
+}
 
   toggle = () => {
     this.setState(prevState => {
@@ -37,6 +41,7 @@ export default class DropdownSplitExample extends React.Component{
 
   render(){
     const{showReset}=this.state;
+    const{setForms}=this.state;
 
     return(
 
@@ -80,10 +85,6 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-success">FAVORITES</h6>
         <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
-        {/* <Button outline size="sm" theme="primary" >set favourite</Button> */}
-        {/* <select className="form-control ml-3"> */}
-                      {/* <option value="">set favourite</option> */}
-        
         <select className="form-control ml-3 ">
                       <option value="">SYMPTOM</option>
                       <option value="1">PROBLEMS</option>
@@ -92,21 +93,8 @@ export default class DropdownSplitExample extends React.Component{
                       <option value="1">MEDICATIONS</option>
                       <option value="1">TEST ORDER</option>
                       <option value="1">NOTE</option>
-                      {/* <option value="2">Other</option> */}
+                     
                       </select>
-        {/* <DropdownToggle split /> */}
-        {/* <>
-        <Button outline size="sm" theme="success" >set favourite</Button>
-        <DropdownToggle split />
-        <DropdownMenu>
-          <DropdownItem>Symptom</DropdownItem>
-          <DropdownItem>Problems</DropdownItem>
-          <DropdownItem>Visit Reason</DropdownItem>
-          <DropdownItem>Procedure</DropdownItem>
-          <DropdownItem>Medications</DropdownItem>
-          <DropdownItem>Test Order</DropdownItem>
-          <DropdownItem>Note</DropdownItem> */}
-        {/* </DropdownMenu> */}
         
       </Dropdown>
       </div>
@@ -123,17 +111,8 @@ export default class DropdownSplitExample extends React.Component{
                       <option value="1">Drug code</option>
                       <option value="1">Procedure code</option>
                       <option value="1">Test code</option>
-                      {/* <option value="2">Other</option> */}
+                     
                       </select>
-        {/* <Button outline  theme="primary">Hospital codes</Button>
-        <Button outline  theme="success">Hospital codes</Button>
-        <DropdownToggle split />
-        <DropdownMenu>
-          <DropdownItem>item/service code</DropdownItem>
-          <DropdownItem>Drug code</DropdownItem>
-          <DropdownItem>Procedure code</DropdownItem>
-          <DropdownItem>Test code</DropdownItem>
-        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -146,14 +125,8 @@ export default class DropdownSplitExample extends React.Component{
         <Dropdown open={this.state.open} toggle={this.toggle} group>
         <select className="form-control ml-3 ">
                       <option value="">service charges/tax</option>
-                      {/* <option value="2">Other</option> */}
+                      
                       </select>
-        {/* <Button outline  theme="primary">HOSPITAL SERVICE CHARGES/ TAX</Button>
-        <Button outline  theme="success">HOSPITAL SERVICE CHARGES/ TAX</Button>
-        <DropdownToggle split />
-        <DropdownMenu>
-         <a href="./HospitalService"> <DropdownItem>service charges/tax</DropdownItem></a>
-        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -187,9 +160,7 @@ export default class DropdownSplitExample extends React.Component{
         <p>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best 
         viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</p>
       <a href="#"><i className=" fas fa-edit"></i></a>
-        {/* <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        company logo
-      </Button> */}
+       
       </div>
     </CardHeader>
   </div>
@@ -201,9 +172,6 @@ export default class DropdownSplitExample extends React.Component{
            Image will be best viewed in the dimensions of 300:100 pixels or 3:1 ratio. The file format should be in 
            .jpeg or .jpg or .png or .gif.</p>
            <a href="#"><i className=" fas fa-edit"></i></a>
-        {/* <Button outline size="sm" theme="primary" className="mb-2 mr-1">
-        Edit signature
-      </Button> */}
       </div>
     </CardHeader>
   </div>
@@ -218,17 +186,8 @@ export default class DropdownSplitExample extends React.Component{
                       <option value="">Daily</option>
                       <option value="">Monthly</option>
                       <option value="">None</option>
-                      {/* <option value="2">Other</option> */}
+                     
                       </select>
-        {/* <Button outline  theme="primary">Weekly</Button>
-        <Button outline  theme="success">Weekly</Button>
-        <DropdownToggle split />
-        <DropdownMenu>
-          <DropdownItem>Weekly</DropdownItem>
-          <DropdownItem>Daily</DropdownItem>
-          <DropdownItem>Monthly</DropdownItem>
-          <DropdownItem>None</DropdownItem>
-        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -258,10 +217,13 @@ export default class DropdownSplitExample extends React.Component{
       <div className="mb-3 mx-auto">
         <h6 className="text-success">Forms</h6>
         <p>Create custom form use them in Electronic health record page</p>
-        <Dropdown open={this.state.open} toggle={this.toggle} group>
-       <a href="./SetForms"> <Button outline  theme="success">Set forms</Button></a>
+        {/* <Dropdown open={this.state.open} toggle={this.toggle} group> */}
+       <a onClick={() => {this.handleShowForms()}}> <Button outline  theme="success">Set forms</Button></a>
+       < Modal size="sm" open={setForms} toggle={this.handlesetForms}>
+      <SetForms/>
+      </Modal>
         {/* <DropdownToggle split /> */}
-      </Dropdown>
+      {/* </Dropdown> */}
       </div>
     </CardHeader></div>
     <div className="card mt-3">
