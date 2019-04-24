@@ -40,13 +40,6 @@ return(
                                    
                                     {/* <option value="2">Other</option> */}
                                     </select>
-                                 {/* <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-                                     Standard User
-                                 </button>
-                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                     <a class="dropdown-item" href="#">Doctor</a>
-                                     <a class="dropdown-item" href="#">Standard User</a>
-                                 </div> */}
                              </div>
                              </div>
                          </div>
