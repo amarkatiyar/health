@@ -40,7 +40,7 @@ return(
                    </div>
                  
     </Row>
-        <Button outline size="md" className="mt-3 ml-3" theme="primary">
+        <Button outline size="md" className="mt-3 ml-3" theme="success">
             Save
         </Button>
 

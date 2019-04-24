@@ -47,7 +47,7 @@ render(){
 
     return(
     <div className="container">
-        <h6 className="mt-3 text-primary">ADMINISTRATOR ACCOUNT</h6>
+        <h6 className="mt-3 text-success">ADMINISTRATOR ACCOUNT</h6>
         <div className="row mt-3">
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
@@ -78,8 +78,8 @@ render(){
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
                         <CardBody> 
-                        <h6 className="text-primary">CONTACT</h6>
-                        <a onClick={() => {this.handleShowAdd1()}}><Button size="sm" className="mr-2 p-1" outline theme="primary">
+                        <h6 className="text-success">CONTACT</h6>
+                        <a onClick={() => {this.handleShowAdd1()}}><Button size="sm" className="mr-2 p-1" outline theme="success">
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
                         </Button></a>
@@ -92,7 +92,7 @@ render(){
                 <div className="col lg-6">
                 <Card style={{height:"250px"}}>
                         <CardBody>  
-                        <h6 className="text-primary">PERSONAL</h6>
+                        <h6 className="text-success">PERSONAL</h6>
                         
                         <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
                         <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
@@ -109,8 +109,8 @@ render(){
                 <div className="col-md-6">
                     <Card style={{height:"180px"}}>
                         <CardBody>
-                        <h6 className="text-primary">SPECIALITY</h6>
-                        <a  onClick={() => {this.handleShowAdd2()}}><Button size="sm" className="mr-2 p-1" outline theme="primary">
+                        <h6 className="text-success">SPECIALITY</h6>
+                        <a  onClick={() => {this.handleShowAdd2()}}><Button size="sm" className="mr-2 p-1" outline theme="success">
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
                         </Button></a>
@@ -125,8 +125,8 @@ render(){
                 </div>
                 <div className="col lg-6"></div>
         </div>
-        <a href="#"><Button  className="mr-2 mt-3 mb-3" outline theme="primary"><i class="fas fa-print"></i> &nbsp;Print Id Card </Button></a>
-        <a href="#"><Button  className="mr-2 mt-3 mb-3" outline theme="primary"><i class="fas fa-arrow-left"></i> &nbsp; Back </Button></a>
+        <a href="#"><Button  className="mr-2 mt-3 mb-3" outline theme="success"><i class="fas fa-print"></i> &nbsp;Print Id Card </Button></a>
+        <a href="#"><Button  className="mr-2 mt-3 mb-3" outline theme="success"><i class="fas fa-arrow-left"></i> &nbsp; Back </Button></a>
     </div>
     )
 }
