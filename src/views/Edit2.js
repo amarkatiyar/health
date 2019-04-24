@@ -19,40 +19,43 @@ export default class Edit2 extends React.Component{
           
         render(){
         return(
-    <div className="container mt-3">
+    // <div className="container mt-3">
     <Card className="" style={{width:"600px",height:"280px"}}>
     <CardBody>
+
+    <Row className="mt-0">
+                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i></h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                 
+                 </Row>
+
     <form>
 
         <div class="form-group row mt-3">
-                 <label for="Ad_status" class="col-sm-6 text-primary">Administrator status*</label>
-                    <div class="col-sm-6">
+                 <label for="Ad_status" className="col-lg-6 col-md-6 col-sm-6 col-6 text-primary">Administrator status*</label>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                     <Dropdown open={this.state.open} toggle={this.toggle} group>
-                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-                                Gender
-                            </button>
-                            <DropdownToggle split />
-                                <DropdownMenu>
-                                <a><DropdownItem>Male</DropdownItem></a>
-                                <DropdownItem>Female</DropdownItem>
-                                <DropdownItem>Other</DropdownItem>
-                                </DropdownMenu>
+                    <select className="form-control ">
+                      <option value="">Male</option>
+                      <option value="1">Female</option>
+                      <option value="2">Other</option>
+                      </select>
                     </Dropdown>
                     </div>
         </div>
         <div className="row">
-            <div className="col-6 ">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-6 ">
             <label for="Education" className="text-primary">Education*</label>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-6">
             <input type="text" className="form-control"  placeholder="Fname"></input>
             </div>
         </div>
         <div className="row mt-3">
-            <div className="col-6 ">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-6 ">
             <label for="l_no" className="text-primary">Licence Number*</label>
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-6">
             <input type="text" className="form-control"  placeholder="Fname"></input>
             </div>
         </div>
@@ -62,7 +65,7 @@ export default class Edit2 extends React.Component{
     </form>
     </CardBody>        
     </Card>
-    </div>
+    // </div>
 )
 }
 }

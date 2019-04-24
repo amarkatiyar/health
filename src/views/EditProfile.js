@@ -4,6 +4,7 @@ import DropdownSplitExample1 from './Edit1';
 import Edit2 from './Edit2';
 import Edit1 from './Edit1';
 import Add2 from './Add2';
+import Add1 from './Add1';
 
 export default class DropdownSplitExample extends React.Component{
     constructor(props) {
@@ -12,7 +13,8 @@ export default class DropdownSplitExample extends React.Component{
         open: false,
         showEditModal: false,
         showEditModal2: false,
-        showAddModal2: false
+        showAddModal2: false,
+        showAddModal1: false
     };
     }
 
@@ -24,6 +26,12 @@ export default class DropdownSplitExample extends React.Component{
         //e.preventDefault();
         this.setState({showEditModal2: !this.state.showEditModal2});
     }
+    
+    handleShowAdd1 = () =>{
+        //e.preventDefault();
+        this.setState({showAddModal1: !this.state.showAddModal1});
+    }
+
     handleShowAdd2 = () =>{
         //e.preventDefault();
         this.setState({showAddModal2: !this.state.showAddModal2});
@@ -33,6 +41,7 @@ render(){
     const {showEditModal} = this.state;
     const {showEditModal2} = this.state;
     const {showAddModal2} = this.state;
+    const {showAddModal1} = this.state;
     //  let { showEdit1 } = this.state;
 
 
@@ -55,10 +64,10 @@ render(){
                         <div> 
                         <a onClick={() => {this.handleShowEdit1()}}><i className="far fa-edit"></i></a> 
                         <Modal size="sm" open={showEditModal} toggle={this.handleShowEdit1}>
-                        <ModalHeader>Header</ModalHeader>
-                        <ModalBody>
+                        {/* <ModalHeader>Header</ModalHeader> */}
+                        {/* <ModalBody> */}
                             <Edit1 />
-                        </ModalBody>
+                        {/* </ModalBody> */}
                         </Modal>
                         </div>                        
                         </CardBody>
@@ -70,10 +79,13 @@ render(){
                     <Card style={{height:"250px"}}>
                         <CardBody> 
                         <h6 className="text-primary">CONTACT</h6>
-                        <a href="#"><Button size="sm" className="mr-2 p-1" outline theme="primary">
+                        <a onClick={() => {this.handleShowAdd1()}}><Button size="sm" className="mr-2 p-1" outline theme="primary">
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
-                        </Button></a>  
+                        </Button></a>
+                        <Modal size="sm" open={showAddModal1} toggle={this.handleShowAdd1}>
+                        <Add1/>
+                        </Modal>
                         </CardBody>
                     </Card>
                 </div>
@@ -84,17 +96,17 @@ render(){
                         
                         <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
                         <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
-                        <ModalHeader>Header</ModalHeader>
-                        <ModalBody>
+                        {/* <ModalHeader>Header</ModalHeader> */}
+                        {/* <ModalBody> */}
                             <Edit2 />
-                        </ModalBody>
+                        {/* </ModalBody> */}
                         </Modal>
                         </CardBody>
                 </Card>
                 </div>
         </div>
         <div className="row mt-3">
-                <div className="col lg-6">
+                <div className="col-md-6">
                     <Card style={{height:"180px"}}>
                         <CardBody>
                         <h6 className="text-primary">SPECIALITY</h6>
@@ -102,11 +114,11 @@ render(){
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
                         </Button></a>
-                        <Modal size="sm" open={showAddModal2} toggle={this.handleShowAdd2}>
-                        <ModalHeader>Header</ModalHeader>
-                        <ModalBody>
-                            <Add2/>
-                        </ModalBody>
+                        < Modal size="sm" open={showAddModal2} toggle={this.handleShowAdd2}>
+                        {/* <ModalHeader> <Add2/></ModalHeader> */}
+                        {/* <ModalBody> */}
+                        <Add2/>
+                        {/* </ModalBody> */}
                         </Modal>
                         </CardBody>
                     </Card>

@@ -71,17 +71,27 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">FAVORITES</h6>
         <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
-        <Button outline size="sm" theme="primary" >set favourite</Button>
-        <DropdownToggle split />
-        <DropdownMenu>
+        {/* <Button outline size="sm" theme="primary" >set favourite</Button> */}
+        <select className="form-control ml-3 ">
+                      <option value="">SYMPTOM</option>
+                      <option value="1">PROBLEMS</option>
+                      <option value="1">VISIT REASON</option>
+                      <option value="1">PROCEDURE</option>
+                      <option value="1">MEDICATIONS</option>
+                      <option value="1">TEST ORDER</option>
+                      <option value="1">NOTE</option>
+                      {/* <option value="2">Other</option> */}
+                      </select>
+        {/* <DropdownToggle split /> */}
+        {/* <>
           <DropdownItem>Symptom</DropdownItem>
           <DropdownItem>Problems</DropdownItem>
           <DropdownItem>Visit Reason</DropdownItem>
           <DropdownItem>Procedure</DropdownItem>
           <DropdownItem>Medications</DropdownItem>
           <DropdownItem>Test Order</DropdownItem>
-          <DropdownItem>Note</DropdownItem>
-        </DropdownMenu>
+          <DropdownItem>Note</DropdownItem> */}
+        {/* </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -92,14 +102,21 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">HOSPITAL CODES</h6>
         <p>Set your hospital codes like procedure code, item/service code etc here and use them easily.</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
-        <Button outline  theme="primary">Hospital codes</Button>
+        <select className="form-control ml-3 ">
+                      <option value="">item/service code</option>
+                      <option value="1">Drug code</option>
+                      <option value="1">Procedure code</option>
+                      <option value="1">Test code</option>
+                      {/* <option value="2">Other</option> */}
+                      </select>
+        {/* <Button outline  theme="primary">Hospital codes</Button>
         <DropdownToggle split />
         <DropdownMenu>
           <DropdownItem>item/service code</DropdownItem>
           <DropdownItem>Drug code</DropdownItem>
           <DropdownItem>Procedure code</DropdownItem>
           <DropdownItem>Test code</DropdownItem>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -110,11 +127,15 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">HOSPITAL SERVICE CHARGES/ TAX</h6>
         <p>Set your hospital service charges/ Tax.</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
-        <Button outline  theme="primary">HOSPITAL SERVICE CHARGES/ TAX</Button>
+        <select className="form-control ml-3 ">
+                      <option value="">service charges/tax</option>
+                      {/* <option value="2">Other</option> */}
+                      </select>
+        {/* <Button outline  theme="primary">HOSPITAL SERVICE CHARGES/ TAX</Button>
         <DropdownToggle split />
         <DropdownMenu>
          <a href="./HospitalService"> <DropdownItem>service charges/tax</DropdownItem></a>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>
@@ -174,14 +195,21 @@ export default class DropdownSplitExample extends React.Component{
         <h6 className="text-primary">REPORT BY EMAIL</h6>
         <p>Set your preference to receive reports via email</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
-        <Button outline  theme="primary">Weekly</Button>
+        <select className="form-control ml-3 ">
+                      <option value="">Weekly</option>
+                      <option value="">Daily</option>
+                      <option value="">Monthly</option>
+                      <option value="">None</option>
+                      {/* <option value="2">Other</option> */}
+                      </select>
+        {/* <Button outline  theme="primary">Weekly</Button>
         <DropdownToggle split />
         <DropdownMenu>
           <DropdownItem>Weekly</DropdownItem>
           <DropdownItem>Daily</DropdownItem>
           <DropdownItem>Monthly</DropdownItem>
           <DropdownItem>None</DropdownItem>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </Dropdown>
       </div>
     </CardHeader>

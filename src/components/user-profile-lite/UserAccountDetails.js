@@ -20,7 +20,7 @@ const UserAccountDetails = ({ title }) => (
     // <ListGroup flush>
       // <ListGroupItem className="">
       <table className="table">
-          <tbody className="text-center text-primary" >
+          <tbody className="text-center" >
           <small>
             <tr className="card mt-1">
               <td>
