@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shar
 
 import PageTitle from "../components/common/PageTitle";
 
-const Billings = () => (
+const Billing = () => (
     <Container fluid className="main-content-container px-4 py-4">
     <Card small className="mb-4">
     <CardHeader className="border-bottom">
@@ -112,4 +112,4 @@ const Billings = () => (
     </Container>
 );
 
-export default Billings;
+export default Billing;

@@ -44,7 +44,7 @@ export default function() {
     {
       title: "Billing",
       htmlBefore: '<i class="material-icons">error</i>',
-      to: "/billing",
+      to: "/Billing",
     },
     {
       title: "Message",
