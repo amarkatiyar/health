@@ -39,6 +39,7 @@ import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
 import Billings from "./views/Billings";
+import Form from "./views/Form";
 export default [
   {
     path: "/",
@@ -198,5 +199,10 @@ export default [
     path: "/ManageUser",
     layout: DefaultLayout,
     component: ManageUser
-  }
+  },
+  {
+    path: "/Form",
+    layout: DefaultLayout,
+    component: Form
+  },
 ];

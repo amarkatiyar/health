@@ -32,10 +32,11 @@ export default class Edit2 extends React.Component{
     <form>
 
         <div class="form-group row mt-3">
-                 <label for="Ad_status" className="col-lg-6 col-md-6 col-sm-6 col-6 text-primary">Administrator status*</label>
+                 <label for="Ad_status" className="col-lg-6 col-md-6 col-sm-6 col-6 ">Administrator status*</label>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                     <Dropdown open={this.state.open} toggle={this.toggle} group>
                     <select className="form-control ">
+                    <option value="">-Select Gender-</option>
                       <option value="">Male</option>
                       <option value="1">Female</option>
                       <option value="2">Other</option>
@@ -45,7 +46,7 @@ export default class Edit2 extends React.Component{
         </div>
         <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-6 ">
-            <label for="Education" className="text-primary">Education*</label>
+            <label for="Education" >Education*</label>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
             <input type="text" className="form-control"  placeholder="Fname"></input>
@@ -53,13 +54,13 @@ export default class Edit2 extends React.Component{
         </div>
         <div className="row mt-3">
             <div className="col-lg-6 col-md-6 col-sm-6 col-6 ">
-            <label for="l_no" className="text-primary">Licence Number*</label>
+            <label for="l_no">Licence Number*</label>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
             <input type="text" className="form-control"  placeholder="Fname"></input>
             </div>
         </div>
-        <Button outline size="md" className="mt-3 ml-5" theme="primary">
+        <Button outline size="md" className="mt-3" theme="success">
             Save
         </Button>
     </form>

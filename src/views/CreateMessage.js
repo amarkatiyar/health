@@ -3,11 +3,11 @@ import { Container, Row, Col, Card, CardHeader,FormInput, CardBody } from "shard
 
   export default function CreateMessage() {
     return (
-  <Container fluid className="main-content-container px-4 py-4">
+  // <Container fluid className="main-content-container px-4 py-4">
         <Row>
         <Col >
-        <Card small className="mb-4">
-          <CardHeader className="border-bottom">
+        {/* <Card small className="mb-4"> */}
+          <CardHeader className="border-bottom" style={{width:"1000px",height:"500px"}}>
           <div className="row">
           <div className="col-lg-11">
           <span id="cancel-btn" className="hover icon-md fa fa-chevron-left mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
@@ -41,10 +41,10 @@ import { Container, Row, Col, Card, CardHeader,FormInput, CardBody } from "shard
 						<div id="save-btn" class="icon-color btn btn-outline-success" data-toggle="tooltip" title="Send Message">Send</div>
 					</div>
           </CardHeader>
-        </Card>
+        {/* </Card> */}
       </Col>
     </Row>
-  </Container>
+  // </Container>
 )
 }
 
