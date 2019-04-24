@@ -29,7 +29,7 @@ export default class Edit1 extends React.Component{
      <form>
          <div className="row">
              <div className="col-6 ">
-             <label for="H_name" className="text-primary">Hospital Name*</label>
+             <label for="H_name" className="text-success">Hospital Name*</label>
              </div>
              <div className="col-6">
              <input type="text" className="form-control"  placeholder="Fname"></input>
@@ -37,7 +37,7 @@ export default class Edit1 extends React.Component{
          </div>
          <div className="row mt-3">
              <div className="col-6 ">
-             <label for="F_name" className="text-primary">First Name*</label>
+             <label for="F_name" className="text-success">First Name*</label>
              </div>
              <div className="col-6">
              <input type="text" className="form-control"  placeholder="Fname"></input>
@@ -45,17 +45,17 @@ export default class Edit1 extends React.Component{
          </div>
          <div className="row mt-3">
              <div className="col-6 ">
-             <label for="L_name" className="text-primary">Last Name*</label>
+             <label for="L_name" className="text-success">Last Name*</label>
              </div>
              <div className="col-6">
              <input type="text" className="form-control"  placeholder="Fname"></input>
              </div>
          </div>
          <div class="form-group row mt-3">
-                  <label for="Ad_status" class="col-sm-6 text-primary">Administrator status*</label>
+                  <label for="Ad_status" class="col-sm-6 text-success">Administrator status*</label>
                   <Dropdown open={this.state.open} toggle={this.toggle} group></Dropdown>
                   <Dropdown open={this.state.open} toggle={this.toggle} group>
-                        <Button outline size="md ml-3" theme="primary" >Active</Button>
+                        <Button outline size="md ml-3" theme="success" >Active</Button>
                         <DropdownToggle split />
                         <DropdownMenu>
                         <a href=""><DropdownItem>Doctor</DropdownItem></a>
@@ -65,13 +65,13 @@ export default class Edit1 extends React.Component{
          </div>
          <div className="row mt-3">
              <div className="col-6 ">
-             <label for="Mo_number" className=" text-primary">Mobile Number</label>
+             <label for="Mo_number" className=" text-success">Mobile Number</label>
              </div>
              <div className="col-6">
              <input type="text" className="form-control"  placeholder="Fname"></input>
              </div>
          </div>
-         <Button outline size="md" className="mt-3 ml-5" theme="primary">
+         <Button outline size="md" className="mt-3 ml-5" theme="success">
              Save
          </Button>
      </form>
