@@ -193,5 +193,10 @@ export default [
     path: "/Add1",
     layout: DefaultLayout,
     component: Add1
+  },
+  {
+    path: "/ManageUser",
+    layout: DefaultLayout,
+    component: ManageUser
   }
 ];

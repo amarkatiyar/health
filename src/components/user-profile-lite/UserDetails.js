@@ -72,8 +72,10 @@ export default class DropdownSplitExample extends React.Component{
         <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
         <Dropdown open={this.state.open} toggle={this.toggle} group>
         {/* <Button outline size="sm" theme="primary" >set favourite</Button> */}
-        <select className="form-control ml-3">
-                      <option value="">set favourite</option>
+        {/* <select className="form-control ml-3"> */}
+                      {/* <option value="">set favourite</option> */}
+        
+        <select className="form-control ml-3 ">
                       <option value="">SYMPTOM</option>
                       <option value="1">PROBLEMS</option>
                       <option value="1">VISIT REASON</option>
@@ -96,6 +98,7 @@ export default class DropdownSplitExample extends React.Component{
           <DropdownItem>Test Order</DropdownItem>
           <DropdownItem>Note</DropdownItem> */}
         {/* </DropdownMenu> */}
+        
       </Dropdown>
       </div>
     </CardHeader>
@@ -161,9 +164,9 @@ export default class DropdownSplitExample extends React.Component{
       <div className="mb-3 mx-auto">
         <h6 className="text-success">SMS/E-MAIL</h6>
         <p>Set your preference to send SMS/E-mail notifications</p>
-        <input type="checkbox" outline size="sm" theme="primary" className="mb-2 mr-1"></input>
+        <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
         The Patient will receive text notifications and reminder<br></br>
-        <input type="checkbox" outline size="sm" theme="primary" className="mb-2 mr-1"></input>
+        <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
         The Patient will receive email notifications and reminder
       </div>
     </CardHeader>

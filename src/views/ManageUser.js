@@ -7,17 +7,18 @@ export default  function ManageUser(){
         <Card>
                 <CardBody>
                 <div className="row">
-                <h5 className="text-primary ml-3">MANAGE USER</h5>
+                <h5 className="text-success ml-3">MANAGE USER</h5>
                 </div>
                 <div className="row">
-                    <div className="col-lg-8">
+                    <div className="col-sm-8">
                     <div class="input-group">
                     <input type="text" class="form-control" placeholder=" search by Username or email" aria-label="Username" aria-describedby="basic-addon1"></input>
                     </div>
                     </div>
-                    <div className="col-lg-4">
-                    <Button outline size="sm" theme="primary" className="ml-2">
-                    <a href="./NewUser"><i class="fas fa-plus"></i> &nbsp; New User</a>
+                    <div className="col-sm-2"></div>
+                    <div className="col-sm-2">
+                    <Button outline size="sm" theme="success" className="ml-2">
+                    <a className="text-success" href="./NewUser"><i class="fas fa-plus"></i> &nbsp; New User</a>
                     </Button>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ export default  function ChangePassword(){
     <div className="container mt-3">
         <Card className="" style={{width:"800px",height:"300px"}}>
             <CardBody>
-            <h5 className=" ml-2 text-primary">CHANGE PASSWORD</h5>
+            <h5 className=" ml-2 text-success">CHANGE PASSWORD</h5>
             <p className="ml-2">Enter current password, new password and press Save button</p>
             <div class="row ml-5">
                 <div classname="col-4 ml-5">
@@ -22,10 +22,10 @@ export default  function ChangePassword(){
             </div>
             <div class="row ml-5">
                 <div class="col-8 ml-4 mt-3">
-                        <Button outline size="sm" theme="primary" className="mb-2 ml-5">
+                        <Button outline size="sm" theme="success" className="mb-2 ml-5">
                             change
                         </Button>
-                        <Button outline size="sm" theme="primary" className="mb-2 ml-5">
+                        <Button outline size="sm" theme="success" className="mb-2 ml-5">
                             cancel
                         </Button>
                 </div>
