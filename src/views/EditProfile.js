@@ -1,13 +1,18 @@
 import React from 'react'
 import {Row,Button, Card, CardBody, Modal, ModalBody, ModalHeader } from 'shards-react'
 import DropdownSplitExample1 from './Edit1';
+import Edit2 from './Edit2';
+import Edit1 from './Edit1';
+import Add2 from './Add2';
 
 export default class DropdownSplitExample extends React.Component{
     constructor(props) {
       super(props);
       this.state = { 
         open: false,
-        showEditModal: false
+        showEditModal: false,
+        showEditModal2: false,
+        showAddModal2: false
     };
     }
 
@@ -15,9 +20,19 @@ export default class DropdownSplitExample extends React.Component{
         //e.preventDefault();
         this.setState({showEditModal: !this.state.showEditModal});
     }
+    handleShowEdit2 = () =>{
+        //e.preventDefault();
+        this.setState({showEditModal2: !this.state.showEditModal2});
+    }
+    handleShowAdd2 = () =>{
+        //e.preventDefault();
+        this.setState({showAddModal2: !this.state.showAddModal2});
+    }
     
 render(){
     const {showEditModal} = this.state;
+    const {showEditModal2} = this.state;
+    const {showAddModal2} = this.state;
     //  let { showEdit1 } = this.state;
 
 
@@ -42,7 +57,7 @@ render(){
                         <Modal size="sm" open={showEditModal} toggle={this.handleShowEdit1}>
                         <ModalHeader>Header</ModalHeader>
                         <ModalBody>
-                            <DropdownSplitExample1 />
+                            <Edit1 />
                         </ModalBody>
                         </Modal>
                         </div>                        
@@ -67,7 +82,13 @@ render(){
                         <CardBody>  
                         <h6 className="text-primary">PERSONAL</h6>
                         
-                        <a href="./Edit2"><i class="far fa-edit"></i></a>
+                        <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
+                        <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
+                        <ModalHeader>Header</ModalHeader>
+                        <ModalBody>
+                            <Edit2 />
+                        </ModalBody>
+                        </Modal>
                         </CardBody>
                 </Card>
                 </div>
@@ -77,10 +98,16 @@ render(){
                     <Card style={{height:"180px"}}>
                         <CardBody>
                         <h6 className="text-primary">SPECIALITY</h6>
-                        <a href="./Add2"><Button size="sm" className="mr-2 p-1" outline theme="primary">
+                        <a  onClick={() => {this.handleShowAdd2()}}><Button size="sm" className="mr-2 p-1" outline theme="primary">
                         <i class="fas fa-plus"></i> &nbsp;
                         Add
-                        </Button></a>     
+                        </Button></a>
+                        <Modal size="sm" open={showAddModal2} toggle={this.handleShowAdd2}>
+                        <ModalHeader>Header</ModalHeader>
+                        <ModalBody>
+                            <Add2/>
+                        </ModalBody>
+                        </Modal>
                         </CardBody>
                     </Card>
                 </div>

@@ -7,7 +7,7 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
     DropdownItem, } from 'shards-react'
 
 
-export default class DropdownSplitExample1 extends React.Component{
+export default class Edit1 extends React.Component{
     constructor(props) {
     super(props);
     this.state = { 

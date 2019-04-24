@@ -1,10 +1,24 @@
 import React from 'react'
 import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
-    FormSelect,FormInput } from 'shards-react'
+    FormSelect,FormInput,Dropdown,DropdownItem,DropdownToggle,DropdownMenu } from 'shards-react'
 
-export default  function Edit2(){
-return(
-
+// export default  function Edit2(){
+export default class Edit2 extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = { 
+        open: false 
+        };
+        }
+          
+         toggle = () => {
+        this.setState(prevState => {
+        return { open: !prevState.open };
+        });
+        }
+          
+        render(){
+        return(
     <div className="container mt-3">
     <Card className="" style={{width:"600px",height:"280px"}}>
     <CardBody>
@@ -13,16 +27,17 @@ return(
         <div class="form-group row mt-3">
                  <label for="Ad_status" class="col-sm-6 text-primary">Administrator status*</label>
                     <div class="col-sm-6">
-                        <div class="dropdown">
+                    <Dropdown open={this.state.open} toggle={this.toggle} group>
                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
                                 Gender
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Male</a>
-                                <a class="dropdown-item" href="#">Female</a>
-                                <a class="dropdown-item" href="#">Other</a>
-                            </div>
-                        </div>
+                            <DropdownToggle split />
+                                <DropdownMenu>
+                                <a><DropdownItem>Male</DropdownItem></a>
+                                <DropdownItem>Female</DropdownItem>
+                                <DropdownItem>Other</DropdownItem>
+                                </DropdownMenu>
+                    </Dropdown>
                     </div>
         </div>
         <div className="row">
@@ -49,4 +64,5 @@ return(
     </Card>
     </div>
 )
+}
 }

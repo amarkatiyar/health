@@ -1,8 +1,22 @@
 import React from 'react'
 import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
-    FormSelect,FormInput } from 'shards-react'
+    FormSelect,FormInput,Dropdown,DropdownItem,DropdownToggle,DropdownMenu } from 'shards-react'
 
-export default  function Add2(){
+    export default class Add2 extends React.Component{
+        constructor(props) {
+        super(props);
+        this.state = { 
+        open: false 
+        };
+        }
+          
+         toggle = () => {
+        this.setState(prevState => {
+        return { open: !prevState.open };
+        });
+        }
+          
+        render(){
 return(
 
     <div className="container mt-3">
@@ -15,16 +29,17 @@ return(
         <div className="form-group row mt-3">
                  <label for="Ad_status" class="col-sm-6 text-primary">Administrator status*</label>
                     <div class="col-sm-6">
-                        <div class="dropdown">
+                    <Dropdown open={this.state.open} toggle={this.toggle} group>
                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
                                 Gender
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Male</a>
-                                <a class="dropdown-item" href="#">Female</a>
-                                <a class="dropdown-item" href="#">Other</a>
-                            </div>
-                        </div>
+                            <DropdownToggle split />
+                                <DropdownMenu>
+                                <a class="dropdown-item" >Male</a>
+                                <a class="dropdown-item" >Female</a>
+                                <a class="dropdown-item" >Other</a>
+                            </DropdownMenu>
+                        </Dropdown>
                     </div>
         </div>
         <Button outline size="md" className="mt-3 ml-5" theme="primary">
@@ -35,4 +50,5 @@ return(
     </Card>
     </div>
 )
+}
 }
