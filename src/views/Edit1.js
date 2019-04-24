@@ -23,9 +23,14 @@ export default class Edit1 extends React.Component{
       
     render(){
     return(
-    <div className="container mt-3">
+    // <div className="container mt-3">
      <Card className="" style={{width:"600px",height:"400px"}}>
      <CardBody>
+     <Row className="mt-0">
+                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i></h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                 
+                 </Row>
      <form>
          <div className="row">
              <div className="col-6 ">
@@ -62,6 +67,14 @@ export default class Edit1 extends React.Component{
                         <DropdownItem>Standard User</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
+                  {/* <Dropdown open={this.state.open} toggle={this.toggle} group></Dropdown> */}
+                  <Dropdown open={this.state.open} toggle={this.toggle} group>
+                    <select className="form-control ml-3 ">
+                      <option value="">ACTIVE</option>
+                      <option value="1">DEACTIVE</option>
+                      {/* <option value="2">Other</option> */}
+                      </select>
+                    </Dropdown>
          </div>
          <div className="row mt-3">
              <div className="col-6 ">
@@ -77,7 +90,7 @@ export default class Edit1 extends React.Component{
      </form>
      </CardBody>        
      </Card>
-     </div>
+
         )
     }
   }

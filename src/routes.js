@@ -37,8 +37,8 @@ import Add2 from "./views/Add2";
 import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
+import Add1 from "./views/Add1";
 import Billings from "./views/Billings";
-
 export default [
   {
     path: "/",
@@ -188,5 +188,10 @@ export default [
     path: "/HospitalService",
     layout: DefaultLayout,
     component: HospitalService
+  },
+  {
+    path: "/Add1",
+    layout: DefaultLayout,
+    component: Add1
   }
 ];

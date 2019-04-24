@@ -19,36 +19,34 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
         render(){
 return(
 
-    <div className="container mt-3">
-    <Card className="" style={{width:"400px",height:"200px"}}>
+    // <div className="container mt-3 ">
+    <Card className="" style={{width:"450px",height:"180px"}}>
     <CardBody>
-    <form>
-        <div className="row">
-        <p>Speciality</p>
-        </div>
-        <div className="form-group row mt-3">
-                 <label for="Ad_status" class="col-sm-6 text-primary">Administrator status*</label>
-                    <div class="col-sm-6">
-                    <Dropdown open={this.state.open} toggle={this.toggle} group>
-                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
-                                Gender
-                            </button>
-                            <DropdownToggle split />
-                                <DropdownMenu>
-                                <a class="dropdown-item" >Male</a>
-                                <a class="dropdown-item" >Female</a>
-                                <a class="dropdown-item" >Other</a>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </div>
-        </div>
-        <Button outline size="md" className="mt-3 ml-5" theme="primary">
+    <Row className="mt-0">
+                   <div className="col-lg-8 col-md-8 col-sm-8 col-8"><h6><i class="fas fa-arrow-left mr-3"></i>Speciality</h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-times"></i></div>
+                 
+    </Row>
+
+    <Row className="mt-2">
+                   <div className="col-lg-4 col-md-4 col-sm-4 col-4"><h6>Speciality</h6></div>
+                   <div className="col-lg-8 col-md-8 col-sm-8 col-8">
+                   <select className="form-control ">
+                      <option value=""></option>
+                      <option value="1"></option>
+                      <option value="2"></option>
+                      </select>
+                   </div>
+                 
+    </Row>
+        <Button outline size="md" className="mt-3 ml-3" theme="success">
             Save
         </Button>
-    </form>
+
     </CardBody>        
     </Card>
-    </div>
+    // </div>
 )
 }
 }
