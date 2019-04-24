@@ -16,10 +16,10 @@ import PageTitle from "../components/common/PageTitle";
 
 export default function BasicCardExample() {
   return (
-    <div className="container-fluid">
+    <div className="container">
     <div className="row mt-4 ">
-    <div className="col lg-6 ">
-    <Card  style={{height: "600px"}}>
+    <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+    <Card className="mb-2"  style={{height: "600px"}}>
       <CardHeader className="bg-light">
             <InputGroup size="md" seamless>
               <InputGroupAddon type="prepend">
@@ -29,14 +29,17 @@ export default function BasicCardExample() {
                 </InputGroupText>
               </InputGroupAddon>
               <FormInput className="border-3 " placeholder="Search patient by name.." />
-              <span className="ml-2"> <a href="./patient"><Button outline theme="success">
+              <span className="pl-2"> <a href="./patient"><Button outline theme="success">
               <i class="fas fa-user-plus"></i> &nbsp;
         New patient
       </Button></a></span>
             </InputGroup></CardHeader>
       
-            <CardBody className="p-0 pb-3"><small>
+            <CardBody className="p-0 pb-3">
+            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+            <small>
             <a href="./patientacc">
+            
             <table className="table mb-0 ">
           
              
@@ -82,23 +85,25 @@ export default function BasicCardExample() {
               
               </tbody>
               
-            </table></a>
-            </small>
+            </table>
+            </a>
+            </small></div>
           </CardBody>
     </Card>
     </div>
+  
     {/* **************************this is second card************ */}
    
-    <div className="col-lg-6">
-      <Card  style={{height: "600px"}}>
+    <div className="col-lg-6 col-md-12 col-sm-12 col-12">
+      <Card className="mb-5"  style={{height: "600px"}}>
       <CardBody>
         <div className="row">
-        <div className="col-lg-10">
+        <div className="col-lg-10 col-md-10 col-sm-9 col-9">
         
-      <a href="#" className="text-success font-weight-bold"><i class="far fa-calendar-alt mr-2"></i> &nbsp;CALENDER</a>
+      <a href="#" className="text-success font-weight-bold"><i class="far fa-calendar-alt pr-2"></i> &nbsp;CALENDER</a>
       </div>
-      <div className="col-lg-2">
-      <a href="#"><i class="fas fa-print "></i></a> &nbsp; &nbsp; &nbsp;
+      <div className="col-lg-2 col-md-2 col-sm-3 col-3">
+      <a href="#"><i class="fas fa-print "></i></a> &nbsp; &nbsp; 
       <a href="#"><i class="fas fa-ellipsis-v"></i></a></div></div>
       <InputGroup size="md" seamless>
               <InputGroupAddon type="prepend">

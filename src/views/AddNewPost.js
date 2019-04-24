@@ -11,13 +11,13 @@ import {
   FormInput,
   Button
 } from "shards-react";
-import PageTitle from "../components/common/PageTitle";
+
 
 export default function BasicCardExample() {
   return (
     <div className="container">
     <div className="row mt-4">
-    <div className="col lg-6 ">
+    <div className=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
     <Card  style={{height: "600px"}}>
       <CardHeader className="bg-light">
             <InputGroup size="md" seamless>

@@ -1,32 +1,41 @@
 export default function() {
   return [
+    // {
+    //   title: "Blog Dashboard",
+    //   to: "/blog-overview",
+    //   htmlBefore: '<i class="material-icons">edit</i>',
+    //   htmlAfter: ""
+    // },
+    // {
+    //   title: "Home",
+    //   htmlBefore: '<i class="fas fa-home"></i>',
+    //   to: "/blog-posts",
+    // },
+
     {
-      title: "Blog Dashboard",
-      to: "/blog-overview",
-      htmlBefore: '<i class="material-icons">edit</i>',
-      htmlAfter: ""
-    },
-    {
-      title: "Blog Posts",
-      htmlBefore: '<i class="material-icons">vertical_split</i>',
+      title: "Home",
+      htmlBefore: '<i class="fas fa-home"></i>',
       to: "/blog-posts",
     },
+
+
     {
-      title: "Add New Post",
-      htmlBefore: '<i class="material-icons">note_add</i>',
+      title: "Patient",
+      htmlBefore: '<i class="fas fa-user"></i>',
       to: "/add-new-post",
     },
     {
-      title: "Forms & Components",
-      htmlBefore: '<i class="material-icons">view_module</i>',
+      title: "Health Record",
+      htmlBefore: '<i class="fas fa-list"></i>',
       to: "/components-overview",
     },
-    {
-      title: "Tables",
-      // title: "Message",
-      htmlBefore: '<i class="material-icons">table_chart</i>',
-      to: "/tables",
-    },
+    // {
+    //   title: "Tables",
+    //   // title: "Message",
+    //   htmlBefore: '<i class="material-icons">table_chart</i>',
+    //   to: "/tables",
+    // },
+    
     {
       title: "setting",
       htmlBefore: '<i class="material-icons">person</i>',
@@ -39,14 +48,19 @@ export default function() {
     },
     {
       title: "Message",
-      htmlBefore: '<i class="material-icons">error</i>',
+      htmlBefore: '<i class="fas fa-envelope"></i>',
       to: "/message",
     },
     {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors",
-    }
+      title: "setting",
+      htmlBefore: '<i class="fas fa-cog"></i>',
+      to: "/user-profile-lite",
+    },
+    // {
+    //   title: "Errors",
+    //   htmlBefore: '<i class="material-icons">error</i>',
+    //   to: "/errors",
+    // }
    
   ];
 }
