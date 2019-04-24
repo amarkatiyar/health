@@ -6,11 +6,12 @@ import { CardBody,Card,FormInput, FormGroup,Button,ButtonGroup} from "shards-rea
 export default function Billing() {
   return (
     <div className="container">
-    <CardBody >
-      <Card >
+    
+      <Card className="mt-3 mb-3" >
+      {/* <CardBody > */}
         <div className="row pt-4">
         <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-9 col-9 ">
-      <a href="#"><i class=" text-dark far fa-credit-card pl-5"></i><span className="pl-4 text-success">BILLING</span></a>
+      <a href="#"><i class=" text-success far fa-credit-card pl-5"></i><span className="pl-4 text-success">BILLING</span></a>
       </div>
       <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class=" text-dark fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v"></i></div>
      </div>
@@ -123,9 +124,9 @@ export default function Billing() {
         </Button></a>
       </div>
   
-  
+      {/* </CardBody> */}
     </Card>
-    </CardBody>
+    
     </div>
   );
  }

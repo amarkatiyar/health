@@ -65,8 +65,8 @@ class NewhealthRecord extends React.Component{
     return(
       <div className="container">
        <Card className=" mt-3 p-4" style={{height:"150px"}}>
-          <div className="d-flex justify-content-between  ">
-         <div className=""><span className="text-success pr-5"> &nbsp;HEALTH RECORD</span> <i class="fas fa-print pl-5"></i> &nbsp; &nbsp;<i class="fas fa-ellipsis-v pl-3"></i></div>
+          <div className="d-flex justify-content-between">
+         <div className=""><span className="text-success pr-5"> &nbsp; HEALTH RECORD</span> <i class=" text-dark fas fa-print pl-5"></i> &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v pl-3"></i></div>
          <div className="small">91+8840091275 &nbsp; prashantkatiyar10796@gmail.com</div>
          <div className="small pr-5">EHT#:<br></br>Date:22/04/2019<br></br>update:
           </div>
@@ -84,9 +84,9 @@ class NewhealthRecord extends React.Component{
           </div>
 
          <div className=" ml-auto">
-         <i class="fas fa-chart-line pl-5"></i>
-          <i class="fas fa-ellipsis-v pl-5 pr-3 "></i><div className="mt-4"> <Button className="p-1" outline theme="success" onClick={()=> this.handleShowVital(showVital)} >
-                <i class="fas fa-plus"  /> &nbsp;Add Multiple
+         <i class=" text-dark fas fa-chart-line pl-5"></i>
+          <i class=" text-dark fas fa-ellipsis-v pl-5 pr-3 "></i><div className="mt-4"> <Button className="p-1" outline theme="success" onClick={()=> this.handleShowVital(showVital)} >
+                <i class=" fas fa-plus"  /> &nbsp;Add Multiple
               </Button>
           </div></div>
          </div>
@@ -98,9 +98,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>Vitals
+                  <i className="fas fa-arrow-left mr-3 text-dark "onClick={()=> this.handleShowVital(showVital)}></i>Vitals
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className="fas fa-check text-dark "></i>
                  </div>
                  </div>
                  <Form>
@@ -228,8 +228,8 @@ class NewhealthRecord extends React.Component{
        <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success"> REASONS</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5"  onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5"  onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
          { showVisitReasons &&
               <div style={{"zIndex":999}}>
@@ -239,9 +239,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>Reasons
+                  <i className="fas fa-arrow-left mr-3 text-dark "onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>Reasons
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -271,8 +271,8 @@ class NewhealthRecord extends React.Component{
        <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">PROBLEMS</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5" onClick={()=> this.handleShowProblems(showProblems)}></i>
-          <i className="fas fa-ellipsis-v "></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5" onClick={()=> this.handleShowProblems(showProblems)}></i>
+          <i className=" text-dark fas fa-ellipsis-v "></i></div>
          </div>
          { showProblems &&
               <div style={{"zIndex":999}}>
@@ -282,9 +282,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>PROBLEMS
+                  <i className="fas fa-arrow-left text-dark mr-3"onClick={()=> this.handleShowProblems(showProblems)}></i>PROBLEMS
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className="fas fa-check text-dark"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -312,8 +312,8 @@ class NewhealthRecord extends React.Component{
        <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">SYMPTOM</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5" onClick={()=> this.handleShowSymptom(showSymptom)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5" onClick={()=> this.handleShowSymptom(showSymptom)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
          { showSymptom &&
               <div style={{"zIndex":999}}>
@@ -323,9 +323,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>SYMPTOM
+                  <i className=" text-dark fas fa-arrow-left mr-3"onClick={()=> this.handleShowSymptom(showSymptom)}></i>SYMPTOM
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -363,8 +363,8 @@ class NewhealthRecord extends React.Component{
        <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">TEST ORDER</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5"   onClick={()=> this.handleShowTestorder(showTestorder)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5"   onClick={()=> this.handleShowTestorder(showTestorder)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
          { showTestorder &&
               <div style={{"zIndex":999}}>
@@ -374,9 +374,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>Test Order
+                  <i className=" text-dark fas fa-arrow-left mr-3" onClick={()=> this.handleShowTestorder(showTestorder)}></i>Test Order
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -404,8 +404,8 @@ class NewhealthRecord extends React.Component{
           <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">MEDICATION</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5" onClick={()=> this.handleShowMedician(showMedication)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5" onClick={()=> this.handleShowMedician(showMedication)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
 
          { showMedication &&
@@ -415,9 +415,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>MEDICATION
+                  <i className=" text-dark fas fa-arrow-left mr-3"onClick={()=> this.handleShowMedician(showMedication)}></i>MEDICATION
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -465,8 +465,8 @@ class NewhealthRecord extends React.Component{
           <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">NOTE</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5"onClick={()=> this.handleShowNote(showNote)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5"onClick={()=> this.handleShowNote(showNote)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
 
          { showNote &&
@@ -476,9 +476,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>NOTE
+                  <i className=" text-dark fas fa-arrow-left mr-3"onClick={()=> this.handleShowNote(showNote)}></i>NOTE
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
@@ -509,8 +509,8 @@ class NewhealthRecord extends React.Component{
          <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">ATTACH FILE</h6></div>
-         <div className=" ml-auto pr-3"><i class="fas fa-plus pr-5" onClick={()=> this.handleShowAttachfile(showAttachfile)}></i>
-          <i className="fas fa-ellipsis-v"></i></div>
+         <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5" onClick={()=> this.handleShowAttachfile(showAttachfile)}></i>
+          <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
 
          { showAttachfile &&
@@ -520,9 +520,9 @@ class NewhealthRecord extends React.Component{
                    
                    <div className="d-flex">
                    <div>
-                  <i className="fas fa-arrow-left mr-3"></i>Attach File
+                  <i className=" text-dark fas fa-arrow-left mr-3" onClick={()=> this.handleShowAttachfile(showAttachfile)}></i>Attach File
                   </div>
-                 <div className="ml-auto"> <i className="fas fa-check"></i>
+                 <div className="ml-auto"> <i className=" text-dark fas fa-check"></i>
                  </div>
                  </div>
                  <Form className="mt-2">
