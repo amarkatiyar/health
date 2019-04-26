@@ -18,13 +18,8 @@ import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
-<<<<<<< HEAD
 import Message from "./components/Message/Message";
 import Billing from "./components/Billings/Billing";
-import CreateBill from "./components/Billings/CreateBill";
-=======
-import Message from "./views/Message";
->>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
 import CreateMessage from "./views/CreateMessage";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
@@ -109,15 +104,12 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-<<<<<<< HEAD
 
   // {
   //   path: "/tables",
   //   layout: DefaultLayout,
   //   component: Tables
   // },
-=======
->>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
   {
     path: "/blog-posts",
     layout: DefaultLayout,

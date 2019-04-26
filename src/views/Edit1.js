@@ -10,25 +10,26 @@ export default class Edit1 extends React.Component{
     constructor(props) {
     super(props);
     this.state = { 
-    open: false 
+    handleShowEdit1: false,
+    }
     };
+
+    handleShowEdit1=() => {
+        this.props.handleHideEdit1();
     }
       
-     toggle = () => {
-    this.setState(prevState => {
-    return { open: !prevState.open };
-    });
-    }
       
     render(){
+        const{ShowEdit1}=this.state;
+
     return(
      <Card className="" style={{width:"600px",height:"400px"}}>
      <CardBody>
      <Row className="mt-0">
-                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i></h6></div>
-                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                   <div onClick ={()=>this.handleShowEdit1()} className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3" ></i></h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class=""></i></div>
                  
-                 </Row>
+     </Row>
      <form>
          <div className="row">
              <div className="col-6 ">
@@ -54,15 +55,18 @@ export default class Edit1 extends React.Component{
              <input type="text" className="form-control"  placeholder="Fname"></input>
              </div>
          </div>
-         <div class="form-group row mt-3">
-                  <label for="Ad_status" class="col-sm-6">Administrator status*</label>
-                  <Dropdown open={this.state.open} toggle={this.toggle} group></Dropdown>
+         <div class="row mt-3">
+                <div className="col-6 ">
+                  <label for="Ad_status">Administrator status*</label>
+                </div>
+                <div className="col-6 ">
                   <Dropdown open={this.state.open} toggle={this.toggle} group>
-                    <select className="form-control ml-3">
-                      <option value="">ACTIVE</option>
-                      <option value="1">DEACTIVE</option>
+                    <select className="form-control">
+                      <option value="1">ACTIVE</option>
+                      <option value="2">DEACTIVE</option>
                       </select>
-                    </Dropdown>
+                  </Dropdown>
+                </div>
          </div>
          <div className="row mt-3">
              <div className="col-6 ">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, FormInput, CardHeader, CardBody } from "shards-react";
+import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form } from "shards-react";
 
 
 import PageTitle from "../components/common/PageTitle";
@@ -7,7 +7,9 @@ import PageTitle from "../components/common/PageTitle";
 const AuditReport = () => (
     <Container fluid className="main-content-container px-4 py-4">
     <Card small className="mb-4">
+    
     <CardHeader className="border-bottom">
+    <Form>
         <div className="row">
         <div className="col-lg-10">
             <h6 className="text-primary">Audit Repots</h6>
@@ -67,10 +69,11 @@ const AuditReport = () => (
 								</select>
     </div>
     <div className="col-xs-2 col-sm-2 col-md-2">
+        <a>
           <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
 									<span class="fa fa-search"></span>
-									<span>&nbsp;&nbsp;Search</span>
-								</button>
+									<span>&nbsp;Search</span>
+								</button></a>
     </div>
   </div>
   <div className="row mt-3 text-white"style={{background:"#787878"}}>
@@ -85,7 +88,9 @@ const AuditReport = () => (
            <CardHeader className="border-bottom  mt-4 mb-5 " style={{background:"#f0f0f0"}}><h6>Not Found</h6>
            </CardHeader> 
            </card>
-  
+
+
+    </Form>
     </CardHeader>
     </Card>
     </Container>

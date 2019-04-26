@@ -7,25 +7,26 @@ export default class Edit2 extends React.Component{
     constructor(props) {
         super(props);
         this.state = { 
-        open: false 
+        open: false,
+        handleShowEdit2: false,
         };
         }
-          
-         toggle = () => {
-        this.setState(prevState => {
-        return { open: !prevState.open };
-        });
+
+        handleShowEdit2=() => {
+            this.props.handleHideEdit2();
         }
           
+          
         render(){
-        return(
-    // <div className="container mt-3">
+            const{ShowEdit2}=this.state;
+
+return(
     <Card className="" style={{width:"600px",height:"280px"}}>
     <CardBody>
 
     <Row className="mt-0">
-                   <div className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i></h6></div>
-                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
+                   <div onClick ={()=>this.handleShowEdit2()} className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3"></i></h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class=""></i></div>
                  
                  </Row>
 
@@ -66,7 +67,6 @@ export default class Edit2 extends React.Component{
     </form>
     </CardBody>        
     </Card>
-    // </div>
 )
 }
 }
