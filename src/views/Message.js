@@ -1,35 +1,69 @@
 import React from "react";
-import { Row, Button, Card, CardBody, Form, FormInput, FormGroup,CardHeader,FormSelect,Modal, ModalBody, ModalHeader } from "shards-react";
+import {Card,CardHeader,Modal } from "shards-react";
 import CreateMessage from "./CreateMessage";
 
 class Message extends React.Component{
-
   constructor(props){
     super(props);
     this.state = {
     showCreateMessageModal: false,
+    showFavorite:false,
     }
+       
   };
+  handleshowFavorite = (prevState) =>{
+    this.setState({showFavorite: !prevState});
+    }
   handleShowCreateMessage= () =>{
+    this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
+  }
+  
+  handleHideCreateMessage = ()=>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
   render(){
     const { showCreateMessageModal } = this.state;
+    let {showFavorite} = this.state;
+   
     return(
       <div className="container mt-4">
             <Card small className="mb-4">
             <CardHeader className="border-bottom">
             <div className="row">
-           <div className="col-lg-11">
-               <span id="help-btn" className="hover icon-md fa fa-envelope-o mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
-               Message
+           <div className="col-lg-10 text-success">
+              <i className="fas fa-envelope mr-3"></i><a className="text-primary">Message</a>
            </div>
-
          <div className="col-lg-1">
-         <span id="save-btn" class="hover icon-md fa fa-ellipsis-v mt-2" data-toggle="tooltip" title="Send Message"></span>
+         <i className="far fa-star mt-2 ml-5" title="Show my favorite message"></i>
          </div>
-        </div><br></br>
 
+         <div className="col-lg-1" >
+         <Card  style={{height:"0px"}}>
+         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" onClick={()=> this.handleshowFavorite(showFavorite)}></i>
+          </div>
+         { showFavorite &&
+            <div style={{"zIndex":999}}>
+            <div className="row">
+          <table className=" table table-bordered table-hover table-light table-sm ">
+          <tbody>
+            <tr>
+              <td><i className="far fa-star">&nbsp;&nbsp;Favorite</i></td>
+            </tr>
+            <tr>
+            <td><i className="fa fa-question-circle">&nbsp;&nbsp;Help</i></td>
+            </tr>
+          </tbody>
+         </table>
+             </div> 
+             </div>
+           }
+         </Card>
+         </div>
+         
+         
+         
+         
+        </div><br></br>
             <div className="row">
             <div className="col-lg-12   d-flex justify-content-between">
             <select id="messageId" className="form-control w-25" name="msgType" onchange="message_list.setType()">
@@ -38,9 +72,9 @@ class Message extends React.Component{
             </select> 
           <div>
           <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-success">&nbsp;&nbsp;Compose</span></a> 
+                        <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Compose</a></span></a> 
                         <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
-                           <CreateMessage />                        
+                           <CreateMessage handleHideCreateMessage={this.handleHideCreateMessage}/>                        
                         </Modal>
           </div>
             </div>
@@ -58,11 +92,11 @@ class Message extends React.Component{
            <CardHeader className="border-bottom" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
                     <div> 
                         <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-success">&nbsp;&nbsp;Create Message</span></a> 
+                        <span className="text-black">&nbsp;&nbsp;<a title="Create New Message">Create Message</a></span></a> 
                         <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
-                           <CreateMessage />                        
+                           <CreateMessage handleHideCreateMessage={this.handleHideCreateMessage} />                        
                         </Modal>
-                        </div> 
+                        </div>
            </CardHeader>
            </card>
           </CardHeader>
@@ -72,239 +106,3 @@ class Message extends React.Component{
     }
 }
 export default Message;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import { Row, Button, Card, CardBody, Form, FormInput, FormGroup,CardHeader,FormSelect } from "shards-react";
-
-// class Message extends React.Component{
-
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//     showCreateMessage: false,
-//     }
-//   };
-//   handleShowCreateMessage= (prevState) =>{
-//     this.setState({showCreateMessage: !prevState});
-//   }
-//   render(){
-//     let { showCreateMessage } = this.state; 
-//     return(
-//       <div className="container mt-4">
-//             <Card small className="mb-4">
-//           <CardHeader className="border-bottom">
-//         <div className="row">
-//           <div className="col-lg-11">
-//           <span id="help-btn" className="hover icon-md fa fa-envelope-o mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
-//           Message
-//          </div>
-
-//          <div className="col-lg-1">
-//          <span id="save-btn" class="hover icon-md fa fa-ellipsis-v mt-2" data-toggle="tooltip" title="Send Message"></span>
-//          </div>
-//         </div><br></br>
-
-//             <div className="row">
-//             <div className="col-lg-12   d-flex justify-content-between">
-//             <select id="messageId" className="form-control w-25" name="msgType" onchange="message_list.setType()">
-//                   <option value="I">INBOX</option>
-//                   <option value="S">SENT MESSAGE</option>
-//             </select> 
-//             <div className="icon-color btn btn-outline-primary ml-5 " data-toggle="tooltip" title="Create New Message">
-// 						<span className="fa fa-plus"></span>
-//                         {/* <span>&nbsp;&nbsp;Compose</span> */}
-//                         <span><a href="./CreateMessage"> &nbsp;
-//                          Compose
-//                         </a></span>
-// 					</div>            
-//             </div>
-//             </div>
-//             <table className="table mt-2">
-//             <thead className="thead-light">
-//             <tr>
-//                 <th scope="col">From</th>
-//                <th scope="col">Message</th>
-//                <th scope="col">Date</th>
-//            </tr>
-//            </thead>
-//            </table>
-//            <card small className="mb-4">
-//            <CardHeader className="border-bottom bg-info"><h6>Not Found</h6>
-//            {/* <div class="icon-color btn btn-outline-primary" data-toggle="tooltip" title="Create New Message">
-// 						<span class="fa fa-plus"></span>
-//                         <span>&nbsp;&nbsp;Create Message</span>
-//                         <span><a href="./CreateMessage"> &nbsp;
-//                          Create Message
-//                         </a></span>CreateMessage
-                        
-//           </div> */}
-//             <Button size="sm" className="mr-2 p-1" outline theme="success"
-//                 onClick={()=> this.handleShowCreateMessage(showCreateMessage)}>
-//                   <i class="fas fa-plus" /> &nbsp; Create Message
-//                 </Button>
-//            </CardHeader>
-//            { showCreateMessage &&
-//            <div style={{"zIndex":999}}>
-//         <Card small className="mb-4">
-//           <CardHeader className="border-bottom">
-//           <div className="row">
-//           <div className="col-lg-11">
-//           <span id="cancel-btn" className="hover icon-md fa fa-chevron-left mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
-//           New Message
-//          </div>
-
-//          <div className="col-lg-1">
-//          <span id="save-btn" class="hover icon-md fa fa-check mt-2" data-toggle="tooltip" title="Send Message"></span>
-//          </div>
-//         </div>
-//         <br></br>
-//           <div className="row">
-//           <div className="col-lg-3">
-//          <h6>To :*</h6><br></br>
-//          <h6>Subject :</h6>
-//          </div>
-//          <div className="col-lg-9">
-// 						<FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Search by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message"/><br></br>
-//             <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Subject" data-toggle="tooltip" title="Enter the subject of the message"/>
-//          </div>
-//         </div>
-    
-//           <div>
-//             <br></br>
-//             <h6>Message *</h6>
-//             <div className="col-xs-12">
-// 							<textarea id="message" rows="5" maxlength="1500" className="form-control required"  placeholder="Message" data-toggle="tooltip" title="Enter the details of the message here"></textarea>
-// 					</div>
-//           </div>
-//           <div className="col-xs-6 mt-3">
-// 						<div id="save-btn" class="icon-color btn btn-outline-success" data-toggle="tooltip" title="Send Message">Send</div>
-// 					</div>
-//           </CardHeader>
-//         </Card>
-//            </div>
-//            }
-//            </card>
-//           </CardHeader>
-//         </Card>
-//     </div>
-//     )
-//     }
-// }
-// export default Message;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import { Container, Row, Col, Card, FormInput, Button,CardHeader, CardBody } from "shards-react";
-
-
-// import PageTitle from "../components/common/PageTitle";
-
-// const Message = () => (
-//   <Container fluid className="main-content-container px-4 py-4">
-//             <Card small className="mb-4">
-//           <CardHeader className="border-bottom">
-//         <div className="row">
-//           <div className="col-lg-11">
-//           <span id="help-btn" className="hover icon-md fa fa-envelope-o mt-2 mr-2" data-toggle="tooltip" title="Cancel"></span>
-//           Message
-//          </div>
-
-//          <div className="col-lg-1">
-//          <span id="save-btn" class="hover icon-md fa fa-ellipsis-v mt-2" data-toggle="tooltip" title="Send Message"></span>
-//          </div>
-//         </div><br></br>
-
-//             <div className="row">
-//             <div className="col-lg-12   d-flex justify-content-between">
-//             <select id="messageId" className="form-control w-25" name="msgType" onchange="message_list.setType()">
-//                   <option value="I">INBOX</option>
-//                   <option value="S">SENT MESSAGE</option>
-//             </select> 
-//             <div className="icon-color btn btn-outline-primary ml-5 " data-toggle="tooltip" title="Create New Message">
-// 						<span className="fa fa-plus"></span>
-//                         {/* <span>&nbsp;&nbsp;Compose</span> */}
-//                         <span><a href="./CreateMessage"> &nbsp;
-//                          Compose
-//                         </a></span>
-// 					</div>            
-//             </div>
-//             </div>
-//             <table className="table mt-2">
-//             <thead className="thead-light">
-//             <tr>
-//                 <th scope="col">From</th>
-//                <th scope="col">Message</th>
-//                <th scope="col">Date</th>
-//            </tr>
-//            </thead>
-//            </table>
-//            <card small className="mb-4">
-//            <CardHeader className="border-bottom bg-info"><h6>Not Found</h6>
-//            <div class="icon-color btn btn-outline-primary" data-toggle="tooltip" title="Create New Message">
-// 						<span class="fa fa-plus"></span>
-//                         {/* <span>&nbsp;&nbsp;Create Message</span> */}
-//                         <span><a href="./CreateMessage"> &nbsp;
-//                          Create Message
-//                         </a></span>
-                        
-// 					</div>
-//            </CardHeader>
-//            </card>
-//           </CardHeader>
-//         </Card>
-//   </Container>
-// );
-// export default Message;
