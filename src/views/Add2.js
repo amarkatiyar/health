@@ -6,7 +6,8 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
         constructor(props) {
         super(props);
         this.state = { 
-        open: false 
+        open: false,
+        handleShowAdd2: false
         };
         }
           
@@ -15,17 +16,21 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
         return { open: !prevState.open };
         });
         }
+
+        handleShowAdd2=() => {
+            this.props.handleHideAdd2();
+        }
           
         render(){
 return(
 
-    // <div className="container mt-3 ">
     <Card className="" style={{width:"450px",height:"180px"}}>
     <CardBody>
+    <Form>
     <Row className="mt-0">
-                   <div className="col-lg-8 col-md-8 col-sm-8 col-8"><h6><i class="fas fa-arrow-left mr-3"></i>Speciality</h6></div>
-                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-check"></i></div>
-                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-times"></i></div>
+                   <div onClick ={()=>this.handleShowAdd2()} className="col-lg-8 col-md-8 col-sm-8 col-8"><h6><i class="fas fa-arrow-left mr-3"></i>Speciality</h6></div>
+                   <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class=""></i></div>
+                   <div onClick ={()=>this.handleShowAdd2()} className="col-lg-2 col-md-2 col-sm-2 col-2"><i class="fas fa-times"></i></div>
                  
     </Row>
 
@@ -42,10 +47,9 @@ return(
         <Button outline size="md" className="mt-3 ml-3" theme="success">
             Save
         </Button>
-
+    </Form>
     </CardBody>        
     </Card>
-    // </div>
 )
 }
 }

@@ -18,7 +18,8 @@ import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
-import Message from "./views/Message";
+import Message from "./components/Message/Message";
+import Billing from "./components/Billings/Billing";
 import CreateMessage from "./views/CreateMessage";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
@@ -40,18 +41,26 @@ import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
 import Billings from "./views/Billings";
 import Form from "./views/Form";
+import Hospital1 from "./views/Hospital1";
+import Procedure1 from "./views/Procedure1";
+import DrugCode1 from "./views/DrugCode1";
+import TestCode1 from "./views/TestCode1";
+import Symtom from "./views/Symtom";
+import Problems from "./views/Problems";
+import VisitReason from "./views/VisitReason";
+import Procedure from "./views/Procedure";
 export default [
   {
     path: "/",
     exact: true,
     layout: LoginLayout,
-    component: () => <Redirect to="login" />
+    component: () => <Redirect to="/blog-posts" />
   },
-  {
-    path: "/login",
-    layout: LoginLayout,
-    component: LoginForm
-  },
+  // {
+  //   path: "/login",
+  //   layout: LoginLayout,
+  //   component: LoginForm
+  // },
   {
     path: "/patient",
     layout: DefaultLayout,
@@ -64,11 +73,11 @@ export default [
     component: PatientAcc
   },
 
-  {
-    path: "/dashboard",
-    layout: DefaultLayout,
-    component: BlogOverview
-  },
+  // {
+  //   path: "/dashboard",
+  //   layout: DefaultLayout,
+  //   component: BlogOverview
+  // },
   {
     path: "/user-profile-lite",
     layout: DefaultLayout,
@@ -80,11 +89,11 @@ export default [
     component: AddNewPost
   },
 
-  {
-    path: "/errors",
-    layout: DefaultLayout,
-    component: Errors
-  },
+  // {
+  //   path: "/errors",
+  //   layout: DefaultLayout,
+  //   component: Errors
+  // },
   {
     path: "/components-overview",
     layout: DefaultLayout,
@@ -95,6 +104,12 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
+
+  // {
+  //   path: "/tables",
+  //   layout: DefaultLayout,
+  //   component: Tables
+  // },
   {
     path: "/blog-posts",
     layout: DefaultLayout,
@@ -111,7 +126,7 @@ export default [
     component: CreateBill
   },
   {
-    path: "/message",
+    path: "/Message",
     layout: DefaultLayout,
     component: Message
   },
@@ -205,4 +220,44 @@ export default [
     layout: DefaultLayout,
     component: Form
   },
+  {
+    path: "/Hospital1",
+    layout: DefaultLayout,
+    component: Hospital1
+  },
+  {
+    path: "/Procedure1",
+    layout: DefaultLayout,
+    component: Procedure1
+  },
+  {
+    path: "/DrugCode1",
+    layout: DefaultLayout,
+    component: DrugCode1
+  },
+  {
+    path: "/TestCode1",
+    layout: DefaultLayout,
+    component: TestCode1
+  },
+  {
+    path: "/Symtom",
+    layout: DefaultLayout,
+    component: Symtom
+  },
+  {
+    path: "/Problems",
+    layout: DefaultLayout,
+    component: Problems
+  },
+  {
+    path: "/VisitReason",
+    layout: DefaultLayout,
+    component: VisitReason
+  },
+  {
+    path: "/Procedure",
+    layout: DefaultLayout,
+    component: Procedure
+  }
 ];

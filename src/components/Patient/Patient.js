@@ -17,7 +17,7 @@ export default function FormExample() {
       <FormGroup>
         <div className="row">
         <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-        <label htmlFor="#firstname">Firstname</label>
+        <label htmlFor="#firstname">Firstname*</label>
         </div>
         <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="text" id="#firstname" placeholder="firstname" />
@@ -27,7 +27,7 @@ export default function FormExample() {
       <FormGroup>
       <div className="row">
       <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-        <label htmlFor="#lastname">Lastname</label>
+        <label htmlFor="#lastname">Lastname*</label>
       </div>
       <div className="col-lg-8 col-md-8 col-sm-8 col-8">
         <FormInput type="text" id="#number" placeholder="lastname" />
@@ -39,7 +39,7 @@ export default function FormExample() {
       <FormGroup>
       <div className="row">
         <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-      <label htmlFor="#Gender">Gender</label>
+      <label htmlFor="#Gender">Gender*</label>
       </div>
       <div className="col-lg-8 col-md-8 col-sm-8 col-8">
       <FormSelect>
@@ -78,7 +78,7 @@ export default function FormExample() {
     <FormGroup>
     <div className="row">
     <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-      <label htmlFor="#number">Number</label>
+      <label htmlFor="#number">Mobile</label>
     </div>
     <div className="col-lg-8 col-md-8 col-sm-8 col-8">
       <FormInput type="number" id="#number" placeholder="+91 8840091275" />

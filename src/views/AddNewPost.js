@@ -23,7 +23,7 @@ export default function BasicCardExample() {
             <InputGroup size="md" seamless>
               <InputGroupAddon type="prepend">
                 <InputGroupText>
-                <i class="fas fa-search"></i>
+                <i class=" text-primary fas fa-search"></i>
                 </InputGroupText>
               </InputGroupAddon>
               <FormInput className="border-3 " placeholder="Search patient by name.." />

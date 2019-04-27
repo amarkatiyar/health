@@ -53,7 +53,7 @@ return(
                          <div class="form-group row">
                          <div class="col-6"></div>
                          <div class="col-6">
-                         <Button outline size="sm" class="form-control" theme="success" className="mb-2">
+                         <Button outline size="sm" class="form-control" theme="success" className="mb-2"><i class="fas fa-check mr-2"></i>
                              CREATE
                          </Button>
                          </div>
