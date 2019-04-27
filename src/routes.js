@@ -49,6 +49,11 @@ import Symtom from "./views/Symtom";
 import Problems from "./views/Problems";
 import VisitReason from "./views/VisitReason";
 import Procedure from "./views/Procedure";
+import PatHealth from "./components/Patient/HealthRecord/PatHealth";
+import Patsetting from "./components/Patient/HealthRecord/Patsetting";
+import PatMessage from "./components/Patient/HealthRecord/PatMessage";
+import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
+import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 export default [
   {
     path: "/",
@@ -56,11 +61,6 @@ export default [
     layout: LoginLayout,
     component: () => <Redirect to="/blog-posts" />
   },
-  // {
-  //   path: "/login",
-  //   layout: LoginLayout,
-  //   component: LoginForm
-  // },
   {
     path: "/patient",
     layout: DefaultLayout,
@@ -73,11 +73,7 @@ export default [
     component: PatientAcc
   },
 
-  // {
-  //   path: "/dashboard",
-  //   layout: DefaultLayout,
-  //   component: BlogOverview
-  // },
+  
   {
     path: "/user-profile-lite",
     layout: DefaultLayout,
@@ -89,11 +85,6 @@ export default [
     component: AddNewPost
   },
 
-  // {
-  //   path: "/errors",
-  //   layout: DefaultLayout,
-  //   component: Errors
-  // },
   {
     path: "/components-overview",
     layout: DefaultLayout,
@@ -104,12 +95,7 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-
-  // {
-  //   path: "/tables",
-  //   layout: DefaultLayout,
-  //   component: Tables
-  // },
+  
   {
     path: "/blog-posts",
     layout: DefaultLayout,
@@ -259,5 +245,30 @@ export default [
     path: "/Procedure",
     layout: DefaultLayout,
     component: Procedure
+  },
+  {
+    path: "/PatHealth",
+    layout: DefaultLayout,
+    component: PatHealth
+  },
+  {
+    path: "/Patsetting",
+    layout: DefaultLayout,
+    component: Patsetting
+  },
+  {
+    path: "/PatMessage",
+    layout: DefaultLayout,
+    component: PatMessage
+  },
+  {
+    path: "/PatCreateMessage",
+    layout: DefaultLayout,
+    component: PatCreateMessage
+  },
+  {
+    path: "/PatBilling",
+    layout: DefaultLayout,
+    component: PatBilling
   }
 ];

@@ -11,7 +11,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Modal,target
+  Modal,target,Container
 
 } from "shards-react";
 import RestSetting from "../../views/RestSetting";
@@ -71,11 +71,10 @@ handleHospitalForms = () => {
     
     
     return (
-
-   <Card small className="">
+<Container className="main-content-container px-4 py-4">
         <div className="card">
-          <CardHeader className="border-bottom mb-3">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
+            {/* <div className="mb-3 mx-auto"> */}
               <h6 className="card-body" className="text-success">Profile</h6>
               <p>Edit your profile,change name,email,etc.</p>
               <a href="./EditProfile">
@@ -83,7 +82,6 @@ handleHospitalForms = () => {
                Edit Profile
               </Button>
               </a>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
@@ -145,10 +143,6 @@ handleHospitalForms = () => {
               </Dropdown>
             </div>
           </CardHeader>
-           {/* < Modal size="sm" open={Hospital1} toggle={this.handleShowHospital1}>
-                <Hospital1 />
-          </Modal> */}
-
         </div>
         <div className="card mt-3">
           <CardHeader className="border-bottom">
@@ -290,8 +284,7 @@ handleHospitalForms = () => {
             </div>
           </CardHeader></div>
         <div className="card mt-3"></div>
-
-      </Card>
+</Container>
     )
   }
 }

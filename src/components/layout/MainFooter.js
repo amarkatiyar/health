@@ -39,7 +39,7 @@ MainFooter.propTypes = {
 
 MainFooter.defaultProps = {
   contained: false,
-  copyright: "Copyright © 2018 DesignRevision",
+  copyright: "©2019 Datagrazp Pvt. Ltd. All Right Reserved.",
   menuItems: [
     {
       title: "Home",

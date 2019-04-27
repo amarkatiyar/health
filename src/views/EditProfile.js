@@ -1,6 +1,5 @@
 import React from 'react'
 import {Row,Button, Card, CardBody, Modal, ModalBody, ModalHeader } from 'shards-react'
-import DropdownSplitExample1 from './Edit1';
 import Edit2 from './Edit2';
 import Edit1 from './Edit1';
 import Add2 from './Add2';
