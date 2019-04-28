@@ -2,7 +2,7 @@ import React from 'react'
 import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
     FormSelect,FormInput,CardHeader } from 'shards-react'
 
-export default  class Hospital1 extends React.Component{
+export default class HospitalForm extends React.Component{
 render(){
 return(
 

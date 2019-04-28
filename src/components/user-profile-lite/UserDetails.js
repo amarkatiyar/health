@@ -28,7 +28,7 @@ export default class DropdownSplitExample extends React.Component {
       showReset: false,
       setForms: false,
       drugCodeForm: false,
-      HospitalService:false
+      // HospitalForm:false
     };
   }
   handleShowReset = () => {
@@ -38,25 +38,19 @@ export default class DropdownSplitExample extends React.Component {
     this.setState({ setForms: !this.state.setForms });
   }
 
-handleShowSetForms = () =>{
-    //e.preventDefault();
-    this.setState({showSetForms: !this.state.showSetForms});
-}
-
-handleHideSetForms = () =>{
-    //e.preventDefault();
-    this.setState({showSetForms: !this.state.showSetForms});
-}
-
-
+  handleHideForms = () => {
+    this.setState({ setForms: !this.state.setForms });
+  }
+// Dropdown code//////////
   handleDrugCodeForm = (e) => {
   console.log(e.target.value);
 
   }
+// Dropdown code End////////
 
-handleHospitalForms = () => {
-      this.setState({ HospitalService: !this.state.HospitalService })
-};
+// handleShowHospitalForms = () => {
+//       this.setState({ HospitalForm: !this.state.HospitalForm })
+// };
   
   toggle = () => {
     this.setState(prevState => {
@@ -67,14 +61,13 @@ handleHospitalForms = () => {
   render() {
     const { showReset } = this.state;
     const { setForms, drugCodeForm, Procedure1, Hospital1,DrugCode1} = this.state;
-    const {HospitalService}=this.state;
+    // const {HospitalForm}=this.state;
     
     
     return (
 <Container className="main-content-container px-4 py-4">
         <div className="card">
           <CardHeader className="mb-3">
-            {/* <div className="mb-3 mx-auto"> */}
               <h6 className="card-body" className="text-success">Profile</h6>
               <p>Edit your profile,change name,email,etc.</p>
               <a href="./EditProfile">
@@ -85,31 +78,26 @@ handleHospitalForms = () => {
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom ">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">Change Password</h6>
               <p>Change your password, it is recommended you change your password regular</p>
-              <a href="./ChangePassword"><Button outline theme="success" className="mb-2 mr-1">
+              <a href="./ChangePassword"><Button outline theme="success" className="mr-1">
                 Change Password 
               </Button></a>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">Manage User</h6>
               <p>Manage users, you can create new user or view existing user and edit them</p>
               <a href="./ManageUser">
               <Button outline size="sm" theme="success" className="mb-2 mr-1">
                 Manage User
               </Button></a>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">FAVORITES</h6>
               <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
@@ -125,12 +113,10 @@ handleHospitalForms = () => {
                 </select>
               </a>
               </Dropdown>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL CODES</h6>
               <p>Set your hospital codes like procedure code, item/service code etc here and use them easily.</p>
               <Dropdown open={this.state.open} toggle={this.toggle}  group>
@@ -141,74 +127,55 @@ handleHospitalForms = () => {
                   <option value="TestCode1">Test code</option>
                 </select>
               </Dropdown>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
               <p>Set your hospital service charges/ Tax.</p>
-
-              <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a> 
-                <Button onClick={() => { this.handleHospitalForms() }} outline theme="success">service charges/tax</Button>
+                <Button outline theme="success">service charges/tax</Button>
               </a>
-              < Modal size="sm" open={HospitalService} toggle={this.handleHospitalForms}>
-                <HospitalService />
-              </Modal>
-              </Dropdown>
-            </div>
           </CardHeader>
 
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">NOTIFICATION</h6>
               <p>Set your user message notification</p>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
               On complete EHR notify user*
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">SMS/E-MAIL</h6>
               <p>Set your preference to send SMS/E-mail notifications</p>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
               The Patient will receive text notifications and reminder<br></br>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
               The Patient will receive email notifications and reminder
-      </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">LOGO PRINTING</h6>
               <p>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best
-        viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</p>
+                viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</p>
               <a href="#"><i className=" fas fa-edit"></i></a>
-
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">DOCTOR SIGNATURE</h6>
               <p>Select doctor signature image that will used in the reports like health records, prescription etc
                  Image will be best viewed in the dimensions of 300:100 pixels or 3:1 ratio. The file format should be in
-           .jpeg or .jpg or .png or .gif.</p>
+                  .jpeg or .jpg or .png or .gif.</p>
               <a href="#"><i className=" fas fa-edit"></i></a>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">REPORT BY EMAIL</h6>
               <p>Set your preference to receive reports via email</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
@@ -217,36 +184,29 @@ handleHospitalForms = () => {
                   <option value="">Daily</option>
                   <option value="">Monthly</option>
                   <option value="">None</option>
-
                 </select>
               </Dropdown>
-            </div>
           </CardHeader>
         </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">AUDIT REPORTS</h6>
               <p>You can view your audit reports here</p>
               <a href="./AuditReport"><Button outline size="sm" theme="success" className="mb-2 mr-1">
                 View Audit Reports
               </Button></a>
-            </div>
           </CardHeader></div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">CLINICAL DECISION SUPPORT</h6>
               <p>Set your Clinical Decision Support settings here</p>
               <a href="./CDS">
               <Button outline size="sm" theme="success" className="mb-2 mr-1">
                  Set Clinical Decision Report
               </Button></a>
-            </div>
           </CardHeader></div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">Forms</h6>
               <p>Create custom form use them in Electronic health record page</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
@@ -254,35 +214,26 @@ handleHospitalForms = () => {
                 <Button onClick={() => { this.handleShowForms() }} outline theme="success">Set forms</Button>
               </a>
               < Modal size="sm" open={setForms} toggle={this.handlesetForms}>
-                <SetForms />
+                <SetForms handleHideForms={this.handleHideForms} />
               </Modal>
               </Dropdown>
-            </div>
-          </CardHeader></div>
+          </CardHeader>
+        </div>
         <div className="card mt-3">
-          <CardHeader className="border-bottom">
-            <div className="mb-3 mx-auto">
+          <CardHeader className="mb-3">
               <h6 className="text-success">RESET ALL SETTING</h6>
               <p>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like
                  account created. This will not delete any data.</p>
               <a onClick={() => { this.handleShowReset() }}>
-                <Button
-                  outline
-                  size="sm"
-                  theme="success"
-                  className="mb-2 mr-1"
-                >
+                <Button outline size="sm" theme="success" className="mb-2 mr-1">
                   Reset All your Setting
           </Button>
               </a>
-              < Modal
-                size="sm"
-                open={showReset} toggle={this.handleShowReset}
-              >
+              < Modal size="sm" open={showReset} toggle={this.handleShowReset}>
                 <RestSetting />
               </Modal>
-            </div>
-          </CardHeader></div>
+          </CardHeader>
+        </div>
         <div className="card mt-3"></div>
 </Container>
     )

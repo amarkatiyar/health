@@ -17,7 +17,7 @@ import {
 
 const UserAccountDetails = ({ title }) => (
 <Container className="main-content-container px-4 py-4">
-<div style={{position:'fixed'}}>
+<div style={{position:"fixed"}}>
             <Card className="">
             <Button outline  theme="success">
                         Edit Profile
