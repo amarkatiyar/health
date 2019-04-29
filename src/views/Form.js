@@ -28,9 +28,6 @@ import { Container,Card, FormInput, CardHeader } from "shards-react";
    <div className="col-lg-1">
    <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="print"></span>
    </div>
-   {/* <div className="col-lg-1">
-   <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Show more options"></span>
-   </div> */}
    <div className="col-lg-1" >
          <Card  style={{height:"0px"}}>
          <div className=" ml-5 pr-3"><i class="fas fa-ellipsis-v" onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>

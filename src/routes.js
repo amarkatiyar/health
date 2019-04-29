@@ -54,6 +54,7 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
+import Calender from "./views/Calender";
 export default [
   {
     path: "/",
@@ -270,5 +271,10 @@ export default [
     path: "/PatBilling",
     layout: DefaultLayout,
     component: PatBilling
+  },
+  {
+    path: "/Calender",
+    layout: DefaultLayout,
+    component: Calender
   }
 ];
