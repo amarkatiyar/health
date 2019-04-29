@@ -1,19 +1,34 @@
 import React from "react";
-import {Card,CardHeader,Modal } from "shards-react";
+import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText} from "shards-react";
 import CreateMessage from "./CreateMessage";
+
 
 class Message extends React.Component{
   constructor(props){
     super(props);
+    this.toggle = this.toggle.bind(this);
+
+    this.state = { 
+      collapse: false,
+     };
     this.state = {
     showCreateMessageModal: false,
     showFavorite:false,
+    showStar:false,
     }
+    
+    
        
   };
+  toggle() {
+    this.setState({ collapse: !this.state.collapse});
+  }
   handleshowFavorite = (prevState) =>{
     this.setState({showFavorite: !prevState});
     }
+    handleshowStar = (prevState) =>{
+      this.setState({showStar: !prevState});
+      }
   handleShowCreateMessage= () =>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
@@ -24,18 +39,56 @@ class Message extends React.Component{
   render(){
     const { showCreateMessageModal } = this.state;
     let {showFavorite} = this.state;
+    let{showStar}=this.state;
    
     return(
-      <div className="container mt-4">
+           <Container fluid className="main-content-container px-4 py-4">
             <Card small className="mb-4">
             <CardHeader className="border-bottom">
             <div className="row">
            <div className="col-lg-10 text-success">
               <i className="fas fa-envelope mr-3"></i><a className="text-primary">Message</a>
            </div>
-         <div className="col-lg-1">
+         {/* <div className="col-lg-1">
          <i className="far fa-star mt-2 ml-5" title="Show my favorite message"></i>
+         
+         </div> */}
+         <div className="col-lg-1" >
+         
+         <Card  style={{height:"0px" }} onClick={this.toggle}>
+         
+         <div className=" ml-4 pr-3"><i className="far fa-star"  ></i>
+          </div>
+       
+           <div className="col-12 d-flex justify-content-center">
+            <Collapse open={this.state.collapse} className="mr-5">
+            <CardHeader style={{ background: "aqua",width:"300px" }}>
+            <a id="assign-btn-cancle" class="hover icon-md fa fa-chevron-left" title="cancle"> &nbsp;&nbsp;Favorite Message</a>
+            </CardHeader>
+              <Card className="mt-0" style={{ height: "350px",width:"300px" }}>
+                <InputGroup size="md" seamless>
+                  <InputGroupAddon type="prepend">
+                    <InputGroupText>
+                      <i class="fas fa-search"></i> 
+                </InputGroupText>
+                  </InputGroupAddon>
+                  <FormInput className="border-3 " placeholder="All" />
+                  <InputGroupAddon type="append">
+                    <InputGroupText>
+                      <i class="fas fa-plus"></i> 
+                </InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+                <div class="alert bg-info text-white font-weight-normal mt-3">
+		              There are no favorite message set, add your favorite message here
+	              </div>
+              </Card>
+            </Collapse>
+           </div>
+          
+         </Card>
          </div>
+        
 
          <div className="col-lg-1" >
          <Card  style={{height:"0px"}}>
@@ -101,7 +154,7 @@ class Message extends React.Component{
            </card>
           </CardHeader>
         </Card>
-    </div>
+        </Container>
     )
     }
 }

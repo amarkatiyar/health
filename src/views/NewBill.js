@@ -95,7 +95,7 @@ class NewBill extends React.Component {
           </div>
           <div className="col-4">
             <CardHeader style={{ background: "aqua" }} onClick={this.toggle}>
-              <a id="assign-icon" class="hover icon-md fa fa-percent" > &nbsp;&nbsp; Favorite Item/Service</a>
+              <a id="assign-icon" class="hover icon-md fas fa-star" > &nbsp;&nbsp; Favorite Item/Service</a>
             </CardHeader>
             <Collapse open={this.state.collapse}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -106,12 +106,21 @@ class NewBill extends React.Component {
                 </InputGroupText>
                   </InputGroupAddon>
                   <FormInput className="border-3 " placeholder="All" />
+                  <InputGroupAddon type="append">
+                    <InputGroupText>
+                      <i class="fas fa-plus"></i> 
+                </InputGroupText>
+                  </InputGroupAddon>
                 </InputGroup>
+                <div class="alert bg-info text-white font-weight-normal mt-3">
+		              There are no favorite message set, add your favorite message here
+	              </div>
               </Card>
             </Collapse>
+            
 
             <CardHeader className="mt-3" style={{ background: "aqua" }}>
-              <a id="assign-icon" className="hover icon-md fa fa-plus" onClick={this.toggle1}> &nbsp;&nbsp;Item/Service Code</a>
+              <a id="assign-icon" className="hover icon-md fa fa-hospital " onClick={this.toggle1}> &nbsp;&nbsp;Item/Service Code</a>
             </CardHeader>
             <Collapse open={this.state.collapse1}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -122,12 +131,20 @@ class NewBill extends React.Component {
                     </InputGroupText>
                   </InputGroupAddon>
                   <FormInput className="border-3 " placeholder="All" />
+                  <InputGroupAddon type="append">
+                    <InputGroupText>
+                      <i class="fa fa-plus"></i> 
+                </InputGroupText>
+                  </InputGroupAddon>
                 </InputGroup>
+                <div class="alert bg-info text-white font-weight-normal mt-3">
+		              There are no favorite message set, add your favorite message here
+	              </div>
               </Card>
             </Collapse>
 
             <CardHeader className="mt-3" style={{ background: "aqua" }}>
-              <a id="assign-icon" class="hover icon-md fa fa-percent" onClick={this.toggle2}> &nbsp;&nbsp;Service Charges/ Tax</a>
+              <a id="assign-icon" class="hover icon-md fa fa-percent " onClick={this.toggle2}> &nbsp;&nbsp;Service Charges/ Tax</a>
             </CardHeader>
             <Collapse open={this.state.collapse2}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -138,9 +155,18 @@ class NewBill extends React.Component {
                     </InputGroupText>
                   </InputGroupAddon>
                   <FormInput className="border-3 " placeholder="All" />
+                  <InputGroupAddon type="append">
+                    <InputGroupText>
+                      <i class="fas fa-plus"></i> 
+                </InputGroupText>
+                  </InputGroupAddon>
                 </InputGroup>
+                <div class="alert bg-info text-white font-weight-normal mt-3">
+		              There are no favorite message set, add your favorite message here
+	              </div>
               </Card>
             </Collapse>
+            
           </div>
         </div>
       </Container>

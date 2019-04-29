@@ -18,12 +18,11 @@ import PatientAcc from "./components/Patient/PatientAcc";
 import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
-import Message from "./components/Message/Message";
-import Billing from "./components/Billings/Billing";
+import Message from "./views/Message";
 import CreateMessage from "./views/CreateMessage";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-import CreateBill from "./components/Billings/CreateBill";
+// import CreateBill from "./components/Billings/CreateBill";
 
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
@@ -38,7 +37,6 @@ import Add2 from "./views/Add2";
 import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import Add1 from "./views/Add1";
-import Billings from "./views/Billings";
 import Form from "./views/Form";
 import Hospital1 from "./views/Hospital1";
 import Procedure1 from "./views/Procedure1";
@@ -54,6 +52,8 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
+import Billings from "./views/Billings";
+
 export default [
   {
     path: "/",
@@ -106,12 +106,12 @@ export default [
     layout: DefaultLayout,
     component: Billings
   },
-  {
-    path: "/CreateBill",
-    layout: DefaultLayout,
-    component: CreateBill
-  },
-  {
+  // {
+  //   path: "/CreateBill",
+  //   layout: DefaultLayout,
+  //   component: CreateBill
+  // },
+   {
     path: "/Message",
     layout: DefaultLayout,
     component: Message
