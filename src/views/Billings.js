@@ -20,26 +20,23 @@ import { Container,Card, FormInput, CardHeader } from "shards-react";
     <CardHeader className="border-bottom">
    <div className="row">
    <div className="col-lg-10">
-   <span id="save-btn" className="text-primary fa fa-credit-card mr-2" data-toggle="tooltip" title=""></span>
+   <span id="save-btn" className="text-primary fa fa-credit-card mr-2" data-toggle="tooltip" title="" style={{cursor:"pointer" }}></span>
       <a className="text-success">BILLING</a>
    </div>
    <div className="col-lg-1">
-   <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="print"></span>
+   <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="print" style={{cursor:"pointer" }}></span>
    </div>
-   {/* <div className="col-lg-1">
-   <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Show more options"></span>
-   </div> */}
    <div className="col-lg-1" >
          <Card  style={{height:"0px"}}>
-         <div className=" ml-5 pr-3"><i class="fas fa-ellipsis-v" onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
+         <div className=" ml-5 pr-3"><i class="fas fa-ellipsis-v" style={{cursor:"pointer" }} onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
           </div>
          { showVisitReasons &&
             <div style={{"zIndex":999}}>
             <div className="row">
           <table className=" table table-bordered table-hover table-light table-sm mr-2 " style={{width:"10px"}}>
-          <tbody>
+          <tbody className="text-success">
     <tr>
-      <td><i className="fa fa-plus ">&nbsp;&nbsp;New&nbsp;Recipt</i></td>
+      <td><a href="./NewBill"><i className="fa fa-plus text-success">&nbsp;&nbsp;New&nbsp;Recipt</i></a></td>
     </tr>
     <tr>
       <td><i className="fa fa-print">&nbsp;&nbsp;Print</i></td>
@@ -48,7 +45,7 @@ import { Container,Card, FormInput, CardHeader } from "shards-react";
       <td><i className="fa fa-file-excel">&nbsp;&nbsp;Export</i></td>
     </tr>
     <tr>
-      <td><i className="fab fa-youtube">&nbsp;&nbsp;Tutorial&nbsp;Video</i></td>
+      <td><a href="https://www.youtube.com/watch?v=KKviZ_88ggs"><i className="fab fa-youtube text-success">&nbsp;&nbsp;Tutorial&nbsp;Video</i></a></td>
     </tr>
     <tr>
     <td><i className="fa fa-question-circle">&nbsp;&nbsp;Help</i></td>

@@ -23,6 +23,9 @@ class NewBill extends React.Component {
     this.state={
       showItemModal: false,
     }
+    this.state = {
+      showVisitReasons:false,
+      }  
   };
 
   toggle() {
@@ -42,8 +45,12 @@ class NewBill extends React.Component {
   handleHideItem = () => {
     this.setState({ showItemModal: !this.state.showItemModal });
   }
+  handleshowVisitReasons = (prevState) =>{
+    this.setState({showVisitReasons: !prevState});
+    }
   render() {
     const { showItemModal } = this.state;
+    let {showVisitReasons} = this.state;
     return (
       <Container fluid className="main-content-container px-4 py-4">
         <div className="row">
@@ -54,19 +61,46 @@ class NewBill extends React.Component {
                   <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="far fa-star ml-3" onClick={this.toggle} data-toggle="tooltip" title="Show my favrotie item/Service list for location"></span>
+                    <span id="save-btn" className="far fa-star ml-3" style={{cursor:"pointer" }} onClick={this.toggle} data-toggle="tooltip" title="Show my favrotie item/Service list for location"></span>
                       <Collapse open={this.state.collapse}></Collapse>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="far fa-hospital ml-3" onClick={this.toggle1} data-toggle="tooltip" title="Show item/Service list for location"></span>
+                    <span id="save-btn" className="far fa-hospital ml-3" style={{cursor:"pointer" }} onClick={this.toggle1} data-toggle="tooltip" title="Show item/Service list for location"></span>
                       <Collapse open={this.state.collapse1}></Collapse>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="fa fa-print ml-3" data-toggle="tooltip" title="Print Invoice"></span>
+                    <span id="save-btn" className="fa fa-print ml-3" style={{cursor:"pointer" }} data-toggle="tooltip" title="Print Invoice"></span>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Show List"></span>
+                    {/* <span id="save-btn" className="fa fa-ellipsis-v ml-3" style={{cursor:"pointer" }} data-toggle="tooltip" title="Show List"></span> */}
+                    <Card  style={{height:"0px"}}>
+         <div className=" ml-3 pr-3"><i class="fas fa-ellipsis-v" style={{cursor:"pointer" }} onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
+          </div>
+         { showVisitReasons &&
+            <div style={{"zIndex":999}}>
+            <div className="row">
+          <div className="col-md-12" style={{paddingRight:"100px"}}>
+          <table className=" table table-bordered table-hover table-sm" style={{width:"10px"}}>
+          <tbody >
+    <tr>
+      <td><i className="fa fa-trash " style={{width:"150px"}}>&nbsp;&nbsp;Delete</i></td>
+    </tr>
+    <tr>
+      <td><i className="fa fa-print">&nbsp;&nbsp;Print</i></td>
+    </tr>
+    <tr>
+      <td><i className="fa fa-question-circle">&nbsp;&nbsp;Help</i></td>
+    </tr>
+   
+  </tbody>
+         </table>
+          </div>
+             </div> 
+             </div>
+           }
+         </Card>
                   </div>
+                  
                   <div className="col-xs-12 col-sm-6 col-md-6">
                     <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message">
                     </FormInput>
@@ -94,7 +128,7 @@ class NewBill extends React.Component {
             </Card>
           </div>
           <div className="col-4">
-            <CardHeader style={{ background: "aqua" }} onClick={this.toggle}>
+            <CardHeader style={{ background: "hsl(0, 50%, 95%)",cursor:"pointer" }} onClick={this.toggle}>
               <a id="assign-icon" class="hover icon-md fas fa-star" > &nbsp;&nbsp; Favorite Item/Service</a>
             </CardHeader>
             <Collapse open={this.state.collapse}>
@@ -119,7 +153,7 @@ class NewBill extends React.Component {
             </Collapse>
             
 
-            <CardHeader className="mt-3" style={{ background: "aqua" }}>
+            <CardHeader className="mt-3" style={{ background: "hsl(0, 50%, 95%)",cursor:"pointer" }}>
               <a id="assign-icon" className="hover icon-md fa fa-hospital " onClick={this.toggle1}> &nbsp;&nbsp;Item/Service Code</a>
             </CardHeader>
             <Collapse open={this.state.collapse1}>
@@ -143,7 +177,7 @@ class NewBill extends React.Component {
               </Card>
             </Collapse>
 
-            <CardHeader className="mt-3" style={{ background: "aqua" }}>
+            <CardHeader className="mt-3" style={{ background: "hsl(0, 50%, 95%)",cursor:"pointer" }}>
               <a id="assign-icon" class="hover icon-md fa fa-percent " onClick={this.toggle2}> &nbsp;&nbsp;Service Charges/ Tax</a>
             </CardHeader>
             <Collapse open={this.state.collapse2}>
