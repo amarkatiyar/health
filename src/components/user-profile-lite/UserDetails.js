@@ -21,6 +21,9 @@ import Procedure1 from "../../views/Procedure1";
 import Hospital1 from "../../views/Hospital1";
 import HospitalForm from "../../views/HospitalForm";
 import TestCode1 from "../../views/TestCode1";
+import Symtom from "../../views/Symtom";
+import VisitReason from "../../views/VisitReason";
+import Procedure from "../../views/Procedure";
 
 export default class DropdownSplitExample extends React.Component {
   constructor(props) {
@@ -33,10 +36,68 @@ export default class DropdownSplitExample extends React.Component {
       showForm1:false,
       showForm2:false,
       showForm3:false,
-      showForm4:false
+      showForm4:false,
+      SymtomForm:false,
+      ProblemForm:false,
+      Procedure:false,
+      VisitReasonForm:false
 
     };
   }
+
+
+  // symtom dropdown coad//////////
+
+  handleSymtomCodeForm = () => {
+    this.setState({ SymtomForm: !this.state.SymtomForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ ProblemForm: !this.state.ProblemForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ VisitReasonForm: !this.state.VisitReasonForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ Procedure: !this.state.Procedure });
+  }
+  
+
+  handleSymtomCodeForm = (e) => {
+    console.log(e.target.value);
+
+    if(e.target.value=="Symtom"){
+      this.setState({
+        showForm1:true,
+        showForm2:false,
+        showForm3:false,
+        showForm4:false
+      })}
+      if(e.target.value=="Problem"){
+        this.setState({
+          showForm1:false,
+          showForm2:true,
+          showForm3:false,
+          showForm4:false
+        })}
+        if(e.target.value=="VisitReason"){
+          this.setState({
+            showForm1:false,
+            showForm2:false,
+            showForm3:true,
+            showForm4:false
+          })}
+          if(e.target.value=="Procedure"){
+            this.setState({
+              showForm1:false,
+              showForm2:false,
+              showForm3:false,
+              showForm4:true
+            })}
+
+  }
+
+
+  // dropdown coad end////////////////
   handleShowReset = () => {
     this.setState({ showReset: !this.state.showReset });
   }
@@ -105,6 +166,7 @@ export default class DropdownSplitExample extends React.Component {
     const { showReset } = this.state;
     const { setForms, drugCodeForm} = this.state;
     const{showForm1,showForm2,showForm3,showForm4}=this.state;
+    const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
     console.log(this.state);
     
     
@@ -146,11 +208,12 @@ export default class DropdownSplitExample extends React.Component {
               <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a>
-                <select className="form-control  text-success"><i class="fas fa-star"></i>
-                  <option value="1">SYMPTOM</option>
-                  <option value="2">PROBLEMS</option>
-                  <option value="3">VISIT REASON</option>
-                  <option value="4">PROCEDURE</option>
+                <select className="form-control  text-success" onChange={(e)=> {this.handleSymtomCodeForm(e)}}>
+                  <option value="">Select</option>
+                  <option value="symtom">SYMPTOM</option>
+                  <option value="Problem">PROBLEMS</option>
+                  <option value="VisitReason">VISIT REASON</option>
+                  <option value="Procedure">PROCEDURE</option>
                   <option value="5">MEDICATIONS</option>
                   <option value="6">TEST ORDER</option>
                   <option value="7">NOTE</option>
@@ -158,6 +221,18 @@ export default class DropdownSplitExample extends React.Component {
               </a>
               </Dropdown>
           </CardHeader>
+          <Modal open={SymtomForm} toggle={this.toggle}>
+          <Symtom />
+        </Modal>
+        <Modal open={ProblemForm} toggle={this.toggle}>
+          <Symtom />
+        </Modal>
+        <Modal open={VisitReasonForm} toggle={this.toggle}>
+          <VisitReason />
+        </Modal>
+        {/* <Modal open={Procedure} toggle={this.toggle}>
+          <Procedure />
+        </Modal> */}
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">

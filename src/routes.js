@@ -6,16 +6,16 @@ import { DefaultLayout } from "./layouts";
 import LoginLayout from "./layouts/LoginLayout";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
+// import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
+// import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
+// import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-import LoginForm from "./components/LoginForm";
+// import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
 import Message from "./views/Message";
