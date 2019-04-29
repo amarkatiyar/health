@@ -21,7 +21,7 @@ export default function() {
     {
       title: "Billing",
       htmlBefore: '<i class="p-2 text-info fa fa-credit-card"></i>',
-      to: "/billing",
+      to: "/billings",
     },
     {
       title: "Message",

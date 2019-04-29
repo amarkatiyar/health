@@ -19,14 +19,14 @@ import {Row, Col,FormInput, CardHeader } from "shards-react";
        <CardHeader className="border-bottom" style={{width:"800px",height:"400px"}}>
 <div className="row mb-3">
 <div className="col-lg-11 text-left">
-<a onClick={()=> this.handleShowItem()}><i className="hover icon-md fa fa-arrow-left mt-2 mr-2" title="cancle"></i></a>Item/Service
+<a onClick={()=> this.handleShowItem()}><i className="hover icon-md fa fa-arrow-left mt-2 mr-2" style={{cursor:"pointer" }} title="cancle"></i></a>Item/Service
 {/* <span id="cancle-btn" className="hover icon-md fa fa-arrow-left" data-toggle="tooltip" title="Cancle">&nbsp;&nbsp;&nbsp;&nbsp;Item/Service</span> */}
 </div>
 <div className="col-lg-1">
 <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Save"></span>
 </div>
 </div>
-<h6 className="text-success text-left" style={{height: "35px",background:"gray"}}>Search select item/service, enter price and quantity</h6>
+<h6 className="text-white text-left" style={{height: "35px",background:"rgb(180, 180, 180)"}}>&nbsp;&nbsp;Search select item/service, enter price and quantity</h6>
 <div className="row">
 <div className="col-4 text-right">
 <h6>Item/Service *</h6><br></br>
