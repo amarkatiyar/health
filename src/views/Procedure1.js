@@ -4,19 +4,17 @@ import {
     FormSelect, FormInput, CardHeader
 } from 'shards-react'
 
-export default function Procedure1() {
-    return (
-
-        <div className="container mt-3">
-            <div className="col-sm-8">
-                <Card className="mb-4" style={{ height: "500px" }}>
-                    <CardHeader className="p-3 " style={{ background: "#A9A9A9" }}>
-                        <div className="row" >
-                            <div className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
-                            {/* <div className="col-sm-1"> %</div> */}
-                            <div className="col-sm-11"> Procedure Code</div>
-                        </div>
-                    </CardHeader>
+export default class Procedure1 extends React.Component {
+render(){
+return (
+<Card style={{ height: "500px",width:"600px" }}>
+<Form>
+    <CardHeader className="p-3 " style={{ background: "#A9A9A9" }}>
+        <div className="row" >
+            <div className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
+            <div className="col-sm-11"> Procedure Code</div>
+        </div>
+    </CardHeader>
                     <div className=" p-3" style={{ background: "hsl(0, 0%, 94%)" }}>
                         <div className="row">
                             <div className="col-sm-9">hdfdfh</div>
@@ -31,8 +29,8 @@ export default function Procedure1() {
                             <p>There are no Procedure Code code here and use them quickly</p>
                         </div>
                     </div>
-                </Card>
-            </div>
-        </div>
+</Form>
+</Card>
     )
+}
 }

@@ -6,16 +6,16 @@ import { DefaultLayout } from "./layouts";
 import LoginLayout from "./layouts/LoginLayout";
 
 // Route Views
-import BlogOverview from "./views/BlogOverview";
+// import BlogOverview from "./views/BlogOverview";
 import UserProfileLite from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
+// import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
+// import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-import LoginForm from "./components/LoginForm";
+// import LoginForm from "./components/LoginForm";
 import  NewhealthRecord from "./components/NewhealthRecord";
 
 import Message from "./views/Message";
@@ -53,6 +53,7 @@ import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
 import Billings from "./views/Billings";
+import Calender from "./views/Calender";
 
 export default [
   {
@@ -270,5 +271,10 @@ export default [
     path: "/PatBilling",
     layout: DefaultLayout,
     component: PatBilling
+  },
+  {
+    path: "/Calender",
+    layout: DefaultLayout,
+    component: Calender
   }
 ];

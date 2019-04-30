@@ -19,6 +19,11 @@ import SetForms from "../../views/SetForms";
 import DrugCode1 from "../../views/DrugCode1";
 import Procedure1 from "../../views/Procedure1";
 import Hospital1 from "../../views/Hospital1";
+import HospitalForm from "../../views/HospitalForm";
+import TestCode1 from "../../views/TestCode1";
+import Symtom from "../../views/Symtom";
+import VisitReason from "../../views/VisitReason";
+import Procedure from "../../views/Procedure";
 
 export default class DropdownSplitExample extends React.Component {
   constructor(props) {
@@ -28,9 +33,71 @@ export default class DropdownSplitExample extends React.Component {
       showReset: false,
       setForms: false,
       drugCodeForm: false,
-      // HospitalForm:false
+      showForm1:false,
+      showForm2:false,
+      showForm3:false,
+      showForm4:false,
+      SymtomForm:false,
+      ProblemForm:false,
+      Procedure:false,
+      VisitReasonForm:false
+
     };
   }
+
+
+  // symtom dropdown coad//////////
+
+  handleSymtomCodeForm = () => {
+    this.setState({ SymtomForm: !this.state.SymtomForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ ProblemForm: !this.state.ProblemForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ VisitReasonForm: !this.state.VisitReasonForm });
+  }
+  handleSymtomCodeForm = () => {
+    this.setState({ Procedure: !this.state.Procedure });
+  }
+  
+
+  handleSymtomCodeForm = (e) => {
+    console.log(e.target.value);
+
+    if(e.target.value=="Symtom"){
+      this.setState({
+        showForm1:true,
+        showForm2:false,
+        showForm3:false,
+        showForm4:false
+      })}
+      if(e.target.value=="Problem"){
+        this.setState({
+          showForm1:false,
+          showForm2:true,
+          showForm3:false,
+          showForm4:false
+        })}
+        if(e.target.value=="VisitReason"){
+          this.setState({
+            showForm1:false,
+            showForm2:false,
+            showForm3:true,
+            showForm4:false
+          })}
+          if(e.target.value=="Procedure"){
+            this.setState({
+              showForm1:false,
+              showForm2:false,
+              showForm3:false,
+              showForm4:true
+            })}
+
+  }
+
+
+  // dropdown coad end////////////////
   handleShowReset = () => {
     this.setState({ showReset: !this.state.showReset });
   }
@@ -41,16 +108,53 @@ export default class DropdownSplitExample extends React.Component {
   handleHideForms = () => {
     this.setState({ setForms: !this.state.setForms });
   }
+
+  handleDrugCodeForm = () => {
+    this.setState({ showForm2: !this.state.showForm2 });
+  }
+  handleDrugCodeForm = () => {
+    this.setState({ showForm1: !this.state.showForm1 });
+  }
+  handleDrugCodeForm = () => {
+    this.setState({ showForm3: !this.state.showForm3 });
+  }
+  
+
 // Dropdown code//////////
   handleDrugCodeForm = (e) => {
   console.log(e.target.value);
+  if(e.target.value=="Hospital1"){
+    this.setState({
+      showForm1:true,
+      showForm2:false,
+      showForm3:false
+    })}
+  
+  if(e.target.value=="DrugCode1"){
+  this.setState({
+    showForm1:false,
+    showForm2:true,
+    showForm3:false,
+    showForm4:false
+  })}
+  if(e.target.value=="Procedure1"){
+    this.setState({
+      showForm1:false,
+      showForm2:false,
+      showForm3:true,
+      showForm4:false
+    })}
+    if(e.target.value=="TestCode1"){
+      this.setState({
+        showForm1:false,
+        showForm2:false,
+        showForm3:false,
+        showForm4:true
+      })}
 
   }
 // Dropdown code End////////
 
-// handleShowHospitalForms = () => {
-//       this.setState({ HospitalForm: !this.state.HospitalForm })
-// };
   
   toggle = () => {
     this.setState(prevState => {
@@ -60,8 +164,10 @@ export default class DropdownSplitExample extends React.Component {
 
   render() {
     const { showReset } = this.state;
-    const { setForms, drugCodeForm, Procedure1, Hospital1,DrugCode1} = this.state;
-    // const {HospitalForm}=this.state;
+    const { setForms, drugCodeForm} = this.state;
+    const{showForm1,showForm2,showForm3,showForm4}=this.state;
+    const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
+    console.log(this.state);
     
     
     return (
@@ -88,10 +194,10 @@ export default class DropdownSplitExample extends React.Component {
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
-              <h6 className="text-success">Manage User</h6>
+              <h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6>
               <p>Manage users, you can create new user or view existing user and edit them</p>
               <a href="./ManageUser">
-              <Button outline size="sm" theme="success" className="mb-2 mr-1">
+                <Button outline size="sm" theme="success" className="mb-2 mr-1"><i className="fas fa-user mr-1"></i>
                 Manage User
               </Button></a>
           </CardHeader>
@@ -102,11 +208,12 @@ export default class DropdownSplitExample extends React.Component {
               <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a>
-                <select className="form-control  text-success">
-                  <option value="1">SYMPTOM</option>
-                  <option value="2">PROBLEMS</option>
-                  <option value="3">VISIT REASON</option>
-                  <option value="4">PROCEDURE</option>
+                <select className="form-control  text-success" onChange={(e)=> {this.handleSymtomCodeForm(e)}}>
+                  <option value="">Select</option>
+                  <option value="symtom">SYMPTOM</option>
+                  <option value="Problem">PROBLEMS</option>
+                  <option value="VisitReason">VISIT REASON</option>
+                  <option value="Procedure">PROCEDURE</option>
                   <option value="5">MEDICATIONS</option>
                   <option value="6">TEST ORDER</option>
                   <option value="7">NOTE</option>
@@ -114,6 +221,18 @@ export default class DropdownSplitExample extends React.Component {
               </a>
               </Dropdown>
           </CardHeader>
+          <Modal open={SymtomForm} toggle={this.toggle}>
+          <Symtom />
+        </Modal>
+        <Modal open={ProblemForm} toggle={this.toggle}>
+          <Symtom />
+        </Modal>
+        <Modal open={VisitReasonForm} toggle={this.toggle}>
+          <VisitReason />
+        </Modal>
+        {/* <Modal open={Procedure} toggle={this.toggle}>
+          <Procedure />
+        </Modal> */}
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
@@ -121,6 +240,7 @@ export default class DropdownSplitExample extends React.Component {
               <p>Set your hospital codes like procedure code, item/service code etc here and use them easily.</p>
               <Dropdown open={this.state.open} toggle={this.toggle}  group>
                 <select name="hospital_code" className="form-control text-success" onChange={(e)=> {this.handleDrugCodeForm(e)}}>
+                  <option value="">Select</option>
                   <option value="Hospital1">item/service code</option>
                   <option value="DrugCode1">Drug code</option>
                   <option value="Procedure1">Procedure code</option>
@@ -128,13 +248,26 @@ export default class DropdownSplitExample extends React.Component {
                 </select>
               </Dropdown>
           </CardHeader>
+        <Modal open={showForm2} toggle={this.toggle}>
+          <DrugCode1 />
+        </Modal>
+        <Modal open={showForm1} toggle={this.toggle}>
+        {showForm1 && <Hospital1 />}
+        </Modal>
+        <Modal open={showForm3} toggle={this.toggle}>
+        <Procedure1 />
+        </Modal>
+        <Modal open={showForm4} toggle={this.toggle}>
+        {showForm4 && <TestCode1 />}
+        </Modal>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
               <p>Set your hospital service charges/ Tax.</p>
-              <a> 
-                <Button outline theme="success">service charges/tax</Button>
+              <a>
+                <Button outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
+                </Button>
               </a>
           </CardHeader>
 

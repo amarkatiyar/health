@@ -5,9 +5,7 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
 export default  class Hospital1 extends React.Component{
 render(){
 return(
-
-<div className="container mt-3">
-<Card className="mb-4" style={{height:"500px",width:"600px"}}>
+<Card style={{height:"500px",width:"600px"}}>
         <CardHeader className="p-3 " style={{background:"#A9A9A9"}}>
         <div className="row" >
         <div className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
@@ -30,7 +28,6 @@ return(
                 </div>
             </div>
 </Card>
-</div>
 )
 }
 }
