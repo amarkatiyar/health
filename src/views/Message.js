@@ -1,5 +1,5 @@
 import React from "react";
-import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText} from "shards-react";
+import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button} from "shards-react";
 import CreateMessage from "./CreateMessage";
 
 
@@ -15,9 +15,7 @@ class Message extends React.Component{
     showCreateMessageModal: false,
     showFavorite:false,
     showStar:false,
-    }
-
-       
+    }  
   };
   toggle() {
     this.setState({ collapse: !this.state.collapse});
@@ -31,7 +29,6 @@ class Message extends React.Component{
   handleShowCreateMessage= () =>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
-  
   handleHideCreateMessage = ()=>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
@@ -42,21 +39,18 @@ class Message extends React.Component{
    
     return(
            <Container fluid className="main-content-container px-4 py-4">
-            <Card small className="mb-4">
-            <CardHeader className="border-bottom">
+            <Card small className="">
+            <CardHeader className="mb-4">
             <div className="row">
            <div className="col-lg-10 text-success" >
-              <i className="fas fa-envelope mr-3" style={{cursor:"pointer" }}></i><a className="text-primary">Message</a>
+              <i className="fas fa-envelope mr-3" style={{cursor:"pointer" }}></i><a className="text-success">Message</a>
            </div>
          {/* <div className="col-lg-1">
          <i className="far fa-star mt-2 ml-5" title="Show my favorite message"></i>
-         
          </div> */}
          <div className="col-lg-1" >
-         
          <Card  style={{height:"0px" }} onClick={this.toggle}>
-         
-         <div className=" ml-4 pr-3"><i className="far fa-star" style={{cursor:"pointer" }} ></i>
+         <div className=" ml-4 pr-3"><i className="far fa-star" title="Show my favorite message" style={{cursor:"pointer" }} ></i>
           </div>
        
            <div className="col-12 d-flex justify-content-center">
@@ -91,7 +85,7 @@ class Message extends React.Component{
 
          <div className="col-lg-1" >
          <Card  style={{height:"0px"}}>
-         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" style={{cursor:"pointer" }} onClick={()=> this.handleshowFavorite(showFavorite)}></i>
+         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{cursor:"pointer" }} onClick={()=> this.handleshowFavorite(showFavorite)}></i>
           </div>
          { showFavorite &&
             <div style={{"zIndex":999}}>
@@ -123,8 +117,12 @@ class Message extends React.Component{
                   <option value="S">SENT MESSAGE</option>
             </select> 
           <div>
-          <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Compose</a></span></a> 
+          {/* <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
+                        <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Compose</a></span></a>  */}
+<span><a onClick={() => {this.handleShowCreateMessage()}}><Button className="pl-4 pr-4" outline theme="success">
+      <i class="fas fa-plus"></i> &nbsp;
+        Compose
+      </Button></a></span>
                         <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
                            <CreateMessage handleHideCreateMessage={this.handleHideCreateMessage}/>                        
                         </Modal>
@@ -143,8 +141,12 @@ class Message extends React.Component{
            <card small className="mb-4" >
            <CardHeader className="border-bottom" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
                     <div> 
-                        <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-black">&nbsp;&nbsp;<a title="Create New Message">Create Message</a></span></a> 
+                        {/* <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
+                        <span className="text-black">&nbsp;&nbsp;<a title="Create New Message">Create Message</a></span></a>  */}
+                        <span><a onClick={() => {this.handleShowCreateMessage()}}><Button outline theme="success">
+      <i class="fas fa-plus"></i> &nbsp;
+        Create Message
+      </Button></a></span>
                         <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
                            <CreateMessage handleHideCreateMessage={this.handleHideCreateMessage} />                        
                         </Modal>
