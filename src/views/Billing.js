@@ -1,3 +1,4 @@
+// @ Author Manohar
 import React from "react";
 import { Container,Card, FormInput, CardHeader,Button } from "shards-react";
 
@@ -106,48 +107,36 @@ import { Container,Card, FormInput, CardHeader,Button } from "shards-react";
        </FormInput>
   </div>
     <div className="col-xs-6 col-sm-6 col-md-2">
-      {/* <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
-		<span className="fa fa-search"></span>
-		<span>&nbsp;&nbsp;Search</span>
-  </button> */}
+   
    <span><a ><Button className="pl-4 pr-4" outline theme="success">
       <i class="fas fa-search"></i> &nbsp;
         Search
       </Button></a></span>
     </div>
     <div className="col-xs-2 col-sm-2 col-md-2">
-    {/* <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Create new Bill" onclick="bill_report.advanceSearch();">
-		<span class="fa fa-plus"></span>
-		<span>&nbsp;&nbsp;<a className="text-white" href="./NewBill">New Bill</a></span>
-  </button> */}
+
     <span><a href="./NewBill"><Button className="pl-4 pr-4" outline theme="success">
       <i class="fas fa-plus"></i> &nbsp;
         New Bill
       </Button></a></span>
     </div>
   </div>
-  <div className="row mt-3" style={{height: "35px",background:"#b4b4b4"}}>
- <div className="col-3 border-white">Date</div>
- <div className="col-5 border">Particulare</div>
- <div className="col-2 border text-right">Amount</div>
- <div className="col-2 border text-right">Paid</div>
+  <div className="row mt-3" style={{height: "35px",background:"#f0f0f0"}}>
+ <div className="col-3 border-white"><small><b>Date</b></small></div>
+ <div className="col-5 border"><small><b>Particular</b></small></div>
+ <div className="col-2 border text-right"><small><b>Amount</b></small></div>
+ <div className="col-2 border text-right"><small><b>Paid</b></small></div>
   </div>
   
   <div className="row mt-1">
- <div className="col-3 ">Total<br></br><i>0.00</i></div>
- <div className="col-5 "><a className="text-success">Paid</a><br></br><i>0.00</i></div>
- <div className="col-2 ">Unpaid<br></br><i>0.00</i></div>
- <div className="col-2 text-right"><a className="text-primary">Overpaid</a><br></br><i>0.00</i></div>
+ <div className="col-3 "><small><b>Total</b></small><br></br><small><b>0.00</b></small></div>
+ <div className="col-5 "><a className="text-success"><small><b>Paid</b></small></a><br></br><small><b>0.00</b></small></div>
+ <div className="col-2 "><small><b>UnPaid</b></small><br></br><small><b>0.00</b></small></div>
+ <div className="col-2 text-right"><a className="text-primary"><small><b>OverPaid</b></small></a><br></br><small><b>0.00</b></small></div>
   </div>
 
   <card small>
            <CardHeader className="border-bottom mt-4 mb-5" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
-           {/* <div class="icon-color btn btn-outline-success" data-toggle="tooltip" title="Create New Message">
-				<span class="fa fa-plus"></span>
-                        <span><a className="text-black" title="Create new Bill" href="./NewBill"> &nbsp;
-                         Create Bill
-                        </a></span>
-    </div> */}
     <span><a href="./NewBill"><Button className="pl-4 pr-4" outline theme="success">
       <i class="fas fa-plus"></i> &nbsp;
         Create Bill

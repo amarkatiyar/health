@@ -45,8 +45,6 @@ import Form from "./views/Form";
 import signup from "./components/fronthealth/signup";
 import Signin from "./components/fronthealth/singin";
 
-
-
 import Hospital1 from "./views/Hospital1";
 import Procedure1 from "./views/Procedure1";
 import DrugCode1 from "./views/DrugCode1";
@@ -81,25 +79,21 @@ export default [
   layout: homelayout,
   component: home
 },
-
 {
   path: "/Aboutus",
   layout: Aboutlayout,
   component: Aboutus
 },
-
 {
   path: "/Services",
   layout: Serviceslayout,
   component: Services
 },
-
 {
   path: "/Contact",
   layout: Contactlayout,
   component: Contact
 },
-
 {
   path: "/signup",
   layout:signuplayout,
@@ -114,87 +108,83 @@ export default [
     path: "/patient",
     layout: DefaultLayout,
     component:Patient
-  },
-
-  {
+},
+{
     path: "/PatientAcc",
     layout: DefaultLayout,
     component: PatientAcc
-  },
-
-  
-  {
+},
+{
     path: "/user-profile-lite",
     layout: DefaultLayout,
     component: UserProfileLite
-  },
-  {
+},
+{
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
-  },
-
-  {
+},
+{
     path: "/components-overview",
     layout: DefaultLayout,
     component: ComponentsOverview
-  },
-  {
+},
+{
     path: "/NewhealthRecord",
     layout: DefaultLayout,
     component: NewhealthRecord
-  },
-  {
+},
+{
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
-  },
-  {
+},
+{
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
-   },
-   {
+},
+{
     path: "/Message",
     layout: DefaultLayout,
     component: Message
-  },
-  {
+},
+{
     path: "/newbill",
     layout: DefaultLayout,
     component: NewBill
-  },
-  {
+},
+{
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
-  },
-  {
+},
+{
     path: "/item",
     layout: DefaultLayout,
     component: Item
-  },
-  {
+},
+{
     path: "/SetForms",
     layout: DefaultLayout,
     component: SetForms
-  },
-  {
+},
+{
     path: "/ChangePassword",
     layout: DefaultLayout,
     component: ChangePassword
-  },
-  {
+},
+{
     path: "/CDS",
     layout: DefaultLayout,
     component: CDS
-  },
-  {
+},
+{
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
-  },
-  {
+},
+{
     path: "/NewUser",
     layout: DefaultLayout,
     component: NewUser
