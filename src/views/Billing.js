@@ -1,7 +1,7 @@
 import React from "react";
 import { Container,Card, FormInput, CardHeader,Button } from "shards-react";
 
-  class Billings extends React.Component{
+  class Billing extends React.Component{
     constructor(props){
       super(props);
       this.state = {
@@ -160,4 +160,4 @@ import { Container,Card, FormInput, CardHeader,Button } from "shards-react";
       )
       }
   }
-export default Billings;
+export default Billing;

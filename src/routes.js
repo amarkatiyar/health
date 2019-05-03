@@ -25,12 +25,9 @@ import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import  NewhealthRecord from "./components/NewhealthRecord"; 
-import Message from "./components/Message/Message";
 
-import Billing from "./components/Billings/Billing";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-import CreateBill from "./components/Billings/CreateBill";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -68,7 +65,8 @@ import Calender from "./views/Calender";
 import Today from "./components/Calender/Today";
 import ManageUser1 from "./views/ManageUser1";
 import NotForm from "./views/NotForm";
-import Billings from "./views/Form";
+import Billing from "./views/Billing";
+import Message from "./views/Message";
 
 export default [
   {
@@ -112,11 +110,7 @@ export default [
   layout:signinlayout,
   component: Signin
 },
-
-
-
-  
-  {
+{
     path: "/patient",
     layout: DefaultLayout,
     component:Patient
@@ -159,20 +153,12 @@ export default [
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
-  },
-  {
-    path: "/CreateBill",
-    layout: DefaultLayout,
-    component: CreateBill
-  },
+   },
    {
     path: "/Message",
     layout: DefaultLayout,
     component: Message
   },
-
-
- 
   {
     path: "/newbill",
     layout: DefaultLayout,

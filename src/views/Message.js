@@ -1,6 +1,6 @@
 // @ Author Manohar
 import React from "react";
-import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button} from "shards-react";
+import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button,Popover} from "shards-react";
 import CreateMessage from "./CreateMessage";
 
 
@@ -8,6 +8,10 @@ class Message extends React.Component{
   constructor(props){
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.toggle1 = this.toggle1.bind(this);
+    this.state = {
+      open: false
+    };
 
     this.state = { 
       collapse: false,
@@ -30,6 +34,12 @@ class Message extends React.Component{
   }
   handleHideCreateMessage = ()=>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
+  }
+  
+  toggle1() {
+    this.setState({
+      open: !this.state.open
+    });
   }
   render(){
     const { showCreateMessageModal } = this.state;
@@ -83,30 +93,26 @@ class Message extends React.Component{
         
 
          <div className="col-lg-1" >
-         <Card  style={{height:"0px"}}>
-         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{cursor:"pointer" }} onClick={()=> this.handleshowFavorite(showFavorite)}></i>
+         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{cursor:"pointer" }} id="popover-2" onClick={this.toggle1}></i>
           </div>
-         { showFavorite &&
-            <div style={{"zIndex":999}}>
-            <div className="row">
-          <table className=" table table-bordered table-hover table-light table-sm ">
+         <Popover
+          placement="bottom"
+          open={this.state.open}
+          toggle1={this.toggle1}
+          target="#popover-2"
+          style={{width:"100px"}}>
+          <table className="table table-bordered table-hover mb-0">
           <tbody>
-            <tr>
-              <td><i className="far fa-star">&nbsp;&nbsp;Favorite</i></td>
-            </tr>
-            <tr>
-            <td><i className="fa fa-question-circle">&nbsp;&nbsp;Help</i></td>
-            </tr>
-          </tbody>
+    <tr>
+    <td><i className="far fa-star">&nbsp;&nbsp;Favorite</i></td>
+    </tr>
+    <tr>
+    <td><i className="far fa-question-circle">&nbsp;&nbsp;Help</i></td>
+    </tr>
+  </tbody>
          </table>
-             </div> 
-             </div>
-           }
-         </Card>
+        </Popover>
          </div>
-         
-         
-         
          
         </div><br></br>
             <div className="row">
