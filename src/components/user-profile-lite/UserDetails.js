@@ -186,7 +186,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card">
           <CardHeader className="mb-3">
               <h6 className="card-body" className="text-success">Profile</h6>
-              <p>Edit your profile,change name,email,etc.</p>
+              <p><small><b>Edit your profile,change name,email,etc.</b></small></p>
               <a href="./EditProfile">
               <Button className="mr-2" outline theme="success">
                Edit Profile
@@ -197,7 +197,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">Change Password</h6>
-              <p>Change your password, it is recommended you change your password regular</p>
+              <p><small><b>Change your password, it is recommended you change your password regular</b></small></p>
               <a href="./ChangePassword"><Button outline theme="success" className="mr-1">
                 Change Password 
               </Button></a>

@@ -19,8 +19,8 @@ const UserAccountDetails = ({ title }) => (
 <Container className="main-content-container px-4 py-3" style={{}}>
 <div style={{position:"fixed"}}>
             <Card className="">
-            <Button outline  theme="success">
-                        Edit Profile
+            <Button outline  theme="success" id="menu-profile" onclick="setting.scrollup('profile')">
+                         Profile
                     </Button>  
             </Card>
 
