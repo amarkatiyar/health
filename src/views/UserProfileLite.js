@@ -7,8 +7,8 @@ import UserAccountDetails from "../components/user-profile-lite/UserAccountDetai
 
 const UserProfileLite = () => (
   <Container fluid className="main-content-container px-4 py-4">
-    <Row noGutters className="page-header py-2">
-      <PageTitle  md="12" className="ml-sm-auto mr-sm-auto" title="SETTINGS"/>
+    <Row noGutters className="page-header mb-3 ml-1">
+      <PageTitle ><h5>setting</h5></PageTitle>
     </Row>
     <Row>
       <Col lg="8">

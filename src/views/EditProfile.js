@@ -1,6 +1,5 @@
 import React from 'react'
 import {Row,Button, Card, CardBody, Modal, ModalBody, ModalHeader } from 'shards-react'
-import DropdownSplitExample1 from './Edit1';
 import Edit2 from './Edit2';
 import Edit1 from './Edit1';
 import Add2 from './Add2';
@@ -23,7 +22,17 @@ export default class DropdownSplitExample extends React.Component{
         //e.preventDefault();
         this.setState({showEditModal: !this.state.showEditModal});
     }
+    handleHideEdit1 = () =>{
+        //e.preventDefault();
+        this.setState({showEditModal: !this.state.showEditModal});
+    }
+    
     handleShowEdit2 = () =>{
+        //e.preventDefault();
+        this.setState({showEditModal2: !this.state.showEditModal2});
+    }
+
+    handleHideEdit2 = () =>{
         //e.preventDefault();
         this.setState({showEditModal2: !this.state.showEditModal2});
     }
@@ -33,7 +42,17 @@ export default class DropdownSplitExample extends React.Component{
         this.setState({showAddModal1: !this.state.showAddModal1});
     }
 
+    handleHideAdd1 = () =>{
+        //e.preventDefault();
+        this.setState({showAddModal1: !this.state.showAddModal1});
+    }
+
     handleShowAdd2 = () =>{
+        //e.preventDefault();
+        this.setState({showAddModal2: !this.state.showAddModal2});
+    }
+
+    handleHideAdd2 = () =>{
         //e.preventDefault();
         this.setState({showAddModal2: !this.state.showAddModal2});
     }
@@ -66,10 +85,7 @@ render(){
                         <div> 
                         <a onClick={() => {this.handleShowEdit1()}}><i className="far fa-edit"></i></a> 
                         <Modal size="sm" open={showEditModal} toggle={this.handleShowEdit1}>
-                        {/* <ModalHeader>Header</ModalHeader> */}
-                        {/* <ModalBody> */}
-                            <Edit1 />
-                        {/* </ModalBody> */}
+                            <Edit1 handleHideEdit1={this.handleHideEdit1}/>
                         </Modal>
                         </div>                        
                         </CardBody>
@@ -86,7 +102,7 @@ render(){
                         Add
                         </Button></a>
                         <Modal size="sm" open={showAddModal1} toggle={this.handleShowAdd1}>
-                        <Add1/>
+                        <Add1 handleHideAdd1={this.handleHideAdd1}/>
                         </Modal>
                         </CardBody>
                     </Card>
@@ -98,10 +114,7 @@ render(){
                         
                         <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
                         <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
-                        {/* <ModalHeader>Header</ModalHeader> */}
-                        {/* <ModalBody> */}
-                            <Edit2 />
-                        {/* </ModalBody> */}
+                            <Edit2 handleHideEdit2={this.handleHideEdit2}/>
                         </Modal>
                         </CardBody>
                 </Card>
@@ -117,10 +130,7 @@ render(){
                         Add
                         </Button></a>
                         < Modal size="sm" open={showAddModal2} toggle={this.handleShowAdd2}>
-                        {/* <ModalHeader> <Add2/></ModalHeader> */}
-                        {/* <ModalBody> */}
-                        <Add2/>
-                        {/* </ModalBody> */}
+                        <Add2 handleHideAdd2={this.handleHideAdd2} />
                         </Modal>
                         </CardBody>
                     </Card>

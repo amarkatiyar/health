@@ -25,7 +25,7 @@ import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import  NewhealthRecord from "./components/NewhealthRecord"; 
-import Message from "./components/Message/Message";
+import Message from "./components/Message/Message_2222";
 
 import Billing from "./components/Billings/Billing";
 import NewBill from "./views/NewBill";
@@ -43,7 +43,6 @@ import Edit2 from "./views/Edit2";
 import Add2 from "./views/Add2";
 import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
-import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
 import Form from "./views/Form";
 import signup from "./components/fronthealth/signup";
@@ -51,6 +50,22 @@ import Signin from "./components/fronthealth/singin";
 
 
 
+import Hospital1 from "./views/Hospital1";
+import Procedure1 from "./views/Procedure1";
+import DrugCode1 from "./views/DrugCode1";
+import TestCode1 from "./views/TestCode1";
+import Symtom from "./views/Symtom";
+import Problems from "./views/Problems";
+import VisitReason from "./views/VisitReason";
+import Procedure from "./views/Procedure";
+import PatHealth from "./components/Patient/HealthRecord/PatHealth";
+import Patsetting from "./components/Patient/HealthRecord/Patsetting";
+import PatMessage from "./components/Patient/HealthRecord/PatMessage";
+import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
+import PatBilling from "./components/Patient/HealthRecord/PatBilling";
+import HospitalForm from "./views/HospitalForm";
+import Billings from "./views/Billings";
+import Calender from "./views/Calender";
 
 export default [
   {
@@ -142,12 +157,12 @@ export default [
     layout: DefaultLayout,
     component: Billing
   },
-  {
-    path: "/CreateBill",
-    layout: DefaultLayout,
-    component: CreateBill
-  },
-  {
+  // {
+  //   path: "/CreateBill",
+  //   layout: DefaultLayout,
+  //   component: CreateBill
+  // },
+   {
     path: "/Message",
     layout: DefaultLayout,
     component: Message
@@ -220,9 +235,9 @@ export default [
     component: RestSetting
   },
   {
-    path: "/HospitalService",
+    path: "/HospitalForm",
     layout: DefaultLayout,
-    component: HospitalService
+    component: HospitalForm
   },
   {
     path: "/Add1",
@@ -239,4 +254,74 @@ export default [
     layout: DefaultLayout,
     component: Form
   },
+  {
+    path: "/Hospital1",
+    layout: DefaultLayout,
+    component: Hospital1
+  },
+  {
+    path: "/Procedure1",
+    layout: DefaultLayout,
+    component: Procedure1
+  },
+  {
+    path: "/DrugCode1",
+    layout: DefaultLayout,
+    component: DrugCode1
+  },
+  {
+    path: "/TestCode1",
+    layout: DefaultLayout,
+    component: TestCode1
+  },
+  {
+    path: "/Symtom",
+    layout: DefaultLayout,
+    component: Symtom
+  },
+  {
+    path: "/Problems",
+    layout: DefaultLayout,
+    component: Problems
+  },
+  {
+    path: "/VisitReason",
+    layout: DefaultLayout,
+    component: VisitReason
+  },
+  {
+    path: "/Procedure",
+    layout: DefaultLayout,
+    component: Procedure
+  },
+  {
+    path: "/PatHealth",
+    layout: DefaultLayout,
+    component: PatHealth
+  },
+  {
+    path: "/Patsetting",
+    layout: DefaultLayout,
+    component: Patsetting
+  },
+  {
+    path: "/PatMessage",
+    layout: DefaultLayout,
+    component: PatMessage
+  },
+  {
+    path: "/PatCreateMessage",
+    layout: DefaultLayout,
+    component: PatCreateMessage
+  },
+  {
+    path: "/PatBilling",
+    layout: DefaultLayout,
+    component: PatBilling
+  },
+  {
+    path: "/Calender",
+    layout: DefaultLayout,
+    component: Calender
+  }
 ];

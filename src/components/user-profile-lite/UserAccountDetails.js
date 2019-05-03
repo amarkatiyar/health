@@ -12,98 +12,121 @@ import {
   FormInput,
   FormSelect,
   FormTextarea,
-  Button,
+  Button,Container
 } from "shards-react";
 
 const UserAccountDetails = ({ title }) => (
-  // <Card small className="mb-4">
-    // <ListGroup flush>
-      // <ListGroupItem className="">
-      <table className="table">
-          <tbody className="text-center" >
-          <small>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Edit Profile</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Change Password</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Manage User</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Set favourites</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Set Hospital Codes</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Set Hospital Service Charges/Tax</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Notification</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">SMS/EMAIL</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Print Logo</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Doctor Signature</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Report By Email</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Audit Report</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Clinical Decision Report</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Forms</a>
-              </td>
-            </tr>
-            <tr className="card mt-1">
-              <td>
-                <a className="text-success" href="">Reset All String</a>
-              </td>
-            </tr>
-            </small>
-          </tbody>
-      </table>
+<Container className="main-content-container px-4 py-4">
+<div style={{position:"fixed"}}>
+            <Card className="">
+            <Button outline  theme="success">
+                        Edit Profile
+                    </Button>  
+            </Card>
 
-      // </ListGroupItem>
-    // </ListGroup>
-  // </Card>
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Change Password
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Manage User
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Set favourites
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Change Password
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Manage User
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Set favourites
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Set Hospital Codes
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Set Hospital Service Charges/Tax
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Notification
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        SMS/EMAIL
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Print logo
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Doctor Signature
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Report By Email
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Audit Report
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                  Clinical Decision Report
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Forms
+                    </Button>  
+            </Card>
+
+            <Card className="mt-1">
+            <Button outline  theme="success">
+                        Reset All Setting
+                    </Button>  
+            </Card>
+         </div>
+</Container>
 );
 
 UserAccountDetails.propTypes = {

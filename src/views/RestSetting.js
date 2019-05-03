@@ -6,6 +6,7 @@ export default  function RestSetting(){
 return( 
     <Card  style={{width:"500px",height:"250px"}}>
     <CardBody>
+      <Form>
         <h6 className="text-success">RESET ALL SETTING</h6>
         <p>Are you sure?<br></br>
         All user preferences updated by you will return to their default settings</p>
@@ -17,6 +18,7 @@ return(
         Cancel
       </Button>
       </div>
+      </Form>
     </CardBody>
     </Card>
 )

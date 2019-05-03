@@ -30,9 +30,9 @@ export default function BasicCardExample() {
               <span className="ml-2 mr-2"> <a href="#"><Button outline theme="success">
               <i class="fas fa-bars"></i> &nbsp;
           Report
-      </Button></a></span><span><a href="./patient"><Button outline theme="success">
+      </Button></a></span><span><a href="./patient"><Button outline theme="primary">
       <i class="fas fa-user-plus"></i> &nbsp;
-        New patient
+        New patientvvvc
       </Button></a></span>
             </InputGroup></CardHeader>
       

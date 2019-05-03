@@ -1,20 +1,20 @@
 import React from "react";
-import {Row, Col, CardHeader,FormInput } from "shards-react";
+import {Row, Col, CardHeader,FormInput,Container } from "shards-react";
 
-    class CreateMessage extends React.Component{
+export default class PatCreateMessage extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        handleShowCreateMessage: false,
+        handleShowPatCreateMessage: false,
       }
     };
   
-    handleShowCreateMessage = () =>{
+    handleShowPatCreateMessage = () =>{
     
-      this.props.handleHideCreateMessage();
+      this.props.handleHidePatCreateMessage();
     }
     render(){
-      const { ShowCreateMessage } = this.state;
+      const { ShowPatCreateMessage } = this.state;
 
     return (
         <Row>
@@ -22,7 +22,7 @@ import {Row, Col, CardHeader,FormInput } from "shards-react";
           <CardHeader className="border-bottom" style={{width:"1000px",height:"420px"}}>
           <div className="row">
           <div className="col-lg-12">       
-          <a onClick={()=> this.handleShowCreateMessage()}><i className="hover icon-md fa fa-chevron-left mt-2 mr-2" style={{cursor:"pointer" }}></i></a>
+          <a onClick={()=> this.handleShowPatCreateMessage()}><i className="hover icon-md fa fa-chevron-left mt-2 mr-2"></i></a>
           New Message
          </div>
         </div>
@@ -40,7 +40,7 @@ import {Row, Col, CardHeader,FormInput } from "shards-react";
     
           <div>
             <br></br>
-            <h6>Message *<i className="far fa-star ml-3" style={{cursor:"pointer" }}></i></h6>
+            <h6>Message *<i className="far fa-star ml-3"></i></h6>
             <div className="col-xs-12">
 							<textarea id="message" rows="5" maxlength="1500" className="form-control required"  placeholder="Message" data-toggle="tooltip" title="Enter the details of the message here"></textarea>
 					</div>
@@ -55,4 +55,3 @@ import {Row, Col, CardHeader,FormInput } from "shards-react";
 )
 }      
 }
-export default CreateMessage;
