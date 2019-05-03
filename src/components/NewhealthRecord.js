@@ -563,7 +563,7 @@ class NewhealthRecord extends React.Component{
         <Button outline theme="success"><i class="fas fa-check-circle"></i>&nbsp;Complete</Button>&nbsp;
       <Button outline theme="success"> <i class="far fa-trash-alt"></i> &nbsp; delete </Button>&nbsp;
       <Button outline theme="success"><i class="fas fa-print"></i>&nbsp;print</Button>&nbsp;
-      <Button outline theme="success"><i class="fas fa-arrow-left"></i> &nbsp;Back</Button>&nbsp;
+     <span><a href="/components-overview"> <Button outline theme="success"><i class="fas fa-arrow-left"></i> &nbsp;Back</Button>&nbsp;</a></span>
 
 
         

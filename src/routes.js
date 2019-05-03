@@ -4,26 +4,33 @@ import { Redirect } from "react-router-dom";
 // Layout Types
 import { DefaultLayout } from "./layouts";
 import LoginLayout from "./layouts/LoginLayout";
+import homelayout from "./components/fronthealth/home";
+import Aboutlayout from "./components/fronthealth/Aboutus";
+import Serviceslayout from "./components/fronthealth/Services";
+import Contactlayout from "./components/fronthealth/Contact";
+import signuplayout from "./components/fronthealth/signup";
+import signinlayout from "./components/fronthealth/singin";
 
-// Route Views
-// import BlogOverview from "./views/BlogOverview";
+// ****frontpage home***********
+import home from "./components/fronthealth/home";
+import Aboutus from "./components/fronthealth/Aboutus";
+import Services from "./components/fronthealth/Services";
+import Contact from "./components/fronthealth/Contact";
+
+
 import UserProfileLite from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
-// import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
-// import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-// import LoginForm from "./components/LoginForm";
-import  NewhealthRecord from "./components/NewhealthRecord";
+import  NewhealthRecord from "./components/NewhealthRecord"; 
+import Message from "./components/Message/Message_2222";
 
-import Message from "./views/Message";
-import CreateMessage from "./views/CreateMessage";
+import Billing from "./components/Billings/Billing";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-// import CreateBill from "./components/Billings/CreateBill";
-
+import CreateBill from "./components/Billings/CreateBill";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -38,6 +45,11 @@ import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import Add1 from "./views/Add1";
 import Form from "./views/Form";
+import signup from "./components/fronthealth/signup";
+import Signin from "./components/fronthealth/singin";
+
+
+
 import Hospital1 from "./views/Hospital1";
 import Procedure1 from "./views/Procedure1";
 import DrugCode1 from "./views/DrugCode1";
@@ -65,10 +77,49 @@ export default [
     layout: LoginLayout,
     component: () => <Redirect to="/blog-posts" />
   },
+// *****************************front page**********
+{
+  path: "/home",
+  layout: homelayout,
+  component: home
+},
+
+{
+  path: "/Aboutus",
+  layout: Aboutlayout,
+  component: Aboutus
+},
+
+{
+  path: "/Services",
+  layout: Serviceslayout,
+  component: Services
+},
+
+{
+  path: "/Contact",
+  layout: Contactlayout,
+  component: Contact
+},
+
+{
+  path: "/signup",
+  layout:signuplayout,
+  component: signup
+},
+{
+  path: "/signin",
+  layout:signinlayout,
+  component: Signin
+},
+
+
+
+  
   {
     path: "/patient",
     layout: DefaultLayout,
-    component: Patient
+    component:Patient
   },
 
   {
@@ -99,16 +150,15 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-  
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
   },
   {
-    path: "/billings",
+    path: "/Billing",
     layout: DefaultLayout,
-    component: Billings
+    component: Billing
   },
   // {
   //   path: "/CreateBill",
@@ -120,11 +170,8 @@ export default [
     layout: DefaultLayout,
     component: Message
   },
-  {
-    path: "/createmessage",
-    layout: DefaultLayout,
-    component: CreateMessage
-  },
+
+ 
   {
     path: "/newbill",
     layout: DefaultLayout,

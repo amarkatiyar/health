@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col,FormInput, CardHeader } from "shards-react";
+import {Row, Col,FormInput, CardHeader,Button } from "shards-react";
 
     class Item extends React.Component{
       constructor(props){
@@ -47,7 +47,8 @@ import {Row, Col,FormInput, CardHeader } from "shards-react";
 </div>
 <span className="text-muted "><i className="far fa-star mr-3 "></i>Add as favorite</span>
 <div class="col-xs-6 mt-3 mb-5 ">
-        <div id="save-btn" class="icon-color btn btn-success">Save</div>
+        {/* <div id="save-btn" class="icon-color btn btn-success">Save</div> */}
+        <span><Button outline theme="success">Save</Button></span>
  </div>
 </CardHeader>
        </Col>

@@ -8,8 +8,8 @@ import {
   Form,
   FormInput,
   FormGroup,
-  FormSelect
 } from "shards-react";
+import { withFormik } from 'formik';
 
 class CreateBill extends React.Component {
   constructor(props) {
@@ -43,6 +43,14 @@ class CreateBill extends React.Component {
     let { showFavorite } = this.state;
     let { showItemcode } = this.state;
     let { showcharge } = this.state;
+    const {
+      values,
+      touched,
+      errors,
+      handleChange,
+      handleBlur,
+      handleSubmit,
+    } = this.props;
 
     return (
       <div className="container-fluid">
@@ -143,7 +151,7 @@ class CreateBill extends React.Component {
                     </tr>
                   </table>
                 </div>
-
+               <div className="pb-4">
                 <Button
                   outline
                   theme="success"
@@ -151,6 +159,7 @@ class CreateBill extends React.Component {
                 >
                   <i className=" fas fa-plus mr-2 " /> &nbsp; Add Item/Service
                 </Button>
+                </div>
               </CardBody>
 
               {showItem && (
@@ -169,7 +178,7 @@ class CreateBill extends React.Component {
                             <i class=" text-dark fas fa-check" />
                           </div>
                         </Row>
-                        <Form>
+                        <form onSubmit={handleSubmit}>
                           <FormGroup>
                             <div className="row text-center">
                               <div className=" col-xl-4 col-lg-4  col-md-4 col-sm-4 col-4">
@@ -193,9 +202,15 @@ class CreateBill extends React.Component {
                               <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                                 <FormInput
                                   type="text"
-                                  id="#Price"
+                                  
                                   placeholder="Price"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.price}
+                                  name="price"
                                 />
+                                 {errors.price && touched.price && <div className="text-warning pb-3" id="feedback">{errors.price}</div>}
+ 
                               </div>
                             </div>
                           </FormGroup>
@@ -208,9 +223,14 @@ class CreateBill extends React.Component {
                               <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                                 <FormInput
                                   type="text"
-                                  id="#Quaninty"
+                              
                                   placeholder="Quaninty"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.quantity}
+                                  name="quantity"
                                 />
+                                {errors.quantity && touched.quantity && <div className="text-warning pb-3" id="feedback">{errors.quantity}</div>}
                               </div>
                             </div>
                           </FormGroup>
@@ -223,9 +243,15 @@ class CreateBill extends React.Component {
                               <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                                 <FormInput
                                   type="text"
-                                  id="#Amount"
+                                
                                   placeholder="NAN"
+                                  onChange={handleChange}
+                                  onBlur={handleBlur}
+                                  value={values.amount}
+                                  name="amount"
+                                 
                                 />
+                                 {errors.amount && touched.amount && <div className="text-warning pb-3" id="feedback">{errors.amount}</div>}
                               </div>
                             </div>
                           </FormGroup>
@@ -242,7 +268,7 @@ class CreateBill extends React.Component {
                               </Button>
                             </a>
                           </div>
-                        </Form>
+                        </form>
                       </CardBody>
                     </Card>
                   </div>
@@ -255,8 +281,8 @@ class CreateBill extends React.Component {
             <Card className="pt-2 pb-2 mb-2">
               <CardBody className="bg-light">
                 <div className="d-flex">
-                  <i class=" text-dark far fa-star" />&nbsp; &nbsp; Favorite
-                  Item/Service
+                  <i class=" text-dark far fa-star" />&nbsp; &nbsp;<h6> Favorite
+                  Item/Service</h6>
                   <div className="ml-auto">
                     <i
                       class=" text-dark fas fa-plus"
@@ -332,11 +358,11 @@ class CreateBill extends React.Component {
               )}
             </Card>
 
-            <Card className="pt-2 pb-2 mb-2">
+            <Card className=" pt-2 pb-2 mb-2">
               <CardBody className="bg-light">
                 <div className="d-flex">
-                  <span className=" fa fa-hospital " />&nbsp; &nbsp;Item/Service
-                  Code
+                  <span className=" fa fa-hospital text-dark " />&nbsp; &nbsp;<h6>Item/Service
+                  Code</h6>
                   <div className="ml-auto">
                     <i
                       class=" text-dark fas fa-plus "
@@ -432,7 +458,7 @@ class CreateBill extends React.Component {
               <CardBody className="bg-light">
                 <div className="d-flex">
                   <span className=" text-dark fa fa-percent" />&nbsp; &nbsp;
-                  Service Charges/ Tax
+                 <h6> Service Charges/ Tax</h6>
                   <div className="ml-auto">
                     <i
                       class="text-dark fas fa-plus"
@@ -517,4 +543,37 @@ class CreateBill extends React.Component {
   }
 }
 
-export default CreateBill;
+const CreateBillform= withFormik({
+  mapPropsToValues: () => ({ price: "" }),
+  mapPropsToValues: () => ({ quantity: "" }),
+  mapPropsToValues: () => ({ amount: "" }),
+
+  validate: values => {
+    const errors = {};
+
+    if (!values.price) {
+      errors.price = '**please enter the price ! **';
+    }
+
+    if (!values.quantity) {
+      errors.quantity = '** plese enter the quantity  ! **';
+    } 
+
+    if (!values.amount) {
+      errors.amount = '** plese enter the amount ! **';
+    } 
+    return errors;
+  },
+
+  handleSubmit: (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 1000);
+  },
+
+  displayName: "CreateBill"
+})(CreateBill);
+
+
+export default CreateBillform;

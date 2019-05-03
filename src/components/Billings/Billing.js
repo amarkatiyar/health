@@ -82,7 +82,7 @@ export default function Billing() {
       </div>
 
       <div className="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
-      <div><a href="#">
+      <div><a href="/CreateBill">
         <Button className="" outline theme="success">
         <i className="fas fa-plus "></i> &nbsp; &nbsp;
         New Bill

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, FormInput, CardHeader, CardBody, Modal, Collapse, InputGroup, InputGroupText, InputGroupAddon } from "shards-react";
+import { Container, Card, FormInput, CardHeader, CardBody, Modal, Collapse, InputGroup, InputGroupText, InputGroupAddon,Button } from "shards-react";
 
 import Item from "./Item";
 class NewBill extends React.Component {
@@ -74,7 +74,7 @@ class NewBill extends React.Component {
                   <div className="col-lg-1">
                     {/* <span id="save-btn" className="fa fa-ellipsis-v ml-3" style={{cursor:"pointer" }} data-toggle="tooltip" title="Show List"></span> */}
                     <Card  style={{height:"0px"}}>
-         <div className=" ml-3 pr-3"><i class="fas fa-ellipsis-v" style={{cursor:"pointer" }} onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
+         <div className=" ml-3 pr-3"><i class="fas fa-ellipsis-v" title="Show list" style={{cursor:"pointer" }} onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
           </div>
          { showVisitReasons &&
             <div style={{"zIndex":999}}>
@@ -118,8 +118,12 @@ class NewBill extends React.Component {
                 </div>
           
                 <div className="col-xs-6 text-right mt-2">
-                  <a className="btn btn-outline-success" onClick={() => {this.handleShowItem()}}><span className="fa fa-plus"></span>
-                    <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Add Item/Service</a></span></a>
+                  {/* <a className="btn btn-outline-success" onClick={() => {this.handleShowItem()}}><span className="fa fa-plus"></span>
+                    <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Add Item/Service</a></span></a> */}
+                    <span><a onClick={() => {this.handleShowItem()}}><Button outline theme="success">
+      <i class="fas fa-plus"></i> &nbsp;
+        Add Item/Service
+      </Button></a></span>
                   <Modal size="lg" open={showItemModal} toggle={this.handleShowItem}>
                     <Item handleHideItem={this.handleHideItem} />
                   </Modal>
