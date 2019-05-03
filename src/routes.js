@@ -26,7 +26,6 @@ import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import  NewhealthRecord from "./components/NewhealthRecord"; 
 
-
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
 import ManageUser from "./views/ManageUser";
