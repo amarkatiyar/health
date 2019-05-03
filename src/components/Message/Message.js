@@ -9,6 +9,8 @@ import {
   FormGroup,
   FormSelect
 } from "shards-react";
+import CreateMessage from "./CreateMessage";
+import Compose from "./Compose";
 
 class Message extends React.Component {
   constructor(props) {
@@ -20,6 +22,8 @@ class Message extends React.Component {
   }
 
   handleShowCreatemessage = prevState => {
+    console.log(prevState);
+
     this.setState({ showCreatemessage: !prevState });
   };
 
@@ -41,8 +45,9 @@ class Message extends React.Component {
               </h6>
             </div>
             <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4 ">
-              <i class=" text-dark far fa-star" />&nbsp; &nbsp; &nbsp;&nbsp;
-              &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v" />
+              <i class=" text-dark far fa-star" />
+              &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+              <i class=" text-dark fas fa-ellipsis-v" />
             </div>
           </div>
 
@@ -68,98 +73,13 @@ class Message extends React.Component {
                 theme="success"
                 onClick={() => this.handleshowCompose(showCompose)}
               >
-                <i class="fas fa-plus" />&nbsp; compose
+                <i class="fas fa-plus" />
+                &nbsp; compose
               </Button>
             </div>
           </div>
 
-          {showCompose && (
-            <div style={{ zIndex: 999 }}>
-              <div className="">
-                <Card className="mt-2 mb-2">
-                  <CardBody>
-                    <Row className="pb-4">
-                      <div className="col-lg-11 col-md-11 col-sm-10 col-10">
-                        <h6>
-                          <i class="fas fa-arrow-left text-dark "onClick={() => this.handleshowCompose(showCompose)} />&nbsp; &nbsp; New
-                          Message
-                        </h6>
-                      </div>
-                      <div className="col-lg-1 col-md-1 col-sm-2 col-2">
-                        <i class="fas fa-check" />
-                      </div>
-                    </Row>
-
-                    <Form>
-                      <FormGroup>
-                        <div className="row">
-                          <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-                            <label htmlFor="#To">To*</label>
-                          </div>
-                          <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                            <select
-                              class="form-control bg-light"
-                              id="sel1"
-                              name="sellist1"
-                            >
-                              <option value="">
-                                Search by name kpid ,e-email here
-                              </option>
-                              <option value="1">Option 1</option>
-                              <option value="2">Option 2</option>
-                              <option value="3">Option 3</option>
-                              <option value="4">Option 4</option>
-                            </select>
-                          </div>
-                        </div>
-                      </FormGroup>
-
-                      <FormGroup>
-                        <div className="row">
-                          <div className="col-lg-4 col-md-4 col-sm-4 col-4 ">
-                            <label htmlFor="Date of Birth">subject:</label>
-                          </div>
-                          <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                            <FormInput
-                              className="bg-light"
-                              type="text"
-                              id="#subject"
-                              placeholder="subject"
-                            />
-                          </div>
-                        </div>
-                      </FormGroup>
-
-                      <FormGroup>
-                        <div className="row">
-                          <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-                            <label htmlFor="#message">
-                              Message* &nbsp; &nbsp;<i class="far fa-star" />
-                            </label>
-                          </div>
-                          <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                            <textarea
-                              class="form-control bg-light"
-                              id="Message"
-                              rows="3"
-                              placeholder="Message"
-                            />
-                          </div>
-                        </div>
-                      </FormGroup>
-                      <a href="#">
-                        <Button className="mr-2" outline theme="success">
-                          {" "}
-                          &nbsp; Send{" "}
-                        </Button>
-                      </a>
-                    </Form>
-                  </CardBody>
-                </Card>
-              </div>
-            </div>
-          )}
-
+          {showCompose && <Compose />}
           <div className="text-center">
             <table className="table mt-3 mb-3">
               <tr className="bg-light">
@@ -192,95 +112,16 @@ class Message extends React.Component {
               theme="success"
               onClick={() => this.handleShowCreatemessage(showCreatemessage)}
             >
-              <i class="fas fa-plus" />&nbsp; &nbsp; Create Message
+              <i class="fas fa-plus" />
+              &nbsp; &nbsp; Create Message
             </Button>
           </div>
         </Card>
         {showCreatemessage && (
-          <div style={{ zIndex: 999 }}>
-            <div className="container">
-              <Card className=" mb-2">
-                <CardBody>
-                  <Row className="pb-4">
-                    <div className="col-lg-11 col-md-11 col-sm-10 col-10">
-                      <h6>
-                        <i class="fas fa-arrow-left text-dark " onClick={() => this.handleShowCreatemessage(showCreatemessage)} />&nbsp; &nbsp; New
-                        Message
-                      </h6>
-                    </div>
-                    <div className="col-lg-1 col-md-1 col-sm-2 col-2">
-                      <i class="fas fa-check text-dark" />
-                    </div>
-                  </Row>
-
-                  <Form>
-                    <FormGroup>
-                      <div className="row">
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-                          <label htmlFor="#To">To*</label>
-                        </div>
-                        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                          <select
-                            class="form-control bg-light"
-                            id="sel1"
-                            name="sellist1"
-                          >
-                            <option value="">
-                              Search by name kpid ,e-email here
-                            </option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                            <option value="4">Option 4</option>
-                          </select>
-                        </div>
-                      </div>
-                    </FormGroup>
-
-                    <FormGroup>
-                      <div className="row">
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-4 ">
-                          <label htmlFor="Date of Birth">subject:</label>
-                        </div>
-                        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                          <FormInput
-                            className="bg-light"
-                            type="text"
-                            id="#subject"
-                            placeholder="subject"
-                          />
-                        </div>
-                      </div>
-                    </FormGroup>
-
-                    <FormGroup>
-                      <div className="row">
-                        <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-                          <label htmlFor="#message">
-                            Message* &nbsp; &nbsp;<i class="far fa-star" />
-                          </label>
-                        </div>
-                        <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                          <textarea
-                            class="form-control bg-light"
-                            id="Message"
-                            rows="3"
-                            placeholder="Message"
-                          />
-                        </div>
-                      </div>
-                    </FormGroup>
-                    <a href="#">
-                      <Button className="mr-2" outline theme="success">
-                        {" "}
-                        &nbsp; Send{" "}
-                      </Button>
-                    </a>
-                  </Form>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
+          <CreateMessage
+            handleShowCreatemessage={this.handleShowCreatemessage}
+            showCreatemessage={this.state.showCreatemessage}
+          />
         )}
       </div>
     );

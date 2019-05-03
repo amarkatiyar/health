@@ -4,32 +4,33 @@ import { Redirect } from "react-router-dom";
 // Layout Types
 import { DefaultLayout } from "./layouts";
 import LoginLayout from "./layouts/LoginLayout";
+import homelayout from "./components/fronthealth/home";
+import Aboutlayout from "./components/fronthealth/Aboutus";
+import Serviceslayout from "./components/fronthealth/Services";
+import Contactlayout from "./components/fronthealth/Contact";
+import signuplayout from "./components/fronthealth/signup";
+import signinlayout from "./components/fronthealth/singin";
 
-// Route Views
-import BlogOverview from "./views/BlogOverview";
+// ****frontpage home***********
+import home from "./components/fronthealth/home";
+import Aboutus from "./components/fronthealth/Aboutus";
+import Services from "./components/fronthealth/Services";
+import Contact from "./components/fronthealth/Contact";
+
+
 import UserProfileLite from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-import LoginForm from "./components/LoginForm";
-import  NewhealthRecord from "./components/NewhealthRecord";
-
-<<<<<<< HEAD
+import  NewhealthRecord from "./components/NewhealthRecord"; 
 import Message from "./components/Message/Message";
+
 import Billing from "./components/Billings/Billing";
-import CreateBill from "./components/Billings/CreateBill";
-=======
-import Message from "./views/Message";
->>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
-import CreateMessage from "./views/CreateMessage";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
 import CreateBill from "./components/Billings/CreateBill";
-
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -44,8 +45,13 @@ import EditProfile from "./views/EditProfile";
 import RestSetting from "./views/RestSetting";
 import HospitalService from "./views/HospitalService";
 import Add1 from "./views/Add1";
-import Billings from "./views/Billings";
 import Form from "./views/Form";
+import signup from "./components/fronthealth/signup";
+import Signin from "./components/fronthealth/singin";
+
+
+
+
 export default [
   {
     path: "/",
@@ -53,15 +59,49 @@ export default [
     layout: LoginLayout,
     component: () => <Redirect to="/blog-posts" />
   },
-  // {
-  //   path: "/login",
-  //   layout: LoginLayout,
-  //   component: LoginForm
-  // },
+// *****************************front page**********
+{
+  path: "/home",
+  layout: homelayout,
+  component: home
+},
+
+{
+  path: "/Aboutus",
+  layout: Aboutlayout,
+  component: Aboutus
+},
+
+{
+  path: "/Services",
+  layout: Serviceslayout,
+  component: Services
+},
+
+{
+  path: "/Contact",
+  layout: Contactlayout,
+  component: Contact
+},
+
+{
+  path: "/signup",
+  layout:signuplayout,
+  component: signup
+},
+{
+  path: "/signin",
+  layout:signinlayout,
+  component: Signin
+},
+
+
+
+  
   {
     path: "/patient",
     layout: DefaultLayout,
-    component: Patient
+    component:Patient
   },
 
   {
@@ -70,11 +110,7 @@ export default [
     component: PatientAcc
   },
 
-  // {
-  //   path: "/dashboard",
-  //   layout: DefaultLayout,
-  //   component: BlogOverview
-  // },
+  
   {
     path: "/user-profile-lite",
     layout: DefaultLayout,
@@ -86,11 +122,6 @@ export default [
     component: AddNewPost
   },
 
-  // {
-  //   path: "/errors",
-  //   layout: DefaultLayout,
-  //   component: Errors
-  // },
   {
     path: "/components-overview",
     layout: DefaultLayout,
@@ -101,24 +132,15 @@ export default [
     layout: DefaultLayout,
     component: NewhealthRecord
   },
-<<<<<<< HEAD
-
-  // {
-  //   path: "/tables",
-  //   layout: DefaultLayout,
-  //   component: Tables
-  // },
-=======
->>>>>>> 9bf648c604ed935278ce28709edaa6515bdf0681
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
   },
   {
-    path: "/billings",
+    path: "/Billing",
     layout: DefaultLayout,
-    component: Billings
+    component: Billing
   },
   {
     path: "/CreateBill",
@@ -130,11 +152,8 @@ export default [
     layout: DefaultLayout,
     component: Message
   },
-  {
-    path: "/createmessage",
-    layout: DefaultLayout,
-    component: CreateMessage
-  },
+
+ 
   {
     path: "/newbill",
     layout: DefaultLayout,

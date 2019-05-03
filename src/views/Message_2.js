@@ -7,7 +7,7 @@ class Message extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-    showCreateMessageModal: false,
+      showCreateMessageModal: false,
     }
   };
   handleShowCreateMessage= () =>{
