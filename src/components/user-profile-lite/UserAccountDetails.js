@@ -16,7 +16,7 @@ import {
 } from "shards-react";
 
 const UserAccountDetails = ({ title }) => (
-<Container className="main-content-container px-4 py-4">
+<Container className="main-content-container px-4 py-3" style={{}}>
 <div style={{position:"fixed"}}>
             <Card className="">
             <Button outline  theme="success">

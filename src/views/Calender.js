@@ -14,16 +14,17 @@ return(
     <div className="col-sm-1"><i class="fas fa-print"></i></div>
     <div className="col-sm-1"><i className="fas fa-ellipsis-v"></i></div>
 </div>
-<div className="row mt-3">
+<div className="row mt-3 border-bottom">
     <div className="col-lg-4">
     <div class="input-group mb-3">
-    <input type="text" className="form-control" aria-describedby="basic-addon1">
+    <input type="text" className="form-control fas fa-plus">
     </input>
     </div>
     </div>
-    <div className="col-lg-4">
+    <div className="col-lg-8">
     </div>
 </div>
+
 
 </CardBody>
 </Card>

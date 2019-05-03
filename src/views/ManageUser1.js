@@ -5,7 +5,7 @@ import Edit1 from './Edit1';
 import Add2 from './Add2';
 import Add1 from './Add1';
 
-export default class EditProfile extends React.Component{
+export default class ManageUser1 extends React.Component{
     constructor(props) {
       super(props);
       this.state = { 

@@ -54,6 +54,9 @@ import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
 import Billings from "./views/Billings";
 import Calender from "./views/Calender";
+import Today from "./components/Calender/Today";
+import ManageUser1 from "./views/ManageUser1";
+import NotForm from "./views/NotForm";
 
 export default [
   {
@@ -276,5 +279,20 @@ export default [
     path: "/Calender",
     layout: DefaultLayout,
     component: Calender
+  },
+  {
+    path: "/Today",
+    layout: DefaultLayout,
+    component: Today
+  },
+  {
+    path: "/ManageUser1",
+    layout: DefaultLayout,
+    component: ManageUser1
+  },
+  {
+    path: "/NotForm",
+    layout: DefaultLayout,
+    component: NotForm
   }
 ];

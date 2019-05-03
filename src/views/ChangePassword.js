@@ -5,7 +5,7 @@ export default  function ChangePassword(){
     return(
     // <div className="container mt-3">
     <Form>
-        <Card className="" style={{width:"800px",height:"300px"}}>
+        <Card className="px-4 ml-3 mt-3 mb-5" style={{width:"680px",height:"300px"}}>
             <CardBody>
             <h5 className=" ml-2 text-success">CHANGE PASSWORD</h5>
             <p className="ml-2">Enter current password, new password and press Save button</p>

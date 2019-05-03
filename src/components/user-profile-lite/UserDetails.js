@@ -19,7 +19,6 @@ import SetForms from "../../views/SetForms";
 import DrugCode1 from "../../views/DrugCode1";
 import Procedure1 from "../../views/Procedure1";
 import Hospital1 from "../../views/Hospital1";
-import HospitalForm from "../../views/HospitalForm";
 import TestCode1 from "../../views/TestCode1";
 import Symtom from "../../views/Symtom";
 import VisitReason from "../../views/VisitReason";
@@ -30,6 +29,7 @@ export default class DropdownSplitExample extends React.Component {
     super(props);
     this.state = {
       open: false,
+      HospitalForm: false,
       showReset: false,
       setForms: false,
       drugCodeForm: false,
@@ -37,62 +37,67 @@ export default class DropdownSplitExample extends React.Component {
       showForm2:false,
       showForm3:false,
       showForm4:false,
-      SymtomForm:false,
-      ProblemForm:false,
-      Procedure:false,
-      VisitReasonForm:false
+      // SymtomForm:false,
+      // ProblemForm:false,
+      // Procedure:false,
+      // VisitReasonForm:false
 
     };
   }
 
 
+  handleShowHospitalForm = () => {
+    this.setState({ HospitalForm: !this.state.HospitalForm });
+  }
+
+
   // symtom dropdown coad//////////
 
-  handleSymtomCodeForm = () => {
-    this.setState({ SymtomForm: !this.state.SymtomForm });
-  }
-  handleSymtomCodeForm = () => {
-    this.setState({ ProblemForm: !this.state.ProblemForm });
-  }
-  handleSymtomCodeForm = () => {
-    this.setState({ VisitReasonForm: !this.state.VisitReasonForm });
-  }
-  handleSymtomCodeForm = () => {
-    this.setState({ Procedure: !this.state.Procedure });
-  }
+  // handleSymtomCodeForm = () => {
+  //   this.setState({ SymtomForm: !this.state.SymtomForm });
+  // }
+  // handleSymtomCodeForm = () => {
+  //   this.setState({ ProblemForm: !this.state.ProblemForm });
+  // }
+  // handleSymtomCodeForm = () => {
+  //   this.setState({ VisitReasonForm: !this.state.VisitReasonForm });
+  // }
+  // handleSymtomCodeForm = () => {
+  //   this.setState({ Procedure: !this.state.Procedure });
+  // }
   
 
-  handleSymtomCodeForm = (e) => {
-    console.log(e.target.value);
+  handleSymtomCodeForm = (e1) => {
+    console.log(e1.target.value);
 
-    if(e.target.value=="Symtom"){
-      this.setState({
-        showForm1:true,
-        showForm2:false,
-        showForm3:false,
-        showForm4:false
-      })}
-      if(e.target.value=="Problem"){
-        this.setState({
-          showForm1:false,
-          showForm2:true,
-          showForm3:false,
-          showForm4:false
-        })}
-        if(e.target.value=="VisitReason"){
-          this.setState({
-            showForm1:false,
-            showForm2:false,
-            showForm3:true,
-            showForm4:false
-          })}
-          if(e.target.value=="Procedure"){
-            this.setState({
-              showForm1:false,
-              showForm2:false,
-              showForm3:false,
-              showForm4:true
-            })}
+    // if(e1.target.value=="Symtom"){
+    //   this.setState({
+    //     showForm1:true,
+    //     showForm2:false,
+    //     showForm3:false,
+    //     showForm4:false
+    //   })}
+    //   if(e1.target.value=="Problem"){
+    //     this.setState({
+    //       showForm1:false,
+    //       showForm2:true,
+    //       showForm3:false,
+    //       showForm4:false
+    //     })}
+    //     if(e1.target.value=="VisitReason"){
+    //       this.setState({
+    //         showForm1:false,
+    //         showForm2:false,
+    //         showForm3:true,
+    //         showForm4:false
+    //       })}
+    //       if(e1.target.value=="Procedure"){
+    //         this.setState({
+    //           showForm1:false,
+    //           showForm2:false,
+    //           showForm3:false,
+    //           showForm4:true
+    //         })}
 
   }
 
@@ -109,13 +114,14 @@ export default class DropdownSplitExample extends React.Component {
     this.setState({ setForms: !this.state.setForms });
   }
 
-  handleDrugCodeForm = () => {
+  handleShowDrugCodeForm = () => {
     this.setState({ showForm2: !this.state.showForm2 });
   }
-  handleDrugCodeForm = () => {
+  handleShowDrugCodeForm = () => {
     this.setState({ showForm1: !this.state.showForm1 });
   }
-  handleDrugCodeForm = () => {
+  
+  handleShowDrugCodeForm = () => {
     this.setState({ showForm3: !this.state.showForm3 });
   }
   
@@ -161,10 +167,15 @@ export default class DropdownSplitExample extends React.Component {
       return { open: !prevState.open };
     });
   }
+  toggle1 = () =>{
+    this.setState(prevState =>{
+      return {open:!prevState};
+    });
+  }
 
   render() {
     const { showReset } = this.state;
-    const { setForms, drugCodeForm} = this.state;
+    const { setForms, drugCodeForm,HospitalForm} = this.state;
     const{showForm1,showForm2,showForm3,showForm4}=this.state;
     const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
     console.log(this.state);
@@ -208,7 +219,7 @@ export default class DropdownSplitExample extends React.Component {
               <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a>
-                <select className="form-control  text-success" onChange={(e)=> {this.handleSymtomCodeForm(e)}}>
+                <select className="form-control  text-success" onChange={(e1)=> {this.handleSymtomCodeForm(e1)}}>
                   <option value="">Select</option>
                   <option value="symtom">SYMPTOM</option>
                   <option value="Problem">PROBLEMS</option>
@@ -221,17 +232,17 @@ export default class DropdownSplitExample extends React.Component {
               </a>
               </Dropdown>
           </CardHeader>
-          <Modal open={SymtomForm} toggle={this.toggle}>
+          {/* <Modal open={SymtomForm} toggle1={this.toggle}>
           <Symtom />
-        </Modal>
-        <Modal open={ProblemForm} toggle={this.toggle}>
-          <Symtom />
-        </Modal>
-        <Modal open={VisitReasonForm} toggle={this.toggle}>
-          <VisitReason />
-        </Modal>
-        {/* <Modal open={Procedure} toggle={this.toggle}>
-          <Procedure />
+        </Modal> */}
+        {/* <Modal open={ProblemForm} toggle1={this.toggle}>
+          <Problems />
+        </Modal> */}
+        {/* <Modal open={VisitReasonForm} toggle1={this.toggle}>
+        {VisitReason && <VisitReason />}
+        </Modal> */}
+        {/* <Modal open={Procedure} toggle1={this.toggle}>
+        {Procedure && <Procedure />}
         </Modal> */}
         </div>
         <div className="card mt-3">
@@ -265,10 +276,12 @@ export default class DropdownSplitExample extends React.Component {
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
               <p>Set your hospital service charges/ Tax.</p>
-              <a>
+              <a onClick={() => {this.handleShowHospitalForm() }}>
                 <Button outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
                 </Button>
               </a>
+              <Modal open={HospitalForm} toggle={this.handleShowHospitalForm}>
+              </Modal>
           </CardHeader>
 
         </div>
