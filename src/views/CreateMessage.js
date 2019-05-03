@@ -29,8 +29,8 @@ import {Row, Col, CardHeader,FormInput } from "shards-react";
         <br></br>
           <div className="row">
           <div className="col-lg-3">
-         <h6>To :*</h6><br></br>
-         <h6>Subject :</h6>
+         <h6><small>To :*</small></h6><br></br>
+         <h6><small>Subject :*</small></h6>
          </div>
          <div className="col-lg-9">
             <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Search by name,K*Id,e-email here" data-toggle="tooltip" title="Enter the subject of the message"/><br></br>
@@ -40,7 +40,7 @@ import {Row, Col, CardHeader,FormInput } from "shards-react";
     
           <div>
             <br></br>
-            <h6>Message *<i className="far fa-star ml-3" style={{cursor:"pointer" }}></i></h6>
+            <h6><small>Message :*<i className="far fa-star ml-3" style={{cursor:"pointer" }}></i></small></h6>
             <div className="col-xs-12">
 							<textarea id="message" rows="5" maxlength="1500" className="form-control required"  placeholder="Message" data-toggle="tooltip" title="Enter the details of the message here"></textarea>
 					</div>
