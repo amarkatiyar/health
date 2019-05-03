@@ -1,3 +1,4 @@
+// @ Author Manohar
 import React from "react";
 import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button,Popover} from "shards-react";
 import CreateMessage from "./CreateMessage";
@@ -16,10 +17,8 @@ class Message extends React.Component{
       collapse: false,
      };
     this.state = {
-    showCreateMessageModal: false,
-    showFavorite:false,
-    showStar:false,
-    }  
+      showCreateMessageModal: false,
+    }
   };
   toggle() {
     this.setState({ collapse: !this.state.collapse});

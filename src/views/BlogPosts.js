@@ -13,8 +13,33 @@ import {
   Button
 } from "shards-react";
 import PageTitle from "../components/common/PageTitle";
+import axios from 'axios';
 
-export default function BasicCardExample() {
+
+
+
+ class BasicCardExample extends React.Component {
+
+  componentDidMount = () => {
+    // http://192.168.0.122:5001/patientList
+    let docID = sessionStorage.getItem("docID");
+    axios.get(`http://192.168.0.122:5001/PatientList?doc_ID=${docID}`)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              console.log("axios");
+              
+              // if (res.status === 200) {
+              //   props.actionAddVideo(res.data);
+              // }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
+  }
+
+  render() {
   return (
     <div className="container">
     <div className="row mt-4 ">
@@ -127,5 +152,6 @@ export default function BasicCardExample() {
     
   );
 }
-
+ }
+export default   BasicCardExample;
 
