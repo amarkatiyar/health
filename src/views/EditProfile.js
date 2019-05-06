@@ -111,11 +111,15 @@ render(){
                 <Card style={{height:"250px"}}>
                         <CardBody>  
                         <h6 className="text-success">PERSONAL</h6>
-                        
-                        <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
-                        <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
-                            <Edit2 handleHideEdit2={this.handleHideEdit2}/>
-                        </Modal>
+                        <div>
+                            <p>Gender:<br></br>
+                            Education:<br></br>License No:<br></br>
+                                <a onClick={() => {this.handleShowEdit2()}}><i class="far fa-edit"></i></a>
+                                <Modal size="sm" open={showEditModal2} toggle={this.handleShowEdit2}>
+                                    <Edit2 handleHideEdit2={this.handleHideEdit2}/>
+                                </Modal>
+                            </p>
+                        </div>
                         </CardBody>
                 </Card>
                 </div>
