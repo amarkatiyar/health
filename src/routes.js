@@ -16,6 +16,10 @@ import home from "./components/fronthealth/home";
 import Aboutus from "./components/fronthealth/Aboutus";
 import Services from "./components/fronthealth/Services";
 import Contact from "./components/fronthealth/Contact";
+import CreateBill from "./components/Billings/CreateBill";
+import Billing from "./components/Billings/Billing";
+import Message from "./components/Message/Message";
+import Calender from "./components/Calender/calender";
 
 
 import UserProfileLite from "./views/UserProfileLite";
@@ -25,12 +29,9 @@ import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
 import  NewhealthRecord from "./components/NewhealthRecord"; 
-import Message from "./components/Message/Message_2222";
 
-import Billing from "./components/Billings/Billing";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-import CreateBill from "./components/Billings/CreateBill";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
@@ -48,8 +49,6 @@ import Form from "./views/Form";
 import signup from "./components/fronthealth/signup";
 import Signin from "./components/fronthealth/singin";
 
-
-
 import Hospital1 from "./views/Hospital1";
 import Procedure1 from "./views/Procedure1";
 import DrugCode1 from "./views/DrugCode1";
@@ -64,7 +63,6 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
-import Calender from "./components/Calenders";
 
 export default [
   {
@@ -79,25 +77,21 @@ export default [
   layout: homelayout,
   component: home
 },
-
 {
   path: "/Aboutus",
   layout: Aboutlayout,
   component: Aboutus
 },
-
 {
   path: "/Services",
   layout: Serviceslayout,
   component: Services
 },
-
 {
   path: "/Contact",
   layout: Contactlayout,
   component: Contact
 },
-
 {
   path: "/signup",
   layout:signuplayout,
@@ -108,40 +102,32 @@ export default [
   layout:signinlayout,
   component: Signin
 },
-
-
-
-  
-  {
+{
     path: "/patient",
     layout: DefaultLayout,
     component:Patient
-  },
-
-  {
+},
+{
     path: "/PatientAcc",
     layout: DefaultLayout,
     component: PatientAcc
-  },
-
-  
-  {
+},
+{
     path: "/user-profile-lite",
     layout: DefaultLayout,
     component: UserProfileLite
-  },
-  {
+},
+{
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
-  },
-
-  {
+},
+{
     path: "/components-overview",
     layout: DefaultLayout,
     component: ComponentsOverview
-  },
-  {
+},
+{
     path: "/NewhealthRecord",
     layout: DefaultLayout,
     component: NewhealthRecord
@@ -156,8 +142,8 @@ export default [
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
-  },
-  {
+},
+{
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
@@ -171,45 +157,43 @@ export default [
     path: "/Message",
     layout: DefaultLayout,
     component: Message
-  },
-
- 
-  {
+},
+{
     path: "/newbill",
     layout: DefaultLayout,
     component: NewBill
-  },
-  {
+},
+{
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
-  },
-  {
+},
+{
     path: "/item",
     layout: DefaultLayout,
     component: Item
-  },
-  {
+},
+{
     path: "/SetForms",
     layout: DefaultLayout,
     component: SetForms
-  },
-  {
+},
+{
     path: "/ChangePassword",
     layout: DefaultLayout,
     component: ChangePassword
-  },
-  {
+},
+{
     path: "/CDS",
     layout: DefaultLayout,
     component: CDS
-  },
-  {
+},
+{
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
-  },
-  {
+},
+{
     path: "/NewUser",
     layout: DefaultLayout,
     component: NewUser

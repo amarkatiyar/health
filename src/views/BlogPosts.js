@@ -44,7 +44,7 @@ import axios from 'axios';
     <div className="container"style={{fontFamily:"Times"}}>
     <div className="row mt-4 ">
     <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
-    <Card className="mb-2"  style={{height: "600px"}}>
+    <Card className="mb-2"  style={{height: "700px"}}>
       <CardHeader className="bg-light">
             <InputGroup size="md" seamless>
               <InputGroupAddon type="prepend">
@@ -60,7 +60,7 @@ import axios from 'axios';
       </Button></a></span>
             </InputGroup></CardHeader>
       
-            <CardBody className="p-0 pb-3">
+            <div className="p-0 pb-3">
             <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <small>
             <a href="./patientacc">
@@ -68,7 +68,7 @@ import axios from 'axios';
             <table className="table mb-0 ">
           
              
-              <tbody>
+              <tbody style={{fontSize:"12px"}}>
                 
               
                 <tr >
@@ -113,36 +113,121 @@ import axios from 'axios';
             </table>
             </a>
             </small></div>
-          </CardBody>
+          </div>
     </Card>
     </div>
   
     {/* **************************this is second card************ */}
    
     <div className="col-lg-6 col-md-12 col-sm-12 col-12">
-      <Card className="mb-5"  style={{height: "600px"}}>
-      <CardBody>
-        <div className="row">
-        <div className="col-lg-10 col-md-10 col-sm-9 col-9">
-        
-      <a href="#" > <i class="text-warning far fa-calendar-alt pr-2"></i> &nbsp;<span className="font-weight-bold text-success">CALENDER</span></a>
+    <div style={{fontFamily:" Times"}}>  
+    
+    <Card className="mb-5"  style={{height: "700px"}}>
+    <div class="d-flex justify-content-around ml-4 mt-3 mr-4">
+    <div className="">
+    <a href="#" > <i class="text-warning far fa-calendar-alt pr-2"style={{fontSize:"20px"}}></i>&nbsp;&nbsp;&nbsp;&nbsp;<span className=" text-success">CALENDER</span></a>
+    </div>
+    <div className="ml-auto">
+    <a href="#"><i class=" text-dark fas fa-print "></i></a> &nbsp; &nbsp; &nbsp; &nbsp; 
+    <a href="#"><i class=" text-dark fas fa-ellipsis-v"></i></a>
+    </div>
+    </div>
+   <div className="row pl-3 pt-3 pr-3">
+
+    <div className=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
+      <select class="form-control bg-light" id="sel1" name="sellist1">
+     <option value="">Search Doctor/user by name,mobile,Kpid or e:email</option>
+     <option value="1">Option 1</option>
+     <option value="2">Option 2</option>
+     <option value="3">Option 3</option>
+     <option value="4">Option 4</option>
+      </select>
       </div>
-      <div className="col-lg-2 col-md-2 col-sm-3 col-3">
-      <a href="#"><i class=" text-dark fas fa-print "></i></a> &nbsp; &nbsp; 
-      <a href="#"><i class=" text-dark fas fa-ellipsis-v"></i></a></div></div>
-      <InputGroup size="md" seamless>
-              <InputGroupAddon type="prepend">
-                <InputGroupText>
-                  {/* <FontAwesomeIcon icon={faSearch} /> */}
-                </InputGroupText>
-              </InputGroupAddon>
-              <FormInput className="border-3 mt-2 bg-light " placeholder="Search Doctor user  by name.." />
-            </InputGroup>
-            
-            
-           
-            </CardBody>
-            </Card>
+      <div className="col-lg-2"></div>
+      <div className="col-lg-10 col-md-10 col-sm-10 col-10">
+      <div className="">
+      <Button outline theme="success">
+      <i class="fas fa-chevron-left"></i>
+      </Button>&nbsp;
+      <Button outline theme="success">
+        Today
+      </Button>&nbsp;
+      <Button outline theme="success">
+        3 Days
+      </Button>&nbsp;
+      <Button outline theme="success">
+        Week
+      </Button>&nbsp;
+      <Button outline theme="success">
+        Month
+      </Button>&nbsp;
+      <Button outline theme="success">
+      <i class="fas fa-chevron-right"></i>
+      </Button>
+      </div>
+      
+      </div>
+      </div>
+     
+     <table className="table table-bordered mt-3">
+
+      <tr className="text-success bg-light text-center"style={{fontSize:"12px"}}>
+        <td>2019-05-06 Mon &nbsp;&nbsp;<i class='fas fa-edit  text-dark'></i></td>
+        <td>2019-05-06 Tue &nbsp;&nbsp;<i class='fas fa-edit  text-dark'></i></td>
+        <td>2019-05-06 Wed &nbsp;&nbsp;<i class='fas fa-edit  text-dark'></i></td>
+      </tr>
+    
+    <tbody style={{fontSize:"11px"}}>
+      <tr>
+        <td>9:30 am</td>
+        <td>9:30 am</td>
+        <td>9:30 am</td>
+      </tr>
+      <tr>
+        <td>10:00 am</td>
+        <td>10:00 am</td>
+        <td>10:00 am</td>
+      </tr>
+      <tr>
+        <td>10:30 am</td>
+        <td>10:30 am</td>
+        <td>10:30 am</td>
+      </tr>
+      <tr>
+        <td>11:00 am</td>
+        <td>11:00 am</td>
+        <td>11:00 am</td>
+      </tr>
+      <tr>
+        <td>11:30 am</td>
+        <td>11:30 am</td>
+        <td>11:30 am</td>
+      </tr>
+      <tr>
+        <td>12:00 am</td>
+        <td>12:00 am</td>
+        <td>12:00 am</td>
+      </tr>
+      <tr>
+        <td>12:30 am</td>
+        <td>12:30 am</td>
+        <td>12:30 am</td>
+      </tr>
+      <tr>
+        <td>1:00 am</td>
+        <td>1:00 am</td>
+        <td>1:00 am</td>
+      </tr>
+      <tr>
+        <td>1:30 am</td>
+        <td>1:30 am</td>
+        <td>1:30 am</td>
+      </tr>
+    </tbody>
+  </table>
+    </Card>
+    
+    </div>
     </div>  
     </div>
     </div>

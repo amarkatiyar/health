@@ -1,13 +1,16 @@
 // @ Author Manohar
 import React from "react";
-import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button} from "shards-react";
+import {Card,CardHeader,Modal,Container,Collapse,FormInput,InputGroup,InputGroupAddon,InputGroupText,Button,Popover} from "shards-react";
 import CreateMessage from "./CreateMessage";
-
 
 class Message extends React.Component{
   constructor(props){
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.toggle1 = this.toggle1.bind(this);
+    this.state = {
+      open: false
+    };
 
     this.state = { 
       collapse: false,
@@ -31,6 +34,12 @@ class Message extends React.Component{
   handleHideCreateMessage = ()=>{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
+  
+  toggle1() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
   render(){
     const { showCreateMessageModal } = this.state;
     let {showFavorite} = this.state;
@@ -44,9 +53,7 @@ class Message extends React.Component{
            <div className="col-lg-10 text-success" >
               <i className="fas fa-envelope mr-3" style={{cursor:"pointer" }}></i><a className="text-success">Message</a>
            </div>
-         {/* <div className="col-lg-1">
-         <i className="far fa-star mt-2 ml-5" title="Show my favorite message"></i>
-         </div> */}
+      
          <div className="col-lg-1" >
          <Card  style={{height:"0px" }} onClick={this.toggle}>
          <div className=" ml-4 pr-3"><i className="far fa-star" title="Show my favorite message" style={{cursor:"pointer" }} ></i>
@@ -72,42 +79,35 @@ class Message extends React.Component{
                   </InputGroupAddon>
                 </InputGroup>
                 <div class="alert bg-info text-white font-weight-normal mt-3">
-		              There are no favorite message set, add your favorite message here
+		              <small>There are no favorite item/service set, add your favorite and use them quickly in billing</small>
 	              </div>
               </Card>
             </Collapse>
            </div>
-          
          </Card>
          </div>
-        
-
+  
          <div className="col-lg-1" >
-         <Card  style={{height:"0px"}}>
-         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{cursor:"pointer" }} onClick={()=> this.handleshowFavorite(showFavorite)}></i>
+         <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{cursor:"pointer" }} id="popover-2" onClick={this.toggle1}></i>
           </div>
-         { showFavorite &&
-            <div style={{"zIndex":999}}>
-            <div className="row">
-          <table className=" table table-bordered table-hover table-light table-sm ">
+         <Popover
+          placement="bottom"
+          open={this.state.open}
+          toggle1={this.toggle1}
+          target="#popover-2"
+          style={{width:"100px"}}>
+          <table className="table table-bordered table-hover mb-0">
           <tbody>
-            <tr>
-              <td><i className="far fa-star">&nbsp;&nbsp;Favorite</i></td>
-            </tr>
-            <tr>
-            <td><i className="fa fa-question-circle">&nbsp;&nbsp;Help</i></td>
-            </tr>
-          </tbody>
+    <tr>
+    <td><i className="far fa-star">&nbsp;&nbsp;Favorite</i></td>
+    </tr>
+    <tr>
+    <td><i className="far fa-question-circle">&nbsp;&nbsp;Help</i></td>
+    </tr>
+  </tbody>
          </table>
-             </div> 
-             </div>
-           }
-         </Card>
+        </Popover>
          </div>
-         
-         
-         
-         
         </div><br></br>
             <div className="row">
             <div className="col-lg-12   d-flex justify-content-between">
@@ -116,8 +116,6 @@ class Message extends React.Component{
                   <option value="S">SENT MESSAGE</option>
             </select> 
           <div>
-          {/* <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-black">&nbsp;&nbsp;<a title="Compose New Message">Compose</a></span></a>  */}
 <span><a onClick={() => {this.handleShowCreateMessage()}}><Button className="pl-4 pr-4" outline theme="success">
       <i class="fas fa-plus"></i> &nbsp;
         Compose
@@ -128,20 +126,33 @@ class Message extends React.Component{
           </div>
             </div>
             </div>
-            <table className="table mt-2">
-            <thead className="thead-light">
-            <tr>
-                <th scope="col">From</th>
-               <th scope="col">Message</th>
-               <th scope="col">Date</th>
-           </tr>
-           </thead>
-           </table>
+           <table className="table mt-3">
+              <tr style={{background:"#f0f0f0"}}>
+                <th>
+                  <small>
+                    <b>From</b>
+                  </small>
+                </th>
+                <th>
+                  <small>
+                    <b>Message</b>
+                  </small>
+                </th>
+                <th>
+                  <small>
+                    <b>Date</b>
+                  </small>
+                </th>
+              </tr>
+              <tr>
+                <td />
+                <td />
+                <td />
+              </tr>
+            </table>
            <card small className="mb-4" >
            <CardHeader className="border-bottom" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
                     <div> 
-                        {/* <a className="btn btn-outline-success" onClick={() => {this.handleShowCreateMessage()}}><span className="fa fa-plus"></span>
-                        <span className="text-black">&nbsp;&nbsp;<a title="Create New Message">Create Message</a></span></a>  */}
                         <span><a onClick={() => {this.handleShowCreateMessage()}}><Button outline theme="success">
       <i class="fas fa-plus"></i> &nbsp;
         Create Message

@@ -38,12 +38,12 @@ class Message extends React.Component {
     let { showCompose } = this.state;
 
     return (
-      <div className="container"style={{fontFamily:"Times"}}>
+      <div className="container"style={{fontFamily:" Times"}}>
         <Card className="mt-4 mb-3">
           <div className="row mt-3">
             <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-8 col-8">
               <h6 className="ml-4  text-success">
-                <i class="far fa-envelope" /> &nbsp; &nbsp; &nbsp;Message
+                <i class="far fa-envelope"style={{fontSize:"20px"}} /> &nbsp; &nbsp; &nbsp;Message
               </h6>
             </div>
             <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4 ">
@@ -55,7 +55,7 @@ class Message extends React.Component {
 
           <div className="row pt-3">
             <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 ">
-              <div className="col-lg-4 col-xl-4 col-md-4 col-sm-6 col-6">
+              <div className="col-lg-4 col-xl-4 col-md-6 col-sm-6 col-6">
                 <select
                   class="form-control bg-light "
                   id="sel1"
@@ -69,7 +69,7 @@ class Message extends React.Component {
                 </select>
               </div>
             </div>
-            <div className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4">
+            <div className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4">
               <Button
                 outline
                 theme="success"
@@ -84,21 +84,21 @@ class Message extends React.Component {
           {showCompose && <Compose />}
           <div className="text-center">
             <table className="table mt-3 mb-3">
-              <tr className="bg-light" style={{fontFamily:" Geneva"}}>
-                <th scope="col " className="border-1">
-                  
+              <tr className="bg-light"style={{fontFamily:" Geneva",fontSize:"12px"}}>
+                <th>
+                
                     From
-                  
+                
                 </th>
-                <th scope="col " className="border-1">
+                <th>
                   
                     Message
                   
                 </th>
-                <th scope="col " className="border-1">
-                  
+                <th>
+                
                     Date
-                  
+              
                 </th>
               </tr>
               <tr>

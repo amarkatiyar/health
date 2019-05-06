@@ -57,7 +57,7 @@ export default function BasicCardExample() {
                 </tr>
               </thead>
               
-              <tbody>
+              <tbody style={{fontSize:"12px"}}>
                 <tr>
                   <td>1/prashant</td>
                   <td>890380345/prashantkatiyar10796@gmail.com</td>

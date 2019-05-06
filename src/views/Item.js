@@ -1,3 +1,4 @@
+// @ Author Manohar
 import React from "react";
 import {Row, Col,FormInput, CardHeader,Button } from "shards-react";
 
@@ -20,19 +21,18 @@ import {Row, Col,FormInput, CardHeader,Button } from "shards-react";
 <div className="row mb-3">
 <div className="col-lg-11 text-left">
 <a onClick={()=> this.handleShowItem()}><i className="hover icon-md fa fa-arrow-left mt-2 mr-2" style={{cursor:"pointer" }} title="cancle"></i></a>Item/Service
-{/* <span id="cancle-btn" className="hover icon-md fa fa-arrow-left" data-toggle="tooltip" title="Cancle">&nbsp;&nbsp;&nbsp;&nbsp;Item/Service</span> */}
 </div>
 <div className="col-lg-1">
 <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Save"></span>
 </div>
 </div>
-<h6 className="text-white text-left" style={{height: "35px",background:"rgb(180, 180, 180)"}}>&nbsp;&nbsp;Search select item/service, enter price and quantity</h6>
+<h6 className="text-left" style={{height: "35px",background:"#f0f0f0"}}>&nbsp;&nbsp;<small>Search select item/service, enter price and quantity</small></h6>
 <div className="row">
 <div className="col-4 text-right">
-<h6>Item/Service *</h6><br></br>
-<h6>Price *</h6><br></br>
-<h6>Quantity*</h6><br></br>
-<h6>Amount</h6>
+<h6><small><b>Item/Service *</b></small></h6><br></br>
+<h6><small><b>Price *</b></small></h6><br></br>
+<h6><small><b>Quantity *</b></small></h6><br></br>
+<h6><small><b>Amount</b></small></h6>
 </div>
 <div className="col-8">
 <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Search or Enter Item/Service" data-toggle="tooltip" title="Enter the subject of the message">
@@ -45,9 +45,8 @@ import {Row, Col,FormInput, CardHeader,Button } from "shards-react";
 </FormInput>
 </div>
 </div>
-<span className="text-muted "><i className="far fa-star mr-3 "></i>Add as favorite</span>
+<span className="text-muted "><i className="far fa-star mr-3 "></i><small><b>Add as favorite</b></small></span>
 <div class="col-xs-6 mt-3 mb-5 ">
-        {/* <div id="save-btn" class="icon-color btn btn-success">Save</div> */}
         <span><Button outline theme="success">Save</Button></span>
  </div>
 </CardHeader>

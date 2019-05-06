@@ -3,7 +3,7 @@ import {Row,Button, Card, CardBody } from 'shards-react'
 
 export default  function ManageUser(){
     return(
-        <div className="container mt-3">
+        <div className="container mt-3 mb-5">
         <Card>
                 <CardBody>
                 <div className="row">
@@ -24,6 +24,7 @@ export default  function ManageUser(){
                     </div>
                 </div>
                 <div className="mt-3">
+                <a href="./ManageUser1"> 
                 <table className="table table-hover">
                     <thead className="text-small">
                         <tr>
@@ -32,6 +33,7 @@ export default  function ManageUser(){
                         <th scope="col">User Type</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         <tr>
                         <td>Mark</td>
@@ -49,6 +51,7 @@ export default  function ManageUser(){
                         </tr>
                     </tbody>
                     </table>
+                </a>
                 </div>
                 </CardBody>
         </Card>

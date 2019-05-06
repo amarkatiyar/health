@@ -11,7 +11,7 @@ export default function Billing() {
       {/* <CardBody > */}
         <div className="row pt-4">
         <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-9 col-9 ">
-      <a href="#"><i class=" text-success far fa-credit-card pl-5"></i><span className="pl-4 text-success">BILLING</span></a>
+      <a href="#"><i class=" text-success far fa-credit-card pl-4"style={{fontSize:"20px"}}></i><span className="pl-4 text-success">BILLING</span></a>
       </div>
       <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class=" text-dark fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v"></i></div>
      </div>
@@ -100,7 +100,7 @@ export default function Billing() {
       
        <table className="table mt-3">
        
-         <tr className="bg-light" style={{fontFamily:" Geneva"}}>
+         <tr className="bg-light" style={{fontFamily:" Geneva",fontSize:"12px"}}>
            <th scope="col " className="border-1">Date</th>
            <th scope="col " className="border-1">Particular</th>
            <th scope="col " className="border-1" >Amount</th>

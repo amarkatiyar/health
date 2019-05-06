@@ -6,9 +6,9 @@ import UserDetails from "../components/user-profile-lite/UserDetails";
 import UserAccountDetails from "../components/user-profile-lite/UserAccountDetails";
 
 const UserProfileLite = () => (
-  <Container fluid className="main-content-container px-4 py-4">
-    <Row noGutters className="page-header mb-3 ml-1">
-      <PageTitle ><h5>setting</h5></PageTitle>
+  <Container fluid className="main-content-container px-4 py-4 ">
+    <Row>
+      <PageTitle>setting</PageTitle>
     </Row>
     <Row>
       <Col lg="8">
