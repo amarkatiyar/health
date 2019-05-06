@@ -63,12 +63,12 @@ class NewhealthRecord extends React.Component{
 
     
     return(
-      <div className="container">
+      <div className="container"style={{fontFamily:" Geneva"}}>
        <Card className=" mt-3 p-4" style={{height:"150px"}}>
           <div className="d-flex justify-content-between">
-         <div className=""><span className="text-success pr-5"> &nbsp; HEALTH RECORD</span> <i class=" text-dark fas fa-print pl-5"></i> &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v pl-3"></i></div>
-         <div className="small">91+8840091275 &nbsp; prashantkatiyar10796@gmail.com</div>
-         <div className="small pr-5">EHT#:<br></br>Date:22/04/2019<br></br>update:
+         <div ><span className="text-success pr-5"> &nbsp; HEALTH RECORD</span> <i class=" text-dark fas fa-print pl-5"></i> &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v pl-3"></i></div>
+         <div >91+8840091275 &nbsp; prashantkatiyar10796@gmail.com</div>
+         <div className=" pr-5">EHT#:<br></br>Date:22/04/2019<br></br>update:
           </div>
          </div>
         

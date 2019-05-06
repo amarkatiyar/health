@@ -5,7 +5,7 @@ import { CardBody,Card,FormInput, FormGroup,Button,ButtonGroup} from "shards-rea
 
 export default function Billing() {
   return (
-    <div className="container">
+    <div className="container"style={{fontFamily:" Times"}}>
     
       <Card className="mt-3 mb-3" >
       {/* <CardBody > */}
@@ -82,7 +82,7 @@ export default function Billing() {
       </div>
 
       <div className="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6">
-      <div><a href="/CreateBill">
+      <div><a href="CreateBill">
         <Button className="" outline theme="success">
         <i className="fas fa-plus "></i> &nbsp; &nbsp;
         New Bill
@@ -100,11 +100,11 @@ export default function Billing() {
       
        <table className="table mt-3">
        
-         <tr className="bg-light">
-           <th><small><b>Date</b></small></th>
-           <th ><small><b>Particular</b></small></th>
-           <th ><small><b>Amount</b></small></th>
-           <th ><small><b>Paid</b></small></th>    
+         <tr className="bg-light" style={{fontFamily:" Geneva"}}>
+           <th scope="col " className="border-1">Date</th>
+           <th scope="col " className="border-1">Particular</th>
+           <th scope="col " className="border-1" >Amount</th>
+           <th scope="col " className="border-1">Paid</th>    
         </tr>
          <tr>
            <td>22/04/2019</td>

@@ -38,7 +38,7 @@ class Message extends React.Component {
     let { showCompose } = this.state;
 
     return (
-      <div className="container">
+      <div className="container"style={{fontFamily:"Times"}}>
         <Card className="mt-4 mb-3">
           <div className="row mt-3">
             <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-8 col-8">
@@ -84,21 +84,21 @@ class Message extends React.Component {
           {showCompose && <Compose />}
           <div className="text-center">
             <table className="table mt-3 mb-3">
-              <tr className="bg-light">
-                <th>
-                  <small>
-                    <b>From</b>
-                  </small>
+              <tr className="bg-light" style={{fontFamily:" Geneva"}}>
+                <th scope="col " className="border-1">
+                  
+                    From
+                  
                 </th>
-                <th>
-                  <small>
-                    <b>Message</b>
-                  </small>
+                <th scope="col " className="border-1">
+                  
+                    Message
+                  
                 </th>
-                <th>
-                  <small>
-                    <b>Date</b>
-                  </small>
+                <th scope="col " className="border-1">
+                  
+                    Date
+                  
                 </th>
               </tr>
               <tr>

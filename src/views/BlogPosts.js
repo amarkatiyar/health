@@ -41,7 +41,7 @@ import axios from 'axios';
 
   render() {
   return (
-    <div className="container">
+    <div className="container"style={{fontFamily:"Times"}}>
     <div className="row mt-4 ">
     <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
     <Card className="mb-2"  style={{height: "600px"}}>
@@ -125,7 +125,7 @@ import axios from 'axios';
         <div className="row">
         <div className="col-lg-10 col-md-10 col-sm-9 col-9">
         
-      <a href="#" className="text-success font-weight-bold"><i class="far fa-calendar-alt pr-2"></i> &nbsp;CALENDER</a>
+      <a href="#" > <i class="text-warning far fa-calendar-alt pr-2"></i> &nbsp;<span className="font-weight-bold text-success">CALENDER</span></a>
       </div>
       <div className="col-lg-2 col-md-2 col-sm-3 col-3">
       <a href="#"><i class=" text-dark fas fa-print "></i></a> &nbsp; &nbsp; 

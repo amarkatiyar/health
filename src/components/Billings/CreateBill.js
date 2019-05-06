@@ -53,7 +53,7 @@ class CreateBill extends React.Component {
     } = this.props;
 
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={{fontFamily:" Times"}}>
         <div className="row mt-3 mb-5">
           <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 pb-3">
             <Card>

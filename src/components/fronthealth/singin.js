@@ -1,7 +1,4 @@
 import React from "react";
-
-// import { faSearch } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Navbar,
   NavbarToggler,
@@ -9,26 +6,21 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Form,
   Card,
   Button,
   Tooltip,
-  CardImg,
-  FormInput,
-  section,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Collapse
+  Collapse,
+  
 } from "shards-react";
 import pic from './pic/banner_1-2.jpg';
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class signin extends React.Component {
+  
+ 
+    
+
   constructor(props) {
     super(props);
 
@@ -68,15 +60,33 @@ class signin extends React.Component {
     });
   }
 
+
+  
+  componentDidMount = () => {
+    sessionStorage.setItem('Username' ,'');
+    sessionStorage.setItem('Password', '');
+     console.log(sessionStorage.getItem('Username'));
+     console.log(sessionStorage.getItem('Password'));
+    let Username = sessionStorage.getItem("Username");
+    
+    
+  }
+
   render() {
     const {
       values,
       touched,
       errors,
       handleChange,
+      history,
       handleBlur,
       handleSubmit
     } = this.props;
+
+    if(sessionStorage.getItem("isLoggedIn")){
+      history.push({pathname: '/blog-posts'})
+    }
+    
     return (
       <div>
         <Navbar type="dark" expand="md" style={{ backgroundColor: "darkcyan" }}>
@@ -149,17 +159,17 @@ class signin extends React.Component {
                         </span>
                       </div>
                       <input
-                        type="email"
+                        type="Username"
                         className="form-control"
-                        placeholder="Doctor/patient Email or id"
+                        placeholder="Doctor/patient Username or id"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.email1}
-                        name="email1"
+                        value={values.Username}
+                        name="Username"
                         
                       />
                     </div>
-                    {errors.email1 && touched.email1 && <div className="text-warning pb-3" id="feedback">{errors.email1}</div>}
+                    {errors.Username && touched.Username && <div className="text-warning pb-3" id="feedback">{errors.Username}</div>}
 
  
 
@@ -170,16 +180,16 @@ class signin extends React.Component {
                         </span>
                       </div>
                       <input
-                        type="password"
+                        type="Password"
                         className="form-control"
-                        placeholder="password"
+                        placeholder="Password"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.password}
-                        name="password"
+                        value={values.Password}
+                        name="Password"
                       />
                     </div>
-                    {errors.password && touched.password && <div className="text-warning pb-3" id="feedback">{errors.password}</div>}
+                    {errors.Password && touched.Password && <div className="text-warning pb-3" id="feedback">{errors.Password}</div>}
 
                     <div className="form-check mb-4 ml-2">
                       <input
@@ -195,23 +205,24 @@ class signin extends React.Component {
                       </label>
                       <a href="#">
                         <span className="pl-3 text-white">
-                          Forgot password?
+                          Forgot Password?
                         </span>
                       </a>
                     </div>
 
                     <div className="mb-4 text-center">
-                      <a href="#">
+                      
                         {" "}
                         <Button
                           id="TooltipBottom"
                           className="pl-4 pr-4"
                           outline
                           theme="white"
+                          type="submit"
                         >
                           <i class="fas fa-sign-in-alt" />&nbsp; Signin
                         </Button>
-                      </a>
+                    
                       <Tooltip
                         placement="bottom"
                         open={this.state.bottom}
@@ -319,34 +330,59 @@ class signin extends React.Component {
 }
 
 const signinForm = withFormik({
-  mapPropsToValues: () => ({ email1: "" }),
-  mapPropsToValues: () => ({ password: "" }),
-
+  mapPropsToValues: () => ({ 
+    Username: "",
+    Password: ""
+   }),
   validate: values => {
     const errors = {};
 
-    if (!values.email1) {
-      errors.email1 = "**please enter the email id ! **";
+    if (!values.Username) {
+      errors.Username = "**please enter the Username id ! **";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email1)
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Username)
     ) {
-      errors.email1 = "**Invalid email address**";
+      errors.Username = "**Invalid Username address**";
     }
 
-    if (!values.password) {
-      errors.password = "**Password is required ! **";
-    } else if (values.password.length < 6) {
-      errors.password = "**Password has to be longer than 6 characters ! **";
+    if (!values.Password) {
+      errors.Password = "**Password is required ! **";
+    } else if (values.Password.length < 6) {
+      errors.Password = "**Password has to be longer than 6 characters ! **";
     }
 
     return errors;
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    
+    // setTimeout(() => {
+    //   alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 1000);
+    console.log("submitting....");
+    console.log(values);
+    
+    axios.post(`http://172.20.10.2:5001/login`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              // console.log("axios");
+                           
+              if (res.status === 200) {
+                sessionStorage.setItem("Username", res.data.docID);
+                sessionStorage.setItem("isLoggedIn", true);
+              }
+              else{
+                // wrong pws    login fail
+              }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
+
+    
   },
 
   displayName: "signin"

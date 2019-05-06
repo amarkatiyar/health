@@ -64,8 +64,7 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
-import Billings from "./views/Billings";
-import Calender from "./views/Calender";
+import Calender from "./components/Calenders";
 
 export default [
   {
@@ -148,6 +147,12 @@ export default [
     component: NewhealthRecord
   },
   {
+    path: "/Calender",
+    layout: DefaultLayout,
+    component: Calender
+  },
+  
+  {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
@@ -157,11 +162,11 @@ export default [
     layout: DefaultLayout,
     component: Billing
   },
-  // {
-  //   path: "/CreateBill",
-  //   layout: DefaultLayout,
-  //   component: CreateBill
-  // },
+   {
+    path: "/CreateBill",
+     layout: DefaultLayout,
+    component: CreateBill
+   },
    {
     path: "/Message",
     layout: DefaultLayout,
@@ -319,9 +324,5 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
-  {
-    path: "/Calender",
-    layout: DefaultLayout,
-    component: Calender
-  }
+ 
 ];

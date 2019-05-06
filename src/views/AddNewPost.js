@@ -15,7 +15,7 @@ import {
 
 export default function BasicCardExample() {
   return (
-    <div className="container mb-5">
+    <div className="container mb-5"style={{fontFamily:" Times"}}>
     <div className="row mt-4">
     <div className=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
     <Card  style={{height: "600px"}}>
@@ -30,9 +30,9 @@ export default function BasicCardExample() {
               <span className="ml-2 mr-2"> <a href="#"><Button outline theme="success">
               <i class="fas fa-bars"></i> &nbsp;
           Report
-      </Button></a></span><span><a href="./patient"><Button outline theme="primary">
+      </Button></a></span><span><a href="./patient"><Button outline theme="success">
       <i class="fas fa-user-plus"></i> &nbsp;
-        New patientvvvc
+        New patient
       </Button></a></span>
             </InputGroup></CardHeader>
       
