@@ -66,6 +66,9 @@ class signup extends React.Component {
       }
     });
   }
+
+
+
   componentDidMount = () => {
     sessionStorage.setItem('email' ,'');
     sessionStorage.setItem('password', '');
@@ -84,6 +87,8 @@ class signup extends React.Component {
       handleBlur,
       handleSubmit,
     } = this.props;
+
+    
     return (
       <div>
         <Navbar type="dark" expand="md" style={{ backgroundColor: "darkcyan" }}>

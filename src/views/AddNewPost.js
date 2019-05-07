@@ -15,7 +15,7 @@ import {
 
 export default function BasicCardExample() {
   return (
-    <div className="container mb-5">
+    <div className="container mb-5"style={{fontFamily:" Times"}}>
     <div className="row mt-4">
     <div className=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
     <Card  style={{height: "600px"}}>
@@ -57,7 +57,7 @@ export default function BasicCardExample() {
                 </tr>
               </thead>
               
-              <tbody>
+              <tbody style={{fontSize:"12px"}}>
                 <tr>
                   <td>1/prashant</td>
                   <td>890380345/prashantkatiyar10796@gmail.com</td>

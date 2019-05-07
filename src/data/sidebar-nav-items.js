@@ -15,9 +15,16 @@ export default function() {
     },
     {
       title: "Health Record",
-      htmlBefore: '<i class=" p-2 text-warning fas fa-list"></i>',
+      htmlBefore: '<i class=" p-2 text-danger fas fa-list"></i>',
       to: "/components-overview",
     },
+
+    {
+      title: "Calender",
+      htmlBefore: '<i class="text-warning far fa-calendar-alt p-2"></i>',
+      to: "/Calender",
+    },
+
     {
       title: "Billing",
       htmlBefore: '<i class="p-2 text-info fa fa-credit-card"></i>',

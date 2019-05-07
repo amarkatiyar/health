@@ -53,12 +53,11 @@ class CreateBill extends React.Component {
     } = this.props;
 
     return (
-      <div className="container-fluid">
+      <div className="container-fluid " style={{fontFamily:" Times"}}>
         <div className="row mt-3 mb-5">
           <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 pb-3">
             <Card>
-              <CardBody>
-                <div className="d-flex">
+                <div className="d-flex pt-3 pl-3 pr-3">
                   <div className="text-success">INVOICE</div>
                   <div className="ml-auto">
                     <div>
@@ -78,7 +77,7 @@ class CreateBill extends React.Component {
                   </div>
                 </div>
 
-                <div className="row pt-4 mb-2">
+                <div className="row pt-4 mb-2 p-3">
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-md-12 pb-2">
                     <select
                       className="form-control bg-light"
@@ -112,7 +111,7 @@ class CreateBill extends React.Component {
                 </div>
                 <small>
                   {" "}
-                  <p>
+                  <p className="pl-3">
                     Add item purchased or service received by patient, and end
                     with payment
                   </p>
@@ -120,27 +119,26 @@ class CreateBill extends React.Component {
 
                 <div className="text-center">
                   <table className="table">
-                    <tr className="bg-light">
+                    <tr className="bg-light"style={{fontSize:"12px"}}>
                       <th>
-                        <small>
+                        
                           {" "}
-                          <b>Item/Service</b>
-                        </small>
+                          Item/Service
+                    
                       </th>
                       <th>
-                        <small>
-                          <b>Price</b>
-                        </small>
+                        
+                          Price
+                        
                       </th>
                       <th>
-                        <small>
-                          <b>Qty</b>
-                        </small>
+                        Qty
+                        
                       </th>
                       <th>
-                        <small>
-                          <b>Amount</b>
-                        </small>
+                        
+                          Amount
+                      
                       </th>
                     </tr>
                     <tr>
@@ -151,8 +149,8 @@ class CreateBill extends React.Component {
                     </tr>
                   </table>
                 </div>
-               <div className="pb-4">
-                <Button
+               <div className="pb-4 pl-3">
+                <Button 
                   outline
                   theme="success"
                   onClick={() => this.handleshowItem(showItem)}
@@ -160,7 +158,7 @@ class CreateBill extends React.Component {
                   <i className=" fas fa-plus mr-2 " /> &nbsp; Add Item/Service
                 </Button>
                 </div>
-              </CardBody>
+              
 
               {showItem && (
                 <div style={{ zIndex: 999 }}>
@@ -278,10 +276,10 @@ class CreateBill extends React.Component {
           </div>
 
           <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-            <Card className="pt-2 pb-2 mb-2">
-              <CardBody className="bg-light">
+            <Card className="p-3 mb-2">
+              
                 <div className="d-flex">
-                  <i class=" text-dark far fa-star" />&nbsp; &nbsp;<h6> Favorite
+                  <i class=" text-dark far fa-star" />&nbsp; &nbsp;<h6 style={{fontSize:"14px"}}> Favorite
                   Item/Service</h6>
                   <div className="ml-auto">
                     <i
@@ -291,8 +289,8 @@ class CreateBill extends React.Component {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <i class=" text-dark fas fa-ellipsis-v" />
                   </div>
-                </div>
-              </CardBody>
+        
+              </div>
               {showFavorite && (
                 <div style={{ zIndex: 999 }}>
                   <div className="container">
@@ -358,10 +356,10 @@ class CreateBill extends React.Component {
               )}
             </Card>
 
-            <Card className=" pt-2 pb-2 mb-2">
-              <CardBody className="bg-light">
+            <Card className=" p-3 mb-2">
+              
                 <div className="d-flex">
-                  <span className=" fa fa-hospital text-dark " />&nbsp; &nbsp;<h6>Item/Service
+                  <span className=" fa fa-hospital text-dark " />&nbsp; &nbsp;<h6 style={{fontSize:"14px"}}>Item/Service
                   Code</h6>
                   <div className="ml-auto">
                     <i
@@ -372,7 +370,7 @@ class CreateBill extends React.Component {
                     <i class=" text-dark fas fa-ellipsis-v" />
                   </div>
                 </div>
-              </CardBody>
+            
               {showItemcode && (
                 <div style={{ zIndex: 999 }}>
                   <div className="container">
@@ -454,11 +452,11 @@ class CreateBill extends React.Component {
               )}
             </Card>
 
-            <Card className=" pt-2 pb-2 mb-2">
-              <CardBody className="bg-light">
+            <Card className=" p-3 mb-2">
+              
                 <div className="d-flex">
                   <span className=" text-dark fa fa-percent" />&nbsp; &nbsp;
-                 <h6> Service Charges/ Tax</h6>
+                 <h6 style={{fontSize:"14px"}}> Service Charges/ Tax</h6>
                   <div className="ml-auto">
                     <i
                       class="text-dark fas fa-plus"
@@ -468,7 +466,7 @@ class CreateBill extends React.Component {
                     <i class="text-dark fas fa-ellipsis-v" />
                   </div>
                 </div>
-              </CardBody>
+          
 
               {showcharge && (
                 <div style={{ zIndex: 999 }}>
