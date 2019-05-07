@@ -54,40 +54,40 @@ const AuditReport = () => (
     </div>
    </div>
 
-  <div className="row mt-3">
-  <div className="col-xs-2 col-sm-2 col-md-2">
-  <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
-									<option selected="selected" value="">Select Action</option>
-									<option value="">read</option>
-									<option value="">create</option>
-									<option value="">Edit</option>
-                                    <option value="">Cured</option>
-                                    <option value="">Ended</option>
-                                    <option value="">Delete</option>
-                                    <option value="">Print</option>
-                                    <option value="">Download</option>
-								</select>
+    <div className="row mt-3">
+            <div className="col-xs-2 col-sm-2 col-md-2">
+            <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
+                                                <option selected="selected" value="">Select Action</option>
+                                                <option value="">read</option>
+                                                <option value="">create</option>
+                                                <option value="">Edit</option>
+                                                <option value="">Cured</option>
+                                                <option value="">Ended</option>
+                                                <option value="">Delete</option>
+                                                <option value="">Print</option>
+                                                <option value="">Download</option>
+                                            </select>
+            </div>
+            <div className="col-xs-2 col-sm-2 col-md-2">
+                <a>
+                <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
+                                            <span class="fa fa-search"></span>
+                                            <span>&nbsp;Search</span>
+                                        </button></a>
+            </div>
     </div>
-    <div className="col-xs-2 col-sm-2 col-md-2">
-        <a>
-          <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
-									<span class="fa fa-search"></span>
-									<span>&nbsp;Search</span>
-								</button></a>
-    </div>
-  </div>
-  <div className="row mt-3 text-white"style={{background:"#787878"}}>
- <div className="col border ">Date/Time</div>
- <div className="col border">Type</div>
- <div className="col border text-right">Action</div>
- <div className="col border text-right">Particular</div>
- <div className="col border text-right">Description</div>
-  </div>
+        <div className="row mt-3 text-white"style={{background:"#787878"}}>
+            <div className="col border ">Date/Time</div>
+            <div className="col border">Type</div>
+            <div className="col border text-right">Action</div>
+            <div className="col border text-right">Particular</div>
+            <div className="col border text-right">Description</div>
+        </div>
   
-  <card small>
-           <CardHeader className="border-bottom  mt-4 mb-5 " style={{background:"#f0f0f0"}}><h6>Not Found</h6>
+        <card small>
+           <CardHeader className=" mt-4 mb-5 " style={{background:"#f0f0f0"}}><h6>Not Found</h6>
            </CardHeader> 
-           </card>
+        </card>
 
 
     </Form>

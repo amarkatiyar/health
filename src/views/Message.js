@@ -6,20 +6,14 @@ import CreateMessage from "./CreateMessage";
 class Message extends React.Component{
   constructor(props){
     super(props);
-    this.toggle = this.toggle.bind(this);
-    this.toggle1 = this.toggle1.bind(this);
-    this.state = {
-      open: false
-    };
-
     this.state = { 
       collapse: false,
-     };
-    this.state = {
       showCreateMessageModal: false,
-    }
+      open: false
+     };
   };
-  toggle() {
+
+  toggle = () => {
     this.setState({ collapse: !this.state.collapse});
   }
   handleshowFavorite = (prevState) =>{
@@ -35,7 +29,7 @@ class Message extends React.Component{
     this.setState({showCreateMessageModal: !this.state.showCreateMessageModal});
   }
   
-  toggle1() {
+  toggle1 = () => {
     this.setState({
       open: !this.state.open
     });
