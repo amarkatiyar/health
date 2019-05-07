@@ -27,6 +27,7 @@ import {
 } from "shards-react";
 import pic from './pic/white-background.jpg';
 import { withFormik } from 'formik';
+import axios from 'axios';
 
 class signup extends React.Component {
   constructor(props) {
@@ -65,7 +66,15 @@ class signup extends React.Component {
       }
     });
   }
-
+  componentDidMount = () => {
+    sessionStorage.setItem('email' ,'');
+    sessionStorage.setItem('password', '');
+     console.log(sessionStorage.getItem('email'));
+     console.log(sessionStorage.getItem('password'));
+    let email = sessionStorage.getItem("email");
+    
+    
+  }
   render() {
     const {
       values,

@@ -28,6 +28,7 @@ import {
 import pic from './pic/banner_1-2.jpg';
 import { withFormik } from "formik";
 
+
 class signin extends React.Component {
   constructor(props) {
     super(props);
