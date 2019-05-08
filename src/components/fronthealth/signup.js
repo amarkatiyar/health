@@ -27,6 +27,7 @@ import {
 } from "shards-react";
 import pic from './pic/white-background.jpg';
 import { withFormik } from 'formik';
+import axios from 'axios';
 
 class signup extends React.Component {
   constructor(props) {
@@ -66,6 +67,17 @@ class signup extends React.Component {
     });
   }
 
+
+  componentDidMount = () => {
+    sessionStorage.setItem('email' ,'');
+    sessionStorage.setItem('password', '');
+     console.log(sessionStorage.getItem('email'));
+     console.log(sessionStorage.getItem('password'));
+    let email = sessionStorage.getItem("email");
+    
+    
+  }
+
   render() {
     const {
       values,
@@ -75,6 +87,8 @@ class signup extends React.Component {
       handleBlur,
       handleSubmit,
     } = this.props;
+
+    
     return (
       <div>
         <Navbar type="dark" expand="md" style={{ backgroundColor: "darkcyan" }}>
@@ -389,10 +403,29 @@ const SignupForm = withFormik({
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-       alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    // setTimeout(() => {
+    //    alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 1000);
+
+    axios.post(`http://172.20.10.2:5001/signup`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              // console.log("axios");
+                           
+              // if (res.status === 200) {
+              //   sessionStorage.setItem("Username", res.data.docID);
+              //   sessionStorage.setItem("isLoggedIn", true);
+              // }
+              // else{
+                // wrong pws    login fail
+              // }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
   },
 
   displayName: 'SignUp',

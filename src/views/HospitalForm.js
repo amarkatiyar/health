@@ -2,8 +2,9 @@ import React from 'react'
 import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
     FormSelect,FormInput,CardHeader } from 'shards-react'
 
-export default class HospitalForm extends React.Component{
-render(){
+// export default class HospitalForm extends React.Component{
+// render(){
+    export default  function HospitalForm(){
 return(
 
 <div className="container mt-3">
@@ -32,5 +33,6 @@ return(
 </Card>
 </div>
 )
-}
-}
+    }
+// }
+// }

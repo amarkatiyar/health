@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form } from "shards-react";
+import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form,Button} from "shards-react";
 
 
 import PageTitle from "../components/common/PageTitle";
@@ -12,7 +12,7 @@ const AuditReport = () => (
     <Form>
         <div className="row">
         <div className="col-lg-10">
-            <h6 className="text-primary">Audit Repots</h6>
+            <h6 className="text-success"><i class="far fa-credit-card"></i>&nbsp; Audit Repots</h6>
         </div>
         <div className="col-lg-1">
         <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="Send Message"></span>
@@ -24,15 +24,20 @@ const AuditReport = () => (
 
    <div className="row mt-3">
    <div className="col-xs-4 col-sm-4 col-md-4">
-          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
-          </FormInput>
+          <select type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,mobile,KPiD or e:email" 
+          data-toggle="tooltip" title="Enter the subject of the message">
+          <option>Patient by name,mobile,KPiD or e:email</option>
+          </select>
     </div>
     <div className="col-xs-4 col-sm-4 col-md-4">
-          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
-          </FormInput>
+    <select type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
+    <option>Patient by name,mobile,KPiD or e:email</option>
+          </select>
+          {/* <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
+          </FormInput> */}
     </div>
     <div className="col-xs-2 col-sm-2 col-md-2">
-          <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
+          <select id="byDate" onchange="bill_report.advanceSearch();" title="" class="form-control">
 									<option selected="selected" value="">Date</option>
 									<option value="">All</option>
 									<option value="TODAY">Today</option>
@@ -69,11 +74,10 @@ const AuditReport = () => (
                                             </select>
             </div>
             <div className="col-xs-2 col-sm-2 col-md-2">
-                <a>
-                <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
-                                            <span class="fa fa-search"></span>
-                                            <span>&nbsp;Search</span>
-                                        </button></a>
+            <span><a ><Button className="form-control" outline theme="success">
+            <i class="fas fa-search"></i> &nbsp;
+                Search
+            </Button></a></span>
             </div>
     </div>
         <div className="row mt-3 text-white"style={{background:"#787878"}}>

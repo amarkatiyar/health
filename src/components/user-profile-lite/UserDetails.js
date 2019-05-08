@@ -23,13 +23,13 @@ import TestCode1 from "../../views/TestCode1";
 import Symtom from "../../views/Symtom";
 import VisitReason from "../../views/VisitReason";
 import Procedure from "../../views/Procedure";
+import NotForm from "../../views/NotForm";
 
 export default class DropdownSplitExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
-      HospitalForm: false,
       showReset: false,
       setForms: false,
       drugCodeForm: false,
@@ -37,6 +37,7 @@ export default class DropdownSplitExample extends React.Component {
       showForm2:false,
       showForm3:false,
       showForm4:false,
+      showNotF: false,
       // SymtomForm:false,
       // ProblemForm:false,
       // Procedure:false,
@@ -46,8 +47,8 @@ export default class DropdownSplitExample extends React.Component {
   }
 
 
-  handleShowHospitalForm = () => {
-    this.setState({ HospitalForm: !this.state.HospitalForm });
+  handleShowNotForm = () => {
+    this.setState({ showNotF: !this.state.showNotF });
   }
 
 
@@ -117,11 +118,20 @@ export default class DropdownSplitExample extends React.Component {
   handleShowDrugCodeForm = () => {
     this.setState({ showForm2: !this.state.showForm2 });
   }
+  handleHideDrugCodeForm = () => {
+    this.setState({ showForm2: !this.state.showForm2 });
+  }
   handleShowDrugCodeForm = () => {
+    this.setState({ showForm1: !this.state.showForm1 });
+  }
+  handleHideDrugCodeForm = () => {
     this.setState({ showForm1: !this.state.showForm1 });
   }
   
   handleShowDrugCodeForm = () => {
+    this.setState({ showForm3: !this.state.showForm3 });
+  }
+  handleHideDrugCodeForm = () => {
     this.setState({ showForm3: !this.state.showForm3 });
   }
   
@@ -174,8 +184,8 @@ export default class DropdownSplitExample extends React.Component {
   }
 
   render() {
-    const { showReset } = this.state;
-    const { setForms, drugCodeForm,HospitalForm} = this.state;
+    const { showReset,showNotF, } = this.state;
+    const { setForms, drugCodeForm} = this.state;
     const{showForm1,showForm2,showForm3,showForm4}=this.state;
     const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
     console.log(this.state);
@@ -196,7 +206,7 @@ export default class DropdownSplitExample extends React.Component {
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
-              <h6 className="text-success">Change Password</h6>
+             <h6 className="text-success">Change Password</h6>
               <p><small><b>Change your password, it is recommended you change your password regular</b></small></p>
               <a href="./ChangePassword"><Button outline theme="success" className="mr-1">
                 Change Password 
@@ -205,8 +215,8 @@ export default class DropdownSplitExample extends React.Component {
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
-              <h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6>
-              <p>Manage users, you can create new user or view existing user and edit them</p>
+              <small><h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6></small>
+              <p><small><b>Manage users, you can create new user or view existing user and edit them</b></small></p>
               <a href="./ManageUser">
                 <Button outline size="sm" theme="success" className="mb-2 mr-1"><i className="fas fa-user mr-1"></i>
                 Manage User
@@ -216,7 +226,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">FAVORITES</h6>
-              <p>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</p>
+              <p><small><b>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</b></small></p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a>
                 <select className="form-control  text-success" onChange={(e1)=> {this.handleSymtomCodeForm(e1)}}>
@@ -248,7 +258,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL CODES</h6>
-              <p>Set your hospital codes like procedure code, item/service code etc here and use them easily.</p>
+              <p><small><b>Set your hospital codes like procedure code, item/service code etc here and use them easily.</b></small></p>
               <Dropdown open={this.state.open} toggle={this.toggle}  group>
                 <select name="hospital_code" className="form-control text-success" onChange={(e)=> {this.handleDrugCodeForm(e)}}>
                   <option value="">Select</option>
@@ -260,70 +270,73 @@ export default class DropdownSplitExample extends React.Component {
               </Dropdown>
           </CardHeader>
         <Modal open={showForm2} toggle={this.toggle}>
-          <DrugCode1 />
+          <DrugCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
         </Modal>
         <Modal open={showForm1} toggle={this.toggle}>
-        {showForm1 && <Hospital1 />}
+        {showForm1 && <Hospital1  handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>}
         </Modal>
         <Modal open={showForm3} toggle={this.toggle}>
-        <Procedure1 />
+        <Procedure1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
         </Modal>
         <Modal open={showForm4} toggle={this.toggle}>
-        {showForm4 && <TestCode1 />}
+        {showForm4 && <TestCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />}
         </Modal>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
-              <p>Set your hospital service charges/ Tax.</p>
-              <a onClick={() => {this.handleShowHospitalForm() }}>
+              <p><small><b>Set your hospital service charges/ Tax.</b></small></p>
+              <a>
                 <Button outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
                 </Button>
               </a>
-              <Modal open={HospitalForm} toggle={this.handleShowHospitalForm}>
-              </Modal>
           </CardHeader>
 
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">NOTIFICATION</h6>
-              <p>Set your user message notification</p>
+              <p><small><b>Set your user message notification</b></small></p>
+              <a onClick={() => { this.handleShowNotForm() }}>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-              On complete EHR notify user*
+             <small><b>On complete EHR notify user*</b></small>
+             </a>
+             < Modal size="sm" open={showNotF} toggle={this.handleShowNotF}>
+                <NotForm />
+              </Modal>
           </CardHeader>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">SMS/E-MAIL</h6>
-              <p>Set your preference to send SMS/E-mail notifications</p>
+              <p><small><b>Set your preference to send SMS/E-mail notifications</b></small></p>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-              The Patient will receive text notifications and reminder<br></br>
+             <small><b>The Patient will receive text notifications and reminder</b></small><br></br>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-              The Patient will receive email notifications and reminder
+              <small><b>The Patient will receive email notifications and reminder</b></small>
           </CardHeader>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">LOGO PRINTING</h6>
-              <p>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best
-                viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</p>
+              <p><small><b>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best
+                viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</b></small></p>
               <a href="#"><i className=" fas fa-edit"></i></a>
           </CardHeader>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">DOCTOR SIGNATURE</h6>
-              <p>Select doctor signature image that will used in the reports like health records, prescription etc
+              <p><small><b>Select doctor signature image that will used in the reports like health records, prescription etc
                  Image will be best viewed in the dimensions of 300:100 pixels or 3:1 ratio. The file format should be in
-                  .jpeg or .jpg or .png or .gif.</p>
+                  .jpeg or .jpg or .png or .gif.</b></small></p>
               <a href="#"><i className=" fas fa-edit"></i></a>
           </CardHeader>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">REPORT BY EMAIL</h6>
-              <p>Set your preference to receive reports via email</p>
+              <p><small><b>Set your preference to receive reports via email</b></small></p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
                 <select className="form-control text-success ">
                   <option value="">Weekly</option>
@@ -337,7 +350,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">AUDIT REPORTS</h6>
-              <p>You can view your audit reports here</p>
+              <p><small><b>You can view your audit reports here</b></small></p>
               <a href="./AuditReport"><Button outline size="sm" theme="success" className="mb-2 mr-1">
                 View Audit Reports
               </Button></a>
@@ -345,7 +358,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">CLINICAL DECISION SUPPORT</h6>
-              <p>Set your Clinical Decision Support settings here</p>
+              <p><small><b>Set your Clinical Decision Support settings here</b></small></p>
               <a href="./CDS">
               <Button outline size="sm" theme="success" className="mb-2 mr-1">
                  Set Clinical Decision Report
@@ -354,7 +367,7 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">Forms</h6>
-              <p>Create custom form use them in Electronic health record page</p>
+              <p><small><b>Create custom form use them in Electronic health record page</b></small></p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a >
                 <Button onClick={() => { this.handleShowForms() }} outline theme="success">Set forms</Button>
@@ -368,8 +381,8 @@ export default class DropdownSplitExample extends React.Component {
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">RESET ALL SETTING</h6>
-              <p>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like
-                 account created. This will not delete any data.</p>
+              <p><small><b>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like
+                 account created. This will not delete any data.</b></small></p>
               <a onClick={() => { this.handleShowReset() }}>
                 <Button outline size="sm" theme="success" className="mb-2 mr-1">
                   Reset All your Setting

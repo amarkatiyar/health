@@ -128,7 +128,7 @@ class Edit1 extends React.Component {
                                 <label for="Mo_number" >Mobile Number*</label>
                             </div>
                             <div className="col-6">
-                                <input type="text" className="form-control" placeholder="M_No"></input>
+                                <input type="number" className="form-control" id="#number" placeholder="+91 8840091275"></input>
                             </div>
                         </div>
                         <Button outline size="md" className="mt-3 ml-5" theme="success">
