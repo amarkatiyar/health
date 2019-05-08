@@ -16,6 +16,10 @@ import home from "./components/fronthealth/home";
 import Aboutus from "./components/fronthealth/Aboutus";
 import Services from "./components/fronthealth/Services";
 import Contact from "./components/fronthealth/Contact";
+// import CreateBill from "./components/Billings/CreateBill";
+// import Billing from "./components/Billings/Billing";
+// import Message from "./components/Message/Message";
+import Calender from "./components/Calender/calender";
 
 
 import UserProfileLite from "./views/UserProfileLite";
@@ -59,12 +63,9 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
-import Calender from "./views/Calender";
-import Today from "./components/Calender/Today";
-import ManageUser1 from "./views/ManageUser1";
-import NotForm from "./views/NotForm";
-import Billing from "./views/Billing";
 import Message from "./views/Message";
+import CreateMessage from "./views/CreateMessage";
+import Billing from "./views/Billing";
 
 export default [
   {
@@ -133,8 +134,14 @@ export default [
     path: "/NewhealthRecord",
     layout: DefaultLayout,
     component: NewhealthRecord
-},
-{
+  },
+  {
+    path: "/Calender",
+    layout: DefaultLayout,
+    component: Calender
+  },
+  
+  {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
@@ -143,8 +150,13 @@ export default [
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
-},
-{
+  },
+   {
+    path: "/CreateMessage",
+     layout: DefaultLayout,
+    component: CreateMessage
+   },
+   {
     path: "/Message",
     layout: DefaultLayout,
     component: Message
@@ -299,24 +311,5 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
-  {
-    path: "/Calender",
-    layout: DefaultLayout,
-    component: Calender
-  },
-  {
-    path: "/Today",
-    layout: DefaultLayout,
-    component: Today
-  },
-  {
-    path: "/ManageUser1",
-    layout: DefaultLayout,
-    component: ManageUser1
-  },
-  {
-    path: "/NotForm",
-    layout: DefaultLayout,
-    component: NotForm
-  }
+ 
 ];

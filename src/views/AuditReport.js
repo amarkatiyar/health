@@ -1,25 +1,58 @@
 import React from "react";
-import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form,Button} from "shards-react";
+import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form,Button,Popover} from "shards-react";
 
 
 import PageTitle from "../components/common/PageTitle";
 
-const AuditReport = () => (
+class AuditReport extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            collapse: false,
+            open: false
+          };
+        };
+      
+toggle1 = () => {
+    this.setState({
+    open: !this.state.open
+    });
+}
+render() {
+    return (
     <Container fluid className="main-content-container px-4 py-4">
     <Card small className="mb-4">
     
     <CardHeader className="border-bottom">
     <Form>
         <div className="row">
-        <div className="col-lg-10">
-            <h6 className="text-success"><i class="far fa-credit-card"></i>&nbsp; Audit Repots</h6>
-        </div>
-        <div className="col-lg-1">
-        <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="Send Message"></span>
-        </div>
-        <div className="col-lg-1">
-        <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Send Message"></span>
-        </div>
+            <div className="col-lg-11">
+                <h6 className="text-success" style={{ cursor: "pointer" }}><i class="far fa-credit-card"></i>&nbsp; Audit Repots</h6>
+            </div>
+            <div className="col-lg-1" >
+                <i className="fa fa-print mr-2" style={{ cursor: "pointer" }}></i>&nbsp;
+                <i className="fas fa-ellipsis-v ml-4" title="Show more options" style={{ cursor: "pointer" }} id="popover-2" onClick={this.toggle1}></i>
+              </div>
+                <Popover
+                  placement="bottom"
+                  open={this.state.open}
+                  toggle1={this.toggle1}
+                  target="#popover-2"
+                  style={{ width: "100px" }}>
+                  <table className="table table-bordered table-hover mb-0">
+                    <tbody>
+                    <tr>
+                        <td><i className="far fa-star">&nbsp;&nbsp;Print</i></td>
+                      </tr>
+                      <tr>
+                        <td><i className="far fa-star">&nbsp;&nbsp;Tutorial</i></td>
+                      </tr>
+                      <tr>
+                        <td><i className="far fa-question-circle">&nbsp;&nbsp;Help</i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </Popover>
         </div>
 
    <div className="row mt-3">
@@ -99,5 +132,6 @@ const AuditReport = () => (
     </Card>
     </Container>
 );
-
+}
+}
 export default AuditReport;

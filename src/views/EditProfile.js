@@ -73,11 +73,6 @@ render(){
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
                     <p>Profile Photo</p>
-                        {/* <CardBody>  */}
-                        {/* <Col xs={6} md={4}>
-                        <Image src=" " roundedCircle />
-                        </Col> */}
-                        {/* </CardBody> */}
                     </Card>
                 </div>
                 <div className="col lg-6">

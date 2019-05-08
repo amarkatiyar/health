@@ -5,13 +5,26 @@ import {
 } from 'shards-react'
 
 export default class Procedure1 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+          open: false,
+          handleShowDrugCodeForm :false
+      };
+  }
+  handleShowDrugCodeForm=(showForm3) => {
+    this.props.handleHideDrugCodeForm(showForm3);
+}
 render(){
+    const { showForm3 } = this.state;
+
+
 return (
 <Card style={{ height: "500px",width:"600px" }}>
 <Form>
     <CardHeader className="p-3 " style={{ background: "#A9A9A9" }}>
         <div className="row" >
-            <div className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
+            <div onClick ={()=>this.handleShowDrugCodeForm(showForm3)} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
             <div className="col-sm-11"> Procedure Code</div>
         </div>
     </CardHeader>

@@ -13,6 +13,7 @@ import {
 } from "shards-react";
 import pic from "./pic/banner_1-2.jpg";
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class Home extends React.Component {
   constructor(props) {
@@ -53,6 +54,16 @@ class Home extends React.Component {
         collapseOpen: !this.state.collapseOpen
       }
     });
+  }
+
+  componentDidMount = () => {
+    sessionStorage.setItem('email' ,'');
+    sessionStorage.setItem('password', '');
+     console.log(sessionStorage.getItem('email'));
+     console.log(sessionStorage.getItem('password'));
+    let email = sessionStorage.getItem("email");
+    
+    
   }
 
   render() {
@@ -141,13 +152,13 @@ class Home extends React.Component {
                         placeholder="Doctor/patient Email or id"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.email1}
-                        name="email1"
+                        value={values.email}
+                        name="email"
                       />
                     </div>
-                    {errors.email1 && touched.email1 && (
+                    {errors.email && touched.email && (
                       <div className="text-warning pb-3" id="feedback">
-                        {errors.email1}
+                        {errors.email}
                       </div>
                     )}
 
@@ -195,6 +206,7 @@ class Home extends React.Component {
                       <a href="#">
                         {" "}
                         <Button
+                        type="submit"
                           id="TooltipBottom"
                           className="pl-4 pr-4"
                           outline
@@ -261,8 +273,8 @@ class Home extends React.Component {
 
           <div className="row  mt-5 text-center">
             <div className="col-md-4 ">
-              <i className="fas fa-desktop "/>
-              <h5 className="font-weight-bold">Electronic Health record</h5>
+              <i className="fas fa-desktop text-dark "style={{fontSize:"50px"}}/>
+              <h5 className="font-weight-bold text-dark mt-2">Electronic Health record</h5>
               <hr />
               <p>
                 Electronic Health Records Software are the recently found route
@@ -276,8 +288,8 @@ class Home extends React.Component {
             </div>
 
             <div className="col-md-4">
-              <i class="fas fa-laptop-medical" />
-              <h5 className="font-weight-bold"> Electronic Medical Records</h5>
+              <i class="fas fa-laptop-medical text-dark "style={{fontSize:"50px"}} />
+              <h5 className="font-weight-bold text-dark mt-2"> Electronic Medical Records</h5>
               <hr />
               <p>
                 Electronic Medical Records Software has proved itself as a
@@ -291,8 +303,8 @@ class Home extends React.Component {
             </div>
 
             <div className="col-md-4">
-              <i class="fas fa-file-medical" />
-              <h5 className="font-weight-bold">Health Records</h5>
+              <i class="fas fa-file-medical text-dark"style={{fontSize:"50px"}} />
+              <h5 className="font-weight-bold text-dark mt-2">Health Records</h5>
               <hr />
               <p>
                 {" "}
@@ -312,12 +324,12 @@ class Home extends React.Component {
             className="mt-5 p-3 mb-4 text-center"
             style={{ backgroundColor: "darkcyan" }}
           >
-            <h3 className="text-white font-weight-bold">KEY&nbsp;FEATURES</h3>
+            <h3 className="text-white font-weight-bold ">KEY&nbsp;FEATURES</h3>
           </div>
           <div className="row  mt-5 text-center">
             <div className="col-md-4 ">
-              <i class="fas fa-user-injured" />
-              <h5 className="font-weight-bold">Patient</h5>
+              <i class="fas fa-user-injured text-dark"style={{fontSize:"50px"}} />
+              <h5 className="font-weight-bold text-dark mt-2">Patient</h5>
               <hr />
               <p>
                 Electronic Health Records Software are the recently found route
@@ -326,8 +338,8 @@ class Home extends React.Component {
             </div>
 
             <div className="col-md-4">
-              <i class="fas fa-file-medical" />
-              <h5 className="font-weight-bold"> Health Record</h5>
+              <i class="fas fa-file-medical text-dark"style={{fontSize:"50px"}} />
+              <h5 className="font-weight-bold text-dark mt-2"> Health Record</h5>
               <hr />
               <p>
                 Electronic Medical Records Software has proved itself as a
@@ -336,8 +348,8 @@ class Home extends React.Component {
             </div>
 
             <div className="col-md-4">
-              <i class="fas fa-file-invoice" />
-              <h5 className="font-weight-bold">Billing</h5>
+              <i class="fas fa-file-invoice text-dark"style={{fontSize:"50px"}} />
+              <h5 className="font-weight-bold text-dark mt-2">Billing</h5>
               <hr />
               <p>
                 {" "}
@@ -351,7 +363,7 @@ class Home extends React.Component {
         <div className="container-fluid bg-dark">
           <div className="container ">
             <div className="row pt-4">
-              <div className="col-md-3 ">
+              <div className="col-md-3 col-lg-3 col-sm-3 col-3 ">
                 <div>
                   <a href="home">
                     <h6 className="text-white p-0">Home</h6>
@@ -388,7 +400,7 @@ class Home extends React.Component {
                   </a>
                 </div>
               </div>
-              <div className="col-md-9 mt-5 text-center">
+              <div className="col-md-9 col-lg-9 col-sm-9 col-12 mt-5 text-center">
                 <i className="fab fa-facebook px-5 text-white" />
                 <i className="fab fa-twitter-square text-white px-5" />
                 <i className="fab fa-linkedin text-white px-5" />
@@ -408,18 +420,18 @@ class Home extends React.Component {
 }
 
 const HomeForm = withFormik({
-  mapPropsToValues: () => ({ email1: "" }),
+  mapPropsToValues: () => ({ email: "" }),
   mapPropsToValues: () => ({ password: "" }),
 
   validate: values => {
     const errors = {};
 
-    if (!values.email1) {
-      errors.email1 = "**please enter the email id ! **";
+    if (!values.email) {
+      errors.email = "**please enter the email id ! **";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email1)
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      errors.email1 = "**Invalid email address**";
+      errors.email = "**Invalid email address**";
     }
 
     if (!values.password) {
@@ -432,10 +444,24 @@ const HomeForm = withFormik({
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+   
+    console.log("submitting....");
+    console.log(values);
+    
+    axios.post(`http://192.168.0.151:5001/login`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              console.log("axios");
+              
+              // if (res.status === 200) {
+              //   props.actionAddVideo(res.data);
+              // }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
   },
 
   displayName: "Home"

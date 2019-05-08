@@ -3,14 +3,17 @@ import React from "react";
 import { CardBody,Card, Form, FormInput, FormGroup, FormSelect,Button} from "shards-react";
 
 
-export default function HealthRecord() {
+  class  HealthRecord extends React.Component{
+
+  
+  render() {
   return (
-    <div className="container">
+    <div className="container" style={{fontFamily:"Times"}}>
     <CardBody >
       <Card style={{height: "470px", width:"100%"}}>
         <div className="row mt-3">
         <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-9 col-9">
-      <h6 className="ml-4  text-success"><i class="fas fa-list-ul"></i> &nbsp; &nbsp; &nbsp;PATIENT MEDICAL HISTORY</h6>
+      <h6 className="ml-4"><i class=" text-danger fas fa-list-ul"style={{fontSize:"20px"}}></i> &nbsp; &nbsp; &nbsp;<span className="text-success">PATIENT MEDICAL HISTORY</span></h6>
       </div>
       <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class=" text-dark fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v"></i></div>
      </div>
@@ -43,9 +46,9 @@ export default function HealthRecord() {
        <table className="table mt-3">
        
          <tr className="bg-light">
-           <th><small><b>Patient</b></small></th>
-           <th ><small><b>KPid</b></small></th>
-           <th ><small><b>Gender/Age</b></small></th>
+           <th scope="col " className="border-2">Patient</th>
+           <th scope="col " className="border-2">KPid</th>
+           <th scope="col " className="border-2">Gender/Age</th>
              
         </tr>
          <tr>
@@ -69,3 +72,5 @@ export default function HealthRecord() {
     </div>
   );
  }
+}
+ export default  HealthRecord;

@@ -8,10 +8,10 @@ import {
   ListGroupItem,
   Progress,
   Dropdown,
-  DropdownToggle,
+  DropdownToggle,Form,FormGroup,
   DropdownMenu,
   DropdownItem,
-  Modal,target,Container
+  Modal,target,Container,CardBody
 
 } from "shards-react";
 import RestSetting from "../../views/RestSetting";
@@ -23,7 +23,7 @@ import TestCode1 from "../../views/TestCode1";
 import Symtom from "../../views/Symtom";
 import VisitReason from "../../views/VisitReason";
 import Procedure from "../../views/Procedure";
-import NotForm from "../../views/NotForm";
+import HospitalForm from "../../views/HospitalForm";
 
 export default class DropdownSplitExample extends React.Component {
   constructor(props) {
@@ -38,6 +38,7 @@ export default class DropdownSplitExample extends React.Component {
       showForm3:false,
       showForm4:false,
       showNotF: false,
+      showHosF: false,
       // SymtomForm:false,
       // ProblemForm:false,
       // Procedure:false,
@@ -50,7 +51,12 @@ export default class DropdownSplitExample extends React.Component {
   handleShowNotForm = () => {
     this.setState({ showNotF: !this.state.showNotF });
   }
-
+  handleShowHosF = () => {
+    this.setState({showHosF: !this.state.showHosF});
+  }
+  handleHideHosF = () => {
+    this.setState({showHosF: !this.state.showHosF});
+  }
 
   // symtom dropdown coad//////////
 
@@ -103,7 +109,7 @@ export default class DropdownSplitExample extends React.Component {
   }
 
 
-  // dropdown coad end////////////////
+  // dropdown Favorites code end////////////////
   handleShowReset = () => {
     this.setState({ showReset: !this.state.showReset });
   }
@@ -114,27 +120,31 @@ export default class DropdownSplitExample extends React.Component {
   handleHideForms = () => {
     this.setState({ setForms: !this.state.setForms });
   }
-
-  handleShowDrugCodeForm = () => {
-    this.setState({ showForm2: !this.state.showForm2 });
-  }
-  handleHideDrugCodeForm = () => {
-    this.setState({ showForm2: !this.state.showForm2 });
-  }
+// /////////////////Hospital code dropfown//////////////////
+  // handleShowDrugCodeForm = ( showForm1,showForm2,showForm3,showForm4) => {
+  //   this.setState({ showForm1: !this.state.showForm1 });
+  //   this.setState({ showForm2: !this.state.showForm2 });
+  //   this.setState({ showForm3: !this.state.showForm3 });
+  //    this.setState({ showForm4: !this.state.showForm4 });
+  // }
+  // handleHideDrugCodeForm = ( showForm1,showForm2,showForm3,showForm4) => {
+  //   this.setState({ showForm1: !this.state.showForm1 });
+  //   this.setState({ showForm2: !this.state.showForm2 });
+  //   this.setState({ showForm3: !this.state.showForm3 });
+  //    this.setState({ showForm4: !this.state.showForm4 });
+  // }
   handleShowDrugCodeForm = () => {
     this.setState({ showForm1: !this.state.showForm1 });
   }
   handleHideDrugCodeForm = () => {
     this.setState({ showForm1: !this.state.showForm1 });
   }
-  
   handleShowDrugCodeForm = () => {
-    this.setState({ showForm3: !this.state.showForm3 });
+    this.setState({ showForm2: !this.state.showForm2 });
   }
   handleHideDrugCodeForm = () => {
-    this.setState({ showForm3: !this.state.showForm3 });
+    this.setState({ showForm2: !this.state.showForm2 });
   }
-  
 
 // Dropdown code//////////
   handleDrugCodeForm = (e) => {
@@ -143,6 +153,7 @@ export default class DropdownSplitExample extends React.Component {
     this.setState({
       showForm1:true,
       showForm2:false,
+      showForm3:false,
       showForm3:false
     })}
   
@@ -184,14 +195,14 @@ export default class DropdownSplitExample extends React.Component {
   }
 
   render() {
-    const { showReset,showNotF, } = this.state;
+    const { showReset,showNotF,showHosF } = this.state;
     const { setForms, drugCodeForm} = this.state;
     const{showForm1,showForm2,showForm3,showForm4}=this.state;
     const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
     console.log(this.state);
     
     
-    return (
+return (
 <Container className="main-content-container px-4 py-4">
         <div className="card">
           <CardHeader className="mb-3">
@@ -269,53 +280,66 @@ export default class DropdownSplitExample extends React.Component {
                 </select>
               </Dropdown>
           </CardHeader>
-        <Modal open={showForm2} toggle={this.toggle}>
-          <DrugCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
-        </Modal>
         <Modal open={showForm1} toggle={this.toggle}>
-        {showForm1 && <Hospital1  handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>}
+               <Hospital1  handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
+        </Modal>
+        <Modal open={showForm2} toggle={this.toggle}>
+              <DrugCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
         </Modal>
         <Modal open={showForm3} toggle={this.toggle}>
-        <Procedure1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
+              <Procedure1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
         </Modal>
         <Modal open={showForm4} toggle={this.toggle}>
-        {showForm4 && <TestCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />}
+               <TestCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
         </Modal>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
               <p><small><b>Set your hospital service charges/ Tax.</b></small></p>
               <a>
-                <Button outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
+                <Button onClick={() => { this.handleShowHosF() }} outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
                 </Button>
               </a>
+              < Modal size="sm" open={showHosF} toggle={this.handleShowHosF}>
+                <HospitalForm handleHideHosF={this.handleHideHosF}/>
+              </Modal>
           </CardHeader>
-
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">NOTIFICATION</h6>
               <p><small><b>Set your user message notification</b></small></p>
-              <a onClick={() => { this.handleShowNotForm() }}>
-              <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
+              <input onClick={() => { this.handleShowNotForm() }} type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
              <small><b>On complete EHR notify user*</b></small>
-             </a>
-             < Modal size="sm" open={showNotF} toggle={this.handleShowNotF}>
-                <NotForm />
-              </Modal>
+             { showNotF &&
+              <div style={{"zIndex":999}}>
+                 <Form>
+                  <div className="ml-3 mt-2 mb-2" style={{width:"450px"}}>
+                    <select type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,mobile,KPiD or e:email" 
+                      data-toggle="tooltip" title="Enter the subject of the message">
+                      <option>Patient by name,mobile,KPiD or e:email</option>
+                    </select>
+                  </div>
+                </Form> 
+             </div>
+            }
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">SMS/E-MAIL</h6>
               <p><small><b>Set your preference to send SMS/E-mail notifications</b></small></p>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-             <small><b>The Patient will receive text notifications and reminder</b></small><br></br>
+              <small><b>The Patient will receive text notifications and reminder</b></small><br></br>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
               <small><b>The Patient will receive email notifications and reminder</b></small>
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">LOGO PRINTING</h6>
@@ -324,6 +348,7 @@ export default class DropdownSplitExample extends React.Component {
               <a href="#"><i className=" fas fa-edit"></i></a>
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">DOCTOR SIGNATURE</h6>
@@ -333,6 +358,7 @@ export default class DropdownSplitExample extends React.Component {
               <a href="#"><i className=" fas fa-edit"></i></a>
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">REPORT BY EMAIL</h6>
@@ -347,6 +373,7 @@ export default class DropdownSplitExample extends React.Component {
               </Dropdown>
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">AUDIT REPORTS</h6>
@@ -354,7 +381,9 @@ export default class DropdownSplitExample extends React.Component {
               <a href="./AuditReport"><Button outline size="sm" theme="success" className="mb-2 mr-1">
                 View Audit Reports
               </Button></a>
-          </CardHeader></div>
+          </CardHeader>
+        </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">CLINICAL DECISION SUPPORT</h6>
@@ -363,7 +392,9 @@ export default class DropdownSplitExample extends React.Component {
               <Button outline size="sm" theme="success" className="mb-2 mr-1">
                  Set Clinical Decision Report
               </Button></a>
-          </CardHeader></div>
+          </CardHeader>
+        </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">Forms</h6>
@@ -378,6 +409,7 @@ export default class DropdownSplitExample extends React.Component {
               </Dropdown>
           </CardHeader>
         </div>
+
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">RESET ALL SETTING</h6>
@@ -393,7 +425,7 @@ export default class DropdownSplitExample extends React.Component {
               </Modal>
           </CardHeader>
         </div>
-        <div className="card mt-3"></div>
+
 </Container>
     )
   }

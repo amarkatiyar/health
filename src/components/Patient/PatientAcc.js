@@ -46,7 +46,7 @@ class PatientAcc extends React.Component {
     let { showProfile } = this.state;
 
     return (
-      <div className="container">
+      <div className="container"style={{fontFamily:" Geneva"}}>
         <Row className="mt-4">
           {/* ************this first column******** */}
           <div className="col-lg-10 col-md-10 col-sm-10 col-9">
@@ -100,7 +100,7 @@ class PatientAcc extends React.Component {
                 <div className="row">
                   <div className="col-lg-10 col-md-10 col-sm-10 col-10">
                     {" "}
-                    <h6 className="text-success">ALTERNATE CONTACT</h6>
+                    <h6 className="text-success">Alternate Contact</h6>
                   </div>
                   <div className="col-lg-2 col-md-2 col-sm-2 col-2">
                     <i
@@ -117,7 +117,7 @@ class PatientAcc extends React.Component {
 
             <Card className="mb-3" style={{ height: "240px" }}>
               <CardBody>
-                <h6 className="text-success">UPCOMING APPOINTMENTS</h6>
+                <h6 className="text-success">Upcoming Appoinment</h6>
               </CardBody>
             </Card>
           </div>
@@ -138,7 +138,7 @@ class PatientAcc extends React.Component {
 
             <Card className="mb-3" style={{ height: "240px" }}>
               <CardBody>
-                <h6 className="text-success">CONTACT</h6>
+                <h6 className="text-success">Contact</h6>
 
                 <Button
                   size="sm"
@@ -158,7 +158,7 @@ class PatientAcc extends React.Component {
                 <div className="row">
                   <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                     {" "}
-                    <h6 className="text-success">CARE TEAM MEMBER</h6>
+                    <h6 className="text-success">Care team Member</h6>
                   </div>
                   <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
                     <i
