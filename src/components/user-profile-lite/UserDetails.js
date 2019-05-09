@@ -20,10 +20,11 @@ import DrugCode1 from "../../views/DrugCode1";
 import Procedure1 from "../../views/Procedure1";
 import Hospital1 from "../../views/Hospital1";
 import TestCode1 from "../../views/TestCode1";
+import HospitalForm from "../../views/HospitalForm";
 import Symtom from "../../views/Symtom";
+import Problems from "../../views/Problems";
 import VisitReason from "../../views/VisitReason";
 import Procedure from "../../views/Procedure";
-import HospitalForm from "../../views/HospitalForm";
 
 export default class DropdownSplitExample extends React.Component {
   constructor(props) {
@@ -39,10 +40,10 @@ export default class DropdownSplitExample extends React.Component {
       showForm4:false,
       showNotF: false,
       showHosF: false,
-      // SymtomForm:false,
-      // ProblemForm:false,
-      // Procedure:false,
-      // VisitReasonForm:false
+      showSymtom: false,
+      showProblems: false,
+      showVisitReason: false,
+      showProcedure: false
 
     };
   }
@@ -57,59 +58,6 @@ export default class DropdownSplitExample extends React.Component {
   handleHideHosF = () => {
     this.setState({showHosF: !this.state.showHosF});
   }
-
-  // symtom dropdown coad//////////
-
-  // handleSymtomCodeForm = () => {
-  //   this.setState({ SymtomForm: !this.state.SymtomForm });
-  // }
-  // handleSymtomCodeForm = () => {
-  //   this.setState({ ProblemForm: !this.state.ProblemForm });
-  // }
-  // handleSymtomCodeForm = () => {
-  //   this.setState({ VisitReasonForm: !this.state.VisitReasonForm });
-  // }
-  // handleSymtomCodeForm = () => {
-  //   this.setState({ Procedure: !this.state.Procedure });
-  // }
-  
-
-  handleSymtomCodeForm = (e1) => {
-    console.log(e1.target.value);
-
-    // if(e1.target.value=="Symtom"){
-    //   this.setState({
-    //     showForm1:true,
-    //     showForm2:false,
-    //     showForm3:false,
-    //     showForm4:false
-    //   })}
-    //   if(e1.target.value=="Problem"){
-    //     this.setState({
-    //       showForm1:false,
-    //       showForm2:true,
-    //       showForm3:false,
-    //       showForm4:false
-    //     })}
-    //     if(e1.target.value=="VisitReason"){
-    //       this.setState({
-    //         showForm1:false,
-    //         showForm2:false,
-    //         showForm3:true,
-    //         showForm4:false
-    //       })}
-    //       if(e1.target.value=="Procedure"){
-    //         this.setState({
-    //           showForm1:false,
-    //           showForm2:false,
-    //           showForm3:false,
-    //           showForm4:true
-    //         })}
-
-  }
-
-
-  // dropdown Favorites code end////////////////
   handleShowReset = () => {
     this.setState({ showReset: !this.state.showReset });
   }
@@ -120,33 +68,99 @@ export default class DropdownSplitExample extends React.Component {
   handleHideForms = () => {
     this.setState({ setForms: !this.state.setForms });
   }
+
+
+  // Favourite dropdown code//////////
+
+  handleShowSymtomCodeForm = () => {
+      this.setState({ showSymtom: !this.state.showSymtom });
+    }
+  handleHideSymtomCodeForm = () => {
+      this.setState({ showSymtom: !this.state.showSymtom });
+  }
+  handleShowProblemsCodeForm=() => {
+    this.setState({ showProblems: !this.state.showProblems });
+  }
+
+  handleHideProblemsCodeForm = () =>{
+    this.setState({showProblems: !this.state.showProblems});
+  }
+  handleShowVisitReasonForm = () =>{
+    this.setState({showVisitReason: !this.state.showVisitReason});
+  }
+  handleHideVisitReasonForm = () =>{
+    this.setState({showVisitReason: !this.state.showVisitReason});
+  }
+  handleShowProcedureForm = () =>{
+    this.setState({showProcedure: !this.state.showProcedure});
+  }
+  handleHideProcedureForm = () =>{
+    this.setState({showProcedure: !this.state.showProcedure});
+  }
+
+
+  handleFavouriteCodeForm = (c) => {
+    console.log(c.target.value);
+    if(c.target.value=="Symtom"){
+      this.setState({
+        showSymtom:true,
+        showProblems:false,
+        showVisitReason:false,
+        showProcedure:false
+      })}
+    
+    if(c.target.value=="Problems"){
+    this.setState({
+      showSymtom:false,
+      showProblems:true,
+      showVisitReason:false,
+      showProcedure:false
+    })}
+    if(c.target.value=="VisitReason"){
+      this.setState({
+        showSymtom:false,
+        showProblems:false,
+        showVisitReason:true,
+        showProcedure:false
+      })}
+      if(c.target.value=="Procedure"){
+        this.setState({
+          showSymtom:false,
+          showProblems:false,
+          showVisitReason:false,
+          showProcedure:true
+        })}
+  
+    }
+
+  
+ // dropdown Favorites code end////////////////
+
+
+
 // /////////////////Hospital code dropfown//////////////////
+
   // handleShowDrugCodeForm = ( showForm1,showForm2,showForm3,showForm4) => {
   //   this.setState({ showForm1: !this.state.showForm1 });
   //   this.setState({ showForm2: !this.state.showForm2 });
   //   this.setState({ showForm3: !this.state.showForm3 });
   //    this.setState({ showForm4: !this.state.showForm4 });
   // }
-  // handleHideDrugCodeForm = ( showForm1,showForm2,showForm3,showForm4) => {
-  //   this.setState({ showForm1: !this.state.showForm1 });
-  //   this.setState({ showForm2: !this.state.showForm2 });
-  //   this.setState({ showForm3: !this.state.showForm3 });
-  //    this.setState({ showForm4: !this.state.showForm4 });
-  // }
-  handleShowDrugCodeForm = () => {
+
+
+  handleHideDrugCodeFormFirst = () => {
     this.setState({ showForm1: !this.state.showForm1 });
   }
-  handleHideDrugCodeForm = () => {
-    this.setState({ showForm1: !this.state.showForm1 });
-  }
-  handleShowDrugCodeForm = () => {
+  handleHideDrugCodeFormSecond = () => {
     this.setState({ showForm2: !this.state.showForm2 });
   }
-  handleHideDrugCodeForm = () => {
-    this.setState({ showForm2: !this.state.showForm2 });
+  handleHideDrugCodeFormThird = () => {
+    this.setState({ showForm3: !this.state.showForm3 });
+  }
+  handleHideDrugCodeFormFour = () => {
+    this.setState({ showForm4: !this.state.showForm4 });
   }
 
-// Dropdown code//////////
   handleDrugCodeForm = (e) => {
   console.log(e.target.value);
   if(e.target.value=="Hospital1"){
@@ -180,6 +194,7 @@ export default class DropdownSplitExample extends React.Component {
       })}
 
   }
+  
 // Dropdown code End////////
 
   
@@ -188,17 +203,12 @@ export default class DropdownSplitExample extends React.Component {
       return { open: !prevState.open };
     });
   }
-  toggle1 = () =>{
-    this.setState(prevState =>{
-      return {open:!prevState};
-    });
-  }
 
   render() {
     const { showReset,showNotF,showHosF } = this.state;
     const { setForms, drugCodeForm} = this.state;
     const{showForm1,showForm2,showForm3,showForm4}=this.state;
-    const{VisitReasonForm,ProblemsForm,SymtomForm,ProblemForm}=this.state;
+    const{showSymtom,showProblems,showVisitReason,showProcedure}=this.state;
     console.log(this.state);
     
     
@@ -239,32 +249,30 @@ return (
               <h6 className="text-success">FAVORITES</h6>
               <p><small><b>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</b></small></p>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
-              <a>
-                <select className="form-control  text-success" onChange={(e1)=> {this.handleSymtomCodeForm(e1)}}>
+                <select name="favourite_code" className="form-control  text-success" onChange={(c)=> {this.handleFavouriteCodeForm(c)}} >
                   <option value="">Select</option>
-                  <option value="symtom">SYMPTOM</option>
-                  <option value="Problem">PROBLEMS</option>
+                  <option value="Symtom">SYMPTOM</option>
+                  <option value="Problems">PROBLEMS</option>
                   <option value="VisitReason">VISIT REASON</option>
                   <option value="Procedure">PROCEDURE</option>
                   <option value="5">MEDICATIONS</option>
                   <option value="6">TEST ORDER</option>
                   <option value="7">NOTE</option>
                 </select>
-              </a>
               </Dropdown>
           </CardHeader>
-          {/* <Modal open={SymtomForm} toggle1={this.toggle}>
-          <Symtom />
-        </Modal> */}
-        {/* <Modal open={ProblemForm} toggle1={this.toggle}>
-          <Problems />
-        </Modal> */}
-        {/* <Modal open={VisitReasonForm} toggle1={this.toggle}>
-        {VisitReason && <VisitReason />}
-        </Modal> */}
-        {/* <Modal open={Procedure} toggle1={this.toggle}>
-        {Procedure && <Procedure />}
-        </Modal> */}
+          <Modal open={showSymtom} toggle={this.toggle}>
+               <Symtom handleHideSymtomCodeForm={this.handleHideSymtomCodeForm}/>
+          </Modal>
+          <Modal open={showProblems} toggle={this.toggle}>
+               <Problems   handleHideProblemsCodeForm={this.  handleHideProblemsCodeForm}/>
+          </Modal>
+          <Modal open={showVisitReason} toggle={this.toggle}>
+               <VisitReason handleHideVisitReasonForm={this.handleHideVisitReasonForm}/>
+          </Modal>
+          <Modal open={showProcedure} toggle={this.toggle}>
+               <Procedure handleHideProcedureForm={this.handleHideProcedureForm}/>
+          </Modal>
         </div>
         <div className="card mt-3">
           <CardHeader className="mb-3">
@@ -281,16 +289,16 @@ return (
               </Dropdown>
           </CardHeader>
         <Modal open={showForm1} toggle={this.toggle}>
-               <Hospital1  handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
+               <Hospital1  handleHideDrugCodeFormFirst={this.handleHideDrugCodeFormFirst}/>
         </Modal>
         <Modal open={showForm2} toggle={this.toggle}>
-              <DrugCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm}/>
+              <DrugCode1 handleHideDrugCodeFormSecond={this.handleHideDrugCodeFormSecond}/>
         </Modal>
         <Modal open={showForm3} toggle={this.toggle}>
-              <Procedure1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
+              <Procedure1 handleHideDrugCodeFormThird={this.handleHideDrugCodeFormThird} />
         </Modal>
         <Modal open={showForm4} toggle={this.toggle}>
-               <TestCode1 handleHideDrugCodeForm={this.handleHideDrugCodeForm} />
+               <TestCode1 handleHideDrugCodeFormFour={this.handleHideDrugCodeFormFour} />
         </Modal>
         </div>
 

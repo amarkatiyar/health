@@ -12,8 +12,8 @@ export default class Procedure1 extends React.Component {
           handleShowDrugCodeForm :false
       };
   }
-  handleShowDrugCodeForm=(showForm3) => {
-    this.props.handleHideDrugCodeForm(showForm3);
+  handleShowDrugCodeForm=() => {
+    this.props.handleHideDrugCodeFormThird();
 }
 render(){
     const { showForm3 } = this.state;
@@ -24,7 +24,7 @@ return (
 <Form>
     <CardHeader className="p-3 " style={{ background: "#A9A9A9" }}>
         <div className="row" >
-            <div onClick ={()=>this.handleShowDrugCodeForm(showForm3)} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
+            <div onClick ={()=>this.handleShowDrugCodeForm()} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
             <div className="col-sm-11"> Procedure Code</div>
         </div>
     </CardHeader>

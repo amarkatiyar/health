@@ -10,8 +10,8 @@ export default  class Hospital1 extends React.Component{
           handleShowDrugCodeForm :false
       };
   }
-  handleShowDrugCodeForm=(showForm1) => {
-    this.props.handleHideDrugCodeForm(showForm1);
+  handleShowDrugCodeForm=() => {
+    this.props.handleHideDrugCodeFormFirst();
 }
 render(){
     const { showForm1 } = this.state;
@@ -20,7 +20,7 @@ return(
 <Card style={{height:"500px",width:"600px"}}>
         <CardHeader className="p-3 " style={{background:"#A9A9A9"}}>
         <div className="row" >
-        <div onClick ={()=>this.handleShowDrugCodeForm(showForm1)} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
+        <div onClick ={()=>this.handleShowDrugCodeForm()} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
             <div className="col-sm-1"> %</div>
             <div className="col-sm-10"> Item/Service Code</div>
         </div>

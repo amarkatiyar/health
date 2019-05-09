@@ -10,8 +10,8 @@ export default class TestCode1 extends React.Component{
           handleShowDrugCodeForm :false
       };
   }
-  handleShowDrugCodeForm=(showForm4) => {
-    this.props.handleHideDrugCodeForm(showForm4);
+  handleShowDrugCodeForm=() => {
+    this.props.handleHideDrugCodeFormFour();
 }
 
 render(){
@@ -23,7 +23,7 @@ return(
     <Form>
         <CardHeader className="p-3 " style={{background:"#A9A9A9"}}>
             <div className="row" >
-                <div onClick ={()=>this.handleShowDrugCodeForm(showForm4)} className="col-sm-1">  <i className="fas fa-arrow-left"></i>
+                <div onClick ={()=>this.handleShowDrugCodeForm()} className="col-sm-1">  <i className="fas fa-arrow-left"></i>
                 </div>
                 <div className="col-sm-11">Test Code</div>
             </div>
