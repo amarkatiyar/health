@@ -18,7 +18,7 @@ class CDS extends React.Component {
   render() {
     return (
       <Container fluid className="main-content-container px-4 py-4">
-        <Card small className="">
+        <Card>
           <CardHeader className="mb-4">
             <div className="row">
               <div className="col-lg-11 text-success" >
@@ -53,7 +53,7 @@ class CDS extends React.Component {
             <br></br>
             <div className="row">
                <div className="col-12 text-right">
-                   <a href="#"><Button  className="mr-2 mt-3 mb-3 " outline theme="success"><i className="fa fa-plus"></i> 
+                   <a href="./CDS1"><Button  className="mr-2 mt-3 mb-3 " outline theme="success"><i className="fa fa-plus"></i> 
                      &nbsp;New Clinical Decisional Support Rule </Button></a>
                </div>   
             </div>
@@ -72,7 +72,7 @@ class CDS extends React.Component {
             <card small className="mb-4">
             <CardHeader className="border-bottom" style={{background:"#f0f0f0"}}><h6>Not Found</h6>
             <div>
-               <a href="#"><Button  className="mr-2 mt-3 mb-3" outline theme="success"><i className="fa fa-plus"></i> 
+               <a href="./CDS1"><Button  className="mr-2 mt-3 mb-3" outline theme="success"><i className="fa fa-plus"></i> 
                &nbsp;Add CDS Rule </Button></a>             
  					  </div>
             </CardHeader>

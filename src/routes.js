@@ -66,6 +66,7 @@ import HospitalForm from "./views/HospitalForm";
 import Message from "./views/Message";
 import CreateMessage from "./views/CreateMessage";
 import Billing from "./views/Billing";
+import CDS1 from "./views/CDS1";
 
 export default [
   {
@@ -311,5 +312,10 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
+  {
+    path: "/CDS1",
+    layout: DefaultLayout,
+    component: CDS1
+  }
  
 ];

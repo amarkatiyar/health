@@ -217,9 +217,9 @@ return (
         <div className="card">
           <CardHeader className="mb-3">
               <h6 className="card-body" className="text-success">Profile</h6>
-              <p><small><b>Edit your profile,change name,email,etc.</b></small></p>
+                <label>Edit your profile,change name,email,etc.</label><br></br>
               <a href="./EditProfile">
-              <Button className="mr-2" outline theme="success">
+              <Button className="mt-3" outline theme="success">
                Edit Profile
               </Button>
               </a>
@@ -228,8 +228,8 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
              <h6 className="text-success">Change Password</h6>
-              <p><small><b>Change your password, it is recommended you change your password regular</b></small></p>
-              <a href="./ChangePassword"><Button outline theme="success" className="mr-1">
+              <label>Change your password, it is recommended you change your password regular</label>
+              <a href="./ChangePassword"><Button outline theme="success" className="mt-3">
                 Change Password 
               </Button></a>
           </CardHeader>
@@ -237,9 +237,9 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <small><h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6></small>
-              <p><small><b>Manage users, you can create new user or view existing user and edit them</b></small></p>
+              <label>Manage users, you can create new user or view existing user and edit them</label><br></br>
               <a href="./ManageUser">
-                <Button outline size="sm" theme="success" className="mb-2 mr-1"><i className="fas fa-user mr-1"></i>
+                <Button outline size="sm" theme="success" className="mt-3"><i className="fas fa-user"></i>
                 Manage User
               </Button></a>
           </CardHeader>
@@ -247,9 +247,10 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">FAVORITES</h6>
-              <p><small><b>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order, Note, Vaccine and select them quickly in Patient Health Record</b></small></p>
+              <label>Set your favorite or frequently used values for Symptom, Diagnosis, Visit Reason, Procedure, Drug, Test Order,
+                   Note, Vaccine and select them quickly in Patient Health Record</label>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
-                <select name="favourite_code" className="form-control  text-success" onChange={(c)=> {this.handleFavouriteCodeForm(c)}} >
+                <select name="favourite_code" className="form-control  text-success mt-3" onChange={(c)=> {this.handleFavouriteCodeForm(c)}} >
                   <option value="">Select</option>
                   <option value="Symtom">SYMPTOM</option>
                   <option value="Problems">PROBLEMS</option>
@@ -277,9 +278,9 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL CODES</h6>
-              <p><small><b>Set your hospital codes like procedure code, item/service code etc here and use them easily.</b></small></p>
+              <label>Set your hospital codes like procedure code, item/service code etc here and use them easily.</label>
               <Dropdown open={this.state.open} toggle={this.toggle}  group>
-                <select name="hospital_code" className="form-control text-success" onChange={(e)=> {this.handleDrugCodeForm(e)}}>
+                <select name="hospital_code" className="form-control text-success mt-3" onChange={(e)=> {this.handleDrugCodeForm(e)}}>
                   <option value="">Select</option>
                   <option value="Hospital1">item/service code</option>
                   <option value="DrugCode1">Drug code</option>
@@ -305,9 +306,9 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">HOSPITAL SERVICE CHARGES/ TAX</h6>
-              <p><small><b>Set your hospital service charges/ Tax.</b></small></p>
+              <label>Set your hospital service charges/ Tax.</label><br></br>
               <a>
-                <Button onClick={() => { this.handleShowHosF() }} outline theme="success">  <i className="fas fa-hospital mr-1"></i> service charges/tax
+                <Button onClick={() => { this.handleShowHosF() }} outline theme="success" className="mt-3">  <i className="fas fa-hospital mr-1"></i> service charges/tax
                 </Button>
               </a>
               < Modal size="sm" open={showHosF} toggle={this.handleShowHosF}>
@@ -319,9 +320,9 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">NOTIFICATION</h6>
-              <p><small><b>Set your user message notification</b></small></p>
-              <input onClick={() => { this.handleShowNotForm() }} type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-             <small><b>On complete EHR notify user*</b></small>
+              <label>Set your user message notification</label><br></br>
+              <input onClick={() => { this.handleShowNotForm() }} type="checkbox" outline size="sm" theme="success" className="mt-3 mr-1"></input>
+              <label>On complete EHR notify user*</label>
              { showNotF &&
               <div style={{"zIndex":999}}>
                  <Form>
@@ -340,39 +341,39 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">SMS/E-MAIL</h6>
-              <p><small><b>Set your preference to send SMS/E-mail notifications</b></small></p>
+              <label>Set your preference to send SMS/E-mail notifications</label><br></br>
+              <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1 mt-3"></input>
+              <label>he Patient will receive text notifications and reminder</label><br></br>
               <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-              <small><b>The Patient will receive text notifications and reminder</b></small><br></br>
-              <input type="checkbox" outline size="sm" theme="success" className="mb-2 mr-1"></input>
-              <small><b>The Patient will receive email notifications and reminder</b></small>
+              <label>The Patient will receive email notifications and reminder</label>
           </CardHeader>
         </div>
 
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">LOGO PRINTING</h6>
-              <p><small><b>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best
-                viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</b></small></p>
-              <a href="#"><i className=" fas fa-edit"></i></a>
+              <label>Select image with logo that will used in the reports like health records, prescription, receipts etcCompany logo will be best
+                viewed in the dimensions of 200:100 pixels or 2:1 ratio. The file format should be in .jpeg or .jpg or .png or .gif.</label>
+              <a href="#"><i className=" fas fa-edit mt-3"></i></a>
           </CardHeader>
         </div>
 
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">DOCTOR SIGNATURE</h6>
-              <p><small><b>Select doctor signature image that will used in the reports like health records, prescription etc
+              <label>Select doctor signature image that will used in the reports like health records, prescription etc
                  Image will be best viewed in the dimensions of 300:100 pixels or 3:1 ratio. The file format should be in
-                  .jpeg or .jpg or .png or .gif.</b></small></p>
-              <a href="#"><i className=" fas fa-edit"></i></a>
+                  .jpeg or .jpg or .png or .gif.</label>
+              <a href="#"><i className=" fas fa-edit mt-3"></i></a>
           </CardHeader>
         </div>
 
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">REPORT BY EMAIL</h6>
-              <p><small><b>Set your preference to receive reports via email</b></small></p>
+              <label>Set your preference to receive reports via email</label><br></br>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
-                <select className="form-control text-success ">
+                <select className="form-control text-success mt-3">
                   <option value="">Weekly</option>
                   <option value="">Daily</option>
                   <option value="">Monthly</option>
@@ -385,8 +386,8 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">AUDIT REPORTS</h6>
-              <p><small><b>You can view your audit reports here</b></small></p>
-              <a href="./AuditReport"><Button outline size="sm" theme="success" className="mb-2 mr-1">
+              <label>You can view your audit reports here</label><br></br>
+              <a href="./AuditReport"><Button outline size="sm" theme="success" className="mb-2 mr-1 mt-3">
                 View Audit Reports
               </Button></a>
           </CardHeader>
@@ -395,9 +396,9 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">CLINICAL DECISION SUPPORT</h6>
-              <p><small><b>Set your Clinical Decision Support settings here</b></small></p>
+              <label>Set your Clinical Decision Support settings here</label><br></br>
               <a href="./CDS">
-              <Button outline size="sm" theme="success" className="mb-2 mr-1">
+              <Button outline size="sm" theme="success" className="mb-2 mr-1 mt-3">
                  Set Clinical Decision Report
               </Button></a>
           </CardHeader>
@@ -406,10 +407,10 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">Forms</h6>
-              <p><small><b>Create custom form use them in Electronic health record page</b></small></p>
+              <label>Create custom form use them in Electronic health record page</label><br></br>
               <Dropdown open={this.state.open} toggle={this.toggle} group>
               <a >
-                <Button onClick={() => { this.handleShowForms() }} outline theme="success">Set forms</Button>
+                <Button onClick={() => { this.handleShowForms() }} outline theme="success" className="mt-3">Set forms</Button>
               </a>
               < Modal size="sm" open={setForms} toggle={this.handlesetForms}>
                 <SetForms handleHideForms={this.handleHideForms} />
@@ -421,10 +422,10 @@ return (
         <div className="card mt-3">
           <CardHeader className="mb-3">
               <h6 className="text-success">RESET ALL SETTING</h6>
-              <p><small><b>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like
-                 account created. This will not delete any data.</b></small></p>
+              <label>Reset all your settings back to default. This will reset system, EHR and other page settings to initial like
+                 account created. This will not delete any data.</label>
               <a onClick={() => { this.handleShowReset() }}>
-                <Button outline size="sm" theme="success" className="mb-2 mr-1">
+                <Button outline size="sm" theme="success" className="mb-2 mr-1 mt-3">
                   Reset All your Setting
           </Button>
               </a>
