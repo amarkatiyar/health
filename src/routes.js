@@ -67,6 +67,7 @@ import Message from "./views/Message";
 import CreateMessage from "./views/CreateMessage";
 import Billing from "./views/Billing";
 import CDS1 from "./views/CDS1";
+import M_user1 from "./views/M_user1";
 
 export default [
   {
@@ -316,6 +317,10 @@ export default [
     path: "/CDS1",
     layout: DefaultLayout,
     component: CDS1
+  },
+  {
+    path: "/M_user1",
+    layout: DefaultLayout,
+    component: M_user1
   }
- 
 ];

@@ -5,7 +5,7 @@ import Edit1 from './Edit1';
 import Add2 from './Add2';
 import Add1 from './Add1';
 
-export default class EditProfile extends React.Component{
+export default class M_user1 extends React.Component{
     constructor(props) {
       super(props);
       this.state = { 
@@ -73,11 +73,6 @@ render(){
                 <div className="col lg-6">
                     <Card style={{height:"250px"}}>
                     <p>Profile Photo</p>
-                        {/* <CardBody>  */}
-                        {/* <Col xs={6} md={4}>
-                        <Image src=" " roundedCircle />
-                        </Col> */}
-                        {/* </CardBody> */}
                     </Card>
                 </div>
                 <div className="col lg-6">

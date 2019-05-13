@@ -168,7 +168,7 @@ export default class DropdownSplitExample extends React.Component {
       showForm1:true,
       showForm2:false,
       showForm3:false,
-      showForm3:false
+      showForm4:false
     })}
   
   if(e.target.value=="DrugCode1"){
@@ -238,7 +238,7 @@ return (
           <CardHeader className="mb-3">
               <small><h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6></small>
               <label>Manage users, you can create new user or view existing user and edit them</label><br></br>
-              <a href="./ManageUser">
+              <a href="./M_user1">
                 <Button outline size="sm" theme="success" className="mt-3"><i className="fas fa-user"></i>
                 Manage User
               </Button></a>
@@ -434,7 +434,6 @@ return (
               </Modal>
           </CardHeader>
         </div>
-
 </Container>
     )
   }
