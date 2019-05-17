@@ -31,6 +31,8 @@ import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
 import CDS from "./views/CDS";
+import CDS1 from "./views/CDS1";
+import M_user1 from "./views/M_user1";
 import AuditReport from "./views/AuditReport";
 import NewUser from "./views/NewUser";
 import Multiple from "./views/Multiple";
@@ -330,5 +332,14 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
-
+  {
+    path: "/CDS1",
+    layout: DefaultLayout,
+    component: CDS1
+  },
+  {
+    path: "/M_user1",
+    layout: DefaultLayout,
+    component: M_user1
+  }
 ];

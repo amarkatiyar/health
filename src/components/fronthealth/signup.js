@@ -68,7 +68,6 @@ class signup extends React.Component {
   }
 
 
-
   componentDidMount = () => {
     sessionStorage.setItem('email' ,'');
     sessionStorage.setItem('password', '');
@@ -403,10 +402,29 @@ const SignupForm = withFormik({
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-       alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    // setTimeout(() => {
+    //    alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 1000);
+
+    axios.post(`http://172.20.10.2:5001/signup`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              // console.log("axios");
+                           
+              // if (res.status === 200) {
+              //   sessionStorage.setItem("Username", res.data.docID);
+              //   sessionStorage.setItem("isLoggedIn", true);
+              // }
+              // else{
+                // wrong pws    login fail
+              // }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
   },
 
   displayName: 'SignUp',

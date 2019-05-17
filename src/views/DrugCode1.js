@@ -3,13 +3,27 @@ import {Row,Button, Card, CardBody,Col,Form,FormGroup, FormCheckbox,
     FormSelect,FormInput,CardHeader } from 'shards-react'
 
 export default class DrugCode1 extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = { 
+          open: false,
+          handleShowDrugCodeForm :false
+      };
+  }
+  handleShowDrugCodeForm=() => {
+    this.props.handleHideDrugCodeFormSecond();
+}
+
 render(){
+
+    const { showForm2 } = this.state;
+
 return(
 
 <Card className="" style={{height:"500px",width:"600px"}}>
         <CardHeader className="p-3 " style={{backgroundColor:"#A9A9A9"}}>
             <div className="row" >
-            <div className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
+            <div  onClick ={()=>this.handleShowDrugCodeForm()} className="col-sm-1"> <i className="fas fa-arrow-left"></i></div>
             <div className="col-sm-11"> Drug Code</div>
             </div>
         </CardHeader>

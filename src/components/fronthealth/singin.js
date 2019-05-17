@@ -16,7 +16,6 @@ import pic from './pic/banner_1-2.jpg';
 import { withFormik } from "formik";
 import axios from 'axios';
 
-
 class signin extends React.Component {
   
  
