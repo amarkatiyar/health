@@ -1,7 +1,6 @@
 // @ Author Manohar
 import React from "react";
 import { Container, Card, FormInput, Popover, CardHeader, CardBody, Modal, Collapse, InputGroup, InputGroupText, InputGroupAddon, Button } from "shards-react";
-
 import Item from "./Item";
 class NewBill extends React.Component {
 
@@ -66,25 +65,20 @@ class NewBill extends React.Component {
                   <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="far fa-star ml-3" style={{ cursor: "pointer" }} onClick={this.toggle} data-toggle="tooltip" title="Show my favrotie item/Service list for location"></span>
+                    <span className="far fa-star ml-3" style={{ cursor: "pointer" }} onClick={this.toggle} title="Show my favrotie item/Service list for location"></span>
                     <Collapse open={this.state.collapse}></Collapse>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="far fa-hospital ml-3" style={{ cursor: "pointer" }} onClick={this.toggle1} data-toggle="tooltip" title="Show item/Service list for location"></span>
+                    <span className="far fa-hospital ml-3" style={{ cursor: "pointer" }} onClick={this.toggle1} title="Show item/Service list for location"></span>
                     <Collapse open={this.state.collapse1}></Collapse>
                   </div>
                   <div className="col-lg-1">
-                    <span id="save-btn" className="fa fa-print ml-3" style={{ cursor: "pointer" }} data-toggle="tooltip" title="Print Invoice"></span>
+                    <span className="fa fa-print ml-3" style={{ cursor: "pointer" }} title="Print Invoice"></span>
                   </div>
                   <div className="col-lg-1">
                     <div className=" ml-3 pr-3"><i class="fas fa-ellipsis-v" title="Show list" style={{ cursor: "pointer" }} id="popover-2" onClick={this.toggle3}></i>
                     </div>
-                    <Popover
-                      placement="bottom"
-                      open={this.state.open}
-                      toggle3={this.toggle3}
-                      target="#popover-2"
-                      style={{ width: "150px" }}>
+                    <Popover className="mr-5" placement="bottom" open={this.state.open} toggle3={this.toggle3} target="#popover-2" style={{ width: "130px" }}>
                       <table className="table table-bordered table-hover mb-0">
                         <tbody>
                           <tr>
@@ -102,14 +96,12 @@ class NewBill extends React.Component {
                   </div>
 
                   <div className="col-xs-12 col-sm-6 col-md-6">
-
-                    <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
+                    <select className="form-control">
                       <option selected="selected" value="">Patient by name,mobile,K*ID or e:email here</option>
-
                     </select>
                   </div>
                   <div className="col-xs-12 col-sm-6 col-md-6">
-                    <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
+                    <select className="form-control">
                       <option selected="selected" value="">User by name,K*Id,e-email here</option>
                     </select>
                   </div>
@@ -123,8 +115,8 @@ class NewBill extends React.Component {
                 </div>
 
                 <div className="col-xs-6 text-right mt-2">
-                  <span><a onClick={() => { this.handleShowItem() }}><Button outline theme="success">
-                    <i class="fas fa-plus"></i> &nbsp;
+                  <span><a onClick={() => { this.handleShowItem() }}>
+                    <Button outline theme="success"><i class="fas fa-plus"></i> &nbsp;
                       Add Item/Service
                   </Button></a></span>
                   <Modal size="lg" open={showItemModal} toggle={this.handleShowItem}>
@@ -136,7 +128,7 @@ class NewBill extends React.Component {
           </div>
           <div className="col-4">
             <CardHeader style={{ background: "hsl(0, 50%, 95%)", cursor: "pointer" }} onClick={this.toggle}>
-              <a id="assign-icon" class="hover icon-md fas fa-star" > &nbsp;&nbsp; Favorite Item/Service</a>
+              <a className="fas fa-star" > &nbsp;&nbsp; Favorite Item/Service</a>
             </CardHeader>
             <Collapse open={this.state.collapse}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -161,7 +153,7 @@ class NewBill extends React.Component {
 
 
             <CardHeader className="mt-3" style={{ background: "hsl(0, 50%, 95%)", cursor: "pointer" }}>
-              <a id="assign-icon" className="hover icon-md fa fa-hospital " onClick={this.toggle1}> &nbsp;&nbsp;Item/Service Code</a>
+              <a className="fa fa-hospital " onClick={this.toggle1}> &nbsp;&nbsp;Item/Service Code</a>
             </CardHeader>
             <Collapse open={this.state.collapse1}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -185,7 +177,7 @@ class NewBill extends React.Component {
             </Collapse>
 
             <CardHeader className="mt-3" style={{ background: "hsl(0, 50%, 95%)", cursor: "pointer" }}>
-              <a id="assign-icon" class="hover icon-md fa fa-percent " onClick={this.toggle2}> &nbsp;&nbsp;Service Charges/ Tax</a>
+              <a className="fa fa-percent " onClick={this.toggle2}> &nbsp;&nbsp;Service Charges/ Tax</a>
             </CardHeader>
             <Collapse open={this.state.collapse2}>
               <Card className="mt-0" style={{ height: "400px" }}>
@@ -207,7 +199,6 @@ class NewBill extends React.Component {
                 </div>
               </Card>
             </Collapse>
-
           </div>
         </div>
       </Container>

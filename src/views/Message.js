@@ -30,15 +30,10 @@ class Message extends React.Component {
   }
 
   toggle1 = () => {
-    this.setState({
-      open: !this.state.open
-    });
+    this.setState({ open: !this.state.open });
   }
   render() {
     const { showCreateMessageModal } = this.state;
-    let { showFavorite } = this.state;
-    let { showStar } = this.state;
-
     return (
       <Container fluid className="main-content-container px-4 py-4">
         <Card small className="">
@@ -50,13 +45,13 @@ class Message extends React.Component {
 
               <div className="col-lg-1" >
                 <Card style={{ height: "0px" }} onClick={this.toggle}>
-                  <div className=" ml-4 pr-3"><i className="far fa-star" title="Show my favorite message" style={{ cursor: "pointer" }} ></i>
+                  <div className=" ml-5 pr-3 "><i className="far fa-star" title="Show my favorite message" style={{ cursor: "pointer" }} ></i>
                   </div>
 
-                  <div className="col-12 d-flex justify-content-center">
-                    <Collapse open={this.state.collapse} className="mr-5">
+                  <div className="col-lg-12 d-flex justify-content-end">
+                    <Collapse open={this.state.collapse} className="mr-5 ">
                       <CardHeader style={{ background: "hsl(0, 50%, 95%)", width: "300px" }}>
-                        <a id="assign-btn-cancle" className="hover icon-md fa fa-chevron-left" title="cancle" > &nbsp;&nbsp;Favorite Message</a>
+                        <a className="fa fa-chevron-left">&nbsp;&nbsp;Favorite Message</a>
                       </CardHeader>
                       <Card className="mt-0" style={{ height: "350px", width: "300px" }}>
                         <InputGroup size="md" seamless>
@@ -65,7 +60,7 @@ class Message extends React.Component {
                               <i class="fas fa-search"></i>
                             </InputGroupText>
                           </InputGroupAddon>
-                          <FormInput className="border-3 " placeholder="All" />
+                          <FormInput className="border-3" placeholder="All" />
                           <InputGroupAddon type="append">
                             <InputGroupText>
                               <i class="fas fa-plus"></i>
@@ -84,12 +79,7 @@ class Message extends React.Component {
               <div className="col-lg-1" >
                 <div className=" ml-4 pr-3"><i class="fas fa-ellipsis-v" title="Show more options" style={{ cursor: "pointer" }} id="popover-2" onClick={this.toggle1}></i>
                 </div>
-                <Popover
-                  placement="bottom"
-                  open={this.state.open}
-                  toggle1={this.toggle1}
-                  target="#popover-2"
-                  style={{ width: "100px" }}>
+                <Popover placement="bottom" open={this.state.open} toggle1={this.toggle1} target="#popover-2" style={{ width: "100px" }}>
                   <table className="table table-bordered table-hover mb-0">
                     <tbody>
                       <tr>
@@ -104,8 +94,8 @@ class Message extends React.Component {
               </div>
             </div><br></br>
             <div className="row">
-              <div className="col-lg-12   d-flex justify-content-between">
-                <select id="messageId" className="form-control w-25" name="msgType" onchange="message_list.setType()">
+              <div className="col-lg-12 d-flex justify-content-between">
+                <select className="form-control w-25">
                   <option value="I">INBOX</option>
                   <option value="S">SENT MESSAGE</option>
                 </select>
