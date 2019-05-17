@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Row, Col, FormInput, CardHeader, Button } from "shards-react";
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class Item extends Component {
   constructor(props) {
@@ -13,6 +14,17 @@ class Item extends Component {
   handleShowItem = () => {
     this.props.handleHideItem();
   }
+  componentDidMount = () => {
+    sessionStorage.setItem('Item/Service', '');
+    sessionStorage.setItem('Price', '');
+    sessionStorage.setItem('Quantity', '');
+    sessionStorage.setItem('Amount', '');
+    console.log(sessionStorage.getItem('FirstName'));
+    console.log(sessionStorage.getItem('Price'));
+    console.log(sessionStorage.getItem('Quantity'));
+    console.log(sessionStorage.getItem('Amount'));
+    // let email = sessionStorage.getItem("email");
+  }
   render() {
     const {
       values,
@@ -22,13 +34,14 @@ class Item extends Component {
       handleBlur,
       handleSubmit
     } = this.props;
+
     return (
       <Row>
         <Col>
           <CardHeader className="border-bottom" style={{ width: "800px", height: "430px" }}>
             <div className="row mb-3">
               <div className="col-lg-12 text-left">
-                <a onClick={() => this.handleShowItem()}><i className="hover icon-md fa fa-arrow-left mt-2 mr-2" style={{ cursor: "pointer" }} title="cancle"></i></a>Item/Service
+                <a onClick={() => this.handleShowItem()}><i className="fa fa-arrow-left mt-2 mr-2" style={{ cursor: "pointer" }} title="cancle"></i></a>Item/Service
             </div>
 
             </div>
@@ -157,10 +170,31 @@ const ItemForm = withFormik({
     return errors;
   },
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    // setTimeout(() => {
+    //   alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 1000);
+
+    console.log("submitting....");
+    console.log(values);
+
+    axios.post(`http://192.168.0.115:5001/signup`, values)
+      .then(function (response) {
+        const res = response;
+        console.log(res);
+        // console.log("axios");
+
+        if (res.status === 200) {
+          // sessionStorage.setItem("", res.data.status);
+          sessionStorage.setItem("success", true);
+        }
+        else {
+          // wrong pws    login fail
+        }
+      })
+      .catch(function () {
+        console.log("Server issue / no data found");
+      });
   },
   displayName: "ItemForm"
 })(Item);
