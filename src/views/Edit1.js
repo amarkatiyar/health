@@ -20,6 +20,8 @@ class Edit1 extends React.Component {
 render() {
     const {
         values,
+        field,
+        option,form,
         touched,
         errors,
         handleChange,
@@ -101,11 +103,21 @@ return (
                                 <label for="Ad_status">Administrator status*</label>
                             </div>
                             <div className="col-6 ">
-                                    <select className="form-control">
-                                        <option value="1">ACTIVE</option>
-                                        <option value="2">DEACTIVE</option>
+                                    <select className="form-control "
+                                     type="text"
+                                     placeholder="Administrator"
+                                     name="Administrator"
+                                     value={values.Administrator}
+                                     onChange={handleChange}
+                                     onBlur={handleBlur}>
+                                    >
+                                        <option value=""></option>
+                                        <option value="ACTIVE">ACTIVE</option>
+                                        <option value="DEACTIVE">DEACTIVE</option>
                                     </select>
-
+                                    {errors.Administrator && touched.Administrator && (<div className="text-danger small" id="feedback">
+                                        {errors.Administrator}
+                                    </div>)}
                             </div>
                         </div>
                         <div className="row mt-3">
@@ -113,7 +125,16 @@ return (
                                 <label for="Mo_number" >Mobile Number*</label>
                             </div>
                             <div className="col-6">
-                                <FormInput type="number" className="form-control" id="#number" placeholder="+91 8840091275"></FormInput>
+                                <FormInput type="number" className="form-control" id="#number" placeholder="+91 8840091275"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.Number}
+                                name="Number"></FormInput>
+                                {errors.Number && touched.Number && (
+                                <div className="text-warning " id="feedback">
+                                    {errors.Number}
+                                </div>
+                        )}
                             </div>
                         </div>
                         <Button outline size="md" className="mt-3 ml-5" theme="success">
@@ -126,7 +147,7 @@ return (
     }
 }
 const Edit1Form = withFormik({
-    mapPropsToValues: () => ({ Hname: "",Fname: "",Lname: "" }),
+    mapPropsToValues: () => ({ Hname: "",Fname: "",Lname: "",Administrator: "",Number: "" }),
     // Custom sync validation
     validate: values => {
       const errors = {};
@@ -148,6 +169,20 @@ const Edit1Form = withFormik({
         errors.Lname = "Please enter the correct chahracter !";
       } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.Lname)) {
         errors.Lname = " Please character only !";
+      }
+      if (!values.Administrator) {
+        errors.Administrator = "Please select the email-id or name !";
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,3}$/i.test(values.Administrator)) {
+      }
+      else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.subject)) {
+        errors.subject = " Please select option !";
+      }
+      if (!values.Number) {
+        errors.Number = "**enter the phone number ! **";
+      } else if (
+        !/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(values.Number)
+      ) {
+        errors.Number = "**Not valid number ! **";
       }
       return errors;
 },
