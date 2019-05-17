@@ -39,12 +39,21 @@ return(
         <div class="form-group row mt-3">
           <label for="Ad_status" className="col-lg-6 col-md-6 col-sm-6 col-6 ">Administrator status*</label>
             <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-              <select className="form-control ">
+              <select className="form-control "
+              type="text"
+              placeholder="Gender"
+              name="Gender"
+              value={values.Gender}
+              onChange={handleChange}
+              onBlur={handleBlur}>
                 <option value="">-Select Gender-</option>
-                  <option value="">Male</option>
-                  <option value="1">Female</option>
-                  <option value="2">Other</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
               </select>
+              {errors.Gender && touched.Gender && (<div className="text-danger small" id="feedback">
+                                        {errors.Gender}
+                                    </div>)}
             </div>
           </div>
         <div className="row">
@@ -100,7 +109,7 @@ return(
 }
 
 const Edit2Form = withFormik({
-    mapPropsToValues: () => ({ Education: "",LicenceNumber: "" }),
+    mapPropsToValues: () => ({ Gender:"",Education: "",LicenceNumber: "" }),
   
     // Custom sync validation
     validate: values => {
@@ -115,6 +124,13 @@ const Edit2Form = withFormik({
         errors.LicenceNumber = "please enter the LicenceNumber ! **";
       }else if (!/^[0-9a-zA-Z]+$/.test(values.LicenceNumber)) {
         errors.LicenceNumber = " **please enter the character only ! **";
+      }
+      if (!values.Gender) {
+        errors.Gender = "Please select the Gender !";
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,3}$/i.test(values.Gender)) {
+      }
+      else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.subject)) {
+        errors.subject = " Please select option !";
       }
       return errors;
     },

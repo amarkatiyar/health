@@ -22,12 +22,11 @@ render() {
     return (
     <Container fluid className="main-content-container px-4 py-4">
     <Card small className="mb-4">
-    
-    <CardHeader className="border-bottom">
+    <CardHeader>
     <Form>
         <div className="row">
             <div className="col-lg-11">
-                <h6 className="text-success" style={{ cursor: "pointer" }}><i class="far fa-credit-card"></i>&nbsp; Audit Repots</h6>
+                <h6 className="text-success" style={{ cursor: "pointer" }}><i class="far fa-credit-card"></i>&nbsp; AUDIT REPORTS</h6>
             </div>
             <div className="col-lg-1" >
                 <i className="fa fa-print mr-2" style={{ cursor: "pointer" }}></i>&nbsp;
@@ -46,6 +45,9 @@ render() {
                       </tr>
                       <tr>
                         <td><i className="far fa-star">&nbsp;&nbsp;Tutorial</i></td>
+                      </tr>
+                      <tr>
+                        <td><i className="far fa-star">&nbsp;&nbsp;Export</i></td>
                       </tr>
                       <tr>
                         <td><i className="far fa-question-circle">&nbsp;&nbsp;Help</i></td>

@@ -1,17 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-  Card,
   CardHeader,
-  Button,
-  ListGroup,
-  ListGroupItem,
-  Progress,
+  Button,Form,
   Dropdown,
-  DropdownToggle,Form,FormGroup,
-  DropdownMenu,
-  DropdownItem,
-  Modal,target,Container,CardBody
+  Modal,Container
 
 } from "shards-react";
 import RestSetting from "../../views/RestSetting";
@@ -240,7 +233,7 @@ return (
               <label>Manage users, you can create new user or view existing user and edit them</label><br></br>
               <a href="./M_user1">
                 <Button outline size="sm" theme="success" className="mt-3"><i className="fas fa-user"></i>
-                Manage User
+                &nbsp;Manage User
               </Button></a>
           </CardHeader>
         </div>
@@ -283,7 +276,7 @@ return (
                 <select name="hospital_code" className="form-control text-success mt-3" onChange={(e)=> {this.handleDrugCodeForm(e)}}>
                   <option value="">Select</option>
                   <option value="Hospital1">item/service code</option>
-                  <option value="DrugCode1">Drug code</option>
+                  <option value="DrugCode1">Medication Code</option>
                   <option value="Procedure1">Procedure code</option>
                   <option value="TestCode1">Test code</option>
                 </select>
