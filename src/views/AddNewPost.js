@@ -64,7 +64,7 @@ class BasicCardExample extends React.Component {
         <div className="">
         <table className="table mb-0 p-0 ">
         <tbody style={{fontSize:"12px"}}>
-        <tr><a href="patientAcc" >
+        <tr ><a href="patientAcc" >
                    <td onClick={(e)=>{this.yourfunction(e,)}}>{item.name}</td>
                    <td onClick={(e)=>{this.yourfunction(e,)}}>{item.gen}</td>
                    <td onClick={(e)=>{this.yourfunction(e,)}}>{item.DOB}</td>
@@ -77,17 +77,9 @@ class BasicCardExample extends React.Component {
         
         </tbody>
         </table>
-        {/* <div className="d-flex justify-content-around">
-        <div onClick={(e)=>{this.yourfunction(e,)}}>{item.name}</div><hr/>
-        <div onClick={(e)=>{this.yourfunction(e,)}}>{item.gen}</div><hr/>
-        <div onClick={(e)=>{this.yourfunction(e,)}}>{item.DOB}</div><hr/>
-        <div onClick={(e)=>{this.yourfunction(e,)}}>{item.mobile}</div><hr/>
-        <div onClick={(e)=>{this.yourfunction(e,)}}>{item.email}</div><hr/>
-
-        </div> */}
-      
-        </div>
         
+        
+        </div>
       )
     })
     
@@ -185,7 +177,7 @@ class BasicCardExample extends React.Component {
               </Collapse>
 
               <CardBody className="p-0 pb-3">
-                { <small>
+                <small>
                   <a href="./patientacc">
                     <table className="table mb-0">
                       <thead className="bg-light">
@@ -210,8 +202,8 @@ class BasicCardExample extends React.Component {
                      
                     </table>
                   </a>
-                </small> }
-             <div>   {patientListItems}</div>
+                </small>
+                {patientListItems}
               </CardBody>
               
             </Card>

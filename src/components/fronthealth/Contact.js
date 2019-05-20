@@ -134,7 +134,7 @@ class Contact extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-3 pt-3 mb-5"
+                className="pb-3 pt-3"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">

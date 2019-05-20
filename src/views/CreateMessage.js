@@ -120,6 +120,9 @@ const CreateMessageForm = withFormik({
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.to)) {
       errors.to = "Invalid email address";
     }
+    // else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.subject)) {
+    //   errors.subject = " Please select option !";
+    // }
 
     if (!values.subject) {
       errors.subject = "Please enter the subject !";

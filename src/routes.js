@@ -16,11 +16,10 @@ import home from "./components/fronthealth/home";
 import Aboutus from "./components/fronthealth/Aboutus";
 import Services from "./components/fronthealth/Services";
 import Contact from "./components/fronthealth/Contact";
-import CreateBill from "./components/Billings/CreateBill";
+// import CreateBill from "./components/Billings/CreateBill";
 import Billing from "./components/Billings/Billing";
 import Message from "./components/Message/Message";
 import Calender from "./components/Calender/calender";
-
 
 import UserProfileLite from "./views/UserProfileLite";
 import AddNewPost from "./views/AddNewPost";
@@ -28,7 +27,7 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-import  NewhealthRecord from "./components/NewhealthRecord"; 
+import NewhealthRecord from "./components/NewhealthRecord";
 
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
@@ -72,69 +71,63 @@ export default [
     layout: LoginLayout,
     component: () => <Redirect to="/home" />
   },
-// *****************************front page**********
-{
-  path: "/pulse",
-  layout: DefaultLayout,
-  component: Pulse
-},
-
-{
-  path: "/home",
-  layout: homelayout,
-  component: home
-},
-{
-  path: "/Aboutus",
-  layout: Aboutlayout,
-  component: Aboutus
-},
-{
-  path: "/Services",
-  layout: Serviceslayout,
-  component: Services
-},
-{
-  path: "/Contact",
-  layout: Contactlayout,
-  component: Contact
-},
-{
-  path: "/signup",
-  layout:signuplayout,
-  component: signup
-},
-{
-  path: "/signin",
-  layout:signinlayout,
-  component: Signin
-},
-{
+  // *****************************front page**********
+  {
+    path: "/home",
+    layout: homelayout,
+    component: home
+  },
+  {
+    path: "/Aboutus",
+    layout: Aboutlayout,
+    component: Aboutus
+  },
+  {
+    path: "/Services",
+    layout: Serviceslayout,
+    component: Services
+  },
+  {
+    path: "/Contact",
+    layout: Contactlayout,
+    component: Contact
+  },
+  {
+    path: "/signup",
+    layout: signuplayout,
+    component: signup
+  },
+  {
+    path: "/signin",
+    layout: signinlayout,
+    component: Signin
+  },
+  {
     path: "/patient",
     layout: DefaultLayout,
-    component:Patient
-},
-{
+    component: Patient
+  },
+  {
     path: "/PatientAcc",
     layout: DefaultLayout,
     component: PatientAcc
-},
-{
+  },
+  {
     path: "/user-profile-lite",
     layout: DefaultLayout,
     component: UserProfileLite
-},
-{
+  },
+  {
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
-},
-{
+  },
+  {
     path: "/components-overview",
     layout: DefaultLayout,
     component: ComponentsOverview
-},
-{
+  },
+  {
     path: "/NewhealthRecord",
     layout: DefaultLayout,
     component: NewhealthRecord
@@ -144,63 +137,63 @@ export default [
     layout: DefaultLayout,
     component: Calender
   },
-  
+
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
-},
-{
+  },
+  {
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
   },
-   {
-    path: "/CreateBill",
-     layout: DefaultLayout,
-    component: CreateBill
-   },
-   {
+  {
+    path: "/NewBill",
+    layout: DefaultLayout,
+    component: NewBill
+  },
+  {
     path: "/Message",
     layout: DefaultLayout,
     component: Message
-},
-{
+  },
+  {
     path: "/newbill",
     layout: DefaultLayout,
     component: NewBill
-},
-{
+  },
+  {
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
-},
-{
+  },
+  {
     path: "/item",
     layout: DefaultLayout,
     component: Item
-},
-{
+  },
+  {
     path: "/SetForms",
     layout: DefaultLayout,
     component: SetForms
-},
-{
+  },
+  {
     path: "/ChangePassword",
     layout: DefaultLayout,
     component: ChangePassword
-},
-{
+  },
+  {
     path: "/CDS",
     layout: DefaultLayout,
     component: CDS
-},
-{
+  },
+  {
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
-},
-{
+  },
+  {
     path: "/NewUser",
     layout: DefaultLayout,
     component: NewUser
@@ -314,7 +307,5 @@ export default [
     path: "/PatBilling",
     layout: DefaultLayout,
     component: PatBilling
-  },
-  
- 
+  }
 ];

@@ -24,7 +24,7 @@ export default  function ManageUser(){
                     </div>
                 </div>
                 <div className="mt-3">
-                <a href="./ManageUser1"> 
+                <a href="./M_user1"> 
                 <table className="table table-hover">
                     <thead className="text-small">
                         <tr>
