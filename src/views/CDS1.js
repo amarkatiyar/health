@@ -32,12 +32,12 @@ return(
     <Card>
         <CardHeader className="mb-4">
           <div className="row">
-            <div className="col-lg-11 text-success" >
+            <div className="col-lg-10 text-success" >
               <i className="fa fa-address-card mr-3" style={{ cursor: "pointer" }}></i><a className="text-success">CLINICAL DECISION SUPPORT</a>
             </div>
 
-            <div className="col-lg-1" >
-              <i className="fa fa-print mr-2" style={{ cursor: "pointer" }}></i>&nbsp;
+            <div className="col-lg-2 text-right" >
+              <i className="fa fa-print" style={{ cursor: "pointer" }}></i>&nbsp;
               <i className="fas fa-ellipsis-v ml-4" title="Show more options" style={{ cursor: "pointer" }} id="popover-2" onClick={this.toggle1}></i>
             </div>
               <Popover
