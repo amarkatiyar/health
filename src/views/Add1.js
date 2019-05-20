@@ -305,6 +305,7 @@ const Add1Form = withFormik({
     return errors;
   },
       handleSubmit: (values, { setSubmitting }) => {
+        values.doc_ID = sessionStorage.getItem("DocId");
         // setTimeout(() => {
         //   alert(JSON.stringify(values, null, 2));
         //   setSubmitting(false);
@@ -316,7 +317,7 @@ const Add1Form = withFormik({
     
     
     
-          axios.post(`http://192.168.0.151:5001/Add1`, values)
+          axios.post(`http://192.168.0.151:5001/ContactDoc`, values)
                 .then(function(response) {
                   const res = response;
                   console.log(res);
@@ -324,7 +325,7 @@ const Add1Form = withFormik({
                                
                   if (res.status === 200) {
                     // sessionStorage.setItem("", res.data.status);
-                    sessionStorage.setItem("success", true);
+                    sessionStorage.setItem("status", true);
                   }
                   else{
                     // wrong pws    login fail

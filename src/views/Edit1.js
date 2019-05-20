@@ -139,7 +139,7 @@ return (
                                 value={values.Number}
                                 name="Number"></FormInput>
                                 {errors.Number && touched.Number && (
-                                <div className="text-warning " id="feedback">
+                                <div className="text-danger small text-left" id="feedback">
                                     {errors.Number}
                                 </div>
                         )}
@@ -163,10 +163,11 @@ const Edit1Form = withFormik({
       if (!values.Hname) {
         errors.Hname = "Please enter the correct chahracter !";
       } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.Hname)) {
+        errors.Hname = "Not valid number !"
       }
-     else if (!/^[0-9]+$/.test(values.Hname)) {
-              errors.Hname = "Not valid number !"
-      }
+    //  else (!/^[0-9]+$/.test(values.Hname)) {
+    //           errors.Hname = "Not valid number !"
+    //   }
 
       if (!values.Fname) {
         errors.Fname = "Please enter the correct chahracter !";
@@ -205,24 +206,24 @@ const Edit1Form = withFormik({
 
 
 
-      axios.post(`http://192.168.0.151:5001/Edit1`, values)
-            .then(function(response) {
-              const res = response;
-              console.log(res);
-              // console.log("axios");
+      // axios.post(`http://192.168.0.151:5001/Edit1`, values)
+      //       .then(function(response) {
+      //         const res = response;
+      //         console.log(res);
+      //         // console.log("axios");
                            
-              if (res.status === 200) {
-                // sessionStorage.setItem("", res.data.status);
-                sessionStorage.setItem("success", true);
-              }
-              else{
-                // wrong pws    login fail
-              }
+      //         if (res.status === 200) {
+      //           // sessionStorage.setItem("", res.data.status);
+      //           sessionStorage.setItem("success", true);
+      //         }
+      //         else{
+      //           // wrong pws    login fail
+      //         }
   
-            })
-            .catch(function() {
-              console.log("Server issue / no data found");
-            });
+      //       })
+      //       .catch(function() {
+      //         console.log("Server issue / no data found");
+      //       });
 
 
     },
