@@ -4,6 +4,8 @@ import {
     FormSelect,FormInput 
     } from 'shards-react'
 import { withFormik } from "formik";
+import axios from 'axios';
+
 
 class Add1 extends React.Component{
   constructor(props) {
@@ -18,6 +20,17 @@ class Add1 extends React.Component{
 handleShowAdd1=() => {
    this.props.handleHideAdd1();
  }
+
+ componentDidMount = () => {
+  sessionStorage.setItem('firstname', '');     
+  sessionStorage.setItem('city' ,'');
+  sessionStorage.setItem('Country', '');
+  sessionStorage.setItem('S_Province', '');
+  sessionStorage.setItem('date', '');
+  sessionStorage.setItem('number', '');
+  sessionStorage.setItem('number1', '');
+  
+}
 
 render(){
     const { Add1Form } = this.state;
@@ -41,7 +54,7 @@ return(
         <FormGroup>
             <div className="row mt-1 ">
                   <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-                  <label htmlFor="#firstname">Address</label>
+                  <label htmlFor="firstname">Address</label>
               </div>
               <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                 <FormInput 
@@ -103,7 +116,7 @@ return(
         <FormGroup>
           <div className="row">
               <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-              <label htmlFor="#Gender">Country</label>
+              <label htmlFor="Country">Country</label>
             </div>
             <div className="col-lg-8 col-md-8 col-sm-8 col-8">
               <FormSelect
@@ -130,7 +143,7 @@ return(
         <FormGroup>
           <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-              <label htmlFor="#S_Province">State/Province</label>
+              <label htmlFor="S_Province">State/Province</label>
             </div>
             <div className="col-lg-8 col-md-8 col-sm-8 col-8">
               <FormSelect
@@ -155,7 +168,7 @@ return(
         <FormGroup>
           <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-              <label htmlFor="#date">Zip/Postal Code</label>
+              <label htmlFor="date">Zip/Postal Code</label>
             </div>
             <div className="col-lg-8 col-md-8 col-sm-8 col-8">
               <FormInput 
@@ -176,10 +189,10 @@ return(
         <FormGroup>
           <div className="row">
             <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-              <label htmlFor="#number">Phone1</label>
+              <label htmlFor="number">Phone1</label>
             </div>
             <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-              <FormInput type="number" id="#number" placeholder="+91 8840091275"
+              <FormInput type="number" id="number" placeholder="+91 8840091275"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.Number1}
@@ -197,7 +210,7 @@ return(
         <FormGroup>
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-4 col-4">
-            <label htmlFor="#number">Phone2</label>
+            <label htmlFor="number1">Phone2</label>
           </div>
           <div className="col-lg-8 col-md-8 col-sm-8 col-8">
             <FormInput type="number" id="Number2" placeholder="+91 8840091275" 
@@ -292,10 +305,37 @@ const Add1Form = withFormik({
     return errors;
   },
       handleSubmit: (values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 1000);
+        // setTimeout(() => {
+        //   alert(JSON.stringify(values, null, 2));
+        //   setSubmitting(false);
+        // }, 1000);
+
+
+        console.log("submitting....");
+        console.log(values);
+    
+    
+    
+          axios.post(`http://192.168.0.151:5001/Add1`, values)
+                .then(function(response) {
+                  const res = response;
+                  console.log(res);
+                  // console.log("axios");
+                               
+                  if (res.status === 200) {
+                    // sessionStorage.setItem("", res.data.status);
+                    sessionStorage.setItem("success", true);
+                  }
+                  else{
+                    // wrong pws    login fail
+                  }
+      
+                })
+                .catch(function() {
+                  console.log("Server issue / no data found");
+                });
+
+
       },
       displayName: "Add1Form"
     })(Add1);

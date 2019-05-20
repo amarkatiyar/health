@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row,Button, Card, CardBody,Form, } from 'shards-react'
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class Add2 extends React.Component{
         constructor(props) {
@@ -20,12 +21,15 @@ class Add2 extends React.Component{
         handleShowAdd2=() => {
             this.props.handleHideAdd2();
         }
+        componentDidMount = () => {
+          sessionStorage.setItem('firstname', '');     
+          sessionStorage.setItem('city' ,'');
+          
+        }
           
         render(){
             const {
                 values,
-                field,
-                option,form,
                 touched,
                 errors,
                 handleChange,
@@ -90,10 +94,35 @@ return(
           return errors;
     },
         handleSubmit: (values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 1000);
+          // setTimeout(() => {
+          //   alert(JSON.stringify(values, null, 2));
+          //   setSubmitting(false);
+          // }, 1000);
+
+          console.log("submitting....");
+        console.log(values);
+    
+    
+    
+          axios.post(`http://192.168.0.151:5001/Add2`, values)
+                .then(function(response) {
+                  const res = response;
+                  console.log(res);
+                  // console.log("axios");
+                               
+                  if (res.status === 200) {
+                    // sessionStorage.setItem("", res.data.status);
+                    sessionStorage.setItem("success", true);
+                  }
+                  else{
+                    // wrong pws    login fail
+                  }
+      
+                })
+                .catch(function() {
+                  console.log("Server issue / no data found");
+                });
+
         },
         displayName: "Add2Form"
       })(Add2);

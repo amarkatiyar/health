@@ -4,6 +4,7 @@ import {
 } from 'shards-react'
 
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class Edit1 extends React.Component {
     constructor(props) {
@@ -17,11 +18,18 @@ class Edit1 extends React.Component {
         this.props.handleHideEdit1();
     }
 
+    componentDidMount = () => {
+        sessionStorage.setItem('Hname', '');     
+        sessionStorage.setItem('Fname' ,'');
+        sessionStorage.setItem('Lname', '');
+        sessionStorage.setItem('Ad_status', '');    
+        sessionStorage.setItem('Mo_number', '');    
+        
+      }
+
 render() {
     const {
         values,
-        field,
-        option,form,
         touched,
         errors,
         handleChange,
@@ -60,7 +68,7 @@ return (
                         </div>
                         <div className="row mt-3">
                             <div className="col-6 ">
-                                <label for="F_name" >FirstName*</label>
+                                <label for="Fname" >FirstName*</label>
                             </div>
                             <div className="col-6">
                                 <FormInput type="text"
@@ -80,7 +88,7 @@ return (
                         </div>
                         <div className="row mt-3">
                             <div className="col-6 ">
-                                <label for="L_name" >LastName*</label>
+                                <label for="Lname" >LastName*</label>
                             </div>
                             <div className="col-6">
                                 <FormInput type="text" 
@@ -187,10 +195,36 @@ const Edit1Form = withFormik({
       return errors;
 },
     handleSubmit: (values, { setSubmitting }) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-      }, 1000);
+    //   setTimeout(() => {
+    //     alert(JSON.stringify(values, null, 2));
+    //     setSubmitting(false);
+    //   }, 1000);
+
+    console.log("submitting....");
+    console.log(values);
+
+
+
+      axios.post(`http://192.168.0.151:5001/Edit1`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              // console.log("axios");
+                           
+              if (res.status === 200) {
+                // sessionStorage.setItem("", res.data.status);
+                sessionStorage.setItem("success", true);
+              }
+              else{
+                // wrong pws    login fail
+              }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
+
+
     },
     displayName: "Edit1Form"
   })(Edit1);

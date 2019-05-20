@@ -231,10 +231,11 @@ return (
           <CardHeader className="mb-3">
               <small><h6 className="text-success"> <i className="fas fa-user mr-1"></i>Manage User</h6></small>
               <label>Manage users, you can create new user or view existing user and edit them</label><br></br>
-              <a href="./M_user1">
+              <a href="./ManageUser">
                 <Button outline size="sm" theme="success" className="mt-3"><i className="fas fa-user"></i>
-                &nbsp;Manage User
-              </Button></a>
+                  &nbsp;Manage User
+                </Button>
+              </a>
           </CardHeader>
         </div>
         <div className="card mt-3">

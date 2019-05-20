@@ -2,6 +2,7 @@ import React from 'react'
 import {Row,Button, Card, CardBody,FormInput } from 'shards-react'
 
 import { withFormik } from "formik";
+import axios from 'axios';
 
 class Edit2 extends React.Component{
 constructor(props) {
@@ -15,6 +16,12 @@ constructor(props) {
             this.props.handleHideEdit2();
         }
           
+        componentDidMount = () => {
+          sessionStorage.setItem('Ad_status', '');     
+          sessionStorage.setItem('Education' ,'');
+          sessionStorage.setItem('lice_no', '');
+          
+        }
           
         render(){
             const{ShowEdit2}=this.state;
@@ -37,7 +44,9 @@ return(
 
     <form onSubmit={handleSubmit}>
         <div class="form-group row mt-3">
-          <label for="Ad_status" className="col-lg-6 col-md-6 col-sm-6 col-6 ">Administrator status*</label>
+          <label for="Ad_status" 
+            className="col-lg-6 col-md-6 col-sm-6 col-6 ">Administrator status*
+          </label>
             <div class="col-lg-6 col-md-6 col-sm-6 col-6">
               <select className="form-control "
               type="text"
@@ -79,7 +88,7 @@ return(
         </div>
         <div className="row mt-3">
             <div className="col-lg-6 col-md-6 col-sm-6 col-6 ">
-            <label for="l_no">LicenceNumber*</label>
+            <label for="lice_no">LicenceNumber*</label>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-6">
               <FormInput type="text" 
@@ -136,10 +145,36 @@ const Edit2Form = withFormik({
     },
   
     handleSubmit: (values, { setSubmitting }) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(false);
-      }, 1000);
+      // setTimeout(() => {
+      //   alert(JSON.stringify(values, null, 2));
+      //   setSubmitting(false);
+      // }, 1000);
+
+
+      console.log("submitting....");
+      console.log(values);
+  
+  
+  
+        axios.post(`http://192.168.0.151:5001/Edit2`, values)
+              .then(function(response) {
+                const res = response;
+                console.log(res);
+                // console.log("axios");
+                             
+                if (res.status === 200) {
+                  // sessionStorage.setItem("", res.data.status);
+                  sessionStorage.setItem("success", true);
+                }
+                else{
+                  // wrong pws    login fail
+                }
+    
+              })
+              .catch(function() {
+                console.log("Server issue / no data found");
+              });
+
     },
   
     displayName: "Edit2Form"

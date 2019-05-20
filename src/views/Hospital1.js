@@ -21,18 +21,7 @@ return(
     <div className="col-2"></div>
     <div className="col-8">
     <Card style={{height:"500px",width:"600px" }}>
-        <div className="container mt-2">
-        <div className="col-4">
-            <h5>Send us a message</h5>
-                <div className="form-group">
-                  <input type="text" className="form-control" id="fullName" placeholder="Full Name" />
-                </div>
-        </div>
-            <div className="col-4">
-            </div>
-        </div>
-    {/* ########## card  code ################# */}
-        {/* <CardHeader className="p-3 " style={{background:"#A9A9A9"}}>
+     <CardHeader className="p-3" style={{background:"#A9A9A9"}}>
         <div className="row" >
         <div onClick ={()=>this.handleShowDrugCodeForm()} className="col-sm-1"> <i className="fas fa-arrow-left" style={{cursor:"pointer"}}></i></div>
             <div className="col-sm-1"style={{cursor:"pointer"}}> <i class="fas fa-hospital"></i></div>
@@ -52,7 +41,7 @@ return(
                 <div className="col-lg-8 bg-success text-left"style={{height:"40px"}}>
                 <small><b>There are no Item/Service code set, add your Item/Service code here and use them quickly</b></small>
                 </div>
-            </div> */}
+            </div> 
 </Card>
 </div>
 <div className="col-2"></div>
