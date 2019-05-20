@@ -1,16 +1,12 @@
 
 import React from "react";
    
-       import {  Button, Card,FormInput,Form, CardBody,FormGroup , Dropdown,
-        DropdownToggle,
-        DropdownMenu,
-        DropdownItem} from "shards-react";
+       import {  Button, Card,FormInput,Form, CardBody,FormGroup } from "shards-react";
 
 class NewhealthRecord extends React.Component{
 
   constructor(props){
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = {
       showVital: false,
       showVisitReasons:false,
@@ -20,15 +16,9 @@ class NewhealthRecord extends React.Component{
       showMedication:false,
       showNote:false,
       showAttachfile:false,
-      open: false
     }
     
   };
-  toggle() {
-    this.setState(prevState => {
-      return { open: !prevState.open };
-    });
-  }
 
   handleShowVital = (prevState) =>{
     this.setState({showVital: !prevState});
@@ -76,20 +66,7 @@ class NewhealthRecord extends React.Component{
       <div className="container"style={{fontFamily:" Geneva"}}>
        <Card className=" mt-3 p-4" style={{height:"150px"}}>
           <div className="d-flex justify-content-between">
-         <div >
-         <Dropdown open={this.state.open} toggle={this.toggle}>
-           <span className="text-success pr-5"> &nbsp; HEALTH RECORD</span>
-           <i class=" text-dark fas fa-print pl-5"></i> &nbsp; &nbsp;
-        
-        <DropdownToggle className="bg-white border-0 "><i class=" text-dark fas fa-ellipsis-v pl-3"></i></DropdownToggle>
-        <DropdownMenu >
-          <DropdownItem><i class="far fa-file-word"></i>&nbsp;&nbsp;Export CCD</DropdownItem>
-          <DropdownItem><i class="fas fa-print"></i>&nbsp;&nbsp;print</DropdownItem>
-          <DropdownItem><i class="fas fa-question"></i>&nbsp;&nbsp;Help</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-         
-  </div>
+         <div ><span className="text-success pr-5"> &nbsp; HEALTH RECORD</span> <i class=" text-dark fas fa-print pl-5"></i> &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v pl-3"></i></div>
          <div >91+8840091275 &nbsp; prashantkatiyar10796@gmail.com</div>
          <div className=" pr-5">EHT#:<br></br>Date:22/04/2019<br></br>update:
           </div>

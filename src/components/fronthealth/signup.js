@@ -69,21 +69,14 @@ class signup extends React.Component {
 
 
   componentDidMount = () => {
-    sessionStorage.setItem('Firstname' ,'');
-    sessionStorage.setItem('Lastname', '');
-    sessionStorage.setItem('email', '');
+    sessionStorage.setItem('email' ,'');
     sessionStorage.setItem('password', '');
-    sessionStorage.setItem('Number', '');
-     console.log(sessionStorage.getItem('FirstName'));
-     console.log(sessionStorage.getItem('Lastname'));
      console.log(sessionStorage.getItem('email'));
      console.log(sessionStorage.getItem('password'));
-     console.log(sessionStorage.getItem('Number'));
-    // let email = sessionStorage.getItem("email");
+    let email = sessionStorage.getItem("email");
     
     
   }
-
   render() {
     const {
       values,
@@ -94,9 +87,6 @@ class signup extends React.Component {
       handleSubmit,
     } = this.props;
 
-    // if(sessionStorage.getItem("issignup")){
-    //   history.push({pathname: '/home'})
-    // }
     
     return (
       <div>
@@ -158,7 +148,7 @@ class signup extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-2 pt-2 mb-5"
+                className="pb-2 pt-2"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">
@@ -416,29 +406,25 @@ const SignupForm = withFormik({
     //    alert(JSON.stringify(values, null, 2));
     //   setSubmitting(false);
     // }, 1000);
-    console.log("submitting....");
-    console.log(values);
-    
-    axios.post(`http://192.168.0.151:5001/signup`, values)
+
+    axios.post(`http://172.20.10.2:5001/signup`, values)
             .then(function(response) {
               const res = response;
               console.log(res);
               // console.log("axios");
                            
-              if (res.status === 200) {
-                // sessionStorage.setItem("", res.data.status);
-                sessionStorage.setItem("success", true);
-              }
-              else{
+              // if (res.status === 200) {
+              //   sessionStorage.setItem("Username", res.data.docID);
+              //   sessionStorage.setItem("isLoggedIn", true);
+              // }
+              // else{
                 // wrong pws    login fail
-              }
+              // }
   
             })
             .catch(function() {
               console.log("Server issue / no data found");
             });
-
-
   },
 
   displayName: 'SignUp',

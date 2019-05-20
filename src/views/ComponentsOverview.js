@@ -1,58 +1,22 @@
-
+// 
 import React from "react";
-import {
-     Card, 
-     Button,
-    Dropdown,
-   DropdownToggle,
-   DropdownMenu,
-   DropdownItem,} from "shards-react";
+import { CardBody,Card, Form, FormInput, FormGroup, FormSelect,Button} from "shards-react";
 
 
   class  HealthRecord extends React.Component{
-    constructor(props) {
-      super(props);
-      this.toggle = this.toggle.bind(this);
-      this.state = {
-        open: false,
-      };
-    }
-    toggle() {
-      this.setState(prevState => {
-        return { open: !prevState.open };
-      });
-    }
 
   
   render() {
   return (
-    <div className="container mt-4 mb-4" style={{fontFamily:"Times"}}>
-    
+    <div className="container" style={{fontFamily:"Times"}}>
+    <CardBody >
       <Card style={{height: "470px", width:"100%"}}>
-       
-
-     <div className="d-flex justify-content-arround p-4">
-     <div className="">
-     <h6 className=""><i class=" text-danger fas fa-list-ul"style={{fontSize:"20px"}}></i> &nbsp; &nbsp; &nbsp;<span className="text-success">PATIENT MEDICAL HISTORY</span></h6>
+        <div className="row mt-3">
+        <div className=" col-xl-10 col-lg-10 col-md-9 col-sm-9 col-9">
+      <h6 className="ml-4"><i class=" text-danger fas fa-list-ul"style={{fontSize:"20px"}}></i> &nbsp; &nbsp; &nbsp;<span className="text-success">PATIENT MEDICAL HISTORY</span></h6>
+      </div>
+      <div className=" col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 "><i class=" text-dark fas fa-print"></i>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<i class=" text-dark fas fa-ellipsis-v"></i></div>
      </div>
-     <div className="ml-auto">
-     <Dropdown open={this.state.open} toggle={this.toggle}>
-            <i class=" text-dark fas fa-print" />&nbsp; &nbsp; &nbsp;&nbsp;
-            
-        <DropdownToggle className="bg-white border-0 "><i class=" text-dark fas fa-ellipsis-v"style={{ fontSize: "15px" }} /></DropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem><i class="fas fa-list-ul"></i>&nbsp; &nbsp;My EHR</DropdownItem>
-          <DropdownItem><i class="fas fa-print"></i>&nbsp; &nbsp;print</DropdownItem>
-          <DropdownItem> <i class="fab fa-youtube"></i>&nbsp; &nbsp;Tutorial video</DropdownItem>
-          <DropdownItem> <i class="fas fa-question"></i>&nbsp; &nbsp;Help</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-     </div>
-  
-     
-     </div>
-
-
      <div className="row pl-4 mt-2 mb-2 pr-4 ">
      <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-3">
      <select class="form-control" id="sel1" name="sellist1">
@@ -104,7 +68,7 @@ import {
               </div>
   
     </Card>
-    
+    </CardBody>
     </div>
   );
  }

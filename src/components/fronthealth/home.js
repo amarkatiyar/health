@@ -135,7 +135,7 @@ class Home extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-3 pt-3 mb-5"
+                className="pb-3 pt-3"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">
@@ -436,7 +436,7 @@ const HomeForm = withFormik({
 
     if (!values.password) {
       errors.password = "**Password is required ! **";
-    } else if (values.password.length < 4) {
+    } else if (values.password.length < 6) {
       errors.password = "**Password has to be longer than 6 characters ! **";
     }
 
@@ -448,7 +448,7 @@ const HomeForm = withFormik({
     console.log("submitting....");
     console.log(values);
     
-    axios.post(`http://192.168.0.115:5001/login`, values)
+    axios.post(`http://192.168.0.151:5001/login`, values)
             .then(function(response) {
               const res = response;
               console.log(res);

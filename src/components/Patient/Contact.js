@@ -12,19 +12,7 @@ import {
 import { withFormik } from "formik";
 
 class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showAddress: false
-    };
-  }
-
-  handleShowAddress = (e, showAddress) => {
-    this.props.handleShowAddress(showAddress);
-  };
-
   render() {
-    let { showAddress } = this.state;
     const {
       values,
       touched,
@@ -41,10 +29,7 @@ class Contact extends React.Component {
               <Row className="mt-0">
                 <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                   <h6>
-                    <i
-                      class="fas fa-arrow-left text-dark mr-3"
-                      onClick={e => this.handleShowAddress(e, !showAddress)}
-                    />
+                    <i class="fas fa-arrow-left text-dark mr-3" />
                     Contact
                   </h6>
                 </div>
@@ -56,7 +41,7 @@ class Contact extends React.Component {
                 <FormGroup>
                   <div className="row">
                     <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                      <label htmlFor="#Address1">Address</label>
+                      <label htmlFor="#Address">Address</label>
                     </div>
                     <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                       <FormInput
@@ -99,37 +84,20 @@ class Contact extends React.Component {
                   </div>
                 </FormGroup>
 
-                <div class="form-group">
+                <FormGroup>
                   <div className="row">
                     <div className=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                       <label htmlFor="#Country">Country</label>
                     </div>
                     <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-                      <FormSelect
-                        name="Country"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.Country}
-                        name="Country"
-                      >
-                       <option value="first">
-                          --select Country--
-                        </option>
-                        <option value="India">India</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="England">England</option>
+                      <FormSelect>
+                        <option value="first">India</option>
+                        <option value="second">Pakistan</option>
+                        <option value="third">England</option>
                       </FormSelect>
-
-                      {errors.Country && touched.Country && (
-                        <div className="input-feedback">{errors.Country}</div>
-                      )}
                     </div>
                   </div>
-                </div>
-
-
-
-
+                </FormGroup>
 
                 <FormGroup>
                   <div className="row">
@@ -137,21 +105,11 @@ class Contact extends React.Component {
                       <label htmlFor="#state/province">State/Province</label>
                     </div>
                     <div className=" col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
-                      <FormSelect  name="state"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.state}
-                        >
-                      <option value="first">
-                          --select state--
-                        </option>
-                        <option value="uttar pradesh">uttar pradesh</option>
-                        <option value="bihar">bihar</option>
-                        <option value="Asaam">Assam</option>
+                      <FormSelect>
+                        <option value="first">uttar pradesh</option>
+                        <option value="second">bihar</option>
+                        <option value="third">Assam</option>
                       </FormSelect>
-                      {errors.state && touched.state && (
-                        <div className="input-feedback text-warning">{errors.state}</div>
-                      )}
                     </div>
                   </div>
                 </FormGroup>
@@ -243,8 +201,6 @@ const Contactform = withFormik({
   mapPropsToValues: () => ({ Address: "" }),
   mapPropsToValues: () => ({ city: "" }),
   mapPropsToValues: () => ({ zipcode: "" }),
-  mapPropsToValues: () => ({ Country: "" }),
-  mapPropsToValues: () => ({ state: "" }),
   mapPropsToValues: () => ({ phoneno: "" }),
   mapPropsToValues: () => ({ note: "" }),
   // Custom sync validation
@@ -254,7 +210,6 @@ const Contactform = withFormik({
     if (!values.Address) {
       errors.Address = "**please enter the Address ! **";
     }
-    
     if (!values.city) {
       errors.city = "**please enter the city ! **";
     } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.city)) {
@@ -264,17 +219,6 @@ const Contactform = withFormik({
     if (!values.zipcode) {
       errors.zipcode = "**enter the zipcode ! **";
     }
-
-    if (!values.state) {
-      errors.state = "**please select state ! **";
-    }
-
-    if (!values.Country) {
-      errors.Country = "**please select Country ! **";
-    }
-    // if (!values.Country) {
-    //   errors.Country = "**please chose city! **";
-    // }
 
     if (!values.phoneno) {
       errors.phoneno = "**enter the phone number! **";
