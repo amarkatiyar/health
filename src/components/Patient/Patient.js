@@ -91,6 +91,9 @@ class Patient extends React.Component {
                           <option value="third">Other</option>
                         </FormSelect>
                       </div>
+                      {errors.Gender && touched.Gender && (
+                        <div className="input-feedback pb-3 text-warning">{errors.Gender}</div>
+                      )}
                     </div>
                   </FormGroup>
 
@@ -194,6 +197,10 @@ const Patientform = withFormik({
   // Custom sync validation
   validate: values => {
     const errors = {};
+    
+    if (!values.Gender) {
+      errors.Gender = "**please select the Gender! **";
+    }
 
     if (!values.Firstname) {
       errors.Firstname = "**please enter the firstname ! **";

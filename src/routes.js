@@ -66,7 +66,7 @@ import CreateMessage from "./views/CreateMessage";
 import Billing from "./views/Billing";
 import NewBill from "./views/NewBill";
 import Item from "./views/Item";
-// import Date from "./views/Date";
+//  import Date from "./views/Date";
 import DocApp from "./views/DocApp";
 import Pulse from "./views/Pulse";
 
@@ -76,7 +76,7 @@ export default [
     path: "/",
     exact: true,
     layout: LoginLayout,
-    component: () => <Redirect to="/blog-posts" />
+    component: () => <Redirect to="/home" />
   },
   // *****************************front page**********
   {
@@ -176,11 +176,11 @@ export default [
     layout: DefaultLayout,
     component: Item
   },
-  // {
-  //   path: "/date",
-  //   layout: DefaultLayout,
-  //   component: Date
-  // },
+// {
+//      path: "/date",
+//      layout: DefaultLayout,
+//      component: Date
+//    },
   {
     path: "/docapp",
     layout: DefaultLayout,

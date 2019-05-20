@@ -105,7 +105,7 @@ class Home extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="p-2  px-3 " active href="./Contact">
-                    <h6 className="text-white"> Contact </h6>
+                    <h6 className="text-white"> Contact Us </h6>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -420,8 +420,10 @@ class Home extends React.Component {
 }
 
 const HomeForm = withFormik({
-  mapPropsToValues: () => ({ email: "" }),
-  mapPropsToValues: () => ({ password: "" }),
+  mapPropsToValues: () => ({ 
+    Username: "",
+    Password: ""
+   }),
 
   validate: values => {
     const errors = {};
@@ -443,7 +445,7 @@ const HomeForm = withFormik({
     return errors;
   },
 
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, props }) => {
    
     console.log("submitting....");
     console.log(values);
@@ -452,16 +454,24 @@ const HomeForm = withFormik({
             .then(function(response) {
               const res = response;
               console.log(res);
-              console.log("axios");
-              
-              // if (res.status === 200) {
-              //   props.actionAddVideo(res.data);
-              // }
+              // console.log("axios");
+                           
+              if (res.status === 200) {
+                sessionStorage.setItem("DocId", res.data.DocId);
+                sessionStorage.setItem("isLoggedIn", true);
+                props.history.push('/blog-posts')
+              }
+              else{
+                alert('wrong input')
+                
+              }
   
             })
             .catch(function() {
               console.log("Server issue / no data found");
             });
+
+    
   },
 
   displayName: "Home"

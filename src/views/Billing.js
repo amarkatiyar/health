@@ -105,12 +105,12 @@ class Billing extends React.Component {
                     Search
                 </Button></a></span>
               </div>
-              <div className="col-xs-2 col-sm-2 col-md-2">
+              {/* <div className="col-xs-2 col-sm-2 col-md-2">
                 <span><a href="./NewBill"><Button className="pl-4 pr-4" outline theme="success">
                   <i class="fas fa-plus"></i> &nbsp;
                     New Bill
                 </Button></a></span>
-              </div>
+              </div> */}
             </div>
             <div className="row mt-3" style={{ height: "35px", background: "#f0f0f0" }}>
               <div className="col-3 border-white"><small><b>Date</b></small></div>

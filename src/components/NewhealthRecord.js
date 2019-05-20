@@ -462,7 +462,7 @@ class NewhealthRecord extends React.Component{
          </Card>
 {/*          
          *********************************************** NOTE ******************************************************************* */}
-          <Card className="pt-2 mb-2" style={{height:"50px"}}>
+          {/* <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">NOTE</h6></div>
          <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5"onClick={()=> this.handleShowNote(showNote)}></i>
@@ -502,10 +502,10 @@ class NewhealthRecord extends React.Component{
             }
         
         
-         </Card>
+         </Card> */}
 
          {/* *********************************************** ATTACH FILE ************************************************** */}
-
+{/* 
          <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success">ATTACH FILE</h6></div>
@@ -553,7 +553,7 @@ class NewhealthRecord extends React.Component{
             }
         
         
-         </Card>
+         </Card> */}
        </div> 
 
 

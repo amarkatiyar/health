@@ -15,12 +15,8 @@ class CreateMessage extends Component {
     this.props.handleHideCreateMessage();
   }
   componentDidMount = () => {
-    sessionStorage.setItem('To', '');
-    sessionStorage.setItem('Subject', '');
-    sessionStorage.setItem('Message', '');
-    console.log(sessionStorage.getItem('To'));
-    console.log(sessionStorage.getItem('Subject'));
-    console.log(sessionStorage.getItem('Message'));
+    sessionStorage.setItem('To', '', 'Subject', '', 'Message', '');
+    console.log(sessionStorage.getItem('To', 'Subject', 'Message'));
     // let Username = sessionStorage.getItem("Username");    
   }
   render() {
@@ -138,9 +134,10 @@ const CreateMessageForm = withFormik({
     //   alert(JSON.stringify(values, null, 2));
     //   setSubmitting(false);
     // }, 1000);
+
     console.log("submitting....");
     console.log(values);
-    axios.post(`http://192.168.0.115:5001/createMessege`, values)
+    axios.post(`http://192.168.0.151:5001/sendMessage`, values)
       .then(function (response) {
         const res = response;
         console.log(res);

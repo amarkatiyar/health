@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Card, FormInput, Popover, CardHeader, CardBody, Modal, Collapse, InputGroup, InputGroupText, InputGroupAddon, Button } from "shards-react";
 import Item from "./Item";
+
 class NewBill extends React.Component {
 
   constructor(props) {
@@ -58,10 +59,10 @@ class NewBill extends React.Component {
     return (
       <Container fluid className="main-content-container px-4 py-4">
         <div className="row">
-          <div className="col-8">
+          <div className="col-12">
             <Card style={{ height: "600px" }}>
-              <CardBody>
-                <div className="row">
+              <CardBody >
+                <div className="row ">
                   <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
                   </div>
                   <div className="col-lg-1">
@@ -126,7 +127,7 @@ class NewBill extends React.Component {
               </CardBody >
             </Card>
           </div>
-          <div className="col-4">
+          {/* <div className="col-4">
             <CardHeader style={{ background: "hsl(0, 50%, 95%)", cursor: "pointer" }} onClick={this.toggle}>
               <a className="fas fa-star" > &nbsp;&nbsp; Favorite Item/Service</a>
             </CardHeader>
@@ -199,7 +200,7 @@ class NewBill extends React.Component {
                 </div>
               </Card>
             </Collapse>
-          </div>
+          </div> */}
         </div>
       </Container>
     )

@@ -99,7 +99,7 @@ class Message extends React.Component {
                   <option value="I">INBOX</option>
                   <option value="S">SENT MESSAGE</option>
                 </select>
-                <div>
+                {/* <div>
                   <span><a onClick={() => { this.handleShowCreateMessage() }}>
                     <Button className="pl-4 pr-4" outline theme="success">
                       <i class="fas fa-plus"></i> &nbsp;
@@ -108,7 +108,7 @@ class Message extends React.Component {
                   <Modal size="lg" open={showCreateMessageModal} toggle={this.handleShowCreateMessage}>
                     <CreateMessage handleHideCreateMessage={this.handleHideCreateMessage} />
                   </Modal>
-                </div>
+                </div> */}
               </div>
             </div>
             <table className="table mt-3">

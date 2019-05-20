@@ -108,7 +108,7 @@ export default class About extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="p-2  px-3 " active href="Contact">
-                    <h6 className="text-white"> Contact </h6>
+                    <h6 className="text-white"> Contact Us </h6>
                   </NavLink>
                 </NavItem>
                 <NavItem>
