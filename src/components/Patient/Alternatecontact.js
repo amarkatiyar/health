@@ -12,7 +12,20 @@ import {
 import { withFormik } from "formik";
 
 class Alternatecontact extends React.Component {
+  
+  constructor(props) {
+    super(props);
+     this.state = {
+      showAlternatecontact: false
+     };
+  }
+  
+  handleshowAlternatecontact = (e, showAlternatecontact) => {
+     this.props.   handleshowAlternatecontact(showAlternatecontact);
+    };
+
   render() {
+    let {showAlternatecontact} = this.state;
     const {
       values,
       touched,
@@ -29,7 +42,7 @@ class Alternatecontact extends React.Component {
               <Row className="mt-0">
                 <div className="col-lg-10 col-md-10 col-sm-10 col-10">
                   <h6>
-                    <i class="fas fa-arrow-left text-dark mr-3" />
+                    <i class="fas fa-arrow-left text-dark mr-3"onClick={(e) => this.  handleshowAlternatecontact(e, !showAlternatecontact)}/>
                     Alternatecontact
                   </h6>
                 </div>
@@ -91,11 +104,17 @@ class Alternatecontact extends React.Component {
                     </div>
 
                     <div className=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
-                      <FormSelect>
-                        <option value="first">India</option>
-                        <option value="second">Pakistan</option>
-                        <option value="third">England</option>
+                      <FormSelect  name="Country"
+                       onChange={handleChange}
+                       onBlur={handleBlur}
+                       value={values.Country}>>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Engaland">England</option>
                       </FormSelect>
+                      {errors.Country && touched.Country && (
+                        <div className="input-feedback text-warning">{errors.Country}</div>
+                      )}
                     </div>
                   </div>
                 </FormGroup>
@@ -116,10 +135,15 @@ class Alternatecontact extends React.Component {
 const Alternatecontactform = withFormik({
   mapPropsToValues: () => ({ Fullname: "" }),
   mapPropsToValues: () => ({ contactnumber: "" }),
+  mapPropsToValues: () => ({ Country: "" }),
 
   // Custom sync validation
   validate: values => {
     const errors = {};
+    
+    if (!values.Country) {
+      errors.Country = "**please select the country ! **";
+    }
 
     if (!values.Fullname) {
       errors.Fullname = "**please enter the fullname ! **";

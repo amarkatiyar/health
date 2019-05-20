@@ -105,7 +105,7 @@ class Home extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="p-2  px-3 " active href="./Contact">
-                    <h6 className="text-white"> Contact </h6>
+                    <h6 className="text-white"> Contact Us </h6>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -135,7 +135,7 @@ class Home extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-3 pt-3"
+                className="pb-3 pt-3 mb-5"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">
@@ -420,8 +420,10 @@ class Home extends React.Component {
 }
 
 const HomeForm = withFormik({
-  mapPropsToValues: () => ({ email: "" }),
-  mapPropsToValues: () => ({ password: "" }),
+  mapPropsToValues: () => ({ 
+    Username: "",
+    Password: ""
+   }),
 
   validate: values => {
     const errors = {};
@@ -436,14 +438,14 @@ const HomeForm = withFormik({
 
     if (!values.password) {
       errors.password = "**Password is required ! **";
-    } else if (values.password.length < 6) {
+    } else if (values.password.length < 4) {
       errors.password = "**Password has to be longer than 6 characters ! **";
     }
 
     return errors;
   },
 
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, props }) => {
    
     console.log("submitting....");
     console.log(values);
@@ -452,16 +454,24 @@ const HomeForm = withFormik({
             .then(function(response) {
               const res = response;
               console.log(res);
-              console.log("axios");
-              
-              // if (res.status === 200) {
-              //   props.actionAddVideo(res.data);
-              // }
+              // console.log("axios");
+                           
+              if (res.status === 200) {
+                sessionStorage.setItem("DocId", res.data.DocId);
+                sessionStorage.setItem("isLoggedIn", true);
+                props.history.push('/blog-posts')
+              }
+              else{
+                alert('wrong input')
+                
+              }
   
             })
             .catch(function() {
               console.log("Server issue / no data found");
             });
+
+    
   },
 
   displayName: "Home"

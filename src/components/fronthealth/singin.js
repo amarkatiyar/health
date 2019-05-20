@@ -83,9 +83,9 @@ class signin extends React.Component {
       handleSubmit
     } = this.props;
 
-    if(sessionStorage.getItem("isLoggedIn")){
-      history.push({pathname: '/blog-posts'})
-    }
+    // if(sessionStorage.getItem("isLoggedIn")){
+    //   history.push({pathname: '/blog-posts'})
+    // }
     
     return (
       <div>
@@ -117,7 +117,7 @@ class signin extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="p-2  px-3 " active href="./Contact">
-                    <h6 className="text-white"> Contact </h6>
+                    <h6 className="text-white"> Contact Us </h6>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -147,7 +147,7 @@ class signin extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-3 pt-3"
+                className="pb-3 pt-3 mb-5"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">
@@ -155,7 +155,7 @@ class signin extends React.Component {
                     <div className="input-group mb-4">
                       <div className="input-group-prepend">
                         <span className="input-group-text">
-                          <i class=" text-dark fas fa-user" />
+                          <i className=" text-dark fas fa-user" />
                         </span>
                       </div>
                       <input
@@ -176,7 +176,7 @@ class signin extends React.Component {
                     <div className="input-group mb-4">
                       <div className="input-group-prepend">
                         <span className="input-group-text">
-                          <i class=" text-dark fas fa-unlock-alt" />
+                          <i className=" text-dark fas fa-unlock-alt" />
                         </span>
                       </div>
                       <input
@@ -220,7 +220,7 @@ class signin extends React.Component {
                           theme="white"
                           type="submit"
                         >
-                          <i class="fas fa-sign-in-alt" />&nbsp; Signin
+                          <i className="fas fa-sign-in-alt" />&nbsp; Signin
                         </Button>
                     
                       <Tooltip
@@ -244,7 +244,7 @@ class signin extends React.Component {
                         outline
                         theme="white"
                       >
-                        <i class="fas fa-user-plus" />&nbsp; Signup
+                        <i className="fas fa-user-plus" />&nbsp; Signup
                       </Button>
                     </a>
                     <Tooltip
@@ -347,15 +347,15 @@ const signinForm = withFormik({
 
     if (!values.Password) {
       errors.Password = "**Password is required ! **";
-    } else if (values.Password.length < 6) {
+    } else if (values.Password.length < 4) {
       errors.Password = "**Password has to be longer than 6 characters ! **";
     }
 
     return errors;
   },
 
-  handleSubmit: (values, { setSubmitting }) => {
-    
+  handleSubmit: (values, { setSubmitting, props }) => {
+    console.log(props)
     // setTimeout(() => {
     //   alert(JSON.stringify(values, null, 2));
     //   setSubmitting(false);
@@ -363,18 +363,20 @@ const signinForm = withFormik({
     console.log("submitting....");
     console.log(values);
     
-    axios.post(`http://172.20.10.2:5001/login`, values)
+    axios.post(`http://192.168.0.151:5001/login`, values)
             .then(function(response) {
               const res = response;
               console.log(res);
               // console.log("axios");
                            
               if (res.status === 200) {
-                sessionStorage.setItem("Username", res.data.docID);
+                sessionStorage.setItem("DocId", res.data.DocId);
                 sessionStorage.setItem("isLoggedIn", true);
+                props.history.push('/blog-posts')
               }
               else{
-                // wrong pws    login fail
+                alert('wrong input')
+                
               }
   
             })

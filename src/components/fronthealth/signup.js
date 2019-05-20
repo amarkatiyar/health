@@ -69,11 +69,17 @@ class signup extends React.Component {
 
 
   componentDidMount = () => {
-    sessionStorage.setItem('email' ,'');
+    sessionStorage.setItem('Firstname' ,'');
+    sessionStorage.setItem('Lastname', '');
+    sessionStorage.setItem('email', '');
     sessionStorage.setItem('password', '');
+    sessionStorage.setItem('Number', '');
+     console.log(sessionStorage.getItem('FirstName'));
+     console.log(sessionStorage.getItem('Lastname'));
      console.log(sessionStorage.getItem('email'));
      console.log(sessionStorage.getItem('password'));
-    let email = sessionStorage.getItem("email");
+     console.log(sessionStorage.getItem('Number'));
+    // let email = sessionStorage.getItem("email");
     
     
   }
@@ -88,6 +94,9 @@ class signup extends React.Component {
       handleSubmit,
     } = this.props;
 
+    // if(sessionStorage.getItem("issignup")){
+    //   history.push({pathname: '/home'})
+    // }
     
     return (
       <div>
@@ -119,7 +128,7 @@ class signup extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink className="p-2  px-3 " active href="./Contact">
-                    <h6 className="text-white"> Contact </h6>
+                    <h6 className="text-white"> Contact Us </h6>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -149,7 +158,7 @@ class signup extends React.Component {
           <div className="row mt-5 mb-5">
             <div className="col-lg-4 col-md-4 col-sm-12 col-12">
               <Card
-                className="pb-2 pt-2"
+                className="pb-2 pt-2 mb-5"
                 style={{ backgroundColor: "darkcyan" }}
               >
                 <div className="card-body ">
@@ -403,10 +412,33 @@ const SignupForm = withFormik({
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-       alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    // setTimeout(() => {
+    //    alert(JSON.stringify(values, null, 2));
+    //   setSubmitting(false);
+    // }, 1000);
+    console.log("submitting....");
+    console.log(values);
+    
+    axios.post(`http://192.168.0.151:5001/signup`, values)
+            .then(function(response) {
+              const res = response;
+              console.log(res);
+              // console.log("axios");
+                           
+              if (res.status === 200) {
+                // sessionStorage.setItem("", res.data.status);
+                sessionStorage.setItem("success", true);
+              }
+              else{
+                // wrong pws    login fail
+              }
+  
+            })
+            .catch(function() {
+              console.log("Server issue / no data found");
+            });
+
+
   },
 
   displayName: 'SignUp',

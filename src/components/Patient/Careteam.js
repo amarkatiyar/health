@@ -12,7 +12,19 @@ import {
 import { withFormik } from "formik";
 
 class Careteam extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCreatemember: false
+    };
+  }
+
+  handleShowCreatemember = (e, showCreatemember) => {
+    this.props.handleShowCreatemember(showCreatemember);
+  };
+
   render() {
+    let { showCreatemember } = this.state;
     const {
       values,
       touched,
@@ -29,8 +41,11 @@ class Careteam extends React.Component {
               <Row className="mt-0">
                 <div className=" col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                   <h6>
-                    <i class="fas fa-arrow-left text-dark mr-3" />
-                    CARE TEAM MEMBER
+                    <i
+                      class="fas fa-arrow-left text-dark mr-3"
+                      onClick={e => this.handleShowCreatemember(e, !showCreatemember)}
+                    />{" "}
+                     CARE TEAM MEMBER
                   </h6>
                 </div>
                 <div className=" col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">

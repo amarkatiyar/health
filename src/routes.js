@@ -63,15 +63,22 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
+import Pulse from "./components/Pulse";
 
 export default [
   {
     path: "/",
     exact: true,
     layout: LoginLayout,
-    component: () => <Redirect to="/blog-posts" />
+    component: () => <Redirect to="/home" />
   },
 // *****************************front page**********
+{
+  path: "/pulse",
+  layout: DefaultLayout,
+  component: Pulse
+},
+
 {
   path: "/home",
   layout: homelayout,
@@ -308,5 +315,6 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
+  
  
 ];
