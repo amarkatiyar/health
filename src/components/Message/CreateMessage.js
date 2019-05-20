@@ -10,7 +10,20 @@ import {
 import { withFormik } from "formik";
 
 class CreateMessage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCreatemessage: false
+    };
+  }
+
+  handleshowCreatemessage = (e, showCreatemessage) => {
+    this.props.handleshowCreatemessage(showCreatemessage);
+  };
+
   render() {
+    let { showCreatemessage } = this.state;
+
     const {
       values,
       touched,
@@ -22,18 +35,30 @@ class CreateMessage extends React.Component {
 
     return (
       <div style={{ zIndex: 999 }}>
-        <div className="">
-          <Card className="mt-2 mb-2">
+        <div
+          style={{
+            position: "absolute",
+            right: "0px",
+            width: "100%",
+            top: "130px"
+          }}
+        >
+          <Card className="mt-2 mb-2  mr-3 ml-3">
             <CardBody>
               <Row className="pb-4">
                 <div className="col-lg-11 col-md-11 col-sm-10 col-10">
                   <h6>
-                    <i class="fas fa-arrow-left text-dark " />
+                    <i
+                      class="fas fa-chevron-left text-dark"
+                      onClick={(e) =>
+                        this.handleshowCreatemessage(e, !showCreatemessage)
+                      }
+                    />
                     &nbsp; &nbsp; New Message
                   </h6>
                 </div>
                 <div className="col-lg-1 col-md-1 col-sm-2 col-2">
-                  <i class="fas fa-check" />
+                  <i class="fas fa-check text-dark" />
                 </div>
               </Row>
 
@@ -44,11 +69,7 @@ class CreateMessage extends React.Component {
                       <label htmlFor="#To">To*</label>
                     </div>
                     <div className="col-lg-8 col-md-8 col-sm-8 col-8">
-                      <select
-                        class="form-control bg-light"
-                        id="sel1"
-                        name="sellist1"
-                      >
+                      <select class="form-control" id="sel1" name="sellist1">
                         <option value="">
                           Search by name kpid ,e-email here
                         </option>
@@ -68,7 +89,7 @@ class CreateMessage extends React.Component {
                     </div>
                     <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                       <FormInput
-                        className="bg-light"
+                        className=""
                         type="text"
                         placeholder="subject"
                         onChange={handleChange}
@@ -95,7 +116,7 @@ class CreateMessage extends React.Component {
                     </div>
                     <div className="col-lg-8 col-md-8 col-sm-8 col-8">
                       <textarea
-                        class="form-control bg-light"
+                        class="form-control "
                         rows="3"
                         placeholder="Message"
                         onChange={handleChange}
@@ -151,7 +172,7 @@ const CreateMessageform = withFormik({
 
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {
-       alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 1000);
   },

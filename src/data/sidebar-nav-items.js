@@ -35,11 +35,6 @@ export default function() {
       htmlBefore: '<i class=" p-2 text-success fas fa-envelope"></i>',
       to: "/message",
     },
-    // {
-    //   title: "Date",
-    //   htmlBefore: '<i class="text-warning far fa-calendar-alt p-2"></i>',
-    //   to: "/date",
-    // },
     {
       title: "Setting",
       htmlBefore: '<i class="p-2 text-dark fas fa-cog"></i>',

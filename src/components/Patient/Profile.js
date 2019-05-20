@@ -13,8 +13,20 @@ import {
 import { withFormik } from "formik";
 
 class Profile extends React.Component {
+   constructor(props) {
+         super(props);
+          this.state = {
+            showProfile: false
+          };
+       }
+      
+       handleShowProfile = (e,  showProfile) => {
+          this.props. handleShowProfile( showProfile);
+         };
   
+
     render() {
+      let {showProfile  } = this.state;
         const {
             values,
             touched,
@@ -34,6 +46,7 @@ class Profile extends React.Component {
                             <h6>
                               <i
                                 class="fas fa-arrow-left text-dark mr-3"
+                                onClick={(e) => this.  handleShowProfile(e, !showProfile)}
                                
                               />
                               Name
