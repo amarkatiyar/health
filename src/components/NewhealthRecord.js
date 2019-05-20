@@ -248,16 +248,16 @@ class NewhealthRecord extends React.Component{
 
      {/* ***************************************************** VISIT REASONS   ********************************************  */}
 
-       <Card className="pt-2 mb-2" style={{height:"50px"}}>
+       {/* <Card className="pt-2 mb-2" style={{height:"50px"}}>
           <div className="d-flex  ">
          <div className=" pl-3"><h6 className="text-success"> REASONS</h6></div>
          <div className=" ml-auto pr-3"><i class=" text-dark fas fa-plus pr-5"  onClick={()=> this.handleshowVisitReasons(showVisitReasons)}></i>
           <i className=" text-dark fas fa-ellipsis-v"></i></div>
          </div>
          { showVisitReasons &&
-              <div style={{"zIndex":999}}>
+              <div style={{"zIndex":999}}> */}
               {/* <div className="container"> */}
-               <Card >
+               {/* <Card >
                  <CardBody>
                    
                    <div className="d-flex">
@@ -275,16 +275,16 @@ class NewhealthRecord extends React.Component{
      
                         <a href="#"><Button  className="mr-2" outline theme="success"> &nbsp; Save </Button></a>
 
-                </Form>
+                </Form> */}
 
                   
                    
-                   </CardBody>
+                   {/* </CardBody>
                  </Card>
-             </div>
-            //  </div>
+             </div> */}
+             {/* </div>
             }
-         </Card>
+         </Card> */}
 
        </div>
        

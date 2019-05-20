@@ -1,15 +1,21 @@
 import React from 'react'
-import {
-    Row, Button, Card, CardBody,FormInput
-} from 'shards-react'
-
+import {render} from 'react-dom';
 import { withFormik } from "formik";
+
+import {
+    Row, Button, Card, CardBody, Col, Form, FormGroup, FormCheckbox,
+    FormSelect, FormInput,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from 'shards-react'
 
 class Edit1 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-        handleShowEdit1: false,
+            handleShowEdit1: false,
         }
     };
 
@@ -17,45 +23,50 @@ class Edit1 extends React.Component {
         this.props.handleHideEdit1();
     }
 
-render() {
-    const {
-        values,
-        field,
-        option,form,
-        touched,
-        errors,
-        handleChange,
-        handleBlur,
-        handleSubmit
-      } = this.props;
-      
-return (          
-        <Card className="" style={{ width: "600px", height: "430px" }}>
-            <CardBody>
-                <Row className="mt-0">
-                    <div onClick={() => this.handleShowEdit1()} className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3" ></i></h6></div>
-                    <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class=""></i></div>
-                </Row>
-                <form onSubmit={handleSubmit}>
+    render() {
+        console.log(this.props)
+
+        const { ShowEdit1 } = this.state;
+        const {
+            values,
+            touched,
+            errors,
+            handleChange,
+            handleBlur,
+            handleSubmit
+          } = this.props;
+        
+        
+
+        return (
+            
+            <Card className="" style={{ width: "600px", height: "400px" }}>
+                <CardBody>
+                    <Row className="mt-0">
+                        <div onClick={() => this.handleShowEdit1()} className="col-lg-10 col-md-10 col-sm-10 col-10"><h6><i class="fas fa-arrow-left mr-3" ></i></h6></div>
+                        <div className="col-lg-2 col-md-2 col-sm-2 col-2"><i class=""></i></div>
+
+                    </Row>
+                    <form onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="col-6 ">
                                 <label for="Hname" >Hospitalname*</label>
                             </div>
                             <div className="col-6">
-                                <FormInput
+                                <input
                                  type="text" 
                                  className="form-control" 
                                  placeholder="Hname"
                                  onChange={handleChange}
                                  onBlur={handleBlur}
-                                 value={values.item}
-                                 name="Hname"
+                                 value={values.Hospitalname}
+                                 name="Hospitalname"
                                  />
-                                 {errors.Hname && touched.Hname && (
-                                    <div className="text-danger small text-left" id="feedback">
-                                    {errors.Hname}
-                                    </div>
-                                )}
+                                 {errors.Hospitalname && touched.Hospitalname && (
+                                 <div className="text-warning " id="feedback">
+                                    {errors.Hospitalname}
+                                 </div>
+                                 )}
                             </div>
                         </div>
                         <div className="row mt-3">
@@ -63,19 +74,20 @@ return (
                                 <label for="F_name" >FirstName*</label>
                             </div>
                             <div className="col-6">
-                                <FormInput type="text"
+                                <input type="text"
                                  className="form-control" 
                                  placeholder="Fname"
                                  onChange={handleChange}
                                  onBlur={handleBlur}
-                                 value={values.item}
-                                 name="Fname"
-                                 />
-                                 {errors.Fname && touched.Fname && (
-                                    <div className="text-danger small text-left" id="feedback">
-                                    {errors.Fname}
-                                    </div>
-                                )}
+                                 value={values.FirstName}
+                                 name="FirstName"
+                                 >
+                                 </input>
+                                 {errors.FirstName && touched.FirstName && (
+                                 <div className="text-warning " id="feedback">
+                                    {errors.FirstName}
+                                 </div>
+                                 )}
                             </div>
                         </div>
                         <div className="row mt-3">
@@ -83,19 +95,19 @@ return (
                                 <label for="L_name" >LastName*</label>
                             </div>
                             <div className="col-6">
-                                <FormInput type="text" 
+                                <input type="text" 
                                 className="form-control" 
                                 placeholder="Lname"
                                 onChange={handleChange}
-                                 onBlur={handleBlur}
-                                 value={values.item}
-                                 name="Lname"
-                                />
-                                {errors.Lname && touched.Lname && (
-                                    <div className="text-danger small text-left" id="feedback">
-                                    {errors.Lname}
-                                    </div>
-                                )}
+                                onBlur={handleBlur}
+                                value={values.LastName}
+                                name="LastName"
+                                ></input>
+                                {errors.LastName && touched.LastName && (
+                                 <div className="text-warning " id="feedback">
+                                    {errors.LastName}
+                                 </div>
+                                 )}
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -103,21 +115,12 @@ return (
                                 <label for="Ad_status">Administrator status*</label>
                             </div>
                             <div className="col-6 ">
-                                    <select className="form-control "
-                                     type="text"
-                                     placeholder="Administrator"
-                                     name="Administrator"
-                                     value={values.Administrator}
-                                     onChange={handleChange}
-                                     onBlur={handleBlur}>
-                                    >
-                                        <option value=""></option>
-                                        <option value="ACTIVE">ACTIVE</option>
-                                        <option value="DEACTIVE">DEACTIVE</option>
+                                <Dropdown open={this.state.open} toggle={this.toggle} group>
+                                    <select className="form-control">
+                                        <option value="1">ACTIVE</option>
+                                        <option value="2">DEACTIVE</option>
                                     </select>
-                                    {errors.Administrator && touched.Administrator && (<div className="text-danger small" id="feedback">
-                                        {errors.Administrator}
-                                    </div>)}
+                                </Dropdown>
                             </div>
                         </div>
                         <div className="row mt-3">
@@ -125,16 +128,7 @@ return (
                                 <label for="Mo_number" >Mobile Number*</label>
                             </div>
                             <div className="col-6">
-                                <FormInput type="number" className="form-control" id="#number" placeholder="+91 8840091275"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.Number}
-                                name="Number"></FormInput>
-                                {errors.Number && touched.Number && (
-                                <div className="text-warning " id="feedback">
-                                    {errors.Number}
-                                </div>
-                        )}
+                                <input type="text" className="form-control" placeholder="M_No"></input>
                             </div>
                         </div>
                         <Button outline size="md" className="mt-3 ml-5" theme="success">
@@ -143,56 +137,42 @@ return (
                     </form>
                 </CardBody>
             </Card>
-    )
+        )
     }
 }
+
+
 const Edit1Form = withFormik({
-    mapPropsToValues: () => ({ Hname: "",Fname: "",Lname: "",Administrator: "",Number: "" }),
+    mapPropsToValues: () => ({ FirstName: "" }),
+  
     // Custom sync validation
     validate: values => {
       const errors = {};
   
-      if (!values.Hname) {
-        errors.Hname = "Please enter the correct chahracter !";
-      } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.Hname)) {
+      if (!values.userName) {
+        errors.FirstName = "please enter the firstname ! **";
+      }else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.FirstName)) {
+        errors.FirstName = " **please enter the character only ! **";
       }
-     else if (!/^[0-9]+$/.test(values.Hname)) {
-              errors.Hname = "Not valid number !"
+      if (!values.userName) {
+        errors.LastName = "please enter the LastName ! **";
+      }else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.LastName)) {
+        errors.LastName = " **please enter the character only ! **";
       }
 
-      if (!values.Fname) {
-        errors.Fname = "Please enter the correct chahracter !";
-      } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.Fname)) {
-        errors.Fname = " Please character only !";
-      } 
-      if (!values.Lname) {
-        errors.Lname = "Please enter the correct chahracter !";
-      } else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.Lname)) {
-        errors.Lname = " Please character only !";
-      }
-      if (!values.Administrator) {
-        errors.Administrator = "Please select the email-id or name !";
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,3}$/i.test(values.Administrator)) {
-      }
-      else if (!/^[a-zA-Z_]+( [a-zA-Z_]+)*$/.test(values.subject)) {
-        errors.subject = " Please select option !";
-      }
-      if (!values.Number) {
-        errors.Number = "**enter the phone number ! **";
-      } else if (
-        !/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(values.Number)
-      ) {
-        errors.Number = "**Not valid number ! **";
-      }
+      console.log(errors);
       return errors;
-},
+    },
+  
     handleSubmit: (values, { setSubmitting }) => {
       setTimeout(() => {
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
       }, 1000);
     },
+  
     displayName: "Edit1Form"
   })(Edit1);
-export default Edit1Form;
+  
+  export default Edit1Form;
   

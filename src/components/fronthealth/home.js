@@ -57,11 +57,11 @@ class Home extends React.Component {
   }
 
   componentDidMount = () => {
-    sessionStorage.setItem('email' ,'');
-    sessionStorage.setItem('password', '');
-     console.log(sessionStorage.getItem('email'));
-     console.log(sessionStorage.getItem('password'));
-    let email = sessionStorage.getItem("email");
+    sessionStorage.setItem('Username' ,'');
+    sessionStorage.setItem('Password', '');
+     console.log(sessionStorage.getItem('Username'));
+     console.log(sessionStorage.getItem('Password'));
+    let Username = sessionStorage.getItem("Username");
     
     
   }
@@ -149,16 +149,16 @@ class Home extends React.Component {
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="Doctor/patient Email or id"
+                        placeholder="Doctor/patient Username or id"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.email}
-                        name="email"
+                        value={values.Username}
+                        name="Username"
                       />
                     </div>
-                    {errors.email && touched.email && (
+                    {errors.Username && touched.Username && (
                       <div className="text-warning pb-3" id="feedback">
-                        {errors.email}
+                        {errors.Username}
                       </div>
                     )}
 
@@ -169,18 +169,18 @@ class Home extends React.Component {
                         </span>
                       </div>
                       <input
-                        type="password"
+                        type="Password"
                         className="form-control"
-                        placeholder="password"
+                        placeholder="Password"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.password}
-                        name="password"
+                        value={values.Password}
+                        name="Password"
                       />
                     </div>
-                    {errors.password && touched.password && (
+                    {errors.Password && touched.Password && (
                       <div className="text-warning pb-3" id="feedback">
-                        {errors.password}
+                        {errors.Password}
                       </div>
                     )}
                     <div className="form-check mb-4 ml-2">
@@ -197,7 +197,7 @@ class Home extends React.Component {
                       </label>
                       <a href="#">
                         <span className="pl-3 text-white">
-                          Forgot password?
+                          Forgot Password?
                         </span>
                       </a>
                     </div>
@@ -428,18 +428,18 @@ const HomeForm = withFormik({
   validate: values => {
     const errors = {};
 
-    if (!values.email) {
-      errors.email = "**please enter the email id ! **";
+    if (!values.Username) {
+      errors.Username = "**please enter the Username id ! **";
     } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Username)
     ) {
-      errors.email = "**Invalid email address**";
+      errors.Username = "**Invalid Username address**";
     }
 
-    if (!values.password) {
-      errors.password = "**Password is required ! **";
-    } else if (values.password.length < 4) {
-      errors.password = "**Password has to be longer than 6 characters ! **";
+    if (!values.Password) {
+      errors.Password = "**Password is required ! **";
+    } else if (values.Password.length < 4) {
+      errors.Password = "**Password has to be longer than 6 characters ! **";
     }
 
     return errors;

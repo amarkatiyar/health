@@ -76,7 +76,7 @@ class CreateBill extends React.Component {
     return (
       <div className="container-fluid " style={{ fontFamily: " Times" }}>
         <div className="row mt-4 mb-5">
-          <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 pb-3">
+          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pb-3">
             <Card>
               <div className="d-flex pt-4 pl-3 pr-3">
                 <div className="text-success">INVOICE</div>
@@ -290,7 +290,7 @@ class CreateBill extends React.Component {
             </Card>
           </div>
 {/* **********************$$$$$$$$$$$$$$ */}
-          <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
+          {/* <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mt-3">
             <Card className="mb-3">
             <cardHeader  className=" p-3 " style={{ fontSize: "14px" }} onClick={this.toggle1}>
             <i class="far fa-star text-dark"></i> &nbsp;&nbsp;   Favorite Item/Service
@@ -320,7 +320,7 @@ class CreateBill extends React.Component {
                   </div>
                   </div>
                   </Collapse>
-                  </Card>
+                  </Card> */}
             
               {/* <div className="d-flex">
                 <i class=" text-dark far fa-star" />
@@ -335,7 +335,7 @@ class CreateBill extends React.Component {
                   <i class=" text-dark fas fa-ellipsis-v" />
                 </div>
               </div> */}
-              {showFavorite && (
+              {/* {showFavorite && (
                 <div style={{ zIndex: 999 ,position:"absolute",left:"0px",width:"100%" ,top:"40px"}}>
                   <div className="container">
                     <Card className="mb-2">
@@ -402,10 +402,10 @@ class CreateBill extends React.Component {
                     </Card>
                   </div>
                 </div>
-              )}
+              )} */}
             
            
-            <Card className="mb-3">
+            {/* <Card className="mb-3">
             
              <cardHeader  className=" p-3 " style={{ fontSize: "14px" }} onClick={this.toggle}>
              <i class="far fa-hospital text-dark "></i> &nbsp;&nbsp;   Service Charges/ Tax
@@ -524,8 +524,8 @@ class CreateBill extends React.Component {
                     </Card>
                   </div>
                 </div>
-              )}
-            
+              )} */}
+{/*             
             <Card className=" mb-2">
             <cardHeader  className=" p-3 " style={{ fontSize: "14px" }} onClick={this.toggle2}>
             <i class="far fa-star text-dark"></i> &nbsp;&nbsp;  Item/ServiceCode
@@ -624,12 +624,12 @@ class CreateBill extends React.Component {
                           </div>
                         </Form>
                       </CardBody>
-                    </Card>
-                  </div>
+                    </Card> */}
+                  {/* </div>
                 </div>
               )}
             
-          </div>
+          </div> */}
         </div>
       </div>
     );

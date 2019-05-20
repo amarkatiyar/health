@@ -20,7 +20,7 @@ render(){
 
 return(
 <div>
-<Card  style={{height:"400px",width:"500px"}}>
+<Card  style={{height:"400px",width:"400px"}}>
     <CardHeader className="p-3 " style={{backgroundColor:"#A9A9A9"}}>
         <div className="row" >
             <div onClick ={()=>this.handleShowForms()} className="col-lg-1"> <i className="fas fa-arrow-left"></i></div>
@@ -30,7 +30,7 @@ return(
     </CardHeader>
     <div className="row mt-4">
         <div className="col-lg-2"></div>
-        <div className="col-lg-8  text-left"style={{height:"40px",backgroundColor:"#D9EDF7"}}>There is no form</div>
+        <div className="col-lg-8 bg-success text-left"style={{height:"40px"}}>There is no form</div>
     </div>
 </Card>
 </div>

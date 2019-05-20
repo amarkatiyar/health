@@ -308,23 +308,43 @@ const Patientform = withFormik({
     
     
     
-    axios.post(`http://192.168.0.151:5001/New_Patient`,values )
-            .then(function(response) {
-              const res = response;
-              console.log(res);
-              console.log("axios");
+    // axios.post(`http://192.168.0.151:5001/New_Patient`,values )
+    //         .then(function(response) {
+    //           const res = response;
+    //           console.log(res);
+    //           console.log("axios");
               
-              if (res.status === 200) {
-                // sessionStorage.setItem("DocId", res.data.DocId);
-                sessionStorage.setItem("isLoggedIn", true);
-                // props.history.push('/blog-posts')
-              }
+    //           if (res.status === 200) {
+    //             // sessionStorage.setItem("DocId", res.data.DocId);
+    //             sessionStorage.setItem("isLoggedIn", true);
+    //             // props.history.push('/blog-posts')
+    //           }
   
-            })
-            .catch(function() {
-              console.log("Server issue / no data found");
-            });
+    //         })
+    //         .catch(function() {
+    //           console.log("Server issue / no data found");
+    //         });
 
+    axios.post(`http://192.168.0.151:5001/New_Patient`, values)
+    .then(function(response) {
+      const res = response;
+      console.log(res);
+      // console.log("axios");
+                   
+      if (res.status === 200) {
+        // sessionStorage.setItem("DocId", res.data.DocId);
+        sessionStorage.setItem("success", true);
+         props.history.push('/blog-posts')
+      }
+      // else{
+      //   alert('wrong input')
+        
+      // }
+
+    })
+    .catch(function() {
+      console.log("Server issue / no data found");
+    });
     
   },
 

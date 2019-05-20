@@ -16,6 +16,9 @@ import home from "./components/fronthealth/home";
 import Aboutus from "./components/fronthealth/Aboutus";
 import Services from "./components/fronthealth/Services";
 import Contact from "./components/fronthealth/Contact";
+import CreateBill from "./components/Billings/CreateBill";
+import Billing from "./components/Billings/Billing";
+import Message from "./components/Message/Message";
 import Calender from "./components/Calender/calender";
 
 
@@ -25,14 +28,14 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import BlogPosts from "./views/BlogPosts";
 import Patient from "./components/Patient/Patient";
 import PatientAcc from "./components/Patient/PatientAcc";
-import NewhealthRecord from "./components/NewhealthRecord";
+import  NewhealthRecord from "./components/NewhealthRecord"; 
 
+import NewBill from "./views/NewBill";
+import Item from "./views/Item";
 import ManageUser from "./views/ManageUser";
 import SetForms from "./views/SetForms";
 import ChangePassword from "./views/ChangePassword";
 import CDS from "./views/CDS";
-import CDS1 from "./views/CDS1";
-import M_user1 from "./views/M_user1";
 import AuditReport from "./views/AuditReport";
 import NewUser from "./views/NewUser";
 import Multiple from "./views/Multiple";
@@ -60,16 +63,7 @@ import PatMessage from "./components/Patient/HealthRecord/PatMessage";
 import PatCreateMessage from "./components/Patient/HealthRecord/PatCreateMessage";
 import PatBilling from "./components/Patient/HealthRecord/PatBilling";
 import HospitalForm from "./views/HospitalForm";
-
-import Message from "./views/Message";
-import CreateMessage from "./views/CreateMessage";
-import Billing from "./views/Billing";
-import NewBill from "./views/NewBill";
-import Item from "./views/Item";
-//  import Date from "./views/Date";
-import DocApp from "./views/DocApp";
-import Pulse from "./views/Pulse";
-
+import Pulse from "./components/Pulse";
 
 export default [
   {
@@ -118,29 +112,29 @@ export default [
 {
     path: "/patient",
     layout: DefaultLayout,
-    component: Patient
-  },
-  {
+    component:Patient
+},
+{
     path: "/PatientAcc",
     layout: DefaultLayout,
     component: PatientAcc
-  },
-  {
+},
+{
     path: "/user-profile-lite",
     layout: DefaultLayout,
     component: UserProfileLite
-  },
-  {
+},
+{
     path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
-  },
-  {
+},
+{
     path: "/components-overview",
     layout: DefaultLayout,
     component: ComponentsOverview
-  },
-  {
+},
+{
     path: "/NewhealthRecord",
     layout: DefaultLayout,
     component: NewhealthRecord
@@ -150,80 +144,63 @@ export default [
     layout: DefaultLayout,
     component: Calender
   },
-
+  
   {
     path: "/blog-posts",
     layout: DefaultLayout,
     component: BlogPosts
-  },
-
-  {
-    path: "/Message",
-    layout: DefaultLayout,
-    component: Message
-  },
-  {
-    path: "/CreateMessage",
-    layout: DefaultLayout,
-    component: CreateMessage
-  },
-  {
+},
+{
     path: "/Billing",
     layout: DefaultLayout,
     component: Billing
   },
-  {
+   {
+    path: "/CreateBill",
+     layout: DefaultLayout,
+    component: CreateBill
+   },
+   {
+    path: "/Message",
+    layout: DefaultLayout,
+    component: Message
+},
+{
     path: "/newbill",
     layout: DefaultLayout,
     component: NewBill
-  },
-  {
-    path: "/item",
-    layout: DefaultLayout,
-    component: Item
-  },
-// {
-//      path: "/date",
-//      layout: DefaultLayout,
-//      component: Date
-//    },
-  {
-    path: "/docapp",
-    layout: DefaultLayout,
-    component: DocApp
-  },
-  {
-    path: "/pulse",
-    layout: DefaultLayout,
-    component: Pulse
-  },
-  {
+},
+{
     path: "/EditProfile",
     layout: DefaultLayout,
     component: EditProfile
-  },
-
-  {
+},
+{
+    path: "/item",
+    layout: DefaultLayout,
+    component: Item
+},
+{
     path: "/SetForms",
     layout: DefaultLayout,
     component: SetForms
-  },
-  {
+},
+{
     path: "/ChangePassword",
     layout: DefaultLayout,
     component: ChangePassword
-  },
-  {
+},
+{
     path: "/CDS",
     layout: DefaultLayout,
     component: CDS
-  },
-  {
+},
+{
     path: "/AuditReport",
     layout: DefaultLayout,
     component: AuditReport
-  },
-  {
+},
+{
     path: "/NewUser",
     layout: DefaultLayout,
     component: NewUser
@@ -338,14 +315,6 @@ export default [
     layout: DefaultLayout,
     component: PatBilling
   },
-  {
-    path: "/CDS1",
-    layout: DefaultLayout,
-    component: CDS1
-  },
-  {
-    path: "/M_user1",
-    layout: DefaultLayout,
-    component: M_user1
-  }
+  
+ 
 ];

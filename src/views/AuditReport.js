@@ -1,78 +1,38 @@
 import React from "react";
-import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form,Button,Popover} from "shards-react";
+import { Container, Row, Col, Card, FormInput, CardHeader, CardBody,Form } from "shards-react";
 
 
 import PageTitle from "../components/common/PageTitle";
 
-class AuditReport extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            collapse: false,
-            open: false
-          };
-        };
-      
-toggle1 = () => {
-    this.setState({
-    open: !this.state.open
-    });
-}
-render() {
-    return (
+const AuditReport = () => (
     <Container fluid className="main-content-container px-4 py-4">
     <Card small className="mb-4">
-    <CardHeader>
+    
+    <CardHeader className="border-bottom">
     <Form>
         <div className="row">
-            <div className="col-lg-11">
-                <h6 className="text-success" style={{ cursor: "pointer" }}><i class="far fa-credit-card"></i>&nbsp; AUDIT REPORTS</h6>
-            </div>
-            <div className="col-lg-1" >
-                <i className="fa fa-print mr-2" style={{ cursor: "pointer" }}></i>&nbsp;
-                <i className="fas fa-ellipsis-v ml-4" title="Show more options" style={{ cursor: "pointer" }} id="popover-2" onClick={this.toggle1}></i>
-              </div>
-                <Popover
-                  placement="bottom"
-                  open={this.state.open}
-                  toggle1={this.toggle1}
-                  target="#popover-2"
-                  style={{ width: "100px" }}>
-                  <table className="table table-bordered table-hover mb-0">
-                    <tbody>
-                    <tr>
-                        <td><i className="far fa-star">&nbsp;&nbsp;Print</i></td>
-                      </tr>
-                      <tr>
-                        <td><i className="far fa-star">&nbsp;&nbsp;Tutorial</i></td>
-                      </tr>
-                      <tr>
-                        <td><i className="far fa-star">&nbsp;&nbsp;Export</i></td>
-                      </tr>
-                      <tr>
-                        <td><i className="far fa-question-circle">&nbsp;&nbsp;Help</i></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Popover>
+        <div className="col-lg-10">
+            <h6 className="text-primary">Audit Repots</h6>
+        </div>
+        <div className="col-lg-1">
+        <span id="save-btn" className="fa fa-print ml-5" data-toggle="tooltip" title="Send Message"></span>
+        </div>
+        <div className="col-lg-1">
+        <span id="save-btn" className="fa fa-ellipsis-v ml-3" data-toggle="tooltip" title="Send Message"></span>
+        </div>
         </div>
 
    <div className="row mt-3">
    <div className="col-xs-4 col-sm-4 col-md-4">
-          <select type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,mobile,KPiD or e:email" 
-          data-toggle="tooltip" title="Enter the subject of the message">
-          <option>Patient by name,mobile,KPiD or e:email</option>
-          </select>
+          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="Patient by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
+          </FormInput>
     </div>
     <div className="col-xs-4 col-sm-4 col-md-4">
-    <select type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
-    <option>Patient by name,mobile,KPiD or e:email</option>
-          </select>
-          {/* <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
-          </FormInput> */}
+          <FormInput type="text" id="subject" maxlength="255" className="form-control" placeholder="User by name,mobile,KPiD or e:email" data-toggle="tooltip" title="Enter the subject of the message">
+          </FormInput>
     </div>
     <div className="col-xs-2 col-sm-2 col-md-2">
-          <select id="byDate" onchange="bill_report.advanceSearch();" title="" class="form-control">
+          <select id="byDate" onchange="bill_report.advanceSearch();" title="Select date or enter custom date" class="form-control">
 									<option selected="selected" value="">Date</option>
 									<option value="">All</option>
 									<option value="TODAY">Today</option>
@@ -109,10 +69,11 @@ render() {
                                             </select>
             </div>
             <div className="col-xs-2 col-sm-2 col-md-2">
-            <span><a ><Button className="form-control" outline theme="success">
-            <i class="fas fa-search"></i> &nbsp;
-                Search
-            </Button></a></span>
+                <a>
+                <button id="advanceSearching" class="icon-color btn btn-success form-control" title="Select or enter search criteria and press search button here" onclick="bill_report.advanceSearch();">
+                                            <span class="fa fa-search"></span>
+                                            <span>&nbsp;Search</span>
+                                        </button></a>
             </div>
     </div>
         <div className="row mt-3 text-white"style={{background:"#787878"}}>
@@ -134,6 +95,5 @@ render() {
     </Card>
     </Container>
 );
-}
-}
+
 export default AuditReport;
