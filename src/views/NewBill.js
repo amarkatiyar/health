@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Card, FormInput, Popover, CardHeader, CardBody, Modal, Collapse, InputGroup, InputGroupText, InputGroupAddon, Button } from "shards-react";
 import Item from "./Item";
+
 class NewBill extends React.Component {
 
   constructor(props) {
@@ -60,8 +61,8 @@ class NewBill extends React.Component {
         <div className="row">
           <div className="col-8">
             <Card style={{ height: "600px" }}>
-              <CardBody>
-                <div className="row">
+              <CardBody >
+                <div className="row ">
                   <div className="col-8"><h6 className="text-success"> INVOICE #:</h6>
                   </div>
                   <div className="col-lg-1">
